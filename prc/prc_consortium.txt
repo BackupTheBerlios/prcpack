@@ -794,7 +794,7 @@ Level
 *************** Updates ****************
 
 v1.9:
-* Added Fist of Raziel, Heartwarder, Holy Liberator, Hunter of the Dead, Knight of the Chalice, Stormlord, and Vassal of Bahamut
+* Added Heartwarder, Stormlord, and Demilich's Trap the Soul and Soul Gems
 
 V1.8:
 * Hierophant, Red Avenger, Duelist
