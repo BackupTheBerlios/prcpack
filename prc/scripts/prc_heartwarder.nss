@@ -42,6 +42,43 @@ void Fey_Type(object oPC ,object oSkin )
    SetLocalInt(oSkin, "FeyType",1);
 }
 
+void Lips_Rapture(object oPC)
+{
+  object oRod=GetItemPossessedBy(oPC,"RodofLipsRapture");
+  if (oRod==OBJECT_INVALID)
+  {
+     oRod=CreateItemOnObject("RodofLipsRapture",oPC);
+     int iUse=GetAbilityModifier(ABILITY_CHARISMA,oPC);
+
+    while (iUse>5)
+    {
+        AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIPS_RAPTURE_1,IP_CONST_CASTSPELL_NUMUSES_5_USES_PER_DAY),oRod);
+        iUse-=5;
+    }
+
+     switch (iUse)
+    {
+        case 1:
+            AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIPS_RAPTURE_1,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY),oRod);
+            break;
+        case 2:
+            AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIPS_RAPTURE_1,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY),oRod);
+            break;
+        case 3:
+            AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIPS_RAPTURE_1,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY),oRod);
+            break;
+        case 4:
+            AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIPS_RAPTURE_1,IP_CONST_CASTSPELL_NUMUSES_4_USES_PER_DAY),oRod);
+            break;
+        case 5:
+            AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIPS_RAPTURE_1,IP_CONST_CASTSPELL_NUMUSES_5_USES_PER_DAY),oRod);
+            break;
+    }
+  }
+
+
+}
+
 void main()
 {
 
@@ -56,7 +93,7 @@ void main()
         bChar=GetHasFeat(FEAT_CHARISMA_INC5, oPC) ? 5 : bChar;
 
     int bHeartP = GetHasFeat(FEAT_HEART_PASSION, oPC) ? 2 : 0;
-//    int bLipsR  = GetHasFeat(FEAT_LIPS_RAPTUR, oPC)   ? 1 : 0;
+    int bLipsR  = GetHasFeat(FEAT_LIPS_RAPTUR, oPC)   ? 1 : 0;
 //    int bVoiceS = GetHasFeat(FEAT_VOICE_SIREN, oPC)   ? 1 : 0;
 //    int bTearsE = GetHasFeat(FEAT_TEARS_EVERGOLD, oPC)? 1 : 0;
     int bFey    = GetHasFeat(FEAT_FEY_METAMORPH, oPC) ? 1 : 0;
@@ -64,6 +101,8 @@ void main()
     if (bChar>0)   CharBonus(oPC, oSkin,bChar);
     if (bHeartP>0) Heart_Passion(oPC, oSkin,bHeartP);
     if (bFey>0)    Fey_Type(oPC ,oSkin );
+
+    if (bLipsR>0) Lips_Rapture(oPC);
 
 
 
