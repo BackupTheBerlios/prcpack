@@ -30,5 +30,11 @@
 ---------Begin Shane Hennessy
 - added Disciple of Darkness feat to all base classes.2da so the feat can be selected
 ---------End Shane Hennessy
-
+09/02/2004
+---------Begin Stratovarius
+- added 8 of 10 PrCs to classes.2da. Lasher and Order of the Bow Initiate omitted. (unstarted)
+- added 8 of 10 PrC feats to feat.2da. Lasher and Order of the Bow Initiate omitted. (unstarted)
+- added 8 of 10 PrC cls_feat_xxx.2da. Lasher and Order of the Bow Initiate omitted. (unstarted)
+- added icons for Arachnae PrC to gfx bin. PrC unstarted, open to whoever wants to.
+---------End Stratovarius
 
