@@ -745,7 +745,7 @@ Level
 7: Electrical Resistance 20
 8: Shocking Spear
 9: Electrical Resistance 30
-10: Elemental Deflagration
+10: Elemental Conflagration
 
 BONUS SPELLS
 Upon gaining a level in Stormlord, the character gains new spells per day as if he had also gained a level in his highest caster class (druid or cleric). He does not learn any new spells through his abilities.
