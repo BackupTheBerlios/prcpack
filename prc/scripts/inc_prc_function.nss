@@ -29,6 +29,9 @@
 // Gets the racial type (RACIAL_TYPE_*) of oCreature
 // * Return value if oCreature is not a valid creature: RACIAL_TYPE_INVALID
 // This function includes changes via levels of classes (like the lich)
+// If you want to set a race dynamicaly set a local called "RACIAL_TYPE"
+// NOTE "RACIAL_TYPE" must be RACIAL_TYPE_* + 1, because we use 0 as meaning it
+// is not set but a zero == RACIAL_TYPE_DWARF
 int MyPRCGetRacialType(object oCreature);
 
 // * Check to see which custom PRCs oPC has and apply the proper feat bonuses
@@ -269,5 +272,11 @@ int MyPRCGetRacialType(object oCreature)
         return RACIAL_TYPE_ELEMENTAL;
     if (GetLevelByClass(CLASS_TYPE_HEARTWARDER,oCreature) >= 10)
         return RACIAL_TYPE_FEY;
+    // check for a local variable that overrides the race
+    // the shifter will use this everytime they change
+    // the racial types are zero based, use 1 based to ensure the variable is set
+    int nRace = GetLocalInt(oCreature,"RACIAL_TYPE");
+    if (nRace)
+        return (nRace-1);
     return GetRacialType(oCreature);
 }

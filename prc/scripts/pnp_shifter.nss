@@ -2064,6 +2064,8 @@ int SetShift(object oPC, object oTarget)
     }
 
     // Remove equipment that can't be worn while shifted
+    // no way to enforce it unless we override the onequip .. could get nasty
+    // future change if needed
 /*    object oItem;
     for (i=0; i < NUM_INVENTORY_SLOTS; i++)
     {
@@ -2113,6 +2115,8 @@ int SetShift(object oPC, object oTarget)
                         oPC);
 
     SetCreatureAppearanceType(oPC,GetAppearanceType(oTarget));
+    // For spells to make sure they now treat you like the new race
+    SetLocalInt(oPC,"RACIAL_TYPE",GetRacialType(oTarget)+1);
 
     // PnP rules say the shifter would heal as if they rested
     effect eHeal = EffectHeal(GetHitDice(oPC)*d4());
@@ -2285,6 +2289,8 @@ int SetShiftTrueForm(object oPC)
                         oPC);
 
     SetCreatureAppearanceType(oPC,GetTrueForm(oPC));
+    // Set race back to unused
+    SetLocalInt(oPC,"RACIAL_TYPE",0);
 
 
     SetLocalInt(oHide,"nPCShifted",FALSE);
