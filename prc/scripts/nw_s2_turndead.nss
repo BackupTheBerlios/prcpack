@@ -24,6 +24,7 @@
 // if FALSE, the cleric will rebuke the undead instead
 
 #include "prc_alterations"
+#include "strat_prc_inc"
 
 // Checks to see if an evil cleric has control 'slots' to command
 // the specified undead
@@ -276,6 +277,7 @@ void main()
     int nClericLevel = GetLevelByClass(CLASS_TYPE_CLERIC);
     int nPaladinLevel = GetLevelByClass(CLASS_TYPE_PALADIN);
     int nBlackguardlevel = GetLevelByClass(CLASS_TYPE_BLACKGUARD);
+    int nHospLevel = GetLevelByClass(CLASS_TYPE_HOSPITALER);
     int nTotalLevel =  GetHitDice(OBJECT_SELF);
 
     int nTurnLevel = nClericLevel;
@@ -293,7 +295,11 @@ void main()
         nClassLevel += (nPaladinLevel -2);
         nTurnLevel  += (nPaladinLevel - 2);
     }
-
+    if((nHospLevel - 2) > 0)
+    {
+        nClassLevel += (nHospLevel -2);
+        nTurnLevel  += (nHospLevel - 2);
+    }
     //Flags for bonus turning types
     int nElemental = GetHasFeat(FEAT_AIR_DOMAIN_POWER) + GetHasFeat(FEAT_EARTH_DOMAIN_POWER) + GetHasFeat(FEAT_FIRE_DOMAIN_POWER) + GetHasFeat(FEAT_WATER_DOMAIN_POWER);
     int nVermin = GetHasFeat(FEAT_PLANT_DOMAIN_POWER) + GetHasFeat(FEAT_ANIMAL_COMPANION);

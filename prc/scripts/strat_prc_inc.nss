@@ -1,5 +1,5 @@
-//Master of Shrouds
-//Stratovarius - Feb 22, 2004
+//HOSPITALER, Master Harper	
+//Stratovarius - March 02, 2004
 
 //New Prestige Classes
 const int CLASS_TYPE_MAGEKILLER   = 65; //CONSTANT
@@ -16,7 +16,9 @@ const int CLASS_TYPE_HIEROPHANT   = 81; //CONSTANT
 const int CLASS_TYPE_RED_AVENGER  = 82; //CONSTANT
 const int CLASS_TYPE_LICH = 90; // CONSTANT
 const int CLASS_TYPE_PNP_SHIFTER = 91; // CONSTANT
+const int CLASS_TYPE_HOSPITALER = 174; // CONSTANT
 const int CLASS_TYPE_MASTER_OF_SHROUDS = 175; // CONSTANT
+const int CLASS_TYPE_MASTER_HARPER = 176; // CONSTANT
 
 //Augment Summon Feat for Mage Killer
 const int FEAT_AUGMENT_SUMMON = 2510; //CONSTANT

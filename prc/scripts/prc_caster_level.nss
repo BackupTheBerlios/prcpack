@@ -62,6 +62,7 @@ int nFireLevels = GetLevelByClass(CLASS_TYPE_ES_FIRE, oCaster);
 int nColdLevels = GetLevelByClass(CLASS_TYPE_ES_COLD, oCaster);
 int nElecLevels = GetLevelByClass(CLASS_TYPE_ES_ELEC, oCaster);
 int nAcidLevels = GetLevelByClass(CLASS_TYPE_ES_ACID, oCaster);
+int nMastHarpLevels = GetLevelByClass(CLASS_TYPE_MASTER_HARPER, oCaster);
 int nFireAdept = GetHasFeat(FEAT_FIRE_ADEPT, oCaster);
 
 
@@ -69,6 +70,7 @@ int nHeartWLevels = GetLevelByClass(CLASS_TYPE_HEARTWARDER, oCaster);
 int nStormlord    = GetLevelByClass(CLASS_TYPE_STORMLORD, oCaster);
 int nFistRaziel   = GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster);
 int nMasterShroud = GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oCaster);
+int nHospitaler = GetLevelByClass(CLASS_TYPE_HOSPITALER, oCaster);
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -90,12 +92,14 @@ int nArcaneCastLevels = nArchmageLevels +
                         nHarperLevels +
                         nSpellswordLevels +
                         nFireLevels + nAcidLevels + nColdLevels + nElecLevels +
-                        nPaleMasterLevels + nFireAdept; // + n<levels from any other arcane prc you define>;
+                        nPaleMasterLevels + nFireAdept + 
+                        nMastHarpLevels; // + n<levels from any other arcane prc you define>;
 
 int nDivineCastLevels = nHeartWLevels +
                         nStormlord +
                         nFistRaziel +
-                        nMasterShroud ; // + n<levels from any divine prc you define>;
+                        nMasterShroud +
+                        nHospitaler; // + n<levels from any divine prc you define>;
 
 /* Find which class to add levels to for Oozemasters */
 if (bArcane(GetClassByPosition(1, oCaster)) || bDivine(GetClassByPosition(1, oCaster)))
