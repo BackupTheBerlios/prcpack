@@ -44,7 +44,7 @@ Level
 7: Glare of the Pit - Once per day, glare can torch an opponent, dealing 16d6 damage.
 8: Fiendish Knowledge - Bonus feat of your choice.
 9: Summon Fiend - Can summon a Vrock once per day.
-10: Symbiosis Grants 20/+1 Damage reduction. For each 5 Epic levels, it gains +1. 
+10: Symbiosis Grants 20/+1 Damage reduction. For each 5 Epic levels, it gains +1.
 
 BONUS SPELLS
 Every other level in Acolyte of the Skin, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
@@ -242,7 +242,7 @@ Upon gaining a level in Elemental Savant, the character gains new spells per day
 The Fist of Raziel represents a knightly order dedicated to the celestial patron of holy warfare against evil. Raziel's crusaders lead the charge against evil wherever it is found. Smiting Evil is their speciality.
 
 - Hit Die: d10.
-- Proficiencies: The Fist of Raziel gains proficiency in simple and martials weapons , all armor and shields(except tower shield). 
+- Proficiencies: The Fist of Raziel gains proficiency in simple and martials weapons , all armor and shields(except tower shield).
 - Skill Points: 2 + Int Modifier.
 
 REQUIREMENTS:
@@ -267,7 +267,7 @@ Level
 7: Smite Evil (+2d8 Holy dmg vs Outsider or Undead Evil) - Can smite evil four times a day. Doesn't stack with +2d6 dmg.
 8: None
 9: Smite Evil (Smite all targets in area to a maximum of five) - Can smite evil five times a day.
-10: Holy Martial Strike - Any weapon wielded is treated as +2d6 Holy damage vs Evil. 
+10: Holy Martial Strike - Any weapon wielded is treated as +2d6 Holy damage vs Evil.
 
 BONUS SPELLS
 Upon gaining a level in Fist of Raziel, the character gains new spells per day as if he had also gained a level in his highest caster class (Cleric or Paladin). He does not learn any new spells through his abilities.
@@ -305,7 +305,7 @@ Upon gaining a level in Harper Mage, the character gains new spells per day as i
 Sune Firehair encourages beauty, passion, and love wherever they may be found.  Heartwarders are aesthetes and hedonists who actively seek out pleasure and beauty in all things who nurture the creation of beautiful objects.
 
 - Hit Die: d8.
-- Proficiencies: The Heartwarder gains no weapon or armor proficiency. 
+- Proficiencies: The Heartwarder gains no weapon or armor proficiency.
 - Skill Points: 2 + Int Modifier.
 
 REQUIREMENTS:
@@ -324,7 +324,7 @@ Level
 3: Charisma Increase - Bonus +2 to Charisma.
 4: Lips of Rapture -  Bonus +2 to Attacks, damages, saves and +4 to Enchantment spells saves. (Dazed on failed save).
 5: Charisma Increase - Bonus +3 to Charisma.
-6: Voice of a Siren -  Gains Greater Spell Focus (Enchantment) and Spell Penetration feats to verbal spells.  
+6: Voice of a Siren -  Gains Greater Spell Focus (Enchantment) and Spell Penetration feats to verbal spells.
 7: Charisma Increase - Bonus +4 to Charisma.
 8: Tears of Evergold -  Craft a Water Holy once per day.
 9: Charisma Increase - Bonus +5 to Charisma.
@@ -370,7 +370,7 @@ The holy liberator is a holy warrior, a distant cousin of the paladin, who is de
 
 - Hit Die: d10
 - Proficiencies: The Holy Liberator is proficient will all simple and martial weapons, all armor and shields.
-- Skill Points: 2 + Int Modifier. 
+- Skill Points: 2 + Int Modifier.
 
 REQUIREMENTS:
 
@@ -441,7 +441,7 @@ A knight of the Chalice is a member of an elite knightly organization devoted to
 
 - Hit Die: d10
 - Proficiencies: The Knight of the Chalice is proficient will all simple and martial weapons, armor and shields.
-- Skill Points: 2 + Int Modifier. 
+- Skill Points: 2 + Int Modifier.
 
 REQUIREMENTS:
 
@@ -728,7 +728,7 @@ Every other level in Spellsword, the character gains new spells per day as if he
 Stormlords are the agents of Talos, inflicting destructive rampages wherever they wander. Talos cares only that they call up storms or engage in spectacular acts of violence. Stormlords often live as brigands,indulging their personals desires for wealth, food, luxury and wanton behavior as they crave random, spectacular acts of violence.
 
 - Hit Die: d8.
-- Proficiencies: A Stormlord does not gain any additional weapon or armor proficiencies.  
+- Proficiencies: A Stormlord does not gain any additional weapon or armor proficiencies.
 - Skill Points: 2 + Int Modifier.
 
 REQUIREMENTS:
@@ -761,7 +761,7 @@ Most of Bahamut's emissaries and champions are dutiful and mighty metallic drago
 
 -Hit Die: d10.
 -Proficiencies: A Vassal of Bahamut is proficient in all simple and martial weapons, all types of armor and shields.
--Skill Points: 2 + Int Modifier. 
+-Skill Points: 2 + Int Modifier.
 
 REQUIREMENTS:
 
@@ -832,7 +832,6 @@ PrC makers:
 Aaon Graywolf - jpgil_galad@yahoo.com
 Attilla - lks_attilla@hotmail.com
 Dark God - darkgod.nwn@t-o-m-e.net
-Dark God (Alternate) - darkgod@t-o-m-e.net
 Kaltor - lamarre_francois@videotron.ca
 Lysander - monty_m678@yahoo.com
 Shane - hennessy_shane@yahoo.com
