@@ -77,3 +77,8 @@ a rogue/Duelist and other classes that require perform. I suggest everyone updat
 ---------Begin Stratovarius
 - Added "Compiled Resources" folder for .Erfs and .Haks.
 ---------End Stratovarius
+22/02/2004
+---------Begin Shane Hennessy
+Added Brian Greinke's changes to make the shifter match PnP rules even better (real epic creature powers, and now you need to mimic something before you can become it)
+---------End Shane Hennessy
+

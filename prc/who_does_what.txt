@@ -25,8 +25,10 @@ Shane Hennessy:
 - Add soul gems to demi lich, and trap the soul spell - complete
 - make demi lich class 6 epic levels instead of 4 to fit with the ECL of +6 - complete
 - update .tlk for above changes to the demilich - complete
-- Add shifter changes from fan on nwvault
+- Add shifter changes from fan on nwvault - complete
 - Add warrior of darkness prc
+- Add a dlg for the shifter to reduce the newly added confusion with mimic being required
+- Get rabbithail to add his magic crafting feats to our pak, if that fails make my own
 
 Stratovarius:
 - Arcane Trickster - TLK and Scripts remaining
