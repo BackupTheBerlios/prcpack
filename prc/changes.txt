@@ -88,3 +88,7 @@ Added DLG so you can pick what you want to shift into, list made dynamically fro
 - Updated Hak/Rar files because NWN cannot accept a filename above 16.3
 - Updated Hak files because of a typo in CLS_PRES_REDAV
 ---------End Stratovarius
+25/02/2004
+---------Begin Stratovarius
+- Updated TLK with enteries for several prestige classes
+---------End Stratovarius

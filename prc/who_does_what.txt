@@ -1,3 +1,9 @@
+Prestige Class Consortium:
+- Get 1.10/2.0 Ready for release
+- Plot big publicity bang with rest of group
+- Decide what should be in release
+
+
 DarkGod:
 - Golemancer(custom prc, need approval)
 - Vermin Lord
@@ -31,23 +37,20 @@ Shane Hennessy:
 - Get rabbithail to add his magic crafting feats to our pak, if that fails make my own
 
 Stratovarius:
-- Arcane Trickster - TLK and Scripts remaining
+- Arcane Trickster - Feat TLK and Scripts remaining
 - Blood Archer - TLK and Scripts remaining
-- Blood Magus - TLK and Scripts remaining
-- Diabolist - TLK and Scripts remaining
+- Blood Magus - Feat TLK and Scripts remaining
+- Diabolist - Feat TLK and Scripts remaining
 - Fist of Hextor - TLK and Scripts remaining
-- Purple Dragon Knight - TLK and Scripts remaining
-- Red Wizard of Thay - TLK and Scripts remaining
-- True Necromancer - TLK and Scripts remaining
+- Purple Dragon Knight - Feat TLK and Scripts remaining
+- Red Wizard of Thay - Feat TLK and Scripts remaining
+- True Necromancer - Feat TLK and Scripts remaining
 - Lasher - Sword & Fist - Unstarted
 - Order of the Bow Initiate - Sword & Fist - Unstarted
 - Peerless Archer - Silver Marches - Unstarted
 - Arachnae - Song and Silence (?) - Unstarted
 - Disciple of Orcus - Book of Vile Darkness - Unstarted
 - Horned Harbinger - Faiths and Pantheons - Unstarted
-
-- Get 1.9 released - complete
-- Get 1.10 Ready for release - not started.
 
 Zedium:
 - Vassal of Bahamut (Just tlk done for now)
