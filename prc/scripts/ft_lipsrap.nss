@@ -4,14 +4,14 @@
 void main()
 {
 
-   if (!GetLocalInt(OBJECT_SELF,"FEAT_LIPS_RAPTUR"))
+   if (GetLocalInt(OBJECT_SELF,"FEAT_LIPS_RAPTUR")<2)
      return;
 
    object oTarget=GetSpellTargetObject();
    if (oTarget==OBJECT_SELF) return;
 
    SetLocalInt(OBJECT_SELF,"FEAT_LIPS_RAPTUR",GetLocalInt(OBJECT_SELF,"FEAT_LIPS_RAPTUR")-1);
-   SendMessageToPC(OBJECT_SELF," Lips of Rapture : use " +IntToString(GetLocalInt(OBJECT_SELF,"FEAT_LIPS_RAPTUR")));
+   SendMessageToPC(OBJECT_SELF," Lips of Rapture : use " +IntToString(GetLocalInt(OBJECT_SELF,"FEAT_LIPS_RAPTUR")-1));
 
 
    effect eAtk=EffectAttackIncrease(2);
