@@ -16,17 +16,17 @@ void main()
      object oTarget = GetSpellTargetObject();
      int iDam;
      effect eDam;
-     if (nVassal = 10)
+     if (nVassal >= 4)
      {
-     iDam = d6(4);
+     iDam = d6(2);
      }
      else if (nVassal >= 7)
      {
      iDam = d6(3);
      }
-     else if (nVassal >= 4)
+     else if (nVassal = 10)
      {
-     iDam = d6(2);
+     iDam = d6(4);
      }
      eDam = EffectDamage(iDam);
      if (GetRacialType(oTarget)==RACIAL_TYPE_DRAGON)
