@@ -13,8 +13,6 @@ void RemovBonusStormlord(object oPC)
 }
 
 
-
-
 void main()
 {
     //The composite properties system gets confused when an exported
@@ -24,9 +22,11 @@ void main()
     //mess up the lich, but only until I hook it into the EvalPRC event -
     //hopefully in the next update
     //  -Aaon Graywolf
-    object oEntering=GetEnteringObject();
-    object oSkin = GetItemInSlot(INVENTORY_SLOT_CARMOUR, oEntering);
+    object oSkin = GetItemInSlot(INVENTORY_SLOT_CARMOUR, GetEnteringObject());
     DestroyObject(oSkin);
+    object oPC = GetEnteringObject();
+    GetPCSkin(oPC);
+}
 
      if (GetLevelByClass(CLASS_TYPE_STORMLORD,oEntering))
       RemovBonusStormlord(oEntering);
