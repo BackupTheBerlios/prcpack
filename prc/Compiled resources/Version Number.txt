@@ -1,4 +1,4 @@
-1.9 Final version D
+1.9 Final version F
 
 Erf changes:
 
@@ -6,6 +6,7 @@ Erf changes:
 
 Hak changes:
 
+ - Corrected all .2das that violated 16.3 rule
  - Changed Harper Mage .2das to no longer interfere with Harper Scout
  - Added correct Iprop_spells.2da
  - First Import.
