@@ -45,6 +45,8 @@ REM rar - Does what hak does, then builds a rar file containing all of the outpu
 REM files.
 REM
 
+REM let the user know we are building a makefile, this could take a while.
+echo Building makefile
 
 REM generate temporary files for each of the source sets
 REM scripts, graphics files, 2das, and misc. other files.
@@ -59,7 +61,7 @@ REM use FINDSTR to find script files with "void main()" or "int StartingConditio
 REM in them, these are the ones we want to compile.
 FINDSTR /R /M /C:"void *main *( *)" /C:"int *StartingConditional *( *)" scripts\*.nss | tools\ssed -R "$! {s/$/ \\/g};s/nss/ncs/g;s/scripts\\/objs\\/g" >objs.temp
 
-REM Now using our generic makefile as a base, glue all of the temp files into it makeing
+REM Now using our generic makefile as a base, glue all of the temp files into it making
 REM a fully formatted makefile we can run nmake on.
 type makefile.template | tools\ssed -R "/~~~scripts~~~/r scripts.temp" | tools\ssed -R "/~~~2das~~~/r 2das.temp" | tools\ssed -R "/~~~gfx~~~/r gfx.temp" | tools\ssed -R "/~~~others~~~/r others.temp" | tools\ssed -R "/~~~objs~~~/r objs.temp" | tools\ssed -R "s/~~~[a-zA-Z0-9_]+~~~/ \\/g" > makefile.temp
 
