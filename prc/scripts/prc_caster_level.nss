@@ -2,6 +2,7 @@
 #include "strat_prc_inc"
 #include "discipleinclude"
 #include "inc_prc_function"
+#include "heartward_inc"
 
 //Added code to correct problems in Hierophant spell-like abilities.
 //Aaon Graywolf - 6 Jan 2004
@@ -64,6 +65,11 @@ int nAcidLevels = GetLevelByClass(CLASS_TYPE_ES_ACID, oCaster);
 int nFireAdept = GetHasFeat(FEAT_FIRE_ADEPT, oCaster);
 
 
+int nHeartWLevels = GetLevelByClass(CLASS_TYPE_HEARTWARDER, oCaster);
+int nStormlord    = GetLevelByClass(CLASS_TYPE_STORMLORD, oCaster);
+int nFistRaziel   = GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster);
+
+
 /////////////////////////////////////////////////////////////////////////////////
 // INSTRUCTIONS
 //
@@ -85,7 +91,9 @@ int nArcaneCastLevels = nArchmageLevels +
                         nFireLevels + nAcidLevels + nColdLevels + nElecLevels +
                         nPaleMasterLevels + nFireAdept; // + n<levels from any other arcane prc you define>;
 
-int nDivineCastLevels = 0; // + n<levels from any divine prc you define>;
+int nDivineCastLevels = nHeartWLevels +
+                        nStormlord +
+                        nFistRaziel ; // + n<levels from any divine prc you define>;
 
 /* Find which class to add levels to for Oozemasters */
 if (bArcane(GetClassByPosition(1, oCaster)) || bDivine(GetClassByPosition(1, oCaster)))

@@ -76,6 +76,21 @@ int add_acid_SP()
     return nSP;
 }
 
+int GetHeartWarderPene(object oCaster)
+{
+  if(GetLevelByClass(CLASS_TYPE_HEARTWARDER,oCaster)<6)
+   return 0;
+
+  string VS=lookup_spell_vs(GetSpellId());
+  if (!(VS=="s" ||VS=="vs"))
+     return 0;
+
+  if ( GetHasFeat(FEAT_SPELL_PENETRATION,oCaster) || GetMetaMagicFeat()==METAMAGIC_SILENT || GetHasFeat(FEAT_GREATER_SPELL_PENETRATION,oCaster)|| GetHasFeat(FEAT_EPIC_SPELL_PENETRATION,oCaster))
+   return 0;
+
+  return 2;
+}
+
 void main()
 {
     object oCaster = OBJECT_SELF;
@@ -99,6 +114,8 @@ void main()
         nSP += add_acid_SP();
 
     nSP += GetSpellPowerBonus(oCaster);
+
+    nSP += GetHeartWarderPene(oCaster);
 
     SetLocalInt(oCaster,"X2_L_LAST_RETVAR", nSP);
 }

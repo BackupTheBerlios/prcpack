@@ -16,6 +16,14 @@
 #include "inc_item_props"
 //#include "inc_prc_function" - Inherited from x2_inc_intweapon->nw_i0_spells
 
+void PrcFeats(object oPC)
+{
+     SetLocalInt(oPC,"ONEQUIP",1);
+     EvalPRCFeats(oPC);
+     DeleteLocalInt(oPC,"ONEQUIP");
+
+}
+
 //Added hook into EvalPRCFeats event
 //  Aaon Graywolf - 6 Jan 2004
 //Added delay to EvalPRCFeats event to allow module setup to take priority
@@ -52,11 +60,12 @@ void main()
 
      }
 
-     DelayCommand(0.5, EvalPRCFeats(oPC));
+     DelayCommand(0.5,PrcFeats(oPC));
 
      // * Moved code to turn off precise strike here
      // * because unequiped weapons weren't being found
      // * correctly through EvalPRCFeats
      DuelistRemovePreciseStrike(oItem);
+
 
 }

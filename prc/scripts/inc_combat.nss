@@ -54,7 +54,7 @@ int DoMeleeAttack(object oPC, object oWeap, object oTarget, int iMod = 0, int bS
 
 // * Returns an integer amount of damage done by oPC with oWeap
 // * Caveat: Cannot account for DAMAGE_BONUS effects on oPC
-int GetMeleeWeaponDamage(object oPC, object oWeap, int bCrit = FALSE);
+int GetMeleeWeaponDamage(object oPC, object oWeap, int bCrit = FALSE,int iDamage = 0);
 
 // * Returns the Enhancement Bonus of oWeap as DAMAGE_POWER_*
 int GetWeaponEnhancement(object oWeap);
@@ -483,7 +483,7 @@ int DoMeleeAttack(object oPC, object oWeap, object oTarget, int iMod = 0, int bS
     return iReturn;
 }
 
-int GetMeleeWeaponDamage(object oPC, object oWeap, int bCrit = FALSE)
+int GetMeleeWeaponDamage(object oPC, object oWeap, int bCrit = FALSE,int iDamage = 0)
 {
     //Declare in instantiate major variables
     int iType = GetBaseItemType(oWeap);
@@ -495,7 +495,7 @@ int GetMeleeWeaponDamage(object oPC, object oWeap, int bCrit = FALSE)
         iStr = iStr < 0 ? 0 : iStr;
     int bSpec = GetHasFeat(GetFeatByWeaponType(iType, "Specialization"), oPC);
     int bESpec = GetHasFeat(GetFeatByWeaponType(iType, "EpicSpecialization"), oPC);
-    int iDamage = 0;
+//    int iDamage = 0;
     int iBonus = 0;
     int iEnhancement = GetWeaponEnhancement(oWeap);
         iEnhancement = iEnhancement < 0 ? 0 : iEnhancement;

@@ -22,6 +22,11 @@ void lookup_spell(int spell_id)
     string clevel = Get2DAString("spells", "Cleric", spell_id);
     SetLocalString(module, "PRC_PACK_SPELL_CLERIC_LEVEL_" + IntToString(spell_id), clevel);
 
+    /* Cache VS  */
+    string VS = Get2DAString("spells", "VS", spell_id);
+    SetLocalString(module, "PRC_PACK_SPELL_VS_" + IntToString(spell_id), VS);
+
+
     /* Now it is looked up */
     SetLocalInt(module, "PRC_PACK_SPELL_LOOKED_" + IntToString(spell_id), 1);
 }
@@ -47,3 +52,10 @@ string lookup_spell_type(int spell_id)
     return GetLocalString(GetModule(), "PRC_PACK_SPELL_TYPE_" + IntToString(spell_id));
 }
 
+
+string lookup_spell_vs(int spell_id)
+{
+    /* Check the spell */
+    lookup_spell(spell_id);
+    return GetLocalString(GetModule(), "PRC_PACK_SPELL_VS_" + IntToString(spell_id));
+}

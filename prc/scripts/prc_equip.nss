@@ -15,6 +15,14 @@
 #include "strat_prc_inc"
 //#include "inc_prc_function" - Inherited from x2_inc_intweapon->nw_i0_spells
 
+
+void PrcFeats(object oPC)
+{
+     SetLocalInt(oPC,"ONEQUIP",2);
+     EvalPRCFeats(oPC);
+     DeleteLocalInt(oPC,"ONEQUIP");
+}
+
 //Added hook into EvalPRCFeats event
 //  Aaon Graywolf - 6 Jan 2004
 //Added delay to EvalPRCFeats event to allow module setup to take priority
@@ -70,5 +78,6 @@ void main()
         }
      }
 
-     DelayCommand(0.1, EvalPRCFeats(oPC));
+     DelayCommand(0.5,PrcFeats(oPC));
+
 }

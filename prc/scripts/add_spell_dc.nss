@@ -3,6 +3,7 @@
 #include "discipleinclude"
 #include "inc_prc_function"
 #include "lookup_2da_spell"
+#include "heartward_inc"
 
 //Added code to correct problems in Hierophant spell-like abilities.
 //Added code to apply Spell Power bonuses
@@ -17,6 +18,24 @@ int GetHierophantSLAAdjustment(object oCaster)
         return StringToInt(lookup_spell_cleric_level(GetSpellId())) - GetLevelByClass(CLASS_TYPE_HIEROPHANT, oCaster);
 
     return 0;
+}
+
+int GetHeartWarderDC(object oCaster)
+{
+  if(GetLevelByClass(CLASS_TYPE_HEARTWARDER,oCaster)<6)
+   return 0;
+
+  string VS=lookup_spell_vs(GetSpellId());
+  if (!(VS=="s" ||VS=="vs"))
+     return 0;
+
+  if ( GetHasFeat(FEAT_GREATER_SPELL_FOCUS_ENCHANTMENT,oCaster) || GetMetaMagicFeat()==METAMAGIC_SILENT || GetHasFeat(FEAT_EPIC_SPELL_FOCUS_ENCHANTMENT,oCaster))
+   return 0;
+
+  if (GetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR")==SPELL_SCHOOL_ENCHANTMENT)
+   return 2;
+
+  return 0;
 }
 
 int add_fire_dc()
@@ -115,6 +134,7 @@ void main()
 
     nDC += GetSpellPowerBonus(oCaster);
     nDC += GetHierophantSLAAdjustment(oCaster);
+    nDC += GetHeartWarderDC(oCaster);
 
     SetLocalInt(oCaster,"X2_L_LAST_RETVAR", nDC);
 }
