@@ -37,16 +37,12 @@ void main()
    object oItem;        // The item casting triggering this spellscript
    object oSpellTarget; // On a weapon: The one being hit. On an armor: The one hitting the armor
    object oSpellOrigin; // On a weapon: The one wielding the weapon. On an armor: The one wearing an armor
-   int nVassal; //Vassal Level
+   int nVassal;         //Vassal Level
 
    // fill the variables
    oSpellOrigin = OBJECT_SELF;
    oSpellTarget = GetSpellTargetObject();
    oItem        =  GetSpellCastItem();
-
-   // put the const int in so that the code could compile
-   // needs to have the proper include with CLASS_TYPE_VASSAL added
-   int CLASS_TYPE_VASSAL = 00;
    nVassal = GetLevelByClass(CLASS_TYPE_VASSAL, OBJECT_SELF);
 
 
