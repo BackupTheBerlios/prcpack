@@ -119,6 +119,20 @@ void DWLeftWeap(object oPC,int iEquip)
   }
   }
 
+void ImperiousAura(object oPC ,object oSkin ,int iLevel)
+{
+
+   if(GetLocalInt(oSkin, "ImperiousAura") == iLevel) return;
+
+    SetCompositeBonus(oSkin, "ImperiousAuraA", iLevel, ITEM_PROPERTY_SKILL_BONUS,SKILL_APPRAISE);
+    SetCompositeBonus(oSkin, "ImperiousAuraP", iLevel, ITEM_PROPERTY_SKILL_BONUS,SKILL_PERFORM);
+    SetCompositeBonus(oSkin, "ImperiousAuraPe", iLevel, ITEM_PROPERTY_SKILL_BONUS,SKILL_PERSUADE);
+    SetCompositeBonus(oSkin, "ImperiousAuraT", iLevel, ITEM_PROPERTY_SKILL_BONUS,SKILL_TAUNT);
+    SetCompositeBonus(oSkin, "ImperiousAuraB", iLevel, ITEM_PROPERTY_SKILL_BONUS,SKILL_BLUFF);
+    SetCompositeBonus(oSkin, "ImperiousAuraI", iLevel, ITEM_PROPERTY_SKILL_BONUS,SKILL_INTIMIDATE);
+
+}
+
 
 void main()
 {
@@ -128,6 +142,11 @@ void main()
     object oArmor4 = GetItemPossessedBy(OBJECT_SELF, "Platinumarmor4");
     object oArmor6 = GetItemPossessedBy(OBJECT_SELF, "Platinumarmor6");
     object oItem = GetItemInSlot(INVENTORY_SLOT_CHEST,OBJECT_SELF);
+
+    int bVassal = GetLevelByClass(CLASS_TYPE_WIZARD, OBJECT_SELF);
+
+    //Imperious Aura
+    if (bVassal>0) ImperiousAura(oPC, oSkin,bVassal);
 
     // *Level 1
     if (nVassal==1)
