@@ -29,14 +29,16 @@ void LichSkills(object oHide, int iLevel)
 
 int GetAmuletLevel(object oAmulet)
 {
-    //object oPC = GetFirstPC();
+    object oPC = GetFirstPC();
     //SendMessageToPC(oPC,"Amulet level func");
     itemproperty iProp = GetFirstItemProperty(oAmulet);
+    int nLevel = 0;
+
     while (GetIsItemPropertyValid(iProp))
     {
         if (GetItemPropertyType(iProp) == ITEM_PROPERTY_AC_BONUS)
         {
-            //SendMessageToPC(oPC," AC bonus found");
+            //SendMessageToPC(oPC," AC found");
             int nAC = GetItemPropertyCostTableValue(iProp);
             //SendMessageToPC(oPC, "AC = " + IntToString(nAC));
             switch (nAC)
@@ -48,14 +50,36 @@ int GetAmuletLevel(object oAmulet)
             case 4:
                 return 3;
             case 5:
-                return 4;
+                // cant return because anything above has this AC 5 bonus
+                nLevel = 4;
+                break;
             default:
                 return 0;
             }
         }
+        // for levels above 4 use a junk item like weight reduction
+        if (GetItemPropertyType(iProp) == ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION)
+        {
+            int nWt = GetItemPropertyCostTableValue(iProp);
+            //SendMessageToPC(oPC, "wt = " + IntToString(nWt));
+            switch(nWt)
+            {
+            case IP_CONST_REDUCEDWEIGHT_10_PERCENT:
+                return 5;
+            case IP_CONST_REDUCEDWEIGHT_20_PERCENT:
+                return 6;
+            case IP_CONST_REDUCEDWEIGHT_40_PERCENT:
+                return 7;
+            case IP_CONST_REDUCEDWEIGHT_60_PERCENT:
+                return 8;
+            default:
+                return 0;
+            }
+        }
+
         iProp = GetNextItemProperty(oAmulet);
     }
-    return 0;
+    return nLevel;
 }
 
 int GetHideLevel(object oHide)
@@ -129,6 +153,8 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
     {
         // Ability bonus
         SetCompositeBonus(oHide, "LichInt", 2, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_INT);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 1, ITEM_PROPERTY_TURN_RESISTANCE);
 
         //Lich skills +2
         LichSkills(oHide, 2);
@@ -145,6 +171,8 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
     {
         // Ability bonus
         SetCompositeBonus(oHide, "LichInt", 2, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_INT);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 2, ITEM_PROPERTY_TURN_RESISTANCE);
 
         //Lich skills +4
         LichSkills(oHide, 4);
@@ -167,6 +195,8 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
     {
         // Ability bonus
         SetCompositeBonus(oHide, "LichWis", 2, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_WIS);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 3, ITEM_PROPERTY_TURN_RESISTANCE);
         //Lich skills +6
         LichSkills(oHide, 6);
 
@@ -229,12 +259,13 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
         // 100 % immune to electric
         iprop = ItemPropertyDamageImmunity(IP_CONST_DAMAGETYPE_ELECTRICAL,IP_CONST_DAMAGEIMMUNITY_100_PERCENT);
         AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oHide);
-
     }
     if (nLevel == 4)
     {
         // Ability bonus
         SetCompositeBonus(oHide, "LichCha", 2, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_CHA);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 4, ITEM_PROPERTY_TURN_RESISTANCE);
 
         //Clear out non-composite properties from last level
         RemoveSpecificProperty(oHide, ITEM_PROPERTY_DAMAGE_REDUCTION, IP_CONST_DAMAGEREDUCTION_1, IP_CONST_DAMAGESOAK_10_HP, 1, "");
@@ -251,6 +282,8 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
         SetCompositeBonus(oHide, "LichInt", 4, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_INT);
         SetCompositeBonus(oHide, "LichWis", 4, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_WIS);
         SetCompositeBonus(oHide, "LichCha", 4, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_CHA);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 8, ITEM_PROPERTY_TURN_RESISTANCE);
 
         //Clear out non-composite properties from last level
         RemoveSpecificProperty(oHide, ITEM_PROPERTY_DAMAGE_REDUCTION, IP_CONST_DAMAGEREDUCTION_1, IP_CONST_DAMAGESOAK_15_HP, 1, "");
@@ -277,6 +310,8 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
         SetCompositeBonus(oHide, "LichInt", 6, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_INT);
         SetCompositeBonus(oHide, "LichWis", 6, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_WIS);
         SetCompositeBonus(oHide, "LichCha", 6, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_CHA);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 12, ITEM_PROPERTY_TURN_RESISTANCE);
 
         //Clear out non-composite properties from last level
         RemoveSpecificProperty(oHide, ITEM_PROPERTY_DAMAGE_REDUCTION, IP_CONST_DAMAGEREDUCTION_5, IP_CONST_DAMAGESOAK_10_HP, 1, "");
@@ -309,6 +344,8 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
         SetCompositeBonus(oHide, "LichInt", 8, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_INT);
         SetCompositeBonus(oHide, "LichWis", 8, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_WIS);
         SetCompositeBonus(oHide, "LichCha", 8, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_CHA);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 16, ITEM_PROPERTY_TURN_RESISTANCE);
 
         //Clear out non-composite properties from last level
         RemoveSpecificProperty(oHide, ITEM_PROPERTY_DAMAGE_REDUCTION, IP_CONST_DAMAGEREDUCTION_10, IP_CONST_DAMAGESOAK_15_HP, 1, "");
@@ -343,6 +380,8 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
         SetCompositeBonus(oHide, "LichInt", 10, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_INT);
         SetCompositeBonus(oHide, "LichWis", 10, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_WIS);
         SetCompositeBonus(oHide, "LichCha", 10, ITEM_PROPERTY_ABILITY_BONUS, IP_CONST_ABILITY_CHA);
+        // Turn resistance
+        SetCompositeBonus(oHide, "LichTurn", 20, ITEM_PROPERTY_TURN_RESISTANCE);
 
         //Clear out non-composite properties from last level
         RemoveSpecificProperty(oHide, ITEM_PROPERTY_DAMAGE_REDUCTION, IP_CONST_DAMAGEREDUCTION_15, IP_CONST_DAMAGESOAK_20_HP, 1, "");
@@ -393,7 +432,8 @@ void LevelUpAmulet(object oAmulet,int nLevel)
         iprop = ItemPropertyACBonus(4);
         AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
     }
-    if (nLevel == 4)
+    // Common level 4 and above things
+    if (nLevel >= 4)
     {
         // Ac bonus
         iprop = ItemPropertyACBonus(5);
@@ -404,6 +444,32 @@ void LevelUpAmulet(object oAmulet,int nLevel)
         iprop = ItemPropertyCastSpell(IP_CONST_CASTSPELL_ANIMATE_DEAD_15,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
         AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
         iprop = ItemPropertyBonusFeat(IP_CONST_FEAT_SPELLFOCUSNEC);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
+    }
+    if (nLevel == 4)
+    {
+        // nothing
+    }
+    if (nLevel == 5)
+    {
+        // reduction is used to permenantly track how much the PC has paid for level ups
+        // because reduction of 1/2 lb is nothing usefull
+        iprop = ItemPropertyWeightReduction(IP_CONST_REDUCEDWEIGHT_10_PERCENT);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
+    }
+    if (nLevel == 6)
+    {
+        iprop = ItemPropertyWeightReduction(IP_CONST_REDUCEDWEIGHT_20_PERCENT);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
+    }
+    if (nLevel == 7)
+    {
+        iprop = ItemPropertyWeightReduction(IP_CONST_REDUCEDWEIGHT_40_PERCENT);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
+    }
+    if (nLevel == 8)
+    {
+        iprop = ItemPropertyWeightReduction(IP_CONST_REDUCEDWEIGHT_60_PERCENT);
         AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
     }
 }
@@ -421,8 +487,18 @@ void RemoveAllGold(object oObject)
 
 void main()
 {
+    // If being used as the onUsed script
     int nGold = GetGold();
     object oPC = GetLastUsedBy();
+    // If being called by EvalPRCFeats
+    if (!GetIsObjectValid(oPC))
+    {
+        oPC = OBJECT_SELF;
+        nGold = 0;
+        // Calling DestroyObject on oPC does nothing so dont worry bout it
+    }
+
+
     int nLichLevel = GetLevelByClass(CLASS_TYPE_LICH,oPC);
 
     // Lich items
@@ -441,6 +517,18 @@ void main()
 
     int nHideLevel = GetHideLevel(oHide);
     //SendMessageToPC(oPC,"hide = " + IntToString(nHideLevel));
+    // Evalutation EVENT Hook (does not need the object to work.
+    // Check to see if they have the amulet, find out what level it is,
+    // and adjust the hide to match the amulet level.  If they loose the amulet
+    // they need to do everything all over from scratch.
+    int nAmuletLevel = GetAmuletLevel(oAmulet);
+    //SendMessageToPC(oPC,"amulet = " + IntToString(nAmuletLevel));
+    if ((nAmuletLevel > 1) &&
+        (nAmuletLevel > nHideLevel))
+    {
+        LevelUpHide(oPC, oHide, nAmuletLevel);
+        return;
+    }
 
     // if they have an amulet and the hide is level 0
     // this can happen if they (in the future) created the phylactery before
@@ -476,6 +564,11 @@ void main()
         // Give them the level 1 phylactery
         oAmulet = CreateItemOnObject("lichamulet",oPC);
         SetIdentified(oAmulet,TRUE);
+
+        // add turn resistance to indicate the level the lich has paid
+        itemproperty iprop = ItemPropertyTurnResistance(1);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oAmulet);
+
         // Allow them to become a lich
         SetLocalInt(oPC,"PNP_AllowLich", 0);
         // pay for it
@@ -505,7 +598,7 @@ void main()
     }
 
 
-    int nAmuletLevel = GetAmuletLevel(oAmulet);
+    nAmuletLevel = GetAmuletLevel(oAmulet);
     //SendMessageToPC(oPC,"amulet = " + IntToString(nAmuletLevel));
 
 
@@ -567,8 +660,8 @@ void main()
             else
                 FloatingTextStringOnCreature("You have advanced as far as possible",oPC);
         }
-        // Level up the amulet, but it stops improving at level 4
-        if ((nAmuletLevel < nLichLevel) && (nAmuletLevel < 4))
+        // Level up the amulet
+        if ((nAmuletLevel < nLichLevel) && (nAmuletLevel < 8))
         {
             LevelUpAmulet(oAmulet,nAmuletLevel+1);
         }

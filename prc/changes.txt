@@ -8,4 +8,5 @@
 - fixed spells.2da alternate messages for lich and shifter.
 - improved lich description in the tlk.
 - fixed Lich alignment restriction to any non-good to match source material
+- Added in Lich hide properties upon client enter using EventPRC system
 ---------End Shane Hennessy

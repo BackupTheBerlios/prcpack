@@ -49,6 +49,7 @@ void EvalPRCFeats(object oPC)
     if(GetLevelByClass(CLASS_TYPE_MAGEKILLER, oPC) > 0)         ExecuteScript("prc_magekill", oPC);
     if(GetLevelByClass(CLASS_TYPE_OOZEMASTER, oPC) > 0)         ExecuteScript("prc_oozemstr", oPC);
     if(GetLevelByClass(CLASS_TYPE_DISCIPLE_OF_MEPH, oPC) > 0)   ExecuteScript("prc_discmeph", oPC);
+    if(GetLevelByClass(CLASS_TYPE_LICH, oPC) > 0)               ExecuteScript("pnp_lich_level", oPC);
     if(iElemSavant > 0)                                         ExecuteScript("prc_elemsavant", oPC);
 }
 
