@@ -1,0 +1,14 @@
+/////////////////////////////////////////////////////////////////////
+//
+// Baleful Transposition - Swap the caster and target's posistions,
+// hostile targets get SR and a will save to negate.
+//
+/////////////////////////////////////////////////////////////////////
+
+#include "spinc_common"
+#include "spinc_trans"
+
+void main()
+{
+	DoTransposition(TRUE);
+}
