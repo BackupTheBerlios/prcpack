@@ -115,7 +115,6 @@ OTHERS=~~~others~~~
 #
 
 # The top rule is the one run by default, we want to build the hak and install.
-#all: hak20
 all: hak
 
 
@@ -124,11 +123,11 @@ rar: hak $(RAR)
 
 
 # Rule to build the 'hak' content and install it.
-hak: $(ERF) $(HAK) install
+hak110: $(ERF) $(HAK) install
 
 
 # Rule to build the 2.0 haks
-hak20: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) install 
+hak: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) install 
 
 
 #################################################################################
