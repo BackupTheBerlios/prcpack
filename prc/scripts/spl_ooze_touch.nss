@@ -139,7 +139,7 @@ void main()
         /* Black pudding */
         case 2014:
         {
-            ooze_touch_damage(EffectDamage((2 * d6()) + level, DAMAGE_TYPE_ACID));
+            ooze_touch_damage(EffectDamage(d6(2) + level, DAMAGE_TYPE_ACID));
             break;
         }
         /* Gelatinous cube */
@@ -186,7 +186,7 @@ void main()
 
             if (!MySavingThrow(SAVING_THROW_FORT, target, DC, SAVING_THROW_TYPE_NONE, OBJECT_SELF))
             {
-                damage = EffectAbilityDecrease(ABILITY_CONSTITUTION, 2 * d6());
+                damage = EffectAbilityDecrease(ABILITY_CONSTITUTION, d6(2));
             }
             else
             {
