@@ -8,4 +8,4 @@ NWN_DIR = C:\documents and settings\james\desktop\nwn
 
 # The version number of the prc pack you are building.  This
 # is only used for the RAR file name.
-PRC_VERSION = 19
+PRC_VERSION = 110
