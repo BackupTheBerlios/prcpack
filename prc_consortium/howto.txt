@@ -5,7 +5,7 @@ which is use dot .. well .. create the erf&hak files :)
 
 The command line script compiler(modified a bit by me to
 play nicely with make) at:
-
+http://www.t-o-m-e.net/tmp/nwnnsscomp.zip
 
 Put the executables somewhere and edit config.mk to point to them.
 Also make it point to your neverwinter directory(so it can automatically
