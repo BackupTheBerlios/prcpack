@@ -85,4 +85,6 @@ Added DLG so you can pick what you want to shift into, list made dynamically fro
 23/02/2004
 ---------Begin Stratovarius
 - Updated Hak and Rar files on CVS and Vault to remove numerous errors (from 20/02/04-23/02/04)
+- Updated Hak/Rar files because NWN cannot accept a filename above 16.3
+- Updated Hak files because of a typo in CLS_PRES_REDAV
 ---------End Stratovarius
