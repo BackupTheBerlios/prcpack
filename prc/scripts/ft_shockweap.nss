@@ -23,7 +23,7 @@ void main()
 
    int dice=d20();
 
-
+ int iDiceCritical=2 + (GetHasFeat(FEAT_WEAPON_OF_CHOICE_SHORTSPEAR) && GetHasFeat(FEAT_INCREASE_MULTIPLIER));
 
      if (dice>=nThreat)
     {
