@@ -21,7 +21,6 @@ void PrcFeats(object oPC)
      SetLocalInt(oPC,"ONEQUIP",1);
      EvalPRCFeats(oPC);
      DeleteLocalInt(oPC,"ONEQUIP");
-
 }
 
 //Added hook into EvalPRCFeats event
@@ -66,6 +65,5 @@ void main()
      // * because unequiped weapons weren't being found
      // * correctly through EvalPRCFeats
      DuelistRemovePreciseStrike(oItem);
-
-
+     KnightRemoveDaemonslaying(oItem);
 }

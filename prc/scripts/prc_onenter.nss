@@ -13,7 +13,6 @@ void RemovBonusStormlord(object oPC)
    if (GetHasFeat(FEAT_THUNDER_WEAPON,oPC)) SetLocalInt(oItem,"STThund",1);
 }
 
-
 void main()
 {
     //The composite properties system gets confused when an exported
@@ -28,9 +27,12 @@ void main()
     object oPC = GetEnteringObject();
     GetPCSkin(oPC);
 
-     if (GetLevelByClass(CLASS_TYPE_STORMLORD,oPC))
-      RemovBonusStormlord(oPC);
+    if (GetLevelByClass(CLASS_TYPE_STORMLORD,oPC))
+        RemovBonusStormlord(oPC);
 
     // Make sure we reapply any bonuses before the player notices they are gone.
     EvalPRCFeats(oPC);
+    // Check to see which special prc requirements (i.e. those that can't be done)
+    // through the .2da's, the entering player already meets.
+    CheckSpecialPRCRecs(oPC);
 }

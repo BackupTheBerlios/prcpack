@@ -58,6 +58,7 @@ void EvalPRCFeats(object oPC)
     if(GetLevelByClass(CLASS_TYPE_HEARTWARDER,oPC) > 0)         ExecuteScript("prc_heartwarder", oPC);
     if(GetLevelByClass(CLASS_TYPE_STORMLORD,oPC) > 0)           ExecuteScript("prc_stormlord", oPC);
     if(GetLevelByClass(CLASS_TYPE_PNP_SHIFTER ,oPC) > 0)        ExecuteScript("prc_shifter", oPC);
+    if(GetLevelByClass(CLASS_TYPE_KNIGHT_CHALICE,oPC) > 0)      ExecuteScript("prc_knghtch", oPC);
 }
 
 // This is required if you want your skin effects to work with the shifter
@@ -145,6 +146,15 @@ int CompareAlignment(object oSource, object oTarget);
 // * iEnergyType = DAMAGE_TYPE_* (POSITIVE for healing, or NEGATIVE for Neg Energy spells
 // * iDisplay = TRUE/FALSE (Whether or not to show feedback)
 int BlastInfidelOrFaithHeal(object oCaster, object oTarget, int iEnergyType, int iDisplayFeedback);
+
+// * Returns an ajusted RACIAL_TYPE constant after checking for PRC
+// * levels which can modify type (i.e. a Lich is Undead)
+int MyPRCGetRacialType(object oCreature);
+
+// * Checks for special PRC requirements which cannot be done through
+// * the cls_pres_* files, and sets related LocalInts.
+// * Any custom class requirements should be handled through here.
+void CheckSpecialPRCRecs(object oPC);
 
 //Check that the character has Hierophant levels, that the last
 //spell cast was an ability (i.e. accessed from class abilities), and
@@ -340,4 +350,34 @@ int MyPRCGetRacialType(object oCreature)
     if (nRace)
         return (nRace-1);
     return GetRacialType(oCreature);
+}
+
+void CheckSpecialPRCRecs(object oPC)
+{
+    //Check if the player meets the requirement for the Knight of the Chalice
+    //i.e. Can cast Protection from Evil
+
+    /*  Talent functions seem to be bugged.  So the inferior function
+     *  Below will need to suffice until BW fixes this
+    talent protAlign = TalentSpell(321);
+    if(GetCreatureHasTalent(protAlign, oPC))
+        SetLocalInt(oPC, "PRC_KnghtCh", 1);
+     */
+
+    //This function is unreliable at best for Wizards as they
+    //would need to have Protection from Alignment memorized upon
+    //leveling up for it to work.  It should work for Sorcerers
+    //and Bards though, since they automatically memorize spells.
+    int iClericLevel = GetLevelByClass(CLASS_TYPE_CLERIC, oPC);
+    int iPaladinLevel = GetLevelByClass(CLASS_TYPE_PALADIN, oPC);
+    int iWisdomBonus = GetAbilityModifier(ABILITY_WISDOM);
+    int bHasSpell = FALSE;
+
+    if(iClericLevel >= 0) bHasSpell = TRUE;
+    if((iPaladinLevel >= 4 && iWisdomBonus >= 1) || (iPaladinLevel >= 6)) bHasSpell = TRUE;
+    if(GetHasSpell(321, oPC)) bHasSpell = TRUE;
+
+    if(bHasSpell)
+        SetLocalInt(oPC, "PRC_KnghtCh", 1);
+
 }
