@@ -50,16 +50,17 @@
 # Names of the output files.
 # NOTE: For version 2.0 this is going to change and there will be 2 haks,
 # the exact names are TBD.
-RAR		= $(OUTPATH)\prc_consortium$(PRC_VERSION).rar
-ERF		= $(OUTPATH)\prc_consortium.erf
-HAK		= $(OUTPATH)\prc_consortium.hak
-TLK		= $(TLKPATH)\prc_consortium.tlk
-README		= prc_consortium.txt
+RAR				= $(OUTPATH)\prc_consortium$(PRC_VERSION).rar
+ERF				= $(OUTPATH)\prc_consortium.erf
+HAK				= $(OUTPATH)\prc_consortium.hak
+TLK				= $(TLKPATH)\prc_consortium.tlk
+README			= prc_consortium.txt
+MISCRESOURCES	= $(OUTPATH)\PRCInstaller.exe "$(OUTPATH)\PRC Pack.hif"
 # Proposed version 2.0 haks
-SCRIPTSHAK	= $(OUTPATH)\prc_scripts.hak
-2DASHAK		= $(OUTPATH)\prc_2das.hak
-MISCHAK		= $(OUTPATH)\prc_misc.hak
-TEXTURESHAK	= $(OUTPATH)\prc_textures.hak
+SCRIPTSHAK		= $(OUTPATH)\prc_scripts.hak
+2DASHAK			= $(OUTPATH)\prc_2das.hak
+MISCHAK			= $(OUTPATH)\prc_misc.hak
+TEXTURESHAK		= $(OUTPATH)\prc_textures.hak
 
 
 # This variable contains all of the files that need to be installed in the
@@ -71,24 +72,24 @@ OVERRIDEFILES	= $(2DAPATH)\classes.2da
 # Define the locations of the various EXE's used by the makefile.  All
 # should be in the tools folder, except the script compiler which
 # comes with NWN.
-RARCOMPILER	= tools\rar
+RARCOMPILER		= tools\rar
 ERFCOMPILER 	= tools\erf
 NSSCOMPILER 	= $(NWN_DIR)\utils\clcompile
 
 
 # Redefine various paths set by the bat file to give them prettier more
 # generic names.
-OUTPATH		= CompiledResources
-2DAPATH		= $(MAKE2DAPATH)
-OBJPATH		= $(MAKEOBJSPATH)
-SRCPATH		= $(MAKESCRIPTPATH)
-TLKPATH		= $(MAKETLKPATH)
+OUTPATH			= CompiledResources
+2DAPATH			= $(MAKE2DAPATH)
+OBJPATH			= $(MAKEOBJSPATH)
+SRCPATH			= $(MAKESCRIPTPATH)
+TLKPATH			= $(MAKETLKPATH)
 
 
 # Paths for the various folders in the NWN install directory.
-NWN_ERF		= $(NWN_DIR)\erf
-NWN_HAK		= $(NWN_DIR)\hak
-NWN_TLK		= $(NWN_DIR)\tlk
+NWN_ERF			= $(NWN_DIR)\erf
+NWN_HAK			= $(NWN_DIR)\hak
+NWN_TLK			= $(NWN_DIR)\tlk
 NWN_OVERRIDE	= $(NWN_DIR)\override
 
 
@@ -165,14 +166,15 @@ installoverrides: $(OVERRIDEFILES)
 
 # This rule builds the 2.0 RAR, commented out for now
 #$(RAR): $(SCRIPTSHAK) $(2DASHAK) $(TEXTURESHAK) $(MISCHAK) \
-#	$(OVERRIDEFILES) $(TLK) $(README) 
+#	$(OVERRIDEFILES) $(TLK) $(README) $(MISCRESOURCES) 
 #	@echo $(@F)
 #	-@del "$@" 2>nul
 #	@"$(RARCOMPILER)" a -ep -inul $@ $**
 
 
 # Rule to build the ship RAR.	
-$(RAR): $(HAK) $(ERF) $(OVERRIDEFILES) $(TLK) $(README)
+$(RAR): $(HAK) $(ERF) $(OVERRIDEFILES) $(TLK) $(README) \
+	$(MISCRESOURCES) 
 	@echo $(@F)
 	-@del "$@" 2>nul
 	@"$(RARCOMPILER)" a -ep -inul $@ $**
