@@ -16,6 +16,11 @@
    // may all end up on the stack, and that's all bad.  60 x 2 = 120.
 
 */
+
+//
+// Altered to calculate grapple check correctly per pnp rules.
+//
+
 //:://////////////////////////////////////////////
 //:: Created By: Brent
 //:: Created On: September 7, 2002
@@ -102,6 +107,13 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
                 + (GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF)) + 12 + -1;
             int nTargetRoll = GetAC(oTarget);
 
+			// Give the caster feedback about the grapple check if he is a PC.
+			if (GetIsPC(OBJECT_SELF))
+			{
+				SendMessageToPC(OBJECT_SELF, nCasterRoll >= nTargetRoll ?
+					"Bigby's Crushing Hand hit" : "Bigby's Grasping Hand missed");
+			}
+			
             // * grapple HIT succesful,
             if (nCasterRoll >= nTargetRoll)
             {
@@ -111,10 +123,20 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
                 nCasterRoll = d20(1) + nCasterModifier
                     +(GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF)) + 12 + 4;
 
-                nTargetRoll = /*NEED GetBaseAttackBonus*/
-                    GetBaseAttackBonus(oTarget) + GetSizeModifier(oTarget)
-                    + GetAbilityModifier(ABILITY_STRENGTH);
+                nTargetRoll = d20(1) + GetSizeModifier(oTarget)
+                    + GetAbilityModifier(ABILITY_STRENGTH) + GetBaseAttackBonus(oTarget);
+//                nTargetRoll = /*NEED GetBaseAttackBonus*/
+//                    GetBaseAttackBonus(oTarget) + GetSizeModifier(oTarget)
+//                    + GetAbilityModifier(ABILITY_STRENGTH);
 
+				// Give the caster feedback about the grapple check if he is a PC.
+				if (GetIsPC(OBJECT_SELF))
+				{
+					string suffix = nCasterRoll >= nTargetRoll ? ", success" : ", failure";
+					SendMessageToPC(OBJECT_SELF, "Grapple check " + IntToString(nCasterRoll) + 
+						" vs. " + IntToString(nTargetRoll) + suffix);
+				}
+			
                 if (nCasterRoll >= nTargetRoll)
                 {
                     effect eKnockdown = EffectParalyze();

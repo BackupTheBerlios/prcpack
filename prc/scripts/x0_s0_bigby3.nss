@@ -8,6 +8,11 @@
 
 
 */
+
+//
+// Altered to calculate grapple check correctly per pnp rules.
+//
+
 //:://////////////////////////////////////////////
 //:: Created By: Brent
 //:: Created On: September 7, 2002
@@ -72,6 +77,13 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
 
             int nTargetRoll = GetAC(oTarget);
 
+			// Give the caster feedback about the grapple check if he is a PC.
+			if (GetIsPC(OBJECT_SELF))
+			{
+				SendMessageToPC(OBJECT_SELF, nCasterRoll >= nTargetRoll ?
+					"Bigby's Grasping Hand hit" : "Bigby's Grasping Hand missed");
+			}
+			
             // * grapple HIT succesful,
             if (nCasterRoll >= nTargetRoll)
             {
@@ -79,11 +91,20 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
                 // * hold target for duration of spell
                 // * check caster ability vs. target's size & strength
                 nCasterRoll = d20(1) + nCasterModifier
-                    + (GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF)) + 10 +4;
+                    + (GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF))
+                    + 10 + 4;
 
-                nTargetRoll = GetSizeModifier(oTarget)
-                    + GetAbilityModifier(ABILITY_STRENGTH);
+                nTargetRoll = d20(1) + GetSizeModifier(oTarget)
+                    + GetAbilityModifier(ABILITY_STRENGTH) + GetBaseAttackBonus(oTarget);
 
+				// Give the caster feedback about the grapple check if he is a PC.
+				if (GetIsPC(OBJECT_SELF))
+				{
+					string suffix = nCasterRoll >= nTargetRoll ? ", success" : ", failure";
+					SendMessageToPC(OBJECT_SELF, "Grapple check " + IntToString(nCasterRoll) + 
+						" vs. " + IntToString(nTargetRoll) + suffix);
+				}
+			
                 if (nCasterRoll >= nTargetRoll)
                 {
                     // Hold the target paralyzed
