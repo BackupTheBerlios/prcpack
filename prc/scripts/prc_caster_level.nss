@@ -114,7 +114,7 @@ void main()
         if(GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster)){
             nArcaneAddon+=GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
             if(lookup_spell_school(GetSpellId()) == "N")
-                nArcaneAddon+=GetLevelByClass(CLASS_TYPE_WIZARD, oCaster);
+                nArcaneAddon+=GetLevelByClass(CLASS_TYPE_CLERIC, oCaster);
         }
     }//end of arcane spell part
 
@@ -163,9 +163,9 @@ void main()
                 nArcaneAddon+=GetLevelByClass(CLASS_TYPE_OOZEMASTER, oCaster) / 2;
         }
         if(GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster)){
-            nDivineAddon+=GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
             if(lookup_spell_school(GetSpellId()) == "N")
-                nDivineAddon+=GetLevelByClass(CLASS_TYPE_CLERIC, oCaster);
+                nDivineAddon+=GetLevelByClass(CLASS_TYPE_WIZARD, oCaster);
+                nDivineAddon+=GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
         }
 
     }//end of divine spell part
