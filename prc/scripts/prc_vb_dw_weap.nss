@@ -10,6 +10,8 @@
 //:: Created On: 5 april 2004
 //:://////////////////////////////////////////////
 
+#include "prc_class_const"
+
 void main()
 {
      int nVassal = GetLevelByClass(CLASS_TYPE_VASSAL, OBJECT_SELF);
