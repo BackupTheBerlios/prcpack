@@ -231,6 +231,11 @@ $(SCRIPTSHAK): $(OBJS) $(SCRIPTS)
 	-@del "$@" 2>nul
 	@"$(ERFCOMPILER)" -c $@ $(SCRIPTS)
 	@"$(ERFCOMPILER)" -u $@ $(OBJS) >nul
+# At some point we may need to use the below method to generate the hak
+# it will add the files to the hak one at a time to prevent command line
+# too long errors, but it runs orders of magnitude slower.
+#	@"$(ERFCOMPILER)" -c $@ howto.txt >nul
+#	!@"$(ERFCOMPILER)" -u $@ $** >nul
 
 
 # Rule to build the 2.0 2das HAK file.
