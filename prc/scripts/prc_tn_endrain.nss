@@ -53,3 +53,4 @@ DeleteLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR");
 // Getting rid of the local integer storing the spellschool name
 }
 
+
