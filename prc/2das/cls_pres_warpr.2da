@@ -1,0 +1,9 @@
+2DA V2.0
+
+      LABEL           ReqType   ReqParam1          ReqParam2   
+0     ClericOr        CLASSOR   2                  ****        
+1     PaladinOr       CLASSOR   6                  ****        
+2     ScriptVar       VAR       codi_allow_warpr   0           
+3     BAB             BAB       5                  ****        
+4     CombatCasting   FEAT      7                  ****        
+5     Persuade        SKILL     12                 5           

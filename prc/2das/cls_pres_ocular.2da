@@ -1,0 +1,8 @@
+2DA V2.0
+
+      LABEL           ReqType   ReqParam1       ReqParam2   
+0     Concentration   SKILL     1               8           
+1     Toughness       FEAT      40              ****        
+2     DruidOr         CLASSOR   3               ****        
+3     ClericOr        CLASSOR   2               ****        
+4     ScriptVar       VAR       X1_AllowOccAd   0           
