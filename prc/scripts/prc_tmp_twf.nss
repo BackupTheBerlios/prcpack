@@ -10,8 +10,12 @@
 //:: Created On: Aug 23, 2004
 //:://////////////////////////////////////////////
 
-#include "prc_inc_oni"
 #include "nw_i0_spells"
+
+#include "prc_inc_function"
+#include "prc_feat_const"
+#include "prc_class_const"
+#include "prc_spell_const"
 
 void main()
 {

@@ -16,7 +16,10 @@
 
 #include "x2_i0_spells"
 #include "inc_addragebonus"
-#include "prc_inc_oni"
+
+#include "prc_feat_const"
+#include "prc_class_const"
+#include "prc_spell_const"
 
 void TurnBasedDamage(object oTarget, object oCaster);
 void AttackNearestForDuration();

@@ -10,9 +10,13 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "prc_inc_oni"
 #include "nw_i0_spells"
 #include "x2_inc_itemprop"
+
+#include "prc_inc_function"
+#include "prc_feat_const"
+#include "prc_class_const"
+#include "prc_spell_const"
 
 void ApplyAbsAmbidex(object oPC)
 {

@@ -10,7 +10,10 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "prc_inc_oni"
+
+#include "prc_feat_const"
+#include "prc_class_const"
+#include "prc_spell_const"
 
 // Used to add/remove the auto frenzy property on creature skin
 void AutoFrenzy(object oPC,int iEquip)
