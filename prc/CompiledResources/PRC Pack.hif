@@ -59,11 +59,22 @@ module.Areas : mordmagman05
 module.Areas : mordmagman06
 
 # Events that need to be wired up.
+module.OnAcquireItem : prc_onaquire
+module.OnActivateItem : prc_onactivate
 module.OnClientEnter : prc_onenter
-module.OnPlayerLevelUp : prc_levelup
+module.OnClientLeave : prc_onleave
+module.OnCutsceneAbort : prc_oncutabort
+module.OnHeartbeat : prc_onheartbeat
+module.OnModuleLoad : prc_onmodload
+module.OnPlayerDeath : prc_ondeath
+module.OnPlayerDying : prc_ondying
 module.OnPlayerEquipItem : prc_equip
-module.OnPlayerUnequipItem : prc_unequip
+module.OnPlayerLevelUp : prc_levelup
 module.OnPlayerRest : prc_rest
+module.OnPlayerRespawn : prc_onrespawn
+module.OnUnaquireItem : prc_onunaquire
+module.OnPlayerUnequipItem : prc_unequip
+module.OnUserDefined : prc_onuserdef
 
 # Cache PRC scripts for better performance.
 module.Cache : screen_targets
@@ -77,3 +88,9 @@ module.Cache : add_damageshield
 module.Cache : add_randdamage
 module.Cache : add_healing
 module.Cache : add_hitpoints
+module.Cache : prc_onaquire
+module.Cache : prc_onactivate
+module.Cache : prc_equip
+module.Cache : prc_onheartbeat
+module.Cache : prc_onunaquire
+module.Cache : prc_onuserdef
