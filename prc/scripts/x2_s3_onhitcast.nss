@@ -29,8 +29,9 @@
 
 #include "prc_class_const"
 #include "prc_feat_const"
-#include "heartward_inc"
 #include "x2_inc_switches"
+
+const int TEMPUS_ABILITY_VICIOUS   = 12;
 
 void main()
 {

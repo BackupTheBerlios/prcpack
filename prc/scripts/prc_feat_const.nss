@@ -261,3 +261,17 @@ const int FEAT_HATED_ENEMY_OUTSIDER = 0000;
 const int FEAT_HATED_ENEMY_SHAPECHANGER = 0000;
 const int FEAT_HATED_ENEMY_UNDEAD = 0000;
 const int FEAT_HATED_ENEMY_VERMIN = 0000;
+
+// Shadowlord
+const int FEAT_SHADOWBLUR                = 3304;
+const int FEAT_SHADOWDISCOPOR            = 3305;
+const int FEAT_DEATHATTACK               = 3306;
+const int FEAT_SHADOWJUMP                = 3307;
+const int FEAT_SHADOWJUMP2               = 3308;
+const int FEAT_SHADOWJUMP3               = 3309;
+const int FEAT_SHADOWPOUNCE              = 3310;
+const int FEAT_SHADOWPOUNCE2             = 3311;
+const int FEAT_SHADOWPOUNCE3             = 3312;
+
+// Battleguard Tempus
+const int TEMPUS_ENCHANT_WEAPON  = 2220;

@@ -16,6 +16,8 @@
 
 #include "inc_npc"
 
+const int IPRP_FEAT_BarbEndurance = 106;
+
 void ElementalFamiliar()
 {
 

@@ -217,14 +217,3 @@ const int TEMPUS_ABILITY_VAMPIRE   = 24;
 
 
 
-// ShadowLOrd
-const int IPRP_FEAT_SNEAKATK4     = 70;
-const int IPRP_FEAT_DEATHATTACK   = 86;
-const int IPRP_FEAT_DEATHATTACK20 = 105;
-
-// Bonded
-const int IPRP_FEAT_BarbEndurance = 106;
-
-const int IPRP_CONST_ONHIT_DURATION_5_PERCENT_1_ROUNDS = 20;
-
-

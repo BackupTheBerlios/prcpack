@@ -1,7 +1,5 @@
 #include "prc_alterations"
-#include "heartward_inc"
 #include "inc_item_props"
-#include "inc_combat"
 #include "inc_combat2"
 
 const int PHS_VFX_IMP_DIMENSION_DOOR_DISS   = 777;

@@ -1,5 +1,15 @@
-#include "heartward_inc"
+
 #include "x2_inc_switches"
+
+// ShadowLOrd
+const int IPRP_FEAT_SNEAKATK4     = 70;
+const int IPRP_FEAT_DEATHATTACK   = 86;
+const int IPRP_FEAT_DEATHATTACK20 = 105;
+
+// Bonded
+const int IPRP_FEAT_BarbEndurance = 106;
+
+const int IPRP_CONST_ONHIT_DURATION_5_PERCENT_1_ROUNDS = 20;
 
 int Sanctify_Feat(int iTypeWeap)
 {
