@@ -12,7 +12,7 @@
 //:://////////////////////////////////////////////
 
 #include "heartward_inc"
-#include "prc_caster_level"
+#include "prc_getcast_lvl"
 
 #include "inc_npc"
 
