@@ -44,3 +44,8 @@
 ---------Begin Zedium
 - added Vassal of Bahamut stuff to the tlk.
 ---------End Zedium
+15/02/2004
+---------Begin Middy
+- Made some small changes to the tlk. Mainly just spelling and such. I'm editing most things in the readme before I transfer them to the tlk.
+- Uploaded To-Fix list. Please check this and fix what applies to you.
+---------End Middy
