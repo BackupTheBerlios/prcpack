@@ -26,4 +26,9 @@
 - added hamatula blueprint creature (not a model, uses the troll shaman)
 - fixed hellfire to do proper damage
 ---------End Shane Hennessy
+06/02/2004
+---------Begin Shane Hennessy
+- added Disciple of Darkness feat to all base classes.2da so the feat can be selected
+---------End Shane Hennessy
+
 
