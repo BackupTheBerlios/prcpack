@@ -76,11 +76,11 @@ void main()
         {
            if (GetBaseItemType(oItem) == BASE_ITEM_ARMOR)
             {
-                ExecuteScript("ft_dw_armor", oSpellTarget);
+                ExecuteScript("prc_vb_dw_armor", oSpellTarget);
             }
            else
             {
-                ExecuteScript("ft_dw_weapon", oSpellTarget);
+                ExecuteScript("prc_vb_dw_weap", oSpellTarget);
             }
          }
 
