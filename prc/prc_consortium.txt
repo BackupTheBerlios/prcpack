@@ -265,6 +265,40 @@ Upon gaining a level in Harper Mage, the character gains new spells per day as i
 
 
 
+******************** Heartwarder *******************
+Sune Firehair encourages beauty, passion, and love wherever they may be found.  Heartwarders are aesthetes and hedonists who actively seek out pleasure and beauty in all things who nurture the creation of beautiful objects.
+
+- Hit Die: d8.
+- Proficiencies: The Heartwarder gains no weapon or armor proficiency. 
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Alignment: Chaotic Good.
+Feats: Dodge, Mobility, Spell Focus (Enchantment), Exotic Weapon Proficiency (Whip)
+Skills: Bluff 3, Persuade 6.
+Divine Spellcasting: Ability to cast spells of Level 3.
+Cleric Domain: Good and Protection
+
+ABILITIES:
+
+Level
+1: Charisma Increase - Bonus +1 to Charisma.
+2: Heart of Passion - Bonus +2 to Charisma-based checks (skills, turning).
+3: Charisma Increase - Bonus +2 to Charisma.
+4: Lips of Rapture -  Bonus +2 to Attacks, damages, saves and +4 to Enchantment spells saves. (Dazed on failed save).
+5: Charisma Increase - Bonus +3 to Charisma.
+6: Voice of a Siren -  Gains Greater Spell Focus (Enchantment) and Spell Penetration feats to verbal spells.  
+7: Charisma Increase - Bonus +4 to Charisma.
+8: Tears of Evergold -  Craft a Water Holy once per day.
+9: Charisma Increase - Bonus +5 to Charisma.
+10: Fey Metamorphosis - Type change to Fey.
+
+BONUS SPELLS
+Upon gaining a level in Heartwarder, the character gains new spells per day as if he had also gained a level in his highest caster class (druid or cleric). He does not learn any new spells through his abilities.
+
+
+
 ******************** Hierophant *******************
 A divine spellcaster who rises high in the service of his deity gains access to spells and abilities of which lesser faithful can only dream. The hierophant prestige class is open to power divine spellcasters who are approaching access to the strongest and most difficult divine spells.  They delay the acquisition of these greatest gifts in exchange for a deeper understanding of and ability to control the power they channel.
 
@@ -292,6 +326,111 @@ Known Issues:
   -Loss of spell slots in exchange for abilities was impossible to implement properly.  This makes theHierophant a bit more powerful than the PnP version.
   -The feats involving transfer of abilities were not implemented.
   -Blast Infidel and Faith Healing work by alignment, not deity, since the former is much more commonly used in NWN.
+
+
+
+******************** Holy Liberator *******************
+The holy liberator is a holy warrior, a distant cousin of the paladin, who is dedicated to overthrowing tyranny wherever it may be found. These champions of freedom and equality are strong-willed, independent-minded, and virtuous.
+
+- Hit Die: d10
+- Proficiencies: The Holy Liberator is proficient will all simple and martial weapons, all armor and shields.
+- Skill Points: 2 + Int Modifier. 
+
+REQUIREMENTS:
+
+Alignment: Chaotic Good
+Base Attack Bonus: +5
+Skills: Persuade 5 or more ranks
+Feats: Iron Will
+Class: Paladin (Must be in first class slot)
+
+ABILITIES:
+Level
+1: Detect Evil - May sense evil at will.
+    Resist Enchantment - +2 bonus to saving throws versus mind-affecting spells.
+2: Smite Evil - Use smite evil as per the paladin ability.
+    Divine Grace - May add charisma bonus to all saving throws.
+3: Turn Undead - May turn undead as a paladin or cleric.
+    Immune to Charm - Immune to mind-affecting spells.
+4: None
+5: Celestial Companion - May summon a special celestial animal companion.
+6: None
+7: Subversion - Can attempt to remove any mind-affecting spells from a creature at will.
+8: None
+9: None
+10: None
+
+BONUS SPELLS
+Upon gaining a level in Holy Liberator, the character gains new spells per day as if he had also gained a level in his highest caster class (paladin or cleric). He does not learn any new spells through his abilities.
+
+
+
+******************** Hunter of the Dead *******************
+The hunter of the dead is the hated enemy of all undead.  She spends each restless night tracking undead to their lairs and cleansing the land of their foul presence forever.
+
+- Hit Die: d10
+- Proficiencies: The Hunter of the Dead is proficient will all simple and martial weapons, armor and shields.
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Alignment: Any nonevil
+Base Attack Bonus: +5
+Skills: Lore 5 ranks
+Special: Turn Undead Ability
+
+ABILITIES:
+Level
+1: Detect Undead - May sense undead at will
+2: Smite Undead - Can use holy power to smite undead once a day. Adds wisdom bonus to attack roll and uses level as damage bonus.
+    Cure Light Wounds - As the spell, once a day.
+3: Spurn Death's Touch - Add wisdom bonus to save versus level/ability drain
+4: Lesser Restoration - As the spell, once a day.
+5: True Death - Attacks against undead have the "Slay Undead" property
+6: Extra Turning
+    Smite Undead - Twice per day.
+    Searing Light - As the spell, once per day.
+7: Cure Light Wounds - As the spell, once per day.
+8: Positive Energy Burst - Use 2 turn attempts to damage nearby undead
+    Restoration - As the spell, twice per day.
+9: Lesser Restoration - As the spell, twice per day/
+10: Sealed Life - Immune to level / ability drain
+    Smite Undead - Three times per day.
+    Searing Light - As the spell, twice per day.
+
+
+
+******************** Knight of the Chalice *******************
+A knight of the Chalice is a member of an elite knightly organization devoted to fighting demons.  Motivated by a pious hatred of these creatures that embody the principles of chaos and evil, knights of the Chalice learn tactics and gain special abilities to help them in their crusade.
+
+- Hit Die: d10
+- Proficiencies: The Knight of the Chalice is proficient will all simple and martial weapons, armor and shields.
+- Skill Points: 2 + Int Modifier. 
+
+REQUIREMENTS:
+
+Alignment: Lawful Good
+Base Attack Bonus: +8
+Skills: Lore 10 or more ranks
+Divine Spellcasting: Level 1 or higher.
+Class: Paladin (Must be in first class slot)
+
+ABILITIES:
+Level
+1: Demonslaying +1/1d6 (Physical) - Gain combat bonuses against demons.
+    Censure Demons - Use turning attempts to stun demons.
+2: Courage of Heaven - Immune to fear.  Allies within 10ft gain +4 to save vs fear.
+3: Demonslaying +2/2d6 (Physical) - Gain combat bonuses against demons.
+4: None
+5: Heavenly Devotion - Immune to enchantment effects. Allies within 10ft gain +4 save vs enchantment
+6: Demonslaying +3/2d6 (Physical) + 1d6 (Divine) - Gain combat bonuses against demons.
+7: None
+8: Concecrated Aura - Demons and undead within 20ft recieve a -1 penalty to attack and AC
+9: Demonslaying +4/2d6(Physical) + 2d6 (Divine) - Gain combat bonuses against demons.
+10: Holy Aura - May use Holy Aura (versus demons only) at will.
+
+BONUS SPELLS
+Upon gaining a level in Knight of the Chalice, the character gains new spells per day as if he had also gained a level in his highest caster class (paladin or cleric). He does not learn any new spells through his abilities.
 
 
 
@@ -562,29 +701,32 @@ Skills: Craft armor 5 ranks, Persuade 5 ranks
 ABILITIES:
 
 Level
-1. Imperious Aura - Gains a bonus equal to his class level on all Appraise, Persuade, Intimidate, Taunt and Perform checks vs. a creature of any dragon type.
+1: Imperious Aura - Gains a bonus equal to his class level on all Appraise, Persuade, Intimidate, Taunt and Perform checks vs. a creature of any dragon type.
     Platinum Armor +4 - Gains a Platinum armor made from transmuted scales of a red dragon. Can only use his Vassal abilities while wearing it.
-2. Dragon Sense - Gain darkvision.
+2: Dragon Sense - Gain darkvision.
     Shared Trove - Gains 200,000 gold pieces.
     Bless weapon - Can cast once a day, as the spell.
-3. Bonus Feat
-4. Dragonwrack (+2d6/1d6) - Deals 2d6 damage if he strikes and 1d6 damage if he is struck by an evil creature of the dragon type.
+3: Bonus Feat
+4: Dragonwrack (+2d6/1d6) - Deals 2d6 damage if he strikes and 1d6 damage if he is struck by an evil creature of the dragon type.
     Protection against Alignment - Can cast once a day, as the spell.
-5. Shared Trove - Gains 500,000 gold pieces.
+5: Shared Trove - Gains 500,000 gold pieces.
     Platinum Armor +6 - Armor's abilities increase.
-6. Bonus Feat
+6: Bonus Feat
     Bull's strength - Can cast once a day, as the spell.
-7. Dragonwrack (+3d6/1d6) - Dragonwrack increases.
-8. Shared Trove - Gains 800,000 gold pieces.
+7: Dragonwrack (+3d6/1d6) - Dragonwrack increases.
+8: Shared Trove - Gains 800,000 gold pieces.
     Magic Circle against Alignment - Can cast once a day, as the spell.
-9. Bonus Feat
+9: Bonus Feat
     Searing Light - Can cast once a day, as the spell.
-10. Dragonwrack (+4d6/1d6) - Dragonwrack increases.
+10: Dragonwrack (+4d6/1d6) - Dragonwrack increases.
     Platinum Armor +8 - Armor's abilities increase.
 
 
 
 *************** Updates ****************
+
+v1.9:
+* Added Heartwarder, Holy Liberator, Hunter of the Dead, Knight of the Chalice, and Vassal of Bahamut
 
 V1.8:
 * Hierophant, Red Avenger, Duelist
