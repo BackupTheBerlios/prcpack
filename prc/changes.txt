@@ -99,4 +99,10 @@ Remove some of the spells from the epic shifter, pnp rules violation.
 Added function to clear all hide locals so shifter will reset the values.
 Changed the soulgem to soul_gem.uti so it can be checked in.
 ---------End Shane Hennessy
+06/03/2004
+---------Begin Stratovarius
+- Updated TLK for Master of Shrouds
+- Email update system appears to be broken
+- Prepared 1.10 for release (backdate to last update)
+---------End Stratovarius
 

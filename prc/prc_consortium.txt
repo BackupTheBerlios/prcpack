@@ -1,4 +1,4 @@
-Version 1.9.0
+Version 1.10.0
 
 This package includes new Prestige Classes by many people. (Listed at the bottom)
 
@@ -329,6 +329,44 @@ Known Issues:
 
 
 
+******************** Hospitaler *******************
+It is the duty of knights hospitaler to protect people traveling on religious pilgrimages. Over the years, this single duty has expanded to include the construction and administration of hospitals and refugee facilities. Hospitalers are a fighting force of necessity, sworn to poverty, obedience, and the defense of those in their care.
+
+Hit Die: d8
+
+REQUIREMENTS
+
+Alignment: Any nonchaotic.
+Base Attack Bonus: +4
+Handle Animal(Lore): 5 ranks.
+Ride(Discipline): 5 ranks.
+
+CLASS SKILLS:
+
+Concentration
+Craft
+Persuade
+Animal Empathy
+Heal
+Lore
+
+Skill Points at Each Level: 2+ Int modifier.
+
+CLASS FEATURES
+
+Weapon and Armour Proficiency: Hospitalers are proficient with all simple, and martial weapons, all types of armour and with shields.
+
+1st Level: Lay on Hands.
+3rd Level: Turn Undead, Remove Disease, Bonus Feat.
+5th Level: Bonus Feat
+7th Level: Bonus Feat
+9th Level: Bonus Feat
+
+BONUS SPELLS:
+
+When a new hospitaler level is gained, the character gains new spells per day as if she had gained a level in the cleric class.  She does not, however, gain any other benefit a character of that class would have gained (e.g., improved chance of rebuking or controlling undead).
+
+
 ******************** Lich *******************
 Feared by mortal beings for their malign magic, their intelligence, and their willingness to embrace undeath for a chance to live forever, liches are evil beings of great power.
 
@@ -423,6 +461,69 @@ Level
 BONUS SPELLS
 Upon gaining a level in Mage Killer, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
 
+
+******************** Master Harper *******************
+Master Harpers are elite members of the Harpers, which is a secret society that battles evil and tyranny, preserves lore, and works to balance civilization and the wild. Master Harpers study spells and develop many skills to help them in their duties of preserving lore by imparting it to others, raising morale, and aiding Harpers and others who promote similar aims.
+- Hit Die: d6.
+- Proficiencies: A master Harper gains no proficiency with any armor or weapons.
+- Skill Points: 4 + Int Modifier. 
+
+REQUIREMENTS:
+Alignement: Any nonevil.
+Spells: Able to cast 2nd-level arcane or divine spells.
+Skills: Bluff 8 ranks, Persuade 8 ranks, Lore 12 ranks, Spellcraft 8 ranks.
+Feats: Alertness, Iron Will.
+
+ABILITIES:
+Level
+1 : Harper Knowledge- bonus for item identification
+Harper Secret - 1 bonus feat: favored ennemy, metamagic or bard feats
+2 : Craft Master Harper Item - May create potions
+3 : Mielikki's Truth - once per day, can remove effect to animal 
+5 : Lycanbane - +5 bonus to the AC vs Shapechanger, and you may transmit this bonus
+Harper Secret
+Musical Instrument Craft: can use Craft Master Harper Item to create Musical Instrument
+6 : Milil's Ear - +4 bonus to the Listen Skill.
+7 : Lliira's Aura - create an aura that gives allies a +4 bonus to saving throws against Mind Affecting spell..
+8 : Deneir's Orel - +4 bonus to the Spellcraft Skill.
+9 : Tymora's Smile - +2 bonus on all saves, twice per day.
+10 : Harper Secret 
+
+
+BONUS SPELLS
+Upon gaining a level in Master Harper, the character gains new spells per day as if he had also gained a level in his highest caster class. He does not learn any new spells through this ability.
+
+
+
+******************** Master of Shrouds *******************
+The master of shrouds is an evil spellcaster who magically seizes incorporeal undead and sets them to do her bidding.  The wrathful undead spread fear and death as they vent their anger at being disturbed.
+
+While a master of shrouds has some divine spells, her primary tool is the ability to summon incorporeal undead creatures to serve her.  Evil clerics most often become masters of shrouds, though ex-paladins may do so if they turn far enough from their lawful good roots and gain access to one of the required domains.
+
+- Hit Dice: d4.
+- Proficiencies: Masters of shrouds are proficient with all simple weapons, with all types of armor, and with shields.
+- Skill Points: 2 + Int Modifier.
+
+
+REQUIREMENTS:
+
+Alignment: Evil
+Concentration: 10 ranks
+Spellcraft: 10 ranks
+Spells: Ability to cast divine spells, and access to at least one of these domains: Death, Evil, Protection
+
+ABILITIES:
+
+Level
+1: Extra Turning, Death Domain, Evil Domain, Protection Domain
+3: Summon Undead I (Allip)
+5: Summon Undead II (Wraith)
+7: Summon Undead III (Spectre)
+9: Summon Undead IV (Improved Spectre)
+
+BONUS SPELLS:
+
+When a new master of shrouds level is gained, the character gains new spells per day as if she had gained a level in the cleric class.  She does not, however, gain any other benefit a character of that class would have gained (e.g., improved chance of rebuking or controlling undead).
 
 
 ******************** Oozemaster *******************
