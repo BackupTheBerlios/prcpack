@@ -15,8 +15,7 @@
 
 #include "inc_item_props"
 #include "pnp_shifter"
-
-const int CLASS_TYPE_LICH = 90;
+#include "strat_prc_inc"
 
 void LichSkills(object oHide, int iLevel)
 {
@@ -205,10 +204,6 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
         RemoveSpecificProperty(oHide,ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS, IP_CONST_IMMUNITYMISC_POISON);
         RemoveSpecificProperty(oHide,ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE, IP_CONST_DAMAGETYPE_COLD,IP_CONST_DAMAGEIMMUNITY_100_PERCENT);
         RemoveSpecificProperty(oHide,ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE, IP_CONST_DAMAGETYPE_ELECTRICAL,IP_CONST_DAMAGEIMMUNITY_100_PERCENT);
-// Negative immunity does not work
-//        RemoveSpecificProperty(oHide,ITEM_PROPERTY_DAMAGE_RESISTANCE, IP_CONST_DAMAGETYPE_NEGATIVE,IP_CONST_DAMAGEIMMUNITY_100_PERCENT);
-        RemoveSpecificProperty(oHide,ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL, -1, IP_CONST_IMMUNITYSPELL_HARM);
-        RemoveSpecificProperty(oHide,ITEM_PROPERTY_DAMAGE_VULNERABILITY, IP_CONST_DAMAGETYPE_DIVINE,IP_CONST_DAMAGEVULNERABILITY_100_PERCENT);
 
 
         // Undead abilities
@@ -233,17 +228,6 @@ void LevelUpHide(object oPC, object oHide, int nLevel)
         AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oHide);
         // 100 % immune to electric
         iprop = ItemPropertyDamageImmunity(IP_CONST_DAMAGETYPE_ELECTRICAL,IP_CONST_DAMAGEIMMUNITY_100_PERCENT);
-        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oHide);
-        // 100 % immune to negative energy (negative should heal... but you cant be turned)
-// Negative immunity does not work
-//        iprop = ItemPropertyDamageImmunity(IP_CONST_DAMAGETYPE_NEGATIVE,IP_CONST_DAMAGEIMMUNITY_100_PERCENT);
-//        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oHide);
-        // Inflict and harm dont do damage (they should heal but...)
-        iprop = ItemPropertySpellImmunitySpecific(IP_CONST_IMMUNITYSPELL_HARM);
-        AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oHide);
-
-        // Make a critical weakness to divine to make up for the heal problems
-        iprop = ItemPropertyDamageVulnerability(IP_CONST_DAMAGETYPE_DIVINE,IP_CONST_DAMAGEVULNERABILITY_100_PERCENT);
         AddItemProperty(DURATION_TYPE_PERMANENT,iprop,oHide);
 
     }
