@@ -123,6 +123,15 @@ void DeletePRCLocalInts(object oSkin)
     DeleteLocalInt(oSkin,"AcolyteResistanceAcid");
     DeleteLocalInt(oSkin,"AcolyteResistanceElectric");
     DeleteLocalInt(oSkin,"AcolyteStatBonusDex");
+// Bonded
+    DeleteLocalInt(oSkin,"BondResEle");
+    DeleteLocalInt(oSkin,"ImmuEle");
+    DeleteLocalInt(oSkin,"BondSubType");
+    DeleteLocalInt(oSkin,"ImmuSneak");
+    DeleteLocalInt(oSkin,"ImmuCritik");
+// IniDrag
+    DeleteLocalInt(oSkin,"IniStunStrk");
+    DeleteLocalInt(oSkin,"IniSR");
 // future PRCs Go below here
 
 }
