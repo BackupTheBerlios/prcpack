@@ -5,7 +5,7 @@
     This file contains scripts used settings in conversations
 */
 
-// void main() {    }
+
 
 #include "inc_npc"
 

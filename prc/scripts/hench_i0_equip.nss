@@ -17,7 +17,7 @@ const int HENCH_AI_HAS_MELEE_WEAPON =     0x00000004;
 const int HENCH_AI_HAS_RANGED_WEAPON =    0x00000008;
 
 
-// void main() {    }
+
 
 
 void SetWeaponState(int nCondition, int bValid = TRUE)

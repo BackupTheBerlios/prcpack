@@ -12,7 +12,7 @@
 //:: Created On: Feb 28, 2002
 //:://////////////////////////////////////////////
 #include "X0_I0_SPELLS"
-
+#include "prc_feat_const"
 #include "x2_inc_spellhook"
 
 void main()

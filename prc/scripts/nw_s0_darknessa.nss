@@ -17,7 +17,7 @@
 #include "prc_alterations"
 
 #include "x0_i0_spells"
-
+#include "prc_class_const"
 #include "x2_inc_spellhook"
 
 void main()

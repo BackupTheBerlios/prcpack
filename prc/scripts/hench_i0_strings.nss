@@ -10,7 +10,7 @@
 */
 
 
-// void main() {    }
+
 
 // weapons equipping
 const string sHenchCantUseShield = "I don't know how to use this shield!";

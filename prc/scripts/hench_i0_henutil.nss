@@ -2,7 +2,7 @@
 //:: hench_i0_henutil (parts from the original NW_I0_HENCHMAN)
 //:: Copyright (c) 2001 Bioware Corp.
 //:://////////////////////////////////////////////
-//void main() { } int GetIsHumanoid(int nRacial) { return 0; }
+
 /*
    This is the include file for the
    henchmen who can join the player.

@@ -10,7 +10,7 @@ the erf version can just be built directly using this file without using
 */
 
 
-// void main() {    }
+
 
 
 const int HENCH_HENAI_NOATTACK  = 0x0001;      // associates dont attack master on damage

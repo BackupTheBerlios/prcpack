@@ -209,3 +209,6 @@ const int FEAT_PA_FLETCH_2         = 4285;
 const int FEAT_PA_FLETCH_3         = 4286;
 const int FEAT_PA_FLETCH_4         = 4287;
 const int FEAT_PA_FLETCH_5         = 4288;
+
+//Shadowlord
+const int SHADOWLORD_DARKNESS     = 2226;

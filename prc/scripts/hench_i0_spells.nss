@@ -10,7 +10,6 @@
 #include "x2_i0_spells"
 #include "inc_npc"
 
-// void main() {    }
 
 // checks if creature should polymorph
 int HenchTalentPolymorph();

@@ -15,7 +15,7 @@
 
 #include "hench_i0_generic"
 
-// void main() {    }
+
 
 int bGlobalNoInventoryChange;
 

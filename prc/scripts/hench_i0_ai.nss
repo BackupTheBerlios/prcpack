@@ -13,7 +13,7 @@
 #include "hench_i0_melee"
 
 
-// void main() {    }
+
 
 
 // Sets the location of an unheard or unseen enemy

@@ -10,8 +10,6 @@
 
 #include "hench_i0_generic"
 
-// void main() {  }
-
 // Removes master force trap and locks
 void ClearForceOptions();
 

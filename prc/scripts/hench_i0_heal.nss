@@ -12,7 +12,6 @@
 #include "hench_i0_assoc"
 
 
-// void main() {    }
 
 
 object GetBestHealingKit()

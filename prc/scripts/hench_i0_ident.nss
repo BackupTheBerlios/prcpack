@@ -7,7 +7,7 @@
 */
 
 // 
-//void main() {}
+
 
 int TalentIdentifyItem(object oItem, object oIdentifier = OBJECT_SELF)
 {
