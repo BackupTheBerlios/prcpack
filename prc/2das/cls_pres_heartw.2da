@@ -1,0 +1,13 @@
+2DA V2.0
+
+      LABEL                      ReqType   ReqParam1         ReqParam2
+0     Good_Domain_Power          FEAT      317               ****
+1     Protection_Domain_Power    FEAT      308               ****
+2     Dodge                      FEAT      10                ****
+3     Mobility                   FEAT      26                ****     
+4     Persuade                   SKILL     12                6
+5     Bluff                      SKILL     23                3
+6     SpellFocusEnc              FEAT      168               ****
+7     WeapProfEx                 FEAT      44                ****
+8     Spellcasting               SPELL     5                 **** 
+9     ScriptVar                  VAR       X1_AllowHeartW    0           
