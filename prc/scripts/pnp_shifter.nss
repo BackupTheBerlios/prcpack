@@ -86,9 +86,16 @@ void RemoveAuraEffect( object oPC );
 void RecognizeCreature( object oPC, string sTemplate );
 // Checks to see if the specified creature is a valid GWS shift choice
 int IsKnownCreature( object oPC, string sTemplate );
+// Shift based on position in the known array
+// oTemplate is either the epic or normal template
+void ShiftFromKnownArray(int nIndex, object oTemplate, object oPC);
 
 void RecognizeCreature( object oPC, string sTemplate )
 {
+    // Only add new ones
+    if (IsKnownCreature(oPC,sTemplate))
+        return;
+
     object oMimicForms = GetItemPossessedBy( oPC, "sparkoflife" );
     if ( !GetIsObjectValid(oMimicForms) )
         oMimicForms = CreateItemOnObject( "sparkoflife", oPC );
@@ -116,6 +123,28 @@ int IsKnownCreature( object oPC, string sTemplate )
     }
     return FALSE;
 }
+
+// Shift based on position in the known array
+void ShiftFromKnownArray(int nIndex,object oTemplate, object oPC)
+{
+    object oMimicForms = GetItemPossessedBy( oPC, "sparkoflife" );
+    int nStartIndex = GetLocalInt(oPC,"ShifterListIndex");
+
+    // Find the name
+    string sResRef = GetLocalArrayString( oMimicForms, "shift_choice", nIndex );
+    if (GetResRef(oTemplate) == "shifterlistenero")
+    {
+        // Force a normal shift
+        if (SetShiftFromTemplateValidate(oPC,sResRef))
+            DestroyObject(oTemplate,2.0);
+    }
+    else // epic shift
+    {
+        if (SetShiftEpicFromTemplateValidate(oPC,sResRef))
+            DestroyObject(oTemplate,2.0);
+    }
+}
+
 
 // Remove "dangling" aura effects on trueform shift
 // Now only removes things it should remove (i.e., auras)

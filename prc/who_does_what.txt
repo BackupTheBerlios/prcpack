@@ -27,7 +27,7 @@ Shane Hennessy:
 - update .tlk for above changes to the demilich - complete
 - Add shifter changes from fan on nwvault - complete
 - Add warrior of darkness prc
-- Add a dlg for the shifter to reduce the newly added confusion with mimic being required
+- Add a dlg for the shifter to reduce the newly added confusion with mimic being required - complete
 - Get rabbithail to add his magic crafting feats to our pak, if that fails make my own
 
 Stratovarius:
