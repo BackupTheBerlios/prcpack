@@ -22,6 +22,6 @@ Shane Hennessy:
 - Update all spells for GetAdjustedRacialType - complete
 - Fix Lich .tlk entries for better ease of use - complete
 - make Lich so they can enter a new module with all hide powers intact. - complete
-- Add soul gems to demi lich, and trap the soul spell
-- make demi lich class 6 epic levels instead of 4 to fit with the ECL of +6 
-- update .tlk for above changes to the demilich
+- Add soul gems to demi lich, and trap the soul spell - complete
+- make demi lich class 6 epic levels instead of 4 to fit with the ECL of +6 - complete
+- update .tlk for above changes to the demilich - complete
