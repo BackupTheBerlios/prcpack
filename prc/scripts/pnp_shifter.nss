@@ -232,6 +232,8 @@ void RemoveAllItemProperties(object oItem)
 
         iProp = GetNextItemProperty(oItem);
     }
+    // for a skin and prcs to get their feats back
+    DeletePRCLocalInts(oItem);
 }
 
 // Gets an IP_CONST_FEAT_* from FEAT_*
@@ -1032,78 +1034,79 @@ void SetItemSpellPowers(object oItem, object oCreature)
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
     }
-    if (GetHasSpell(SPELL_MAGIC_MISSILE,oCreature) && total_props <= 7)
+// Shifter should not get spells, even at epic levels
+/*    if (GetHasSpell(SPELL_MAGIC_MISSILE,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_FIREBALL,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_FIREBALL,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_FIREBALL_10,IP_CONST_CASTSPELL_NUMUSES_4_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_CONE_OF_COLD,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_CONE_OF_COLD,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_CONE_OF_COLD_9,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_LIGHTNING_BOLT,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_LIGHTNING_BOLT,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIGHTNING_BOLT_10,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_CURE_CRITICAL_WOUNDS,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_CURE_CRITICAL_WOUNDS,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_CRITICAL_WOUNDS_12,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_HEAL,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_HEAL,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_HEAL_11,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_FINGER_OF_DEATH,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_FINGER_OF_DEATH,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_FINGER_OF_DEATH_13,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_FIRE_STORM,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_FIRE_STORM,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_FIRE_STORM_13,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_HAMMER_OF_THE_GODS,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_HAMMER_OF_THE_GODS,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_HAMMER_OF_THE_GODS_12,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_GREATER_DISPELLING,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_GREATER_DISPELLING,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_GREATER_DISPELLING_7,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_DISPEL_MAGIC,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_DISPEL_MAGIC,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DISPEL_MAGIC_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
-    if (GetHasSpell(SPELL_HARM,oCreature) && total_props <= 7)
+    }*/
+/*    if (GetHasSpell(SPELL_HARM,oCreature) && total_props <= 7)
     {
         iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_HARM_11,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
         AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
         total_props++;
-    }
+    }*/
 }
 
 
@@ -1925,13 +1928,10 @@ int SetShift(object oPC, object oTarget)
     }
     else // apply the hide effects to the PCs hide
     {
+        // Make sure we start with a clean hide
+        RemoveAllItemProperties(oHidePC);
         CopyAllItemProperties(oHidePC,oHide);
     }
-
-    // Need to save off the PC original appearance to the hide
-    // local variables save off to items and are permanent!
-    if (!GetLocalInt(oHidePC,"nPCTrueFormType"))
-        SetLocalInt(oHidePC,"nPCTrueFormType",GetAppearanceType(oPC));
 
     if (!GetIsObjectValid(oWeapCRPC))
     {
@@ -1941,6 +1941,8 @@ int SetShift(object oPC, object oTarget)
     }
     else // apply effects to the item
     {
+        // Make sure we start with a clean weapon
+        RemoveAllItemProperties(oWeapCRPC);
         CopyAllItemProperties(oWeapCRPC,oWeapCR);
     }
     if (!GetIsObjectValid(oWeapCLPC))
@@ -1951,6 +1953,8 @@ int SetShift(object oPC, object oTarget)
     }
     else // apply effects to the item
     {
+        // Make sure we start with a clean weapon
+        RemoveAllItemProperties(oWeapCLPC);
         CopyAllItemProperties(oWeapCLPC,oWeapCL);
     }
     if (!GetIsObjectValid(oWeapCBPC))
@@ -1961,6 +1965,8 @@ int SetShift(object oPC, object oTarget)
     }
     else // apply effects to the item
     {
+        // Make sure we start with a clean weapon
+        RemoveAllItemProperties(oWeapCBPC);
         CopyAllItemProperties(oWeapCBPC,oWeapCB);
     }
 
@@ -2218,7 +2224,7 @@ int SetShiftEpicFromTemplateValidate(object oPC, string sTemplate)
     if (GetValidShift(oPC, oTarget) && in_list )
     {
         // Shift the PC to it
-        bRetValue = SetShiftEpic(oPC,oTarget);
+        bRetValue =SetShiftEpic (oPC,oTarget);
     }
 
     // Remove the temporary creature
@@ -2241,7 +2247,10 @@ int SetShiftTrueForm(object oPC)
     {
         // Remove all the abilities of the object
         RemoveAllItemProperties(oHide);
+	// Debug
+        //CopyItem(oHide,oPC,TRUE);
     }
+	
     if (GetIsObjectValid(oWeapCR))
     {
         // Remove all the abilities of the object

@@ -1,4 +1,5 @@
 #include "inc_item_props"
+#include "inc_prc_function"
 #include "heartward_inc"
 
 void RemovBonusStormlord(object oPC)
@@ -27,7 +28,9 @@ void main()
     object oPC = GetEnteringObject();
     GetPCSkin(oPC);
 
-
      if (GetLevelByClass(CLASS_TYPE_STORMLORD,oPC))
       RemovBonusStormlord(oPC);
+
+    // Make sure we reapply any bonuses before the player notices they are gone.
+    EvalPRCFeats(oPC);
 }

@@ -43,15 +43,15 @@ void AcolyteStatBonus(object oPC, object oSkin, int iLevel, int iStat)
     if(iStat == IP_CONST_ABILITY_DEX) sFlag = "AcolyteStatBonusDex";
     if(iStat == IP_CONST_ABILITY_INT) sFlag = "AcolyteStatBonusInt";
 
-    if(GetLocalInt(oPC, sFlag) == iLevel) return;
+    if(GetLocalInt(oSkin, sFlag) == iLevel) return;
 
     if(iLevel > 0){
         SetCompositeBonus(oSkin, sFlag, iLevel, ITEM_PROPERTY_ABILITY_BONUS, iStat);
-        SetLocalInt(oPC, sFlag, TRUE);
+        SetLocalInt(oSkin, sFlag, TRUE);
     }
     else {
         SetCompositeBonus(oSkin, sFlag, 0, ITEM_PROPERTY_ABILITY_BONUS, iStat);
-        SetLocalInt(oPC, sFlag, FALSE);
+        SetLocalInt(oSkin, sFlag, FALSE);
    }
 }
 
@@ -67,10 +67,10 @@ void AcolyteResistance(object oPC, object oSkin, int iType)
     if(iType == IP_CONST_DAMAGETYPE_ACID) sFlag = "AcolyteResistanceAcid";
     if(iType == IP_CONST_DAMAGETYPE_ELECTRICAL) sFlag = "AcolyteResistanceElectric";
 
-    if(GetLocalInt(oPC, sFlag) == TRUE) return;
+    if(GetLocalInt(oSkin, sFlag) == TRUE) return;
 
     AddItemProperty(DURATION_TYPE_PERMANENT, ItemPropertyDamageResistance(iType, IP_CONST_DAMAGERESIST_20), oSkin);
-    SetLocalInt(oPC, sFlag, TRUE);
+    SetLocalInt(oSkin, sFlag, TRUE);
 }
 
 void main()

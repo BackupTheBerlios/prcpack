@@ -92,3 +92,10 @@ Added DLG so you can pick what you want to shift into, list made dynamically fro
 ---------Begin Stratovarius
 - Updated TLK with enteries for several prestige classes
 ---------End Stratovarius
+06/03/2004
+---------Begin Shane Hennessy
+Fixed shifter so if another PRC uses the hide, it returns the hide passives when returning to true form.
+Remove some of the spells from the epic shifter, pnp rules violation.
+Added function to clear all hide locals so shifter will reset the values.
+---------End Shane Hennessy
+

@@ -59,6 +59,60 @@ void EvalPRCFeats(object oPC)
     if(GetLevelByClass(CLASS_TYPE_STORMLORD,oPC) > 0)           ExecuteScript("prc_stormlord", oPC);
 }
 
+// This is required if you want your skin effects to work with the shifter
+// The shifter skin is wiped when it returns to normal form
+// Any locals you use for your skin should be added to this list
+void DeletePRCLocalInts(object oSkin);
+void DeletePRCLocalInts(object oSkin)
+{
+    // In order to work with the PRC system we need to delete some locals for each
+    // PRC that has a hide
+// Duelist
+    DeleteLocalInt(oSkin,"DiscMephResist");
+    DeleteLocalInt(oSkin,"GraceBonus");
+    DeleteLocalInt(oSkin,"ElaborateParryBonus");
+    DeleteLocalInt(oSkin,"CannyDefenseBonus");
+// Elemental Savants
+    DeleteLocalInt(oSkin,"ElemSavantResist");
+    DeleteLocalInt(oSkin,"ElemSavantPerfection");
+    DeleteLocalInt(oSkin,"ElemSavantImmMind");
+    DeleteLocalInt(oSkin,"ElemSavantImmParal");
+    DeleteLocalInt(oSkin,"ElemSavantImmSleep");
+// heartWarder
+    DeleteLocalInt(oSkin,"HeartPassion");
+    DeleteLocalInt(oSkin,"FeyType");
+// MageKiller
+    DeleteLocalInt(oSkin,"MKFortBonus");
+    DeleteLocalInt(oSkin,"MKRefBonus");
+// Master Harper
+    DeleteLocalInt(oSkin,"MHLycanbane");
+    DeleteLocalInt(oSkin,"MHMililEar");
+    DeleteLocalInt(oSkin,"MHDeneirsOrel");
+// OozeMaster
+    DeleteLocalInt(oSkin,"OozeChaPen");
+    DeleteLocalInt(oSkin,"IndiscernibleCrit");
+    DeleteLocalInt(oSkin,"IndiscernibleBS");
+    DeleteLocalInt(oSkin,"OneOozeMind");
+    DeleteLocalInt(oSkin,"OneOozePoison");
+// Storm lord
+    DeleteLocalInt(oSkin,"StormLResElec");
+// Spell sword
+    DeleteLocalInt(oSkin,"SpellswordSFBonusNormal");
+    DeleteLocalInt(oSkin,"SpellswordSFBonusEpic");
+// Acolyte of the skin
+    DeleteLocalInt(oSkin,"AcolyteSkinBonus");
+    DeleteLocalInt(oSkin,"AcolyteSymbBonus");
+    DeleteLocalInt(oSkin,"AcolyteStatBonusCon");
+    DeleteLocalInt(oSkin,"AcolyteStatBonusDex");
+    DeleteLocalInt(oSkin,"AcolyteStatBonusInt");
+    DeleteLocalInt(oSkin,"AcolyteResistanceCold");
+    DeleteLocalInt(oSkin,"AcolyteResistanceFire");
+    DeleteLocalInt(oSkin,"AcolyteResistanceAcid");
+    DeleteLocalInt(oSkin,"AcolyteResistanceElectric");
+    DeleteLocalInt(oSkin,"AcolyteStatBonusDex");
+// future PRCs Go below here
+
+}
 
 //--------------------------------------------------------
 //Miscellaneous PRC Functions
