@@ -101,12 +101,17 @@ int TotalAndRemoveProperty(object oItem, int iType, int iSubType = -1)
     return total;
 }
 
-void RemoveSpecificProperty(object oItem, int iType, int iSubType = -1, int iCostVal = -1, int iNum = 1, string sFlag = "")
+void RemoveSpecificProperty(object oItem, int iType, int iSubType = -1, int iCostVal = -1, int iNum = 1, string sFlag = "", int iParam1 = -1)
 {
     int iRemoved = 0;
     itemproperty ip = GetFirstItemProperty(oItem);
     while(GetIsItemPropertyValid(ip) && iRemoved < iNum){
-        if(GetItemPropertyType(ip) == iType && GetItemPropertySubType(ip) == iSubType && GetItemPropertyCostTableValue(ip) == iCostVal){
+        int bMatch = GetItemPropertyType(ip) == iType;
+            bMatch = GetItemPropertySubType(ip) == iSubType || iSubType == -1 ? bMatch : FALSE;
+            bMatch = GetItemPropertyCostTableValue(ip) == iCostVal || iCostVal == -1 ? bMatch : FALSE;
+            bMatch = GetItemPropertyParam1Value(ip) == iParam1 || iParam1 == -1 ? bMatch : FALSE;
+
+        if(bMatch){
             RemoveItemProperty(oItem, ip);
             iRemoved++;
         }
@@ -397,6 +402,17 @@ void DuelistRemovePreciseStrike(object oWeap)
     int iPStrkBonus = GetLocalInt(oWeap, "PStrkBonus");
     if(iPStrkBonus != 0)
         RemoveSpecificProperty(oWeap, ITEM_PROPERTY_DAMAGE_BONUS, IP_CONST_DAMAGETYPE_SLASHING, iPStrkBonus, 1, "PStrkBonus");
+}
+
+void KnightRemoveDaemonslaying(object oWeap)
+{
+    int iDivineBonus = GetLocalInt(oWeap, "DSlayBonusDiv");
+    int iPositiveBonus = GetLocalInt(oWeap, "DSlayBonusPos");
+    if(iDivineBonus != 0)
+        RemoveSpecificProperty(oWeap, ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP, IP_CONST_RACIALTYPE_OUTSIDER, iDivineBonus, 1, "DSlayBonusDiv", IP_CONST_DAMAGETYPE_DIVINE);
+    if(iPositiveBonus != 0)
+        RemoveSpecificProperty(oWeap, ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP, IP_CONST_RACIALTYPE_OUTSIDER, iPositiveBonus, 1, "DSlayBonusPos", IP_CONST_DAMAGETYPE_POSITIVE);
+    SetCompositeBonus(oWeap, "DSlayingAttackBonus", 0, ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP, IP_CONST_RACIALTYPE_OUTSIDER);
 }
 
 int GetOppositeElement(int iElem)
