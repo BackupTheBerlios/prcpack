@@ -16,3 +16,7 @@ Aaon Graywolf:
   * Other various PRCs from Champions of the Faith
 
 NOTE: I may not (will not, more likely) do all of the above.  Rather, it is simply a list of the the classes that I will be most likely to begin working on.
+
+Shane Hennessy:
+- Update all spells for GetAdjustedRacialType
+- Fix Lich .tlk entries for better ease of use
