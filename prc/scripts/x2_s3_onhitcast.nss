@@ -27,9 +27,10 @@
 //:: Created On: 2003-07-22
 //:://////////////////////////////////////////////
 
-#include "x2_inc_switches"
+#include "prc_class_const"
+#include "prc_feat_const"
 #include "heartward_inc"
-#include "prc_inc_oni"
+#include "x2_inc_switches"
 
 void main()
 {
