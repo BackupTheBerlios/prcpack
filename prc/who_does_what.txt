@@ -27,3 +27,16 @@ Shane Hennessy:
 - update .tlk for above changes to the demilich - complete
 - Add shifter changes from fan on nwvault
 - Add warrior of darkness prc
+
+Stratovarius:
+- Arcane Trickster - Class, feat, cls_feat.2das
+- Blood Archer - Class, feat, cls_feat.2das
+- Blood Magus - Class, feat, cls_feat.2das
+- Diabolist - Class, feat, cls_feat.2das
+- Fist of Hextor - Class, feat, cls_feat.2das
+- Lasher - Class, feat, cls_feat.2das
+- Order of the Bow Initiate - Class, feat, cls_feat.2das
+- Purple Dragon Knight - Class, feat, cls_feat.2das
+- Red Wizard of Thay - Class, feat, cls_feat.2das
+- True Necromancer - Class, feat, cls_feat.2das
+
