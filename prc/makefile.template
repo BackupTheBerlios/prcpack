@@ -50,9 +50,9 @@
 # Names of the output files.
 # NOTE: For version 2.0 this is going to change and there will be 2 haks,
 # the exact names are TBD.
-RAR		= prc_consortium$(PRC_VERSION).rar
-ERF		= prc_consortium.erf
-HAK		= prc_consortium.hak
+RAR		= $(OUTPATH)\prc_consortium$(PRC_VERSION).rar
+ERF		= $(OUTPATH)\prc_consortium.erf
+HAK		= $(OUTPATH)\prc_consortium.hak
 TLK		= $(TLKPATH)\prc_consortium.tlk
 README		= prc_consortium.txt
 
@@ -73,6 +73,7 @@ NSSCOMPILER 	= $(NWN_DIR)\utils\clcompile
 
 # Redefine various paths set by the bat file to give them prettier more
 # generic names.
+OUTPATH		= CompiledResources
 2DAPATH		= $(MAKE2DAPATH)
 OBJPATH		= $(MAKEOBJSPATH)
 SRCPATH		= $(MAKESCRIPTPATH)
