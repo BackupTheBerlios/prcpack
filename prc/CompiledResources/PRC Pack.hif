@@ -18,6 +18,19 @@
 #
 # The following tags are supported:
 #
+# Title : Allows you to specify the title for the HIF, if the installer is run in
+#     single HIF mode then the installer's title bar will have the HIF's title,
+#     or file name if the HIF has no title.  The format of the title is
+#     <HIF TITLE> Module Updater <HIF VERSION>
+# Version : Allows you to specify the version number for your content.  Modules
+#     that the HIF is added to are tagged with the version number.
+# MinNWNVersion : Allows you to specify the minimum version of NWN that is required,
+#     and whether your content requies XP1 or XP2.  For the NWN version use the
+#     standard format, i.e. 1.62, 1.31, etc.  For the Expansions use XP1 or
+#     Undrentide for SoU and XP2 or Underdark for HotU.  If you list multiple
+#     requirements separate them by commas.  For example:
+#     MinNWNVersion : 1.62, XP1, XP2
+#     will make your content require NWN 1.62 or later and both expansions.
 # erf : Imports the listed erf files into the module
 # module.Hak : haks to add to the module
 # module.CustomTlk : Custom tlk file for the module, only 1 value.
@@ -41,9 +54,12 @@
 # module.OnUnaquireItem : Assigns script(s) to handle this module event
 # module.OnUserDefined : Assigns script(s) to handle this module event
 
+# Title for the HIF.
+Title : PRC Pack
+
 # Add the PRC pack version and specify at least 1.62 to install.
 Version : 2.0
-MinNWNVersion: 1.62
+MinNWNVersion: 1.62, XP1, XP2
 
 # ERF with the required areas.
 erf : prc_consortium.erf
