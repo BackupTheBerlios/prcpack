@@ -40,6 +40,9 @@ Stratovarius:
 - Red Wizard of Thay - TLK and Scripts remaining
 - True Necromancer - TLK and Scripts remaining
 
+- Add SoulTaker's PrCs to the CVS - Complete with help from Midnight
+- Get 1.9 ready for release - Needs final beta test and compile for release.
+
 Midnight Voyager:
 -Bring fear into the hearts of- ...er... Give all members a gentle prodding to work
 -QUality Control (Need full TLK for this, inevitably)

@@ -11,6 +11,7 @@ To install:
    "OnPlayerEquipItem" event to "prc_equip"
    "OnPlayerUnEquipItem" event to "prc_unequip"
    "OnClientEnter" event to "prc_onenter"
+   "OnPlayerRest" event to "prc_rest"
 5) Save
 6) Enjoy
 
