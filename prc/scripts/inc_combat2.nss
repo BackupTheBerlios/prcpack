@@ -1,5 +1,12 @@
 #include "inc_combat"
 
+// * Performs a ranged attack roll by oPC against oTarget.
+// * Begins with BAB; to simulate multiple attacks in one round,
+// * use iMod to add a -5 modifier for each consecutive attack.
+// * If bShowFeedback is TRUE, display the attack roll in oPC's
+// * message window after a delay of fDelay seconds.
+// * Caveat: Cannot account for ATTACK_BONUS effects on oPC
+int DoRangedAttack(object oPC, object oWeap, object oTarget, int iMod = 0, int bShowFeedback = TRUE, float fDelay = 0.0);
 
 // Get Bonus Mighty
 int GetMightyWeapon(object oWeap);

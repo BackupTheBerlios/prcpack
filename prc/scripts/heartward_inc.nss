@@ -149,7 +149,6 @@ const int FEAT_INCREASE_DAMAGE1         = 3342;
 const int FEAT_INCREASE_DAMAGE2         = 3343;
 const int FEAT_INIDR_SPELLRESISTANCE    = 3345;
 const int FEAT_INIDR_STUNSTRIKE         = 3346;
-const int FEAT_INIDR_SHAPEDRAGON        = 3347;
 const int FEAT_CLAWENH2                 = 3348;
 const int FEAT_CLAWENH3                 = 3349;
 
@@ -186,22 +185,9 @@ const int SHADOWLORD_INVISPHERE   = 2234;
 
 const int SPELL_POLYMORPH_ELEM    = 2235 ;
 
-// Initiate of Draconic
-
-const int SPELL_SHAPEDRAGONGOLD = 2239;
-const int SPELL_SHAPEDRAGONRED  = 2240;
-const int SPELL_SHAPEDRAGONPRYS = 2241;
-
 // VFX Persistant
 
 const int VFX_MOB_CIRCEVIL_NODIS   = 50 ;
-
-// Polymproh
-
-const int POLY_SHAPEDRAGONGOLD  = 130;
-const int POLY_SHAPEDRAGONRED   = 131;
-const int POLY_SHAPEDRAGONPRYS  = 132;
-
 
 // Battleguard Tempus
 const int TEMPUS_ABILITY_ENHANC1   = 1;
@@ -221,6 +207,17 @@ const int TEMPUS_ABILITY_WOUNDING  = 14;
 const int TEMPUS_ABILITY_BARSKIN   = 15;
 const int TEMPUS_ABILITY_CONECOLD  = 16;
 const int TEMPUS_ABILITY_DARKNESS  = 17;
+const int TEMPUS_ABILITY_FIREBALL  = 18;
+const int TEMPUS_ABILITY_HASTE     = 19;
+const int TEMPUS_ABILITY_IMPROVINV = 20;
+const int TEMPUS_ABILITY_LIGHTBOLT = 21;
+const int TEMPUS_ABILITY_MAGICMISSILE  = 22;
+const int TEMPUS_ABILITY_WEB       = 23;
+const int TEMPUS_ABILITY_VAMPIRE   = 24;
+
+
+
+ int TEMPUS_ABILITY_DARKNESS  = 17;
 const int TEMPUS_ABILITY_FIREBALL  = 18;
 const int TEMPUS_ABILITY_HASTE     = 19;
 const int TEMPUS_ABILITY_IMPROVINV = 20;

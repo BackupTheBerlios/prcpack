@@ -123,15 +123,6 @@ void DeletePRCLocalInts(object oSkin)
     DeleteLocalInt(oSkin,"AcolyteResistanceAcid");
     DeleteLocalInt(oSkin,"AcolyteResistanceElectric");
     DeleteLocalInt(oSkin,"AcolyteStatBonusDex");
-// Bonded
-    DeleteLocalInt(oSkin,"BondResEle");
-    DeleteLocalInt(oSkin,"ImmuEle");
-    DeleteLocalInt(oSkin,"BondSubType");
-    DeleteLocalInt(oSkin,"ImmuSneak");
-    DeleteLocalInt(oSkin,"ImmuCritik");
-// IniDrag
-    DeleteLocalInt(oSkin,"IniStunStrk");
-    DeleteLocalInt(oSkin,"IniSR");
 // future PRCs Go below here
 
 }
@@ -385,6 +376,17 @@ void CheckSpecialPRCRecs(object oPC)
     int iClericLevel = GetLevelByClass(CLASS_TYPE_CLERIC, oPC);
     int iPaladinLevel = GetLevelByClass(CLASS_TYPE_PALADIN, oPC);
     int iWisdomBonus = GetAbilityModifier(ABILITY_WISDOM);
+    int bHasSpell = FALSE;
+
+    if(iClericLevel >= 0) bHasSpell = TRUE;
+    if((iPaladinLevel >= 4 && iWisdomBonus >= 1) || (iPaladinLevel >= 6)) bHasSpell = TRUE;
+    if(GetHasSpell(321, oPC)) bHasSpell = TRUE;
+
+    if(bHasSpell)
+        SetLocalInt(oPC, "PRC_KnghtCh", 1);
+
+}
+LITY_WISDOM);
     int bHasSpell = FALSE;
 
     if(iClericLevel >= 0) bHasSpell = TRUE;
