@@ -12,10 +12,11 @@
 //:: Created By: Georg Zoeller
 //:: Created On: Oct 2003/
 //:://////////////////////////////////////////////
-
+//
+// 2/25/2004 - bleedingedge - Removed SR check per bioware 1.62 change.
+//
 //:: modified by mr_bumpkin Dec 4, 2003 for prc stuff
 #include "prc_alterations"
-
 
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
@@ -27,6 +28,7 @@ void main()
 {
 DeleteLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR");
 SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_TRANSMUTATION);
+
     /*
       Spellcast Hook Code
       Added 2003-07-07 by Georg Zoeller
@@ -84,13 +86,6 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_TRANSMUTATION
     {
         nDam = nDam + nDam/2;
     }
-    //-------------------------------------------------------------------------
-    // do not resolve immunity here
-    //-------------------------------------------------------------------------
-    if (MyPRCResistSpell(oCaster,oTarget )== 1)
-    {
-        return;
-    }
 
     if (nDam>0)
     {
@@ -101,10 +96,8 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_TRANSMUTATION
         DelayCommand(0.1f,DoCrumble(nDam, oCaster, oTarget));
     }
 
-
 DeleteLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR");
 // Erasing the variable used to store the spell's spell school
-
 }
 
 //------------------------------------------------------------------------------

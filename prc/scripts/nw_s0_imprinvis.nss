@@ -46,9 +46,8 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ILLUSION);
     effect eInvis = EffectInvisibility(INVISIBILITY_TYPE_NORMAL);
     effect eDur = EffectVisualEffect(VFX_DUR_CESSATE_POSITIVE);
     effect eCover = EffectConcealment(50);
-    effect eLink = EffectLinkEffects(eDur, eVis);
-    eLink = EffectLinkEffects(eLink, eCover);
-    eLink = EffectLinkEffects(eLink, eInvis);
+    effect eLink = EffectLinkEffects(eDur, eCover);
+    eLink = EffectLinkEffects(eLink, eVis);
 
     //Fire cast spell at event for the specified target
     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_IMPROVED_INVISIBILITY, FALSE));
@@ -63,6 +62,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ILLUSION);
     ApplyEffectToObject(DURATION_TYPE_INSTANT, eImpact, oTarget);
 
     ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oTarget, TurnsToSeconds(nDuration));
+    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eInvis, oTarget, TurnsToSeconds(nDuration));
 
 DeleteLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR");
 // Getting rid of the local integer storing the spellschool name
