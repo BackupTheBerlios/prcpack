@@ -40,4 +40,7 @@
 - added 8 of 10 PrC cls_bfeat_xxx.2da. Lasher and Order of the Bow Initiate omitted. (unstarted)
 - added 8 of 10 PrC cls_pres_xxx.2da. Lasher and Order of the Bow Initiate omitted. (unstarted)
 ---------End Stratovarius
-
+14/02/2004
+---------Begin Zedium
+- added Vassal of Bahamut stuff to the tlk.
+---------End Zedium
