@@ -43,6 +43,10 @@ Stratovarius:
 - Add SoulTaker's PrCs to the CVS - Complete with help from Midnight
 - Get 1.9 ready for release - Needs final beta test and compile for release.
 
+Zedium:
+- Vassal of Bahamut (Just tlk done for now)
+- Several Exalted and Vile feats if approved.
+
 Midnight Voyager:
 -Bring fear into the hearts of- ...er... Give all members a gentle prodding to work
 -QUality Control (Need full TLK for this, inevitably)
