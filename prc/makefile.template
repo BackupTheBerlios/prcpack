@@ -55,6 +55,11 @@ ERF		= $(OUTPATH)\prc_consortium.erf
 HAK		= $(OUTPATH)\prc_consortium.hak
 TLK		= $(TLKPATH)\prc_consortium.tlk
 README		= prc_consortium.txt
+# Proposed version 2.0 haks
+SCRIPTSHAK	= $(OUTPATH)\prc_scripts.hak
+2DASHAK		= $(OUTPATH)\prc_2das.hak
+MISCHAK		= $(OUTPATH)\prc_misc.hak
+TEXTURESHAK	= $(OUTPATH)\prc_textures.hak
 
 
 # This variable contains all of the files that need to be installed in the
@@ -104,10 +109,12 @@ OTHERS=~~~others~~~
 
 
 #
-# Build rules from here down.
+# Top level virtual rules that just associate pretty text names with various
+# targets
 #
 
 # The top rule is the one run by default, we want to build the hak and install.
+#all: hak20
 all: hak
 
 
@@ -119,6 +126,13 @@ rar: hak $(RAR)
 hak: $(ERF) $(HAK) install
 
 
+# Rule to build the 2.0 haks
+hak20: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) install 
+
+
+#################################################################################
+# Rules to install content in NWN begin here
+
 # Rule to install the hak content
 install: installcontent installoverrides
 
@@ -126,9 +140,13 @@ install: installcontent installoverrides
 # to the NWN install directory.
 installcontent:
 	@echo Installing PRC files
-	@copy /y "$(HAK)" "$(NWN_HAK)" >nul
-	@copy /y "$(ERF)" "$(NWN_ERF)" >nul
+	-@copy /y "$(HAK)" "$(NWN_HAK)" >nul
+	-@copy /y "$(ERF)" "$(NWN_ERF)" >nul
 	@copy /y "$(TLK)" "$(NWN_TLK)" >nul
+	-@copy /y "$(SCRIPTSHAK)" "$(NWN_HAK)" >nul
+	-@copy /y "$(2DASHAK)" "$(NWN_HAK)" >nul
+	-@copy /y "$(MISCHAK)" "$(NWN_HAK)" >nul
+	-@copy /y "$(TEXTURESHAK)" "$(NWN_HAK)" >nul
 
 # Rule to install all the override files.  This one is a bit tricky, the '!'
 # operator tells nmake to run the rule once for each target, and $** will
@@ -137,11 +155,28 @@ installcontent:
 installoverrides: $(OVERRIDEFILES)
 	!@copy /y "$**" "$(NWN_OVERRIDE)" >nul
 
+# Rules to install content in NWN end here
+#################################################################################
 
+
+#
+# Rules to build the final targets
+#
+
+# This rule builds the 2.0 RAR, commented out for now
+#$(RAR): $(SCRIPTSHAK) $(2DASHAK) $(TEXTURESHAK) $(MISCHAK) \
+#	$(OVERRIDEFILES) $(TLK) $(README) 
+#	@echo $(@F)
+#	-@del "$@" 2>nul
+#	@"$(RARCOMPILER)" a -ep -inul $@ $**
+
+
+# Rule to build the ship RAR.	
 $(RAR): $(HAK) $(ERF) $(OVERRIDEFILES) $(TLK) $(README)
 	@echo $(@F)
 	-@del "$@" 2>nul
 	@"$(RARCOMPILER)" a -ep -inul $@ $**
+
 
 # Rule to build the ERF file.  Currently script source and object files are
 # going here.
@@ -158,8 +193,39 @@ $(HAK): $(2DAS) $(GFX) $(OTHERS)
 	@"$(ERFCOMPILER)" -c $@ $**
 
 
+# Rule to build the 2.0 scripts HAK file.
+$(SCRIPTSHAK): $(OBJS) $(SCRIPTS)
+	@echo $(@F)
+	-@del "$@" 2>nul
+	@"$(ERFCOMPILER)" -c $@ $**
+
+
+# Rule to build the 2.0 2das HAK file.
+$(2DASHAK): $(2DAS)
+	@echo $(@F)
+	-@del "$@" 2>nul
+	@"$(ERFCOMPILER)" -c $@ $**
+
+
+# Rule to build the 2.0 textures HAK file.
+$(TEXTURESHAK): $(GFX)
+	@echo $(@F)
+	-@del "$@" 2>nul
+	@"$(ERFCOMPILER)" -c $@ $**
+
+
+# Rule to build the 2.0 misc HAK file.
+$(MISCHAK): $(OTHERS) 
+	@echo $(@F)
+	-@del "$@" 2>nul
+	@"$(ERFCOMPILER)" -c $@ $**
+
+
+#
 # Rule to add makefile dependencies.  This will run makedep to build the include
-# file dependencies for all source files that get built to object files.
+# file dependencies for all source scripts files that get built to object files
+# (i.e. it ignores include scripts files).
+#
 depends: $(OBJS)
 	@echo Updating dependencies
 	@tools\makedep -a -w -n -l -s$(SRCPATH) -i$(SRCPATH) -o$(MAKEFILE) $**
@@ -172,5 +238,6 @@ depends: $(OBJS)
  	-@del "$(MAKEDIR)\$(@R).ndb" 2>nul
 
 
-# Depends updates will go here.
+#################################################################################
+# Depends updates will go here. DO NOT ADD ANYTING BELOW THIS LINE!
 
