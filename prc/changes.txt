@@ -18,4 +18,12 @@
 - Trap the soul spell added.
 - Changed TLK for new additions.
 ---------End Shane Hennessy
+28/01/2004
+---------Begin Shane Hennessy
+- Fixed lich demilich level up bug
+- Fixed fire shield and body of flame to be target self only
+- fixed Disc of Meph prereqs to include disciple of darkness
+- added hamatula blueprint creature (not a model, uses the troll shaman)
+- fixed hellfire to do proper damage
+---------End Shane Hennessy
 
