@@ -51,6 +51,8 @@ void EvalPRCFeats(object oPC)
     if(iElemSavant > 0)                                         ExecuteScript("prc_elemsavant", oPC);
     if(GetLevelByClass(CLASS_TYPE_HEARTWARDER,oPC) > 0)         ExecuteScript("prc_heartwarder", oPC);
     if(GetLevelByClass(CLASS_TYPE_STORMLORD,oPC) > 0)           ExecuteScript("prc_stormlord", oPC);
+    if(GetLevelByClass(CLASS_TYPE_PNP_SHIFTER ,oPC) > 0)        ExecuteScript("prc_shifter", oPC);
+    if(GetLevelByClass(CLASS_TYPE_KNIGHT_CHALICE,oPC) > 0)      ExecuteScript("prc_knghtch", oPC);
 }
 
 
@@ -272,29 +274,7 @@ int BlastInfidelOrFaithHeal(object oCaster, object oTarget, int iEnergyType, int
 /*
 int MyPRCGetRacialType(object oCreature)
 {
-    // Determine if they have a class that makes them another racial type
-    // level 4 lich is undead
-    if (GetLevelByClass(CLASS_TYPE_LICH,oCreature) >= 4)
-        return RACIAL_TYPE_UNDEAD;
-    if (GetLevelByClass(CLASS_TYPE_MONK,oCreature) >= 20)
-        return RACIAL_TYPE_OUTSIDER;
-    if (GetLevelByClass(CLASS_TYPE_OOZEMASTER,oCreature) >= 10)
-        return RACIAL_TYPE_OOZE;
-    if (GetLevelByClass(CLASS_TYPE_DRAGONDISCIPLE,oCreature) >= 10)
-        return RACIAL_TYPE_DRAGON;
-    if (GetLevelByClass(CLASS_TYPE_ACOLYTE,oCreature) >= 10)
-        return RACIAL_TYPE_OUTSIDER;
-    if (GetLevelByClass(CLASS_TYPE_ES_FIRE,oCreature) >= 10)
-        return RACIAL_TYPE_ELEMENTAL;
-    if (GetLevelByClass(CLASS_TYPE_ES_COLD,oCreature) >= 10)
-        return RACIAL_TYPE_ELEMENTAL;
-    if (GetLevelByClass(CLASS_TYPE_ES_ELEC,oCreature) >= 10)
-        return RACIAL_TYPE_ELEMENTAL;
-    if (GetLevelByClass(CLASS_TYPE_ES_ACID,oCreature) >= 10)
-        return RACIAL_TYPE_ELEMENTAL;
-    if (GetLevelByClass(CLASS_TYPE_HEARTWARDER,oCreature) >= 10)
-        return RACIAL_TYPE_FEY;
-    return GetRacialType(oCreature);
+	THIS CODE IS IN prc_alteration
 } */
 
 void CheckSpecialPRCRecs(object oPC)

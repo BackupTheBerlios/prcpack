@@ -416,7 +416,7 @@ int CreateRecipeFromItem(object oItem, object oPC)
     while (sRecipeTag == "NULL")
     {
         string sItemResRefRead = Get2DAString(sItemIreqFile,"L_RESREF",i);
-        SendMessageToPC(oPC,"reading "+sItemResRefRead);
+        //SendMessageToPC(oPC,"reading "+sItemResRefRead);
         if (sItemResRefRead == sItemResRef)
         {
             SendMessageToPC(oPC,"Found item in file");
@@ -432,7 +432,7 @@ int CreateRecipeFromItem(object oItem, object oPC)
         else if (sItemResRefRead == "")
         {
             //end of file
-            SendMessageToPC(oPC,"no item in file, i= "+IntToString(i)+ " item resref = "+sItemResRef);
+            //SendMessageToPC(oPC,"no item in file, i= "+IntToString(i)+ " item resref = "+sItemResRef);
             return FALSE;
         }
         i++;

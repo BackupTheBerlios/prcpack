@@ -2164,6 +2164,9 @@ int SetShiftFromTemplate(object oPC, string sTemplate)
     int bRetValue = SetShift(oPC,oTarget);
 
     // Remove the temporary creature
+    SetIsDestroyable(TRUE,FALSE,FALSE);
+    SetPlotFlag(oTarget,FALSE);
+    SetImmortal(oTarget,FALSE);
     DestroyObject(oTarget);
 
     return bRetValue;
