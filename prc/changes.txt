@@ -68,3 +68,8 @@
 ---------Begin Stratovarius
 - Various bugfixes and edits to different scripts and 2das to prepare the pack for release of 1.9.
 ---------End Stratovarius
+19/02/2004
+---------Begin Zedium
+- Added new skill list for the standard bioware classes, it makes Perform a normal skill, so you can create things like
+a rogue/Duelist and other classes that require perform. I suggest everyone updates their own classes to also have this change.
+---------End Zedium
