@@ -4,13 +4,17 @@
 //:://////////////////////////////////////////////
 /*
     Target loses 2d4 levels.
+    Undead gain 2d4x5 HP for one hour.
 */
 //:://////////////////////////////////////////////
 //:: Created By: James Tallet
 //:: Created On: Mar 4, 2004
 //:://////////////////////////////////////////////
 
+
+#include "prc_alterations"
 #include "NW_I0_SPELLS"
+#include "strat_prc_inc"
 #include "x2_inc_spellhook"
 
 void main()
@@ -24,9 +28,18 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
     int nDrain = d4(2);
     effect eDrain = EffectNegativeLevel(nDrain);
     eDrain = SupernaturalEffect(eDrain);
-    if(!GetIsReactionTypeFriendly(oTarget))
+
+    //Undead Gain HP from Energy Drain
+    int nHP = d4(2);
+    nHP = nHP + nHP + nHP + nHP +nHP;
+    effect eHP = EffectTemporaryHitpoints(nHP);
+
+    if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
     {
-        //Fire cast spell at event for the specified target
+        ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eHP, oTarget, HoursToSeconds(1));
+    }
+    else
+    {
         SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_ENERGY_DRAIN));
         if(!MySavingThrow(SAVING_THROW_FORT, oTarget, (GetSpellSaveDC()+ GetChangesToSaveDC(OBJECT_SELF)), SAVING_THROW_TYPE_NEGATIVE))
             {
