@@ -34,19 +34,23 @@ Stratovarius:
 - Blood Magus - TLK and Scripts remaining
 - Diabolist - TLK and Scripts remaining
 - Fist of Hextor - TLK and Scripts remaining
-- Lasher - Unstarted
-- Order of the Bow Initiate - Unstarted
 - Purple Dragon Knight - TLK and Scripts remaining
 - Red Wizard of Thay - TLK and Scripts remaining
 - True Necromancer - TLK and Scripts remaining
+- Lasher - Unstarted
+- Order of the Bow Initiate - Unstarted
+- Peerless Archer - Unstarted
+- Arachnae - Unstarted
+- Disciple of Orcus - Unstarted
+- One more that I can't remember - Unstarted
 
 - Add SoulTaker's PrCs to the CVS - Complete with help from Midnight
-- Get 1.9 ready for release - Needs final beta test and compile for release.
+- Get 1.9 ready for release - In Final Beta.
 
 Zedium:
 - Vassal of Bahamut (Just tlk done for now)
 - Several Exalted and Vile feats if approved.
 
 Midnight Voyager:
--Bring fear into the hearts of- ...er... Give all members a gentle prodding to work
--QUality Control (Need full TLK for this, inevitably)
+- Bring fear into the hearts of- ...er... Give all members a gentle prodding to work
+- Quality Control (Need full TLK for this, inevitably)
