@@ -1,0 +1,12 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Robe_of_the_Archmagi_Black     RESULT      nw_mcloth004       ****
+1    CasterLevel14th                CASTERLVL   14                 ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Mage_Armor                     SPELL       102                ****        
+4    Bless                          SPELL       6                  ****        
+5    Spell_Resistance               SPELL       168                ****        
+6    Lawful_Evil                    ALIGN       LE                 ****        
+7    Neutral_Evil                   ALIGN       NE                 ****        
+8    Chaotic_Evil                   ALIGN       CE                 ****        

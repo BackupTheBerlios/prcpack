@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Gloves_of_Dexterity_1          RESULT      nw_it_mbracer001   ****
+1    CasterLevel8th                 CASTERLVL   8                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Cats_Grace                     SPELL       13                 ****        

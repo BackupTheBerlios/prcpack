@@ -1,0 +1,9 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Eyes_of_Doom                   RESULT      x0_armhe004        ****
+1    CasterLevel11th                CASTERLVL   11                 ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Doom                           SPELL       46                 ****        
+4    Deathwatch                     ****        ****               ****        
+5    Fear                           SPELL       54                 ****        

@@ -1,0 +1,8 @@
+2DA V2.0
+
+     LABEL                                    ReqType     ReqParam1          ReqParam2   
+0    Elixir_of_Horus-Re                       RESULT      x0_it_mmedmisc02   ****        
+1    CasterLevel13th                          CASTERLVL   13                 ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+3    Daylight                                 ****        ****               ****        
+4    Sunbeam                                  SPELL       183                ****        

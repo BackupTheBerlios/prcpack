@@ -1,0 +1,9 @@
+2DA V2.0
+
+     LABEL                           ReqType     ReqParam1          ReqParam2   
+0    Cape_of_Winter                  RESULT      x0_maarcl039       ****
+1    CasterLevel5th                  CASTERLVL   5                  ****        
+2    Craft_Wondrous_Item_Feat        FEAT        2502               ****        
+3    Endure_Elements                 SPELL       50                 ****        
+4    Resistance                      SPELL       151                ****        
+5    Level_6                         LEVEL       6                  ****        

@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1        ReqParam2   
+0    Boots_of_Elvenkind             RESULT      nw_it_mboots002  ****
+1    CasterLevel9th                 CASTERLVL   9                ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502             ****        
+3    Elf                            RACE        1                ****        

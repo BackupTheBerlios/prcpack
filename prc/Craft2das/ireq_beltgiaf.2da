@@ -1,0 +1,7 @@
+2DA V2.0
+
+      LABEL                         ReqType     ReqParam1        ReqParam2   
+0     Belt_of_Giant_Strength_Frost  RESULT      nw_it_mbelt007   ****        
+1     Caster_Level_10th             CASTERLVL   10               ****        
+2     CraftWondrousItem             FEAT        2502             ****        
+3     Bulls_Strength                SPELL       9                ****        

@@ -1,0 +1,9 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Helm_of_Darkness               RESULT      x0_armhe017        ****
+1    CasterLevel13th                CASTERLVL   13                 ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Darkness                       SPELL       36                 ****        
+4    Negative_Energy_Protection     SPELL       125                ****        
+5    Protection_from_Elements       SPELL       137                ****        

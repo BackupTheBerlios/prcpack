@@ -1,0 +1,9 @@
+2DA V2.0
+
+     LABEL                                    ReqType     ReqParam1          ReqParam2   
+0    Janthras_Harp                            RESULT      x0_it_mmedmisc05   ****        
+1    CasterLevel6th                           CASTERLVL   6                  ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+3    Invisibility_Sphere                      SPELL       92                 ****        
+6    Pass_Without_Trace                       ****        ****               ****        
+7    Masterwork_Harp                          ****        ****               ****        

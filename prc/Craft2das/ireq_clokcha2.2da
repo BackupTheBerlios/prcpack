@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Cloak_of_Charisma_2            RESULT      nw_maarcl092       ****
+1    CasterLevel8th                 CASTERLVL   8                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Charm_Monster                  SPELL       15                 ****        

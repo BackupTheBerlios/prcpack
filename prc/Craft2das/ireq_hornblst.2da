@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Horn_of_Blasting               RESULT      x0_it_mthnmisc08   ****        
+1    CasterLevel7th                 CASTERLVL   7                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Sound_Burst                    SPELL       167                ****        

@@ -1,0 +1,11 @@
+2DA V2.0
+
+     LABEL                                    ReqType     ReqParam1          ReqParam2   
+0    Inst_of_the_Bards_Fochluchan_Bandore     RESULT      x0_it_mmedmisc03   ****        
+1    CasterLevel14th                          CASTERLVL   14                 ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+3    Greater_Dispelling                       SPELL       67                 ****        
+4    Healing_Circle                           SPELL       100                ****        
+5    Mind_Fog                                 SPELL       118                ****        
+6    Bard                                     CLASS       1                  ****        
+7    Masterwork_Harp                          ****        ****               ****        

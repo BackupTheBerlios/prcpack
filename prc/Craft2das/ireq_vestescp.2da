@@ -1,0 +1,8 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Vest_of_Escape                 RESULT      x0_cloth004        ****
+1    CasterLevel11th                CASTERLVL   11                 ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Knock                          SPELL       93                 ****        
+4    Grease                         SPELL       66                 ****        

@@ -1,0 +1,7 @@
+2DA V2.0
+
+      LABEL                         ReqType     ReqParam1        ReqParam2   
+0     Necklace_of_Fireballs         RESULT      x0_it_mneck002   ****        
+1     Caster_Level_10th             CASTERLVL   10               ****        
+2     CraftWondrousItem             FEAT        2502             ****        
+3     Fireball                      SPELL       58               ****        

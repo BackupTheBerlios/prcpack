@@ -1,0 +1,12 @@
+2DA V2.0
+
+     LABEL                                    ReqType     ReqParam1          ReqParam2   
+0    Inst_of_the_Bards_Fochluchan_Bandore     RESULT      x0_it_mthnmisc15   ****        
+1    CasterLevel3rd                           CASTERLVL   3                  ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+3    Flare                                    ****        ****               ****        
+4    Light                                    SPELL       100                ****        
+5    Mending                                  ****        ****               ****        
+6    Message                                  ****        ****               ****        
+7    Bard                                     CLASS       1                  ****        
+8    Masterwork_Lute                          ****        ****               ****        

@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Ring_of_Freedom                RESULT      x0_it_mring006     ****
+1    CasterLevel11th                CASTERLVL   11                 ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    True_Seeing                    SPELL       62                 ****        

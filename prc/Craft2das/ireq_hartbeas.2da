@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                                    ReqType     ReqParam1          ReqParam2   
+0    Heart_of_the_Beast                       RESULT      x0_it_msmlmisc06   ****        
+1    CasterLevel10th                          CASTERLVL   10                 ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+3    Divine_Power                             SPELL       42                 ****        

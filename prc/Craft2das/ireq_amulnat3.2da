@@ -1,0 +1,7 @@
+2DA V2.0
+
+      LABEL                         ReqType     ReqParam1        ReqParam2   
+0     Amulet_of_Natural_Armor_3     RESULT      nw_it_mneck013   ****        
+1     Caster_Level_9th              CASTERLVL   9                ****        
+2     CraftWondrousItem             FEAT        2502             ****        
+3     Barkskin                      SPELL       3                ****        

@@ -49,6 +49,7 @@ module.Hak : prc_2das.hak
 module.Hak : prc_scripts.hak
 module.Hak : prc_textures.hak
 module.Hak : prc_misc.hak
+module.Hak : prc_craft2das.hak
 
 # Custom tlk used by the prc pack.
 module.CustomTlk : prc_consortium.tlk

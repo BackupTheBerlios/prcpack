@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Bracers_of_Archery             RESULT      x0_it_mbracer001   ****
+1    CasterLevel4th                 CASTERLVL   4                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Craft_Magic_Arms_Armor_Feat    FEAT        2504               ****        

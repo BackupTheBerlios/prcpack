@@ -1,0 +1,8 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Cowl_of_Warding                RESULT      x0_armhe015        ****
+1    CasterLevel15th                CASTERLVL   15                 ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Freedom_of_Movement            SPELL       62                 ****        
+4    Mind_Blank                     SPELL       117                ****        

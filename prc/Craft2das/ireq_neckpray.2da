@@ -1,0 +1,10 @@
+2DA V2.0
+
+      LABEL                         ReqType     ReqParam1        ReqParam2   
+0     Necklace_of_Prayer_Beads      RESULT      nw_it_mneck003   ****        
+1     Caster_Level_17th             CASTERLVL   17               ****        
+2     CraftWondrousItem             FEAT        2502             ****        
+3     Bless                         SPELL       6                ****        
+4     Cure_Serious_Wounds           SPELL       35               ****        
+5     Remove_Blindness_Deafness     SPELL       145              ****        
+6     Remove_Disease                SPELL       147              ****        

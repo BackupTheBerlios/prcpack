@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Goggles_of_Night               RESULT      x0_armhe008        ****
+1    CasterLevel3rd                 CASTERLVL   3                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Darkvision                     SPELL       ****               ****        

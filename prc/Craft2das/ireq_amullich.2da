@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                           ReqType     ReqParam1          ReqParam2   
+0    Lich_Phylactery_1               RESULT      lichamulet         ****
+1    CasterLevel11                   CASTERLVL   11                 ****        
+2    Craft_Wondrous_Item_Feat        FEAT        2502               ****        
+3    ExtraGold			     EXTRAGOLD   40000              ****        

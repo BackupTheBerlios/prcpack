@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Cloak_of_Displacement          RESULT      x0_maarcl032       ****
+1    CasterLevel4th                 CASTERLVL   4                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Displacement                   SPELL       458                ****        

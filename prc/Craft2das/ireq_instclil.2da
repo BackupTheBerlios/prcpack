@@ -1,0 +1,11 @@
+2DA V2.0
+
+     LABEL                                    ReqType     ReqParam1          ReqParam2   
+0    Inst_of_the_Bards_Cli_Lyre               RESULT      x0_it_mthnmisc19   ****        
+1    CasterLevel11th                          CASTERLVL   11                 ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+3    Haste                                    SPELL       78                 ****        
+4    Remove_Curse                             SPELL       146                ****        
+5    Sound_Burst                              SPELL       167                ****        
+6    Bard                                     CLASS       1                  ****        
+7    Masterwork_Lyre                          ****        ****               ****        

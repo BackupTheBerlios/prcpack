@@ -1,0 +1,8 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Bracers_of_Blinding_Strike     RESULT      x0_it_mbracer002   ****
+1    CasterLevel12th                CASTERLVL   12                 ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Mage_Armor                     SPELL       102                ****        
+4    Haste                          SPELL       78                 ****        

@@ -61,6 +61,7 @@ SCRIPTSHAK		= $(OUTPATH)\prc_scripts.hak
 2DASHAK			= $(OUTPATH)\prc_2das.hak
 MISCHAK			= $(OUTPATH)\prc_misc.hak
 TEXTURESHAK		= $(OUTPATH)\prc_textures.hak
+CRAFT2DASHAK		= $(OUTPATH)\prc_craft2das.hak
 
 
 # This variable contains all of the files that need to be installed in the
@@ -85,6 +86,7 @@ ERFFILESPATH		= $(MAKEERFPATH)
 OBJPATH			= $(MAKEOBJSPATH)
 SRCPATH			= $(MAKESCRIPTPATH)
 TLKPATH			= $(MAKETLKPATH)
+CRAFT2DASPATH		= $(MAKECRAFT2DASPATH)
 
 
 # Paths for the various folders in the NWN install directory.
@@ -111,6 +113,8 @@ GFX=~~~gfx~~~
 
 OTHERS=~~~others~~~
 
+CRAFT2DAS=~~~craft2das~~~
+
 
 #
 # Top level virtual rules that just associate pretty text names with various
@@ -130,7 +134,7 @@ hak110: $(ERF110) $(HAK) install
 
 
 # Rule to build the 2.0 haks
-hak: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) $(ERF) install 
+hak: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) $(ERF) $(CRAFT2DASHAK) install 
 
 
 #################################################################################
@@ -150,6 +154,7 @@ installcontent:
 	-@copy /y "$(2DASHAK)" "$(NWN_HAK)" >nul
 	-@copy /y "$(MISCHAK)" "$(NWN_HAK)" >nul
 	-@copy /y "$(TEXTURESHAK)" "$(NWN_HAK)" >nul
+	-@copy /y "$(CRAFT2DASHAK)" "$(NWN_HAK)" >nul
 
 # Rule to install all the override files.  This one is a bit tricky, the '!'
 # operator tells nmake to run the rule once for each target, and $** will
@@ -168,7 +173,7 @@ installoverrides: $(OVERRIDEFILES)
 
 # This rule builds the 2.0 RAR, commented out for now
 $(RAR): $(SCRIPTSHAK) $(2DASHAK) $(TEXTURESHAK) $(MISCHAK) $(ERF) \
-	$(OVERRIDEFILES) $(TLK) $(README) $(MISCRESOURCES) 
+	$(OVERRIDEFILES) $(TLK) $(README) $(MISCRESOURCES) $(CRAFT2DASHAK)
 	@echo $(@F)
 	-@del "$@" 2>nul
 	@"$(RARCOMPILER)" a -ep -inul $@ $**
@@ -191,7 +196,7 @@ $(RAR): $(SCRIPTSHAK) $(2DASHAK) $(TEXTURESHAK) $(MISCHAK) $(ERF) \
 
 
 # Rule to build the HAK file.
-$(HAK): $(2DAS) $(GFX) $(OTHERS) 
+$(HAK): $(2DAS) $(GFX) $(OTHERS) $(CRAFT2DAS) 
 	@echo $(@F)
 	-@del "$@" 2>nul
 	@"$(ERFCOMPILER)" -c $@ $**
@@ -232,6 +237,12 @@ $(MISCHAK): $(OTHERS)
 	-@del "$@" 2>nul
 	@"$(ERFCOMPILER)" -c $@ $**
 
+
+# Rule to build the 2.0 craft HAK file.
+$(CRAFT2DASHAK): $(CRAFT2DAS) 
+	@echo $(@F)
+	-@del "$@" 2>nul
+	@"$(ERFCOMPILER)" -c $@ $**
 
 #
 # Rule to add makefile dependencies.  This will run makedep to build the include

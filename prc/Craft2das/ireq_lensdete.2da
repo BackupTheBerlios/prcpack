@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Lens_of_Detection              RESULT      x0_it_mthnmisc11   ****        
+1    CasterLevel5th                 CASTERLVL   5                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    True_Seeing                    SPELL       186                ****        

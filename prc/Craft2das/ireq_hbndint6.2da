@@ -1,0 +1,7 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Headband_of_Intellect_6        RESULT      x0_armhe011        ****
+1    CasterLevel8th                 CASTERLVL   8                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Legend_Lore                    SPELL       376                ****        

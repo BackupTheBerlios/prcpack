@@ -1,0 +1,9 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Gauntlet_of_Fury               RESULT      x0_it_mglove005    ****
+1    CasterLevel6th                 CASTERLVL   6                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Mage_Armor                     SPELL       102                ****        
+3    Magic_Missile                  SPELL       107                ****        
+3    Isaacs_Greater_Missile_Storm   SPELL       448                ****        

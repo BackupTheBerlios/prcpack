@@ -1,0 +1,9 @@
+2DA V2.0
+
+     LABEL                          ReqType     ReqParam1          ReqParam2   
+0    Harp_of_Charming               RESULT      nw_it_mmidmisc01   ****        
+1    CasterLevel5th                 CASTERLVL   5                  ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+3    Charm_Monster                  SPELL       15                 ****        
+3    Charm_Person_or_Animal         SPELL       17                 ****        
+3    Mass_Charm                     SPELL       111                ****        
