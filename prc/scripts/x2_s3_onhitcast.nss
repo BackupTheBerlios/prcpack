@@ -43,7 +43,7 @@ void main()
    oSpellTarget = GetSpellTargetObject();
    oItem        =  GetSpellCastItem();
 
-   nVassal = GetLevelByClass(CLASS_TYPE_VASSAL,OBJECT_SELF);
+   //nVassal = GetLevelByClass(CLASS_TYPE_VASSAL,OBJECT_SELF);
 
 
    if (GetIsObjectValid(oItem))

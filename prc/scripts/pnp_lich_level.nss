@@ -16,6 +16,8 @@
 // Called by the EvalPRC function
 
 #include "pnp_lich_inc"
+#include "NW_I0_GENERIC"
+
 
 void LichLevelUpVFX(object oPC)
 {
@@ -34,6 +36,12 @@ void main()
     // being called by EvalPRCFeats
     object oPC = OBJECT_SELF;
     int nLichLevel = GetLevelByClass(CLASS_TYPE_LICH,oPC);
+
+    // If they are polymorphed dont run this code
+    // this should fix the HOTU sensi amulet bug
+    if (GetHasEffect(EFFECT_TYPE_POLYMORPH,oPC))
+        return;
+
 
     //************************************************
     // Lich items
