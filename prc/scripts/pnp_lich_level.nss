@@ -140,7 +140,7 @@ void main()
                 if (nNumSoulGems+4 < nLowestHideLevel)
                     nLowestHideLevel = nNumSoulGems+4;
                 if (nHideLevel < nLowestHideLevel)
-                    LevelUpHide(oPC, oHide, nAmuletLevel);
+                    LevelUpHide(oPC, oHide, nLowestHideLevel);
             }
             break;
         case 10:
@@ -169,7 +169,7 @@ void main()
                 if (nLowestHideLevel >= 10)
                     nLowestHideLevel = 9;
                 if (nHideLevel < nLowestHideLevel)
-                    LevelUpHide(oPC, oHide, nAmuletLevel);
+                    LevelUpHide(oPC, oHide, nLowestHideLevel);
             }
             break;
     }
