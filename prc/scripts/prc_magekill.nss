@@ -10,7 +10,7 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
+#include "prc_feat_const"
 
 // * Applies the Mage Killer's saving throw bonuses as CompositeBonuses on the object's skin.
 // * Currently only valid for Fortitude and Reflex saves.

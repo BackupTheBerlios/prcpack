@@ -12,9 +12,7 @@
 //:://////////////////////////////////////////////
 #include "x2_inc_switches"
 #include "x2_inc_intweapon"
-#include "strat_prc_inc"
 #include "inc_item_props"
-//#include "inc_prc_function" - Inherited from x2_inc_intweapon->nw_i0_spells
 
 void PrcFeats(object oPC)
 {

@@ -10,7 +10,7 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
+#include "prc_feat_const"
 
 // * Applies the damage bonuses for Daemonslaying
 // * Uses multiple damage types, since constance do not exist for

@@ -11,7 +11,7 @@
 //:://////////////////////////////////////////////
 
 #include "x2_inc_spellhook"
-#include "discipleinclude"
+#include "prc_feat_const"
 void main()
 {
     //Declare major variables

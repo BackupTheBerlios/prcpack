@@ -13,7 +13,6 @@
 // alter self for the lich
 
 #include "pnp_shifter"
-#include "strat_prc_inc"
 
 
 void main()

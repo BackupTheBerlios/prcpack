@@ -12,12 +12,9 @@
 //  Aaon Graywolf - Jan 6, 2004
 
 
-#include "prc_dg_inc"
-#include "strat_prc_inc"
-#include "discipleinclude"
+
 #include "x2_inc_switches"
-#include "x2_inc_intweapon"
-#include "inc_prc_function"
+#include "prc_inc_function"
 
 void main()
 {

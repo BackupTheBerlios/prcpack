@@ -1,5 +1,3 @@
-#include "prc_dg_inc"
-
 #include "X0_I0_SPELLS"
 #include "prc_alterations"
 #include "x2_inc_spellhook"

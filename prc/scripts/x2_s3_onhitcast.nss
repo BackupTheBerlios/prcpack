@@ -28,7 +28,7 @@
 //:://////////////////////////////////////////////
 
 #include "x2_inc_switches"
-#include "heartward_inc"
+#include "prc_feat_const"
 
 void main()
 {

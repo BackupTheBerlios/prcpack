@@ -6,7 +6,8 @@
  * Lockindal Linantal
  */
 
-#include "strat_prc_inc"
+#include "prc_class_const"
+#include "prc_feat_const"
 
 void main()
 {

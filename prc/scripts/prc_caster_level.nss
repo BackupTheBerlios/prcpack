@@ -1,248 +1,200 @@
-#include "prc_dg_inc"
-#include "strat_prc_inc"
-#include "discipleinclude"
-#include "inc_prc_function"
-#include "heartward_inc"
+/*
+New function
+Split in different logical places. All scripts should be in their logical spot
+for optimum performance.
+
+Usually, you only need to add things in 1 of 2 places. These are marked
+by a lot of green stuff around them
+
+Heavily modified by Kaltor, mar 30 2004
+*/
+
+
+#include "prc_feat_const"
+#include "prc_class_const"
 #include "lookup_2da_spell"
 
-//Added code to correct problems in Hierophant spell-like abilities.
-//Aaon Graywolf - 6 Jan 2004
 
-int bArcane(int nCastingClass);
-int bDivine(int nCastingClass);
-int bIsFirstArcaneClass(int nCastingClass, object oCaster = OBJECT_SELF);
-int bIsFirstDivineClass(int nCastingClass, object oCaster = OBJECT_SELF);
-
+int IsArcaneClass(int nClass);
+int IsDivineClass(int nClass);
 
 
 void main()
 {
-// prevents any prc levels from being added to the cast level of a wand or scroll.
-if(GetSpellCastItem() != OBJECT_INVALID)
-{
-return;
-}
+    if(GetSpellCastItem() != OBJECT_INVALID)
+        return;
 
-object oCaster = OBJECT_SELF;
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-// This is the section where you declare any + 1 caster level prc's and the amount
-// of casting levels they should add
-//////////////////////////////////////////////////////////////////////////////////
-
-
-
-// Determine how many caster levels of Pale Master are added to oCaster's arcane spells.
-int nPaleMasterLevels = GetLevelByClass(CLASS_TYPE_PALEMASTER, oCaster);
-if(nPaleMasterLevels > 0) nPaleMasterLevels = (nPaleMasterLevels - 1) / 2 + 1;
-
-/******************* DarkGod PrC ********************/
-
-/* Archmages */
-int nArchmageLevels = GetLevelByClass(CLASS_TYPE_ARCHMAGE, oCaster);
-
-/* Spell Power feats */
-int nSpellPowerLevels = 0;
-if (GetHasFeat(FEAT_SPELL_POWER_V)) nSpellPowerLevels = 5;
-else if (GetHasFeat(FEAT_SPELL_POWER_IV)) nSpellPowerLevels = 4;
-else if (GetHasFeat(FEAT_SPELL_POWER_III)) nSpellPowerLevels = 3;
-else if (GetHasFeat(FEAT_SPELL_POWER_II)) nSpellPowerLevels = 2;
-else if (GetHasFeat(FEAT_SPELL_POWER_I)) nSpellPowerLevels = 1;
-
-/* Oozemasters */
-int nOozemasterLevels = GetLevelByClass(CLASS_TYPE_OOZEMASTER, oCaster) / 2;
-
-/******************* Stratovarius PrC ********************/
-
-int nMageKillerLevels = GetLevelByClass(CLASS_TYPE_MAGEKILLER, oCaster);
-int nHarperLevels = GetLevelByClass(CLASS_TYPE_HARPERMAGE, oCaster);
-int nSpellswordLevels = GetLevelByClass(CLASS_TYPE_SPELLSWORD, oCaster) / 2;
-int nAcolyteLevels = GetLevelByClass(CLASS_TYPE_ACOLYTE, oCaster) / 2;
-int nEldritchLevels = GetLevelByClass(CLASS_TYPE_ELDRITCH_KNIGHT, oCaster);
-int nFireLevels = GetLevelByClass(CLASS_TYPE_ES_FIRE, oCaster);
-int nColdLevels = GetLevelByClass(CLASS_TYPE_ES_COLD, oCaster);
-int nElecLevels = GetLevelByClass(CLASS_TYPE_ES_ELEC, oCaster);
-int nAcidLevels = GetLevelByClass(CLASS_TYPE_ES_ACID, oCaster);
-int nMastHarpLevels = GetLevelByClass(CLASS_TYPE_MASTER_HARPER, oCaster);
-int nFireAdept = GetHasFeat(FEAT_FIRE_ADEPT, oCaster);
-
-
-int nHeartWLevels = GetLevelByClass(CLASS_TYPE_HEARTWARDER, oCaster);
-int nStormlord    = GetLevelByClass(CLASS_TYPE_STORMLORD, oCaster);
-int nFistRaziel   = GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster);
-int nMasterShroud = GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oCaster);
-int nHospitaler = GetLevelByClass(CLASS_TYPE_HOSPITALER, oCaster);
-
-
-/******************* True Necromancer ********************/
-
-    int nTrueNecroArcLevels;
-    int nTrueNecroDivLevels;
-    int nTrueNecroLevels;
-    nTrueNecroLevels = GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
-    string school = lookup_spell_school(GetSpellId());
-        if (school == "N")
-        {
-        nTrueNecroArcLevels = GetLevelByClass(CLASS_TYPE_CLERIC, oCaster);
-        nTrueNecroDivLevels = GetLevelByClass(CLASS_TYPE_WIZARD, oCaster);
-        nTrueNecroDivLevels = nTrueNecroLevels + nTrueNecroDivLevels;
+    int nPrevious = GetLocalInt(OBJECT_SELF, "LastCalcuAddonCL");
+    if(nPrevious>0){
+        SetLocalInt(OBJECT_SELF,"X2_L_LAST_RETVAR", nPrevious);
+        return;
         }
 
 
 
-
-/////////////////////////////////////////////////////////////////////////////////
-// INSTRUCTIONS
-//
-// If you want to add more +1 caster level prc's, declare them above
-// and sort out the exact number of caster levels each one should add
-// then add that amount to the appropriate category below.
-// -> either add the amount to nArcaneCastLevels or to nDivineCastLevels, depending
-//    on which kind of class it affects.
-//////////////////////////////////////////////////////////////////////////////////
+    //------------------------------------------------------------------
+    //FEW VARIABLES WELL NEED
+    object oCaster = OBJECT_SELF;
+    int nCastingClass = GetLastSpellCastClass();
+    int nFirstClass = GetClassByPosition(1, oCaster);
+    int nArcaneAddon = 0;
+    int nDivineAddon = 0;
 
 
-int nArcaneCastLevels = nArchmageLevels +
-                        nSpellPowerLevels +
-                        nMageKillerLevels +
-                        nAcolyteLevels +
-                        nEldritchLevels +
-                        nHarperLevels +
-                        nSpellswordLevels +
-                        nFireLevels + nAcidLevels + nColdLevels + nElecLevels +
-                        nPaleMasterLevels + nFireAdept +
-                        nMastHarpLevels +
-                        nTrueNecroLevels +
-                        nTrueNecroArcLevels; // + n<levels from any other arcane prc you define>;
-
-int nDivineCastLevels = nHeartWLevels +
-                        nStormlord +
-                        nFistRaziel +
-                        nMasterShroud +
-                        nHospitaler +
-                        nTrueNecroDivLevels; // + n<levels from any divine prc you define>;
-
-/* Find which class to add levels to for Oozemasters */
-if (bArcane(GetClassByPosition(1, oCaster)) || bDivine(GetClassByPosition(1, oCaster)))
-{
-    if (bArcane(GetClassByPosition(1, oCaster)))
-        nArcaneCastLevels += nOozemasterLevels;
-    else if (bDivine(GetClassByPosition(1, oCaster)))
-        nDivineCastLevels += nOozemasterLevels;
-}
-else if (bArcane(GetClassByPosition(2, oCaster)) || bDivine(GetClassByPosition(2, oCaster)))
-{
-    if (bArcane(GetClassByPosition(2, oCaster)))
-        nArcaneCastLevels += nOozemasterLevels;
-    else if (bDivine(GetClassByPosition(2, oCaster)))
-        nDivineCastLevels += nOozemasterLevels;
-}
 
 
-///////////////////////////////////////////////////////////////////////////////////
-// This is the end of the section where you declare any +1 caster level prc's -
-//
-// - so there shouldn't be any need to alter any lines of code below this line if all
-// you're trying to do is add more prc classes.
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
 
-int nCastingClass = GetLastSpellCastClass();
+    //------------------------------------------------------------------
+    //IF ARCANE SPELL HAS BEEN CAST
+    if( IsArcaneClass(nCastingClass)){
 
-if(bArcane(nCastingClass) && nArcaneCastLevels)
-// Making sure they are using an arcane class, and there is something to be added.
-{
-    if(bIsFirstArcaneClass(nCastingClass))
-    // determine whether nCastingClass is their first arcane class.
-    {
-    int nToReturn = nArcaneCastLevels;
-    SetLocalInt(oCaster,"X2_L_LAST_RETVAR", nToReturn);
+        if( nFirstClass != nCastingClass && IsArcaneClass(nFirstClass))
+            return;
+
+        nArcaneAddon+=
+            GetLevelByClass(CLASS_TYPE_PALEMASTER, oCaster)/2+
+            GetLevelByClass(CLASS_TYPE_ARCHMAGE, oCaster)+
+            GetLevelByClass(CLASS_TYPE_MAGEKILLER, oCaster)+
+            GetLevelByClass(CLASS_TYPE_HARPERMAGE, oCaster)+
+            GetLevelByClass(CLASS_TYPE_SPELLSWORD, oCaster) / 2+
+            GetLevelByClass(CLASS_TYPE_ACOLYTE, oCaster) / 2+
+            GetLevelByClass(CLASS_TYPE_ELDRITCH_KNIGHT, oCaster)+
+            GetLevelByClass(CLASS_TYPE_ES_FIRE, oCaster)+
+            GetLevelByClass(CLASS_TYPE_ES_COLD, oCaster)+
+            GetLevelByClass(CLASS_TYPE_ES_ELEC, oCaster)+
+            GetLevelByClass(CLASS_TYPE_ES_ACID, oCaster)+
+            GetLevelByClass(CLASS_TYPE_MASTER_HARPER, oCaster)+
+            GetHasFeat(FEAT_FIRE_ADEPT, oCaster);
+
+
+            /*///////////////////////////////////////////////
+            /////////////////////////////////////////////////
+            /////////////////////////////////////////////////
+            THIS IS WHERE YOU ADD ARCANE CLASSES
+
+            simply modify the above with something looking like this:
+
+            from:
+
+            GetHasFeat(FEAT_FIRE_ADEPT, oCaster);
+
+            to:
+
+            GetHasFeat(FEAT_FIRE_ADEPT, oCaster)+
+            GetLevelByClass(MY_NEW_CLASS_TYPE, oCaster);
+
+            /////////////////////////////////////////////////
+            /////////////////////////////////////////////////
+            ///////////////////////////////////////////////*/
+
+
+
+
+
+
+        // area for CLASS-specific code. Avoid if possible
+
+        if(GetLevelByClass(CLASS_TYPE_OOZEMASTER, oCaster)){
+            if(IsArcaneClass(nFirstClass) ||
+               (!IsDivineClass(nFirstClass) && IsArcaneClass(GetClassByPosition(2, oCaster))))
+                nArcaneAddon+=GetLevelByClass(CLASS_TYPE_OOZEMASTER, oCaster) / 2;
+        }
+        if (GetHasFeat(FEAT_SPELL_POWER_I)){
+            nArcaneAddon+=1;
+            if (GetHasFeat(FEAT_SPELL_POWER_II)){
+                nArcaneAddon+=1;
+                if (GetHasFeat(FEAT_SPELL_POWER_III)){
+                    nArcaneAddon+=1;
+                    if (GetHasFeat(FEAT_SPELL_POWER_IV)){
+                        nArcaneAddon+=1;
+                        if (GetHasFeat(FEAT_SPELL_POWER_V)){
+                            nArcaneAddon+=1;
+                        }}}}
+        }
+        if(GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster)){
+            nArcaneAddon+=GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
+            if(lookup_spell_school(GetSpellId()) == "N")
+                nArcaneAddon+=GetLevelByClass(CLASS_TYPE_WIZARD, oCaster);
+        }
+    }//end of arcane spell part
+
+
+
+    //------------------------------------------------------------------
+    //IF DIVINE SPELL HAS BEEN CAST
+    else if( IsDivineClass(nCastingClass)){
+
+        if( nFirstClass != nCastingClass && IsDivineClass(nFirstClass))
+            return;
+
+        nDivineAddon+=
+            GetLevelByClass(CLASS_TYPE_HEARTWARDER, oCaster)+
+            GetLevelByClass(CLASS_TYPE_STORMLORD, oCaster)+
+            GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster)+
+            GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oCaster)+
+            GetLevelByClass(CLASS_TYPE_HOSPITALER, oCaster)+
+            GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
+
+            /*///////////////////////////////////////////////
+            /////////////////////////////////////////////////
+            /////////////////////////////////////////////////
+            THIS IS WHERE YOU ADD DIVINE CLASSES
+
+            simply modify the above with something looking like this:
+
+            from:
+
+            GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster);
+
+            to:
+
+            GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster)+
+            GetLevelByClass(MY_NEW_CLASS_TYPE, oCaster);
+
+            /////////////////////////////////////////////////
+            /////////////////////////////////////////////////
+            ///////////////////////////////////////////////*/
+
+        //class-specific code. Avoid if at all possible
+
+        if(GetLevelByClass(CLASS_TYPE_OOZEMASTER, oCaster)){
+            if(IsDivineClass(nFirstClass) ||
+               (!IsArcaneClass(nFirstClass) && IsDivineClass(GetClassByPosition(2, oCaster))))
+                nArcaneAddon+=GetLevelByClass(CLASS_TYPE_OOZEMASTER, oCaster) / 2;
+        }
+        if(GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster)){
+            nDivineAddon+=GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
+            if(lookup_spell_school(GetSpellId()) == "N")
+                nDivineAddon+=GetLevelByClass(CLASS_TYPE_CLERIC, oCaster);
+        }
+
+    }//end of divine spell part
+    else{
+        //to fix a weird hierophant bug
+        if(GetLevelByClass(CLASS_TYPE_HIEROPHANT, oCaster) > 0)
+            nDivineAddon+= GetLevelByClass(CLASS_TYPE_HIEROPHANT, oCaster);
     }
-}
-else if(bDivine(nCastingClass) && nDivineCastLevels)
-// Making sure they are using a divine class, and there is something to be added.
-{
-    if(bIsFirstDivineClass(nCastingClass))
-    // determine whether nCastingClass is their first divine class.
-    {
-    int nToReturn = nDivineCastLevels;
-    SetLocalInt(oCaster,"X2_L_LAST_RETVAR", nToReturn);
-    }
-}
-//Hierophant spell-like abilities should be cast using Cleric level, not Hierophant level
-else if(GetWasLastSpellHieroSLA())
-{
-    int nToReturn = GetLevelByClass(CLASS_TYPE_CLERIC, OBJECT_SELF) - GetLevelByClass(CLASS_TYPE_HIEROPHANT, OBJECT_SELF);
-    SetLocalInt(oCaster,"X2_L_LAST_RETVAR", nToReturn);
+
+
+
+    //------------------------------------------------------------------
+    //FINISH THE JOB
+
+    SetLocalInt(oCaster,"X2_L_LAST_RETVAR", nArcaneAddon+nDivineAddon);
+    SetLocalInt(oCaster, "LastCalcuAddonCL", nArcaneAddon+nDivineAddon);
+    DelayCommand(6.0, DeleteLocalInt(oCaster, "LastCalcuAddonCL"));
+    return;
 }
 
 
-}// end void main
 
-
-// Determines whether a given class is one of the 3 arcane base classes
-int bArcane(int nCastingClass)
-{
-switch(nCastingClass)
-{
-case CLASS_TYPE_WIZARD: return TRUE; break;
-case CLASS_TYPE_SORCERER: return TRUE; break;
-case CLASS_TYPE_BARD: return TRUE; break;
-}
-return FALSE;
-}
-// Determines whether a given class is one of the 2 divine base classes.
-// I'm not sure if Paladin or Ranger can be used, so I commented them out, but you can
-// feel free to uncomment them if you discover that they can be used.
-int bDivine(int nCastingClass)
-{
-switch(nCastingClass)
-{
-case CLASS_TYPE_CLERIC: return TRUE; break;
-case CLASS_TYPE_DRUID: return TRUE; break;
-//case CLASS_TYPE_PALADIN: return TRUE; break;  // I'm not sure if the +1 Caster Level spell progression
-//case CLASS_TYPE_RANGER: return TRUE; break;   // works for Rangers or Paladins, so they're commented out
-}
-return FALSE;
+int IsArcaneClass(int nClass){
+    return (    nClass==CLASS_TYPE_WIZARD ||
+                nClass==CLASS_TYPE_SORCERER ||
+                nClass==CLASS_TYPE_BARD);
 }
 
-// This function's job is just to make sure that if the character has 2 arcane classes, they
-// aren't using the second one to cast the spell
-
-int bIsFirstArcaneClass(int nCastingClass, object oCaster = OBJECT_SELF)
-{
-int nFirstClass = GetClassByPosition(1, oCaster);
-if(nFirstClass == nCastingClass || !bArcane(nFirstClass))
-// If the first character class isn't arcane, then the second one must be or the
-// character could never have taken any levels in a +1 casting level arcane prc to
-// begin with, so there's no need to screen for that.
-// It HAS to be the case
-{
-return TRUE;
+int IsDivineClass(int nClass){
+    return (    nClass==CLASS_TYPE_CLERIC ||
+                nClass==CLASS_TYPE_DRUID);
 }
-else
-{
-return FALSE;
-}
-}// end function
-
-
-// This function's job is just to make sure that if the character has 2 divine classes, they
-// aren't using the second one to cast the spell
-
-int bIsFirstDivineClass(int nCastingClass, object oCaster = OBJECT_SELF)
-{
-int nFirstClass = GetClassByPosition(1, oCaster);
-if(nFirstClass == nCastingClass || !bDivine(nFirstClass))
-// If the first character class isn't divine, then the second one must be or the
-// character could never have taken any levels in a +1 casting level divine prc to
-// begin with, so there's no need to screen for that.
-// It HAS to be the case
-{
-return TRUE;
-}
-else
-{
-return FALSE;
-}
-}// end function

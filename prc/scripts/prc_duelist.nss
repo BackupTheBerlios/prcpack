@@ -10,7 +10,9 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
+#include "prc_class_const"
+#include "prc_feat_const"
+
 
 // * Applies the Duelist's AC bonuses as CompositeBonuses on the object's skin.
 // * AC bonus is determined by object's int bonus (2x int bonus if epic)

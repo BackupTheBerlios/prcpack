@@ -1,5 +1,5 @@
-#include "heartward_inc"
 #include "inc_item_props"
+#include "prc_feat_const"
 
 void main()
 {

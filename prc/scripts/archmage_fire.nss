@@ -1,7 +1,4 @@
-#include "prc_dg_inc"
 #include "lookup_2da_spell"
-
-#include "prc_alterations"
 #include "X0_I0_SPELLS"
 #include "x2_inc_spellhook"
 #include "x2_i0_spells"

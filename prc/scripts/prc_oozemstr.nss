@@ -10,8 +10,8 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
-#include "prc_dg_inc"
+#include "prc_class_const"
+#include "prc_feat_const"
 
 // * Applies the Oozemasters's immunities on the object's skin.
 // * iType = IP_CONST_IMMUNITYMISC_*

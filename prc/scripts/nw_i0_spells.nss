@@ -20,10 +20,8 @@
 //Aaon Graywolf - Jan 6, 2003
 
 #include "prc_alterations"
-#include "strat_prc_inc"
-#include "prc_dg_inc"
-#include "discipleinclude"
-#include "inc_prc_function"
+#include "prc_inc_functions"
+
 
 // GZ: Number of spells in GetSpellBreachProtections
 const int NW_I0_SPELLS_MAX_BREACH = 33;
@@ -858,3 +856,5 @@ void TrapDoElectricalDamage(int ngDamageMaster, int nSaveDC, int nSecondary)
         o2ndTarget = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_LARGE, lTarget);
     }
 }
+
+//void main(){}

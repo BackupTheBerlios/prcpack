@@ -24,7 +24,6 @@
 // if FALSE, the cleric will rebuke the undead instead
 
 #include "prc_alterations"
-#include "strat_prc_inc"
 
 // Checks to see if an evil cleric has control 'slots' to command
 // the specified undead

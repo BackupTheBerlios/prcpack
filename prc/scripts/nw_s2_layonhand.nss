@@ -12,7 +12,7 @@
 //:: Created On: Aug 15, 2001
 //:: Updated On: Oct 20, 2003
 //:://////////////////////////////////////////////
-#include "strat_prc_inc"
+
 #include "NW_I0_SPELLS"
 void main()
 {

@@ -10,9 +10,7 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
-#include "prc_dg_inc"
-#include "discipleinclude"
+#include "prc_feat_const"
 
 // * Applies the Disciple of Mephistopheles's resistances on the object's skin.
 // * iLevel = IP_CONST_DAMAGERESIST_*

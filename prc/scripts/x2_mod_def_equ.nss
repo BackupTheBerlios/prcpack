@@ -16,7 +16,7 @@
 //:://///////////////////////////////////////////
 #include "x2_inc_switches"
 #include "x2_inc_intweapon"
-#include "discipleinclude"
+
 void main()
 {
 

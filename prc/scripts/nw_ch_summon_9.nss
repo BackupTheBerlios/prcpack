@@ -18,7 +18,7 @@ creatures.
 
 #include "X0_INC_HENAI"
 #include "x2_inc_switches"
-#include "strat_prc_inc"
+
 void main()
 {
      //Sets up the special henchmen listening patterns

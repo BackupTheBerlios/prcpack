@@ -13,7 +13,9 @@
 
 #include "inc_item_props"
 #include "pnp_shifter"
-#include "strat_prc_inc"
+//#include "strat_prc_inc"
+
+
 
 // Returns the lich amulet level
 int GetAmuletLevel(object oAmulet);
@@ -586,4 +588,6 @@ void CraftVFX(object oObject)
     eFx = EffectVisualEffect(VFX_FNF_LOS_EVIL_30);
     ApplyEffectToObject(DURATION_TYPE_INSTANT,eFx,oObject, 4.0);
 }
+
+//void main(){}
 

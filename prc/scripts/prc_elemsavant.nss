@@ -10,8 +10,7 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
-#include "prc_dg_inc"
+#include "prc_feat_const"
 
 // * Applies the Elemental Savant's immunities on the object's skin.
 // * iType = IP_CONST_IMMUNITYMISC_*

@@ -1,7 +1,5 @@
 #include "inc_item_props"
-#include "strat_prc_inc"
-#include "prc_dg_inc"
-#include "heartward_inc"
+#include "prc_feat_const"
 
 ////    bonus CHA    ////
 void CharBonus(object oPC ,object oSkin ,int iLevel)

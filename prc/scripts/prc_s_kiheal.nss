@@ -14,8 +14,6 @@
 //:://////////////////////////////////////////////
 
 #include "NW_I0_SPELLS"
-#include "strat_prc_inc"
-#include "prc_alterations"
 
 void main()
 {

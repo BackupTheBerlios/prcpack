@@ -10,7 +10,7 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
+#include "prc_feat_const"
 
 // * Applies the Spellsword's Spell Failure reduction on object's skin.
 // * iLevel = IP_CONST_ARCANE_SPELL_FAILURE_*

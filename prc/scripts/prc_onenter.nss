@@ -1,6 +1,5 @@
 #include "inc_item_props"
-#include "inc_prc_function"
-#include "heartward_inc"
+#include "prc_inc_function"
 
 void RemovBonusStormlord(object oPC)
 {

@@ -10,7 +10,7 @@
 //:://////////////////////////////////////////////
 
 #include "inc_item_props"
-#include "strat_prc_inc"
+#include "prc_feat_const"
 
 // * Applies the Acolyte's AC bonuses as CompositeBonuses on object's skin.
 // * iLevel = integer AC Bonus

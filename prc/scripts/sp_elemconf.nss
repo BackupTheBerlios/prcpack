@@ -1,4 +1,5 @@
-#include "heartward_inc"
+#include "prc_spell_const"
+#include "prc_class_const"
 
 void main()
 {
