@@ -14,13 +14,13 @@ const int CLASS_TYPE_ES_ACID   = 74; //CONSTANT
 const int CLASS_TYPE_DUELIST    = 80; //CONSTANT
 const int CLASS_TYPE_HIEROPHANT   = 81; //CONSTANT
 const int CLASS_TYPE_RED_AVENGER  = 82; //CONSTANT
-const int CLASS_TYPE_KNIGHT_CHALICE = 83; //CONSTANT
 const int CLASS_TYPE_LICH = 90; // CONSTANT
 const int CLASS_TYPE_PNP_SHIFTER = 91; // CONSTANT
 const int CLASS_TYPE_TRUENECRO = 151; // CONSTANT
 const int CLASS_TYPE_HOSPITALER = 174; // CONSTANT
 const int CLASS_TYPE_MASTER_OF_SHROUDS = 175; // CONSTANT
 const int CLASS_TYPE_MASTER_HARPER = 176; // CONSTANT
+const int CLASS_TYPE_KNIGHT_CHALICE = 83; //CONSTANT
 
 //Augment Summon Feat for Mage Killer
 const int FEAT_AUGMENT_SUMMON = 2510; //CONSTANT
@@ -137,3 +137,9 @@ const int FEAT_MOS_UNDEAD_1         = 3501; //CONSTANT
 const int FEAT_MOS_UNDEAD_2         = 3502; //CONSTANT
 const int FEAT_MOS_UNDEAD_3         = 3503; //CONSTANT
 const int FEAT_MOS_UNDEAD_4         = 3504; //CONSTANT
+
+//Knight of the Chalice Feats
+const int DEMONSLAYING_1            = 2754; //CONSTANT
+const int DEMONSLAYING_2            = 2755; //CONSTANT
+const int DEMONSLAYING_3            = 2756; //CONSTANT
+const int DEMONSLAYING_4            = 2757; //CONSTANT
