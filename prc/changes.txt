@@ -62,4 +62,5 @@
 16/02/2004
 ---------Begin Stratovarius
 - Added Heartwarder, Stormlord, Fist of Raziel to Feat, Masterfeat, and Spells. Edited 2das for correct TLK numbering.
+- Added Stormlord Icons to gfx folder and to classes.2da and feat.2da.
 ---------End Stratovarius
