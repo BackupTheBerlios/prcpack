@@ -36,11 +36,11 @@ void main()
     int nMetaMagic = GetMetaMagicFeat();
     int nDuration = GetCasterLevel(OBJECT_SELF);
     object oPC = OBJECT_SELF;
-    effect eSummon = EffectSummonCreature("HAMATULA");
+    effect eSummon = EffectSummonCreature("hamatula");
 
     if (GetHasFeat(FEAT_IMP_SUMMON_HAMATULA, oPC))
     {
-        eSummon = EffectSummonCreature("HAMATULA_35E");
+        eSummon = EffectSummonCreature("hamatula001");
     }
 
     effect eVis = EffectVisualEffect(VFX_FNF_SUMMON_GATE);
