@@ -80,6 +80,7 @@ NSSCOMPILER 	= $(NWN_DIR)\utils\clcompile
 # Redefine various paths set by the bat file to give them prettier more
 # generic names.
 OUTPATH			= CompiledResources
+ERFFILESPATH		= $(MAKEERFPATH)
 2DAPATH			= $(MAKE2DAPATH)
 OBJPATH			= $(MAKEOBJSPATH)
 SRCPATH			= $(MAKESCRIPTPATH)
@@ -97,6 +98,8 @@ NWN_OVERRIDE	= $(NWN_DIR)\override
 .SUFFIXES: .nss .ncs .erf .hak .zip .rar
 
 # variables to hold all of the contents of the various directories.
+
+ERFFILES=~~~erffiles~~~
 
 SCRIPTS=~~~scripts~~~
 
@@ -123,11 +126,11 @@ rar: hak $(RAR)
 
 
 # Rule to build the 'hak' content and install it.
-hak110: $(ERF) $(HAK) install
+hak110: $(ERF110) $(HAK) install
 
 
 # Rule to build the 2.0 haks
-hak: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) install 
+hak: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) $(ERF) install 
 
 
 #################################################################################
@@ -164,31 +167,39 @@ installoverrides: $(OVERRIDEFILES)
 #
 
 # This rule builds the 2.0 RAR, commented out for now
-#$(RAR): $(SCRIPTSHAK) $(2DASHAK) $(TEXTURESHAK) $(MISCHAK) \
-#	$(OVERRIDEFILES) $(TLK) $(README) $(MISCRESOURCES) 
-#	@echo $(@F)
-#	-@del "$@" 2>nul
-#	@"$(RARCOMPILER)" a -ep -inul $@ $**
-
-
-# Rule to build the ship RAR.	
-$(RAR): $(HAK) $(ERF) $(OVERRIDEFILES) $(TLK) $(README) \
-	$(MISCRESOURCES) 
+$(RAR): $(SCRIPTSHAK) $(2DASHAK) $(TEXTURESHAK) $(MISCHAK) $(ERF) \
+	$(OVERRIDEFILES) $(TLK) $(README) $(MISCRESOURCES) 
 	@echo $(@F)
 	-@del "$@" 2>nul
 	@"$(RARCOMPILER)" a -ep -inul $@ $**
 
 
+# Rule to build the ship RAR.	
+#$(RAR): $(HAK) $(ERF110) $(OVERRIDEFILES) $(TLK) $(README) \
+#	$(MISCRESOURCES) 
+#	@echo $(@F)
+#	-@del "$@" 2>nul
+#	@"$(RARCOMPILER)" a -ep -inul $@ $**
+
+
 # Rule to build the ERF file.  Currently script source and object files are
 # going here.
-$(ERF): $(OBJS) $(SCRIPTS) 
+#$(ERF110): $(OBJS) $(SCRIPTS) 
+#	@echo $(@F)
+#	-@del "$@" 2>nul
+#	@"$(ERFCOMPILER)" -c $@ $**
+
+
+# Rule to build the HAK file.
+$(HAK): $(2DAS) $(GFX) $(OTHERS) 
 	@echo $(@F)
 	-@del "$@" 2>nul
 	@"$(ERFCOMPILER)" -c $@ $**
 
 
-# Rule to build the HAK file.
-$(HAK): $(2DAS) $(GFX) $(OTHERS) 
+# Rule to build the 2.0 ERF file.  Only areas should be in here, they are
+# the only things that do not work in hak files.
+$(ERF): $(ERFFILES)
 	@echo $(@F)
 	-@del "$@" 2>nul
 	@"$(ERFCOMPILER)" -c $@ $**

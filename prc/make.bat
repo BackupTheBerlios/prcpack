@@ -52,6 +52,7 @@ REM generate temporary files for each of the source sets
 REM scripts, graphics files, 2das, and misc. other files.
 REM each of these temp files will be stuffed into a macro
 REM in the makefile.
+dir /b erf | tools\ssed -R "$! {s/$/ \\/g};s/^/erf\\/g" >erffiles.temp
 dir /b scripts\*.nss | tools\ssed -R "$! {s/$/ \\/g};s/^/scripts\\/g" >scripts.temp
 dir /b gfx | tools\ssed -R "$! {s/$/ \\/g};s/^/gfx\\/g" >gfx.temp
 dir /b 2das | tools\ssed -R "$! {s/$/ \\/g};s/^/2das\\/g" >2das.temp
@@ -63,11 +64,12 @@ FINDSTR /R /M /C:"void *main *( *)" /C:"int *StartingConditional *( *)" scripts\
 
 REM Now using our generic makefile as a base, glue all of the temp files into it making
 REM a fully formatted makefile we can run nmake on.
-type makefile.template | tools\ssed -R "/~~~scripts~~~/r scripts.temp" | tools\ssed -R "/~~~2das~~~/r 2das.temp" | tools\ssed -R "/~~~gfx~~~/r gfx.temp" | tools\ssed -R "/~~~others~~~/r others.temp" | tools\ssed -R "/~~~objs~~~/r objs.temp" | tools\ssed -R "s/~~~[a-zA-Z0-9_]+~~~/ \\/g" > makefile.temp
+type makefile.template | tools\ssed -R "/~~~erffiles~~~/r erffiles.temp" | tools\ssed -R "/~~~scripts~~~/r scripts.temp" | tools\ssed -R "/~~~2das~~~/r 2das.temp" | tools\ssed -R "/~~~gfx~~~/r gfx.temp" | tools\ssed -R "/~~~others~~~/r others.temp" | tools\ssed -R "/~~~objs~~~/r objs.temp" | tools\ssed -R "s/~~~[a-zA-Z0-9_]+~~~/ \\/g" > makefile.temp
 
 SETLOCAL
 
 REM set local variables for the source and object trees.
+SET MAKEERFPATH=erf
 SET MAKE2DAPATH=2das
 SET MAKESCRIPTPATH=scripts
 SET MAKEOBJSPATH=objs
@@ -85,6 +87,7 @@ tools\nmake -NOLOGO -f makefile.temp %1 %2 %3 %4 %5 %6 %7 %8 %9
 ENDLOCAL
 
 REM delete temp files
+del erffiles.temp
 del scripts.temp
 del gfx.temp
 del 2das.temp
