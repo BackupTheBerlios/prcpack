@@ -23,6 +23,9 @@
 # objs - All of hte compiled script object files are placed here.  If this
 # directory does not exist it will be created.
 #
+# setup - Builds the NSIS Setup.exe install application.  This REQUIRES
+# NSIS to be installed on your PC.
+#
 # There is some outside information that the makefile needs to know, it expects
 # this information to be set in variables in the config.make file.  The variables
 # it expects to be set are as follows:
@@ -61,8 +64,10 @@ SCRIPTSHAK		= $(OUTPATH)\prc_scripts.hak
 2DASHAK			= $(OUTPATH)\prc_2das.hak
 MISCHAK			= $(OUTPATH)\prc_misc.hak
 TEXTURESHAK		= $(OUTPATH)\prc_textures.hak
-CRAFT2DASHAK		= $(OUTPATH)\prc_craft2das.hak
+CRAFT2DASHAK	= $(OUTPATH)\prc_craft2das.hak
 
+# The NSIS script used to build setup.exe
+INSTALLSCRIPT	= Setup\install.nsi
 
 # This variable contains all of the files that need to be installed in the
 # NWN override directory for the prc pack to work.  If this list is changed
@@ -70,23 +75,29 @@ CRAFT2DASHAK		= $(OUTPATH)\prc_craft2das.hak
 # to the subdirectories on there as well.
 OVERRIDEFILES	= $(2DAPATH)\classes.2da
 
+# If an install path for NSIS is not given, assume "C:\program files\nsis"
+!IFNDEF NSISPATH
+NSISPATH		= C:\program files\nsis
+!ENDIF
+
 # Define the locations of the various EXE's used by the makefile.  All
 # should be in the tools folder, except the script compiler which
 # comes with NWN.
 RARCOMPILER		= tools\rar
 ERFCOMPILER 	= tools\erf
 NSSCOMPILER 	= $(NWN_DIR)\utils\clcompile
+NSISCOMPILER	= "$(NSISPATH)\makensis.exe"
 
 
 # Redefine various paths set by the bat file to give them prettier more
 # generic names.
 OUTPATH			= CompiledResources
-ERFFILESPATH		= $(MAKEERFPATH)
+ERFFILESPATH	= $(MAKEERFPATH)
 2DAPATH			= $(MAKE2DAPATH)
 OBJPATH			= $(MAKEOBJSPATH)
 SRCPATH			= $(MAKESCRIPTPATH)
 TLKPATH			= $(MAKETLKPATH)
-CRAFT2DASPATH		= $(MAKECRAFT2DASPATH)
+CRAFT2DASPATH	= $(MAKECRAFT2DASPATH)
 
 
 # Paths for the various folders in the NWN install directory.
@@ -124,7 +135,6 @@ CRAFT2DAS=~~~craft2das~~~
 # The top rule is the one run by default, we want to build the hak and install.
 all: hak
 
-
 # Rule to build the rar file.
 rar: hak $(RAR)
 
@@ -135,6 +145,11 @@ hak110: $(ERF110) $(HAK) install
 
 # Rule to build the 2.0 haks
 hak: $(SCRIPTSHAK) $(2DASHAK) $(MISCHAK) $(TEXTURESHAK) $(ERF) $(CRAFT2DASHAK) install 
+
+# Rule to build the NSIS installer.
+nsis:
+	@echo Setup.exe
+	@$(NSISCOMPILER) /V1 $(INSTALLSCRIPT)
 
 
 #################################################################################

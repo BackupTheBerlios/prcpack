@@ -4,6 +4,9 @@
 !define APPNAME "PRC Pack"
 !define APPNAMEANDVERSION "PRC Pack 2.0"
 
+; Enable LZMA compression for the smallest EXE.
+SetCompressor lzma
+
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
 InstallDir "$PROGRAMFILES\PRC Pack"
