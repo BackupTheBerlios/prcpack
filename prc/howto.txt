@@ -1,0 +1,26 @@
+What do you need:
+The command line erf tool available at:
+http://nwvault.ign.com/Files/other/data/1053576776593.shtml
+which is use dot .. well .. create the erf&hak files :)
+
+The command line script compiler(modified a bit by me to
+play nicely with make) at:
+http://www.t-o-m-e.net/tmp/nwnnsscomp.zip
+
+Put the executables somewhere and edit config.mk to point to them.
+Also make it point to your neverwinter directory(so it can automatically
+copy the neccesary files to override/tlk)
+
+THen you're done.
+
+just type:
+* To compile:
+	make scripts
+* To create hak/erf(this will compile if needed)
+	make pack
+* To install in override/tlk(this will compile if needed)
+	make install
+
+(This requires cygwin with make installed)
+
+If you want to do it manualy .. well your loss :)

@@ -1,0 +1,17 @@
+2DA V2.0
+
+     FeatLabel                   FeatIndex List GrantedOnLevel OnMenu 
+0    FEAT_MASTERY_ELEMENTS_BACK  3000      3    1              1      
+1    FEAT_MASTERY_ELEMENTS_FIRE  3001      2    -1             1      
+2    FEAT_MASTERY_ELEMENTS_COLD  3002      2    -1             1      
+3    FEAT_MASTERY_ELEMENTS_ACID  3003      2    -1             1      
+4    FEAT_MASTERY_ELEMENTS_ELEC  3004      2    -1             1      
+5    FEAT_MASTERY_ELEMENTS_SONIC 3005      2    -1             1      
+6    FEAT_MASTERY_SHAPES         3006      2    -1             1      
+7    FEAT_SPELL_POWER_I          3007      2    -1             0      
+8    FEAT_SPELL_POWER_II         3008      2    -1             0      
+9    FEAT_SPELL_POWER_III        3009      2    -1             0      
+10   FEAT_SPELL_POWER_IV         3010      2    -1             0      
+11   FEAT_SPELL_POWER_V          3011      2    -1             0      
+12   FEAT_ARCANE_FIRE            3012      2    -1             1      
+13   FEAT_SPELL_LIKE             3013      2    -1             1      

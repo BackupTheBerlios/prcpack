@@ -1,0 +1,6 @@
+2DA V2.0
+
+     LABEL           ReqType  ReqParam1 ReqParam2 
+0    Arcane          SPELL    3         ****      
+1    Lore            SKILL    7         4         
+2    GreatFortitude  FEAT     14        ****      

@@ -1,0 +1,13 @@
+2DA V2.0                                                         
+                                                                 
+           LABEL          ReqType   ReqParam1        ReqParam2   
+0          AttackBonus    BAB       6                ****
+1          Tumble         SKILL     21               5
+2          Perform        SKILL     11               3
+3          Dodge          FEAT      10               ****
+4          Ambidex        FEAT      1                ****
+6          Mobility       FEAT      26               ****
+7          WeapProfMar    FEATOR    45               ****
+8          WeapProfElf    FEATOR    256              ****
+9          WeapProfRog    FEATOR    50               ****
+10         ScriptVar      VAR       X2_AllowDuel  0
