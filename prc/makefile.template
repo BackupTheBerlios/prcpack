@@ -158,8 +158,19 @@ $(HAK): $(2DAS) $(GFX) $(OTHERS)
 	@"$(ERFCOMPILER)" -c $@ $**
 
 
+# Rule to add makefile dependencies.  This will run makedep to build the include
+# file dependencies for all source files that get built to object files.
+depends: $(OBJS)
+	@echo Updating dependencies
+	@tools\makedep -a -w -n -l -s$(SRCPATH) -i$(SRCPATH) -o$(MAKEFILE) $**
+
+
 # Inference rule to compile scripts.
 {$(SRCPATH)\}.nss{$(OBJPATH)\}.ncs:
 	@echo $(<F)
 	@"$(NSSCOMPILER)" "$(MAKEDIR)\$<" "$(MAKEDIR)\$(@D)" >nul
  	-@del "$(MAKEDIR)\$(@R).ndb" 2>nul
+
+
+# Depends updates will go here.
+

@@ -71,6 +71,9 @@ SET MAKESCRIPTPATH=scripts
 SET MAKEOBJSPATH=objs
 SET MAKETLKPATH=tlk
 
+REM before doing the real build build the dependencies for include files.
+tools\nmake -NOLOGO -f makefile.temp MAKEFILE=makefile.temp depends
+
 REM the objs path is not part of CVS, make sure it exists.
 mkdir %MAKEOBJSPATH% >nul 2>nul
 
