@@ -28,7 +28,7 @@
 //:://////////////////////////////////////////////
 
 #include "x2_inc_switches"
-#include "prc_feat_const"
+#include "heartward_inc"
 
 void main()
 {
@@ -36,11 +36,15 @@ void main()
    object oItem;        // The item casting triggering this spellscript
    object oSpellTarget; // On a weapon: The one being hit. On an armor: The one hitting the armor
    object oSpellOrigin; // On a weapon: The one wielding the weapon. On an armor: The one wearing an armor
+   int nVassal; //Vassal Level
 
    // fill the variables
    oSpellOrigin = OBJECT_SELF;
    oSpellTarget = GetSpellTargetObject();
    oItem        =  GetSpellCastItem();
+
+   nVassal = GetLevelByClass(CLASS_TYPE_VASSAL,OBJECT_SELF);
+
 
    if (GetIsObjectValid(oItem))
    {
@@ -59,11 +63,25 @@ void main()
         }
      }
 
+
 //// Stormlord Shocking & Thundering Spear
 
      if (GetHasFeat( FEAT_THUNDER_WEAPON,OBJECT_SELF))
+        {
            ExecuteScript("ft_shockweap",OBJECT_SELF);
+        }
 
-
-   }
+///  Vassal of Bahamut Dragonwrack
+     if (nVassal >= 4)
+        {
+           if (GetBaseItemType(oItem) == BASE_ITEM_ARMOR)
+            {
+                ExecuteScript("ft_dw_armor", oSpellTarget);
+            }
+           else
+            {
+                ExecuteScript("ft_dw_weapon", oSpellTarget);
+            }
+         }
+ }
 }
