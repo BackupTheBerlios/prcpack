@@ -54,6 +54,7 @@ void EvalPRCFeats(object oPC)
     if(GetLevelByClass(CLASS_TYPE_FRE_BERSERKER, oPC) > 0)      ExecuteScript("prc_frebzk", oPC);
     if(GetLevelByClass(CLASS_TYPE_TEMPEST, oPC) > 0)            ExecuteScript("prc_tempest", oPC); 
     if(GetLevelByClass(CLASS_TYPE_VASSAL, oPC) > 0)             ExecuteScript("prc_vassal", oPC);   
+    if(GetLevelByClass(CLASS_TYPE_PEERLESS, oPC) > 0)           ExecuteScript("prc_peerless", oPC);   
 }
 
 
