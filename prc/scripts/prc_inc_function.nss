@@ -27,8 +27,6 @@
 #include "prc_class_const"
 #include "prc_spell_const"
 #include "prc_alterations"
-#include "prc_inc_oni"
-
 
 
 void EvalPRCFeats(object oPC)
@@ -308,6 +306,68 @@ void CheckSpecialPRCRecs(object oPC)
     if(bHasSpell)
         SetLocalInt(oPC, "PRC_KnghtCh", 1);
 
+}
+
+///////////////////////////////////////////////////////////////
+//  GetArmorType
+///////////////////////////////////////////////////////////////
+const int ARMOR_TYPE_CLOTH      = 0;
+const int ARMOR_TYPE_LIGHT      = 1;
+const int ARMOR_TYPE_MEDIUM     = 2;
+const int ARMOR_TYPE_HEAVY      = 3;
+  
+// returns -1 on error, or base AC of armor
+int GetItemACBase(object oArmor)
+{
+    int nBonusAC = 0;
+  
+    // oItem is not armor then return an error
+    if(GetBaseItemType(oArmor) != BASE_ITEM_ARMOR)
+        return -1;
+  
+    // check each itemproperty for AC Bonus
+    itemproperty ipAC = GetFirstItemProperty(oArmor);
+    
+    while(GetIsItemPropertyValid(ipAC))
+    {
+        int nType = GetItemPropertyType(ipAC);
+  
+        // check for ITEM_PROPERTY_AC_BONUS
+        if(nType == ITEM_PROPERTY_AC_BONUS)
+        {
+            nBonusAC = GetItemPropertyCostTableValue(ipAC);
+            break;
+        }
+  
+        // get next itemproperty
+        ipAC = GetNextItemProperty(oArmor);
+    }
+  
+    // return base AC
+    return GetItemACValue(oArmor) - nBonusAC;
+}
+
+// returns -1 on error, or the const int ARMOR_TYPE_*
+int GetArmorType(object oArmor)
+{
+    int nType = -1;
+  
+    // get and check Base AC
+    switch(GetItemACBase(oArmor) )
+    {
+        case 0: nType = ARMOR_TYPE_CLOTH;   break;
+        case 1: nType = ARMOR_TYPE_LIGHT;   break;
+        case 2: nType = ARMOR_TYPE_LIGHT;   break;
+        case 3: nType = ARMOR_TYPE_LIGHT;   break;
+        case 4: nType = ARMOR_TYPE_MEDIUM;  break;
+        case 5: nType = ARMOR_TYPE_MEDIUM;  break;
+        case 6: nType = ARMOR_TYPE_HEAVY;   break;
+        case 7: nType = ARMOR_TYPE_HEAVY;   break;
+        case 8: nType = ARMOR_TYPE_HEAVY;   break;
+    }
+    
+    // return type
+    return nType;
 }
 
 

@@ -10,3 +10,12 @@ int SPELL_ELE_CONF_EARTH   = 2215;
 int SPELL_ELE_CONF_AIR     = 2216;
 int IP_CONST_CASTSPELL_LIPS_RAPTURE_1 =550;
 
+// Frenzied Berserker Spells
+const int SPELL_FRENZY = 2700; 
+const int SPELL_INSPIRE_FRENZY = 2701; 
+const int SPELL_SUPREME_POWER_ATTACK = 2702; 
+const int SPELL_REMOVE_FRENZY = 2703; 
+
+// Tempest Spells
+const int SPELL_T_TWO_WEAPON_FIGHTING = 2705;
+
