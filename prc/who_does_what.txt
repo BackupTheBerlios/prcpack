@@ -19,5 +19,6 @@ Aaon Graywolf:
 NOTE: I may not (will not, more likely) do all of the above.  Rather, it is simply a list of the the classes that I will be most likely to begin working on.
 
 Shane Hennessy:
-- Update all spells for GetAdjustedRacialType
-- Fix Lich .tlk entries for better ease of use
+- Update all spells for GetAdjustedRacialType - complete
+- Fix Lich .tlk entries for better ease of use - complete
+- make Lich so they can enter a new module with all hide powers intact.

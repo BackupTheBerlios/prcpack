@@ -1,2 +1,11 @@
 19/01/2004
 - Turn Undead => Rebuke/Command Undead for evil chars, from Wes Baran -- DarkGod
+20/01/2004
+---------Begin Shane Hennessy
+- MyPRCGetRacialType function added for PRCs that change the PC's racial type.
+- Modified all spell scripts that call GetRacialType to use MyPRCGetRacialType.
+- Moved Lich and Shifter class constants to strat_prc_inc.
+- fixed spells.2da alternate messages for lich and shifter.
+- improved lich description in the tlk.
+- fixed Lich alignment restriction to any non-good to match source material
+---------End Shane Hennessy
