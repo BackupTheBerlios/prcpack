@@ -30,6 +30,7 @@ void main()
     if (GetDistanceToObject(oLock) <= 30.0)
         {
         nDC = GetLockUnlockDC(oLock);
+        nDC = nDC + 5;
         if (GetIsSkillSuccessful(oCaster, SKILL_OPEN_LOCK, nDC))
             {
             SetLocked(oLock, FALSE);
