@@ -1,0 +1,7 @@
+2DA V2.0
+
+      LABEL                ReqType    ReqParam1         ReqParam2   
+0     Arcane               ARCSPELL   5                 ****        
+1     Spellcraft           SKILL      16                8           
+2     FEAT_REDWIZ_TATTOO   FEAT       4235              ***         
+3     ScriptVar            VAR        PNP_AllowRedWiz   0           
