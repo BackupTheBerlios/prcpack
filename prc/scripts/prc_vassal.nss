@@ -143,7 +143,7 @@ void main()
     object oArmor6 = GetItemPossessedBy(OBJECT_SELF, "Platinumarmor6");
     object oItem = GetItemInSlot(INVENTORY_SLOT_CHEST,OBJECT_SELF);
 
-    int bVassal = GetLevelByClass(CLASS_TYPE_WIZARD, OBJECT_SELF);
+    int bVassal = GetLevelByClass(CLASS_TYPE_VASSAL, OBJECT_SELF);
 
     //Imperious Aura
     if (bVassal>0) ImperiousAura(oPC, oSkin,bVassal);
