@@ -41,6 +41,9 @@
 # module.OnUnaquireItem : Assigns script(s) to handle this module event
 # module.OnUserDefined : Assigns script(s) to handle this module event
 
+# ERF with the required areas.
+erf : prc_consortium.erf
+
 # Haks used by the prc pack.
 module.Hak : prc_2das.hak
 module.Hak : prc_scripts.hak
@@ -49,14 +52,6 @@ module.Hak : prc_misc.hak
 
 # Custom tlk used by the prc pack.
 module.CustomTlk : prc_consortium.tlk
-
-# Add the Mordenkainen's Magnificent Mansion areas to the area list.
-module.Areas : mordmagman01
-module.Areas : mordmagman02
-module.Areas : mordmagman03
-module.Areas : mordmagman04
-module.Areas : mordmagman05
-module.Areas : mordmagman06
 
 # Events that need to be wired up.
 module.OnAcquireItem : prc_onaquire
