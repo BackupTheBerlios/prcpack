@@ -46,8 +46,8 @@ Stratovarius:
 - Disciple of Orcus - Book of Vile Darkness - Unstarted
 - Horned Harbinger - Faiths and Pantheons - Unstarted
 
-- Add SoulTaker's PrCs to the CVS - Complete with help from Midnight
-- Get 1.9 ready for release - In Final Beta.
+- Get 1.9 released - complete
+- Get 1.10 Ready for release - not started.
 
 Zedium:
 - Vassal of Bahamut (Just tlk done for now)
