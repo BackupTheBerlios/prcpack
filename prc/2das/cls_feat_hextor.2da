@@ -1,0 +1,17 @@
+2DA V2.0
+
+      FeatLabel                   FeatIndex   List   GrantedOnLevel   OnMenu   
+0     FEAT_HEXTOR_BSTRIKE_DAM_1   4242        2      -1               0        
+1     FEAT_HEXTOR_BSTRIKE_DAM_2   4243        2      -1               0        
+2     FEAT_HEXTOR_BSTRIKE_DAM_3   4244        2      -1               0        
+3     FEAT_HEXTOR_BSTRIKE_DAM_4   4245        2      -1               0        
+4     FEAT_HEXTOR_BSTRIKE_ATK_1   4246        2      -1               0        
+5     FEAT_HEXTOR_BSTRIKE_ATK_2   4247        2      -1               0        
+6     FEAT_HEXTOR_BSTRIKE_ATK_3   4248        2      -1               0        
+7     FEAT_HEXTOR_BSTRIKE_ATK_4   4249        2      -1               0        
+8     FEAT_HEXTOR_STRBOOST_1      4250        3      2                1        
+9     FEAT_HEXTOR_STRBOOST_2      4251        3      5                1        
+10    FEAT_HEXTOR_STRBOOST_3      4252        3      8                1        
+11    FEAT_HEXTOR_FEAR_1          4253        3      3                1        
+12    FEAT_HEXTOR_FEAR_2          4254        3      6                1        
+13    FEAT_HEXTOR_FEAR_3          4255        3      9                1        
