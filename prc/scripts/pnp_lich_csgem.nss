@@ -46,7 +46,7 @@ void main()
 
     // Soul gem creation code
     object oSoulGem = CreateItemOnObject("soulgem",oPC);
-    itemproperty iProp = ItemPropertyCastSpell(356,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+    itemproperty iProp = ItemPropertyCastSpell(851,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
     AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oSoulGem);
 
     // Trigger the level up lich check
