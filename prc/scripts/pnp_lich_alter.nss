@@ -13,8 +13,8 @@
 // alter self for the lich
 
 #include "pnp_shifter"
+#include "strat_prc_inc"
 
-const int CLASS_TYPE_LICH = 90;
 
 void main()
 {
