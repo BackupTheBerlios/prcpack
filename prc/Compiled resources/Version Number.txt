@@ -1,4 +1,4 @@
-1.9 Beta Final
+1.9 Final version C
 
 Erf changes:
 
@@ -6,4 +6,5 @@ Erf changes:
 
 Hak changes:
 
+ - Added correct Iprop_spells.2da
  - First Import.
