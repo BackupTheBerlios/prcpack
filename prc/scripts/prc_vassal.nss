@@ -142,7 +142,8 @@ void main()
     object oArmor4 = GetItemPossessedBy(OBJECT_SELF, "Platinumarmor4");
     object oArmor6 = GetItemPossessedBy(OBJECT_SELF, "Platinumarmor6");
     object oItem = GetItemInSlot(INVENTORY_SLOT_CHEST,OBJECT_SELF);
-
+    object oPC = OBJECT_SELF;
+    object oSkin = GetPCSkin(oPC);
     int bVassal = GetLevelByClass(CLASS_TYPE_VASSAL, OBJECT_SELF);
 
     //Imperious Aura
@@ -169,6 +170,14 @@ void main()
     }
 
     // *Level 4
+    //Dragonwrack
+    if (bVassal >= 4)
+    {
+        AddArmorOnhit( oPC,GetLocalInt(oPC,"ONEQUIP"));
+        DWRightWeap( oPC,GetLocalInt(oPC,"ONEQUIP"));
+        DWLeftWeap( oPC,GetLocalInt(oPC,"ONEQUIP"));
+    }
+
 
     // *Level 5
     if (nVassal==5)
