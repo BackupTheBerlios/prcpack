@@ -49,3 +49,8 @@
 - Made some small changes to the tlk. Mainly just spelling and such. I'm editing most things in the readme before I transfer them to the tlk.
 - Uploaded To-Fix list. Please check this and fix what applies to you.
 ---------End Middy
+16/02/2004
+---------Begin Middy
+- Updated the entire... entire readme. Added Vassal of Bahamut to it. Other additions and the like pending. Woo, I'm tired.
+- Minor tlk updates.
+---------End Middy

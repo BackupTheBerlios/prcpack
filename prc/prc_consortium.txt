@@ -1,180 +1,25 @@
-Version 1.8.0
+Version 1.9.0
 
-This package includes new Prestige Classes by many people.
+This package includes new Prestige Classes by many people. (Listed at the bottom)
 
 To install:
-
 1) Open your module in the toolset
-2) In Module Properties->Custom Content add the .hak and tlk file
-3) Import the .erf file with File->Import
-4) In Module Properties->Events set the following events:
+2) In Module Properties-> Custom Content add the .hak and tlk file
+3) Import the .erf file with File-> Import
+4) In Module Properties-> Events set the following events:
    "OnPlayerLevelUp" event to "prc_levelup"
    "OnPlayerEquipItem" event to "prc_equip"
    "OnPlayerUnEquipItem" event to "prc_unequip"
    "OnClientEnter" event to "prc_onenter"
 5) Save
-6) Enjoy!
+6) Enjoy
 
-You could also extract all the content of the hak&erf files to your overwrite and simply add the tlk&events to the module.
-
-
-******************** Archmage *******************
-The highest art is magic, often refered to as *the* Art. Its most advanced practitionner are frequently archmages, bending spells in ways unavailable to otehr spellcasters.
-
-- Hit Die: d4.
-- Proficiencies: An Archmage does not gain any additional weapon or armor proficiencies.
-- Skill Points: 2 + Int Modifier.
-
-REQUIREMENTS:
-
-Arcane Spellcasting: Level 7 or higher.
-Feats: Skill Focus(Spellcraft), Any Spell Focus.
-Skills: Spellcraft 15 or more ranks, Lore 15 or more ranks.
-
-ABILITIES:
-
-Level
-1: High Arcana*, Mastery of Elements(Normal)
-2: High Arcana*
-3: High Arcana*
-4: High Arcana*
-5: High Arcana*
-
-BONUS SPELLS
-The Archmage sacrifices the bonus spell slots he should gain in order to
-take a High Arcana feat at each levels.
-He does however add his level to the base caster class when determining
-spell powers(damage, duration ...).
-
-HIGH ARCANA:
-Each level the Archmage must choose one High Arcana feat of those:
-* Arcane Fire: This feat allows the Archmage to convert any spells he     knows into a powerfull bolt of raw magical energy.
-* Mastery of Elements: This feat allows the Archmage to change on the
-  fly the damage type of any elemental spells. The feat to set them back
-  to normal is free at level 1, the fire, cold, acid, electrical and sonic   damages are separated in their own feats and must be selected.
-* Mastery of Shapes: This feat allows the Archmage to create "holes"
-  in her area of effects spells to protect his companions from the effects.
-* Spell-Like ability: This feat allows the Archmage to permanently prepare   a spell as a spell-like ability which she may then use 2 times per day.
-* Spell Power: This feat allows the Archmage to increase his effective       caster level by 1(cummulative with the normal level bonusthey get).
+You could also extract all the contents of the hak and erf files to your override folder and simply add the tlk & events to the module.
 
 
-******************** Oozemaster *******************
-The oozemaster is not a class for stable individuals. It involves relating one-on-one with things that relate to nothing at all. Unlike the animal lord's kindred creatures, the oozemaster's charges have nothing to say. No one has yet developed a speak with ooze spell-or if someone has, the oozes haven't responded. Given that oozemasters exude everything but confidence, most of them have few sentient friends and even fewer guests. Thus, they tend to gibber and talk to themselves a lot.
-
-- Hit Die: d8.
-- Proficiencies: Oozemasters gain no weapon or armor proficiencies.
-- Skill Points: 4 + Int Modifier.
-
-- Requirements
-Spellcasting: Able to cast 3rd-level arcane or divine spells.
-Skills: Lore 7 ranks.
-Feats: Great Fortitude.
-
-ABILITIES:
-
-Levels:
-1: Minor Oozy Touch
-2: Charisma penality -1, Oozy Glob(1/day)
-3: Minor Oozy Touch
-4: Charisma penality -2, Oozy Glob(2/day)
-5: Major Oozy Touch
-6: Charisma penality -3, Oozy Glob(3/day), Indiscernible Anatomy
-7: Major Oozy Touch
-8: Charisma penality -4, Oozy Glob(4/day), Slime Wave
-9: Major Oozy Touch
-10: Charisma penality -5, Oozy Glob(5/day), One with the Ooze
-
-BONUS SPELLS
-Every other level in Oozemaster, the character gains new spells per day as if he had also gained a level in his highest caster class. He does not learn any new spells through this abilities.
-
-******************** Mage Killer *******************
-Mage Killers are a rare breed. They master magic designed for combat against other spellcasters. They learn not only combat skills as might be taught a warrior, but also spells that target the weaknesses of their foes. Some use traps, other use weapons, but all hone their magical skills to a fine point, for it is those skills that distinguish them from the usual run of hunters and killers. They develop friendships with the sorts of people who can lead them to their foes, but the dirty business of overcoming those foes they place on their own shoulders.
-
-- Hit Die: d4.
-- Proficiencies: A mage killer does not gain any additional weapon or armor proficiencies.
-- Skill Points: 2 + Int Modifier.
-
-REQUIREMENTS:
-
-Arcane Spellcasting: Level 4 or higher.
-Feats: Great Fortitude, Lightning Reflexes, Combat Casting, and Weapon Proficiency: Martial.
-Skills: Spellcraft 10 or more ranks.
-
-ABILITIES:
-
-Level
-1: Improved Saves
-2: Augment Summoning
-3: Improved Saves
-4: Spell Focus: Evocation
-5: Improved Saves
-6: Spell Focus: Necromancy
-7: Improved Saves
-8: Spell Focus: Conjuration
-9: Improved Saves
-10: Spell Focus: Transmutation
-
-BONUS SPELLS
-Upon gaining a level in Mage Killer, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through this abilities.
-
-******************** Harper Mage *******************
-Wizards and sorcerers have been part of the Harpers since the organization's inception. Many of its senior members today are powerful mages. Among the organizations principal allies are several influential wizards and sorcerers who have made some of their accumulated knowledge available to the Harpers. Mystra, the diety of magic, is one of the patron dieties of the Harpers; her predecessor was one of the dieties who met at the Dancing Place centuries ago to inspire the founding of the organization. With such a rich magical tradition, it is inevitable that the Harpers would develop some of their own magical lore and techniques to pass on to their agents.
-
-- Hit Die: d4
-- Proficiencies: A harper mage is proficient with simple weapons.
-- Skill Points: 4 + Int Modifier
-
-REQUIREMENTS:
-
-Feats: Alertness, Extend Spell
-Alignment: Any nonevil.
-Skills: Concentration 4 or more ranks, Spellcraft 8 or more ranks, Lore 8 or more ranks, Persuade 2 or more ranks.
-
-ABILITIES:
-
-Level
-1: Skill Focus: Lore
-2: Skill Focus: Spellcraft
-3: Still Spell
-4: Silent Spell
-5: Hardiness vs Spells
-
-BONUS SPELLS
-Upon gaining a level in Harper Mage, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through this abilities.
-
-******************** Spellsword *******************
-The dream of melding magic and weaponplay is fufilled in the person of the Spellsword. A student of both arcane rituals and martial techniques, the Spellsword gradually learns to cast spells in armor with less chance of failure. Moreover, she can cast spells through her weapon, as well as store spells there for later use. Feared by mages for her ability to cast in armor, and by the common people for her ability to use spells, the Spellsword often walks the world alone.
-
-- Hit Die: d8.
-- Proficiencies: A Spellsword does not gain any additional weapon or armor proficiencies.
-- Skill Points: 2 + Int Modifier.
-
-REQUIREMENTS:
-
-Arcane Spellcasting: Level 2 or higher.
-Feats: Weapon Proficiency Simple, Weapon Proficiency Martial, Armor Proficiency Light, Armor Proficiency Medium, Armor Proficiency Heavy.
-Skills: Lore 6 or more ranks.
-BAB: 4 or higher.
-
-ABILITIES:
-
-Level
-1: Blank
-2: Ignore Spell Failure 10%
-3: Ignore Spell Failure 15%
-4: Blank
-5: Ignore Spell Failure 20%
-6: Brew Potion
-7: Ignore Spell Failure 25%
-8: Bonus Feat
-9: Ignore Spell Failure 30%
-10: Blank
-
-BONUS SPELLS
-Every other level in Spellsword, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through this abilities.
 
 ******************** Acolyte of the Skin *******************
-The tempation of power drives some people to extreme lengths. regardless of the consequences. Replacing your own skin with that of a living demon is a goal that most couldn't even conceive of, let alone consider. But this ghastly fate is exactly what some spellcasters seek in their desperate quest.
+The temptation of power drives some people to extreme lengths, regardless of the consequences. Replacing your own skin with that of a living demon is a goal that most couldn't even conceive of, let alone consider. But this ghastly fate is exactly what some spellcasters seek in their desperate quest.
 
 - Hit Die: d4.
 - Proficiencies: An Acolyte of the Skin does not gain any additional weapon or armor proficiencies.
@@ -182,29 +27,66 @@ The tempation of power drives some people to extreme lengths. regardless of the 
 
 REQUIREMENTS:
 
-Arcane Spellcasting: Level 3 or higher.
-Skills: Lore 8 or more ranks.
-Alignment: Nongood.
+Arcane Spellcasting: Able to cast 3rd-level spells.
+Skills: Lore 8 ranks.
+Alignment: Non-good.
 
 ABILITIES:
 
 Level
-1: Wear Fiend
-2: Flame Resistant
-3: Fiendish Glare
-4: Fiendish Knowledge
-5: Skin Adaption
-6: Cold Resistant
-7: Glare of the Pit
-8: Fiendish Knowledge
-9: Summon Fiend
-10: Symbiosis
+1: Wear Fiend - Grants +1 Natural Armor, +2 Dexterity and Dark Vision.
+2: Flame Resistant - Gains 20 fire resistance.
+3: Fiendish Glare - Glare can decrease a foe's abilities and even stun weak opponents.
+4: Fiendish Knowledge - ?
+5: Skin Adaption - Grants +2 Natural Armor, +2 Constitution.
+6: Cold Resistant - Gains 20 cold resistance.
+7: Glare of the Pit - Once per day, glare can torch an opponent, dealing 16d6 damage.
+8: Fiendish Knowledge - ?
+9: Summon Fiend - Can summon a Vrock once per day.
+10: Symbiosis Grants 20/+1 Damage reduction. For each 5 Epic levels, it gains +1. 
 
 BONUS SPELLS
-Every other level in Acolyte of the Skin, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through this abilities.
+Every other level in Acolyte of the Skin, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
+
+
+
+******************** Archmage *******************
+The highest art is magic, often referred to as *the* Art. Its most advanced practitioners are frequently archmages, bending spells in ways unavailable to other spellcasters.
+
+- Hit Die: d4.
+- Proficiencies: An Archmage does not gain any additional weapon or armor proficiencies.
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Arcane Spellcasting: Able to cast 7th-level spells.
+Feats: Skill Focus (Spellcraft), Any Spell Focus.
+Skills: Spellcraft 15 ranks, Lore 15 ranks.
+
+ABILITIES:
+
+Level
+1: High Arcana*, Mastery of Elements (Normal)
+2: High Arcana*
+3: High Arcana*
+4: High Arcana*
+5: High Arcana*
+
+BONUS SPELLS
+The Archmage sacrifices the bonus spell slots he should gain in order to take a High Arcana feat at each level. He does, however, add his level to his base caster class when determining spell power (damage, duration ...).
+
+HIGH ARCANA:
+Each level the Archmage must choose one of the following High Arcana feats:
+* Arcane Fire: This feat allows the Archmage to convert any spells he knows into a powerful bolt of raw magical energy.
+* Mastery of Elements: This feat allows the Archmage to change on the fly the damage type of any elemental spells. The feat to set them back to normal is free at level 1, the fire, cold, acid, electrical and sonic damages are separated in their own feats and must be selected.
+* Mastery of Shapes: This feat allows the Archmage to create "holes" in her area of effect spells to protect his companions from the effects.
+* Spell-Like ability: This feat allows the Archmage to permanently prepare a spell as a spell-like ability which she may then use 2 times per day.
+* Spell Power: This feat allows the Archmage to increase his effective caster level by 1 (commutative with the normal level bonus they get).
+
+
 
 ******************** Champion of Bane *******************
-Champions of Bane are tyrannical warriors who dedicate themselves to Bane's cause, slowly, but inevitably bringing more land and power to Bane, and unfavouring loyalty to his cause of domination. Bane has the portfolios of Fear, Strife, Tyranny, and Hatred.
+Champions of Bane are tyrannical warriors who dedicate themselves to Bane's cause, slowly but inevitably bringing more land and power to Bane, and unswerving loyalty to his cause of domination. Bane has the portfolios of Fear, Strife, Tyranny, and Hatred.
 
 - Hit Die: d10.
 - Proficiencies: All simple and martial weapons, light and medium armor, and shields.
@@ -213,71 +95,24 @@ Champions of Bane are tyrannical warriors who dedicate themselves to Bane's caus
 REQUIREMENTS:
 
 Base Attack Bonus: +7
-Feats: Weapon Focus(Morningstar)
+Feats: Weapon Focus (Morningstar)
 Alignment: Lawful Evil
 
 ABILITIES:
 
 Level
-1: Lay on Hands - Can heal damage equal to class level multiplied by their Charisma modifier,  deals damage to undead creatures
+1: Lay on Hands - Can heal damage equal to class level multiplied by their Charisma modifier, deals damage to undead creatures
 2: Sacred Defense  - +1 to all saving throws.
 3: Smite Good -  Once per day may add Charisma bonus to attack roll and do +1 point of damage per level of Champion and Blackguard.
 4: Sacred Defense  - +2 to all saving throws.
-5: Divine Wrath - Once per day +3 to attack, damage and saving throws and Damage Reduction +1/5 for a number of rounds equal to Charisma bonus.
+5: Divine Wrath - Once per day +3 to attack, damage and saving throws, and Damage Reduction +1/5 for a number of rounds equal to Charisma bonus.
 6: Sacred Defense  - +3 to all saving throws.
 8: Sacred Defense  - +4 to all saving throws.
 10: Sacred Defense  - +5 to all saving throws.
 
 Champions of Bane receive a bonus feat every second level.
 
-******************** Eldritch Knight *******************
-Studying the martial and arcane arts to equal degree, the eldritch knight is a versatile combatantant who can cast fireball on her foes or charge them with sword drawn. The eldritch knight takes pride in her ability to use the right technique for the job: spells against physically tough foes and force of arms against spellcasting enemies.
 
-- Hit Die: d6
-- Proficiencies: None
-- Skill Points: 2 + Int Modifier.
-
-REQUIREMENTS:
-
-Feats: Weapon Proficiency(Martial)
-Arcane Spellcasting: Level 3 or higher.
-
-ABILITIES:
-
-Eldritch Knights receive a bonus feat at first level. The feats to pick from are all fighter bonus feats (except Weapon Specification)
-
-BONUS SPELLS
-
-Upon reaching level 1,2, 3, 4, 5, 6, 7, 8, 9, and 10 the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer or wizard). He does not learn any new spells through this ability, however.
-
-******************** Elemental Savant *******************
-Elemental Savants study the basic building blocks of existence - air, earth, fire, water - learning to harness their powers. Eventually they transcend their mortal form and become elemental beings. Most elemental savants start out as wizards, although clerics and druids are not unknown. Sorcerers occasionally take this prestige class, but since metamagic feats are of less utility to them, they have difficulty using the classes strengths to the fullest.
-
-- Hit Die: d4.
-- Proficiencies: An elemental savant does not gain any additional weapon or armor proficiencies.
-- Skill Points: 2 + Int Modifier.
-
-REQUIREMENTS:
-
-Arcane Spellcasting: Level 3 or higher.
-Skills: Lore 8 or more ranks.
-
-ABILITIES:
-
-Level
-1: Elemental Transition, Resistance 5
-2: Elemental Focus +1
-3: Elemental Penetration +1
-4: Elemental Transition, Resistance 10
-5: Elemental Focus +2
-6: Elemental Penetration +2
-7: Elemental Transistion, Resistance 15
-8: Elemental Focus +3
-9: Elemental Penetration +3
-10: Elemental Perfection
-
-BONUS SPELLS
-Upon gaining a level in Elemental Savant, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through this abilities.
 
 ******************** Disciple of Mephistopheles *******************
 The Disciple of Mephistopheles wields hellfire as his weapon, striking down all who oppose him. He focuses on all things fire-related, as is fitting with the preoccupation of the arch-devil he serves.
@@ -295,7 +130,8 @@ Feats: Disciple of Darkness
 ABILITIES:
 
 Level
-1: Hellfire Grasp - Can make a touch attack at will, dealing 1d6 Fire Damage, also character gains a +1d6 Damage Bonus to all unarmed strikes (while wearing gloves)
+1: Hellfire Grasp - Can make a touch attack at will, dealing 1d6 Fire Damage, also character gains a
++1d6 Damage Bonus to all unarmed strikes (while wearing gloves)
     Fire Adept - Casts Fire Spells at +1 Character Level
 2: Fire Resistance 10 - Gains 10 Fire Resistance
 3: Hellfire Blast - Can release a gout of fire from hand at will, dealing 4d6 Fire Damage
@@ -304,200 +140,38 @@ Level
 6: Hellfire - Casts a spell which causes a diabolical explosion, dealing special damage
     Fire Resistance 20 - Gains 20 Fire Resistance
 7: Fire Shield - As Spell
-8: Hellfire Storm - An Improved version of Hellfire, with a larger explosion, with more range and more damage
-10: Body of Flame - Body becomes fire for ten minutes, gaining immunity among other things
+8: Hellfire Storm - An Improved version of Hellfire, with a larger explosion, more range and more damage
+10: Body of Flame - Body becomes fire for up to ten minutes per day, gaining fire immunity and damage reduction 30/+1. Anyone he touches or touches him must succeed a reflex save or catch fire.
 
 
-******************** Shifter (PnP Version) *******************
-This shifter class was created in order to provide a class that more closely resembles the 3E version of the shifter.
-
-- Hit Die: d8.
-- Proficiencies: A shifter does not gain any additional weapon or armor proficiencies.
-- Skill Points: 4 + Int Modifier.
-
-REQUIREMENTS:
-
-Druid level : Level 5 or higher.
-Feats: Awareness
-
-ABILITIES:
-
-Level
-Level 1: Mimic feat 1/day , Weapon proficiency creature feat, Greater WildShape feat 1/day.
-small and medium humanoid.
-Level 2: animal and monstrous humanoid.
-Level 3: large, tiny, beast, plant, Mimic feat 2/day, Greater WildShape 2/day.
-Level 4: Giant and Vermin
-Level 5: magical beast, Mimic feat 3/day, Greater WildShape 3/day.
-Level 6: aberration and ooze.
-Level 7: huge and dragon, Mimic feat 4/day, Greater wildshape 4/day.
-Level 8: undead and construct
-Level 9: elemental and outsider, Mimic feat 5/day, Greater wildshape 5/day.
-Level 10: evershifting form: no limit on Mimic or Greater wildshape.
-
-Epic Shifter
-The epic shifter has gone beyond the normal druidic ability to wildshape; no longer does she simply assume a new form when she changes shape. The epic shifter actually becomes the new creature. Epic shifters are rarely encountered in their true form; indeed, some of the most ancient and powerful shifters claim (with some pride) to have forgotten their true form entirely.
-
-Epic shifters are generally a wild and carefree lot, and they prefer to spend their time exploring the multiverse and reveling in new forms and shapes they discover along the way.
-
-- Hit Die: d8.
-- Skill Points: 4 + Int Modifier.
-
-Level 11: Epic Greater WildShape 2/day (gain +2 uses every 3 levels above 11)
-
-
-******************** Lich Template *******************
-(Template Class)
-Feared by mortal beings for their malign magic, their intelligence, and their willingness to embrace undeath for a chance to live forever, liches are evil beings of great power.
-- WOTC website on the Lich Template
-
-Description:
-This template class is the evolution of an Arcane or Divine caster with the spell caster ability of 11th or greater level into the feared Lich. The progression of un-death is one not taken litely and it may completely destroy the one who seeks the power.  The power actually comes from defense because the lich does not gain any spells or caster levels.
-
-Prerequisites to take the class:
-11th level Wizard, Sorcerer, or Cleric.
-14 Concentration
-Any non good alignment.
-Creation of 1st stage of phylactery.  (First level up in the lich class and then create your phlyactery to gain your lich powers)
-At each level up you must upgrade your phylactery in order to gain more powers.
-
-Lich skills: Hide, Listen, Move Silently, Search,Persuade, and Spot.
-Class skills: As a wizard.
-HD per level 1d4 (At level 4 you get a massive con bonus to simulate the retroactive d12 HD bump)
-
-Level 1
-Int +2
-natural armor +2
-lich skills +2
-damaging touch 1d6+5, paralyzing touch (1d4 rounds)
-resistances (cold 5, electricity 5), )
-
-Level 2
-natural armor +3
-lich skills +4
-damage reduction 5/+1
-damaging touch (1d8+5), paralyzing touch (1d4 minutes)
-resistances (cold 10, electricity 10)
-fear aura
-
-Level 3
-Wis +2
- natural armor +4
-lich skills +6
-damage reduction 10/+1
-paralyzing touch (1d4 hours)
-resistances (cold 20, electricity 20)
-
-Level 4
-Cha +2
-natural armor +5
-lich skills +8
-damage reduction 15/+1
-immunities (cold, electricity)
-paralyzing touch (permanent)
-turn resistance +4
-undeath
-
-Epic Progression:
-In order to become a demilich you must be a level 21 Sorcerer, Wizard, or Cleric.
-At each level you must create one soul gem in order to gain the powers for that level, you must also upgrade your phylactery.  To gain the final level you must have 8 soul gems.
-Soul gems cost 120,000 gold and 4,800 exp each gem.  (Use the Craft Wonderous item feat to create them)
-
-Bonus Feats: None
-HD: 1d4
-
-(Carrierd over from your previous lich levels)
-100% cold immune
-100% electric immune
-+12 to con (simulation of retroactive d12 HD change)
-Undead Properties.
-
-Level 5:
-DR 5/+5
-DR Acid 5/-
-DR Fire 5/-
-DR Sonic 5/-
-+3 int, wis, and cha
-+10 lich skills
-+5 turn resistance
-Immunity to level 1 spells.
-
-Level 6:
-DR 10/+8
-DR Acid 10/-
-DR Fire 10/-
-DR Sonic 10/-
-+4 int, wis, and cha
-+12 lich skills
-+8 turn resistance
-Immunity to level 3 spells.
-
-Level 7:
-DR 15/+11
-DR Acid 10/-
-DR Fire 10/-
-DR Sonic 10/-
-+6 int, wis, and cha
-+14 lich skills
-+11 turn resistance
-Immunity to level 5 spells.
-
-Level 8:
-DR 20/+14
-DR Acid 15/-
-DR Fire 15/-
-DR Sonic 15/-
-+7 int, wis, and cha
-+16 lich skills
-+14 turn resistance
-Immunity to level 7 spells.
-
-Level 9:
-DR 25/+17
-DR Acid 15/-
-DR Fire 15/-
-DR Sonic 15/-
-+8 int, wis, and cha
-+18 lich skills
-+17 turn resistance
-Immunity to level 8 spells.
-
-Level 10:
-DR 30/+20
-DR Acid 20/-
-DR Fire 20/-
-DR Sonic 20/-
-+10 int, wis, and cha
-+20 lich skills
-+20 turn resistance
-Immunity to level 9 spells.
 
 ******************** Duelist *******************
-The duelist is a nimble, intelligent fighter trained in making precise attacks with light weapons, such as the rapier.  Also known as the swashbuckler, the duelist always takes full advantage of his quick reflexes and wits in a fight.  Rather than wearing bulky armor, duelists feel the best way to protect themselves is to not get hit at all.
+
+The duelist is a nimble, intelligent fighter trained in making precise attacks with light weapons, such as the rapier.  Also known as the swashbuckler, the duelist always takes full advantage of his quick reflexes and wits in a fight.  Rather than wearing bulky armor, duelists feel that the best way to protect themselves is to not get hit at all.
 
 - Hit Die: d10
-- Proficiencies: A duelist is proficient with all simple and martial weapons.  But does not gain any armor or shield proficiencies.
+- Proficiencies: A duelist is proficient with all simple and martial weapons, but does not gain any armor or shield proficiencies.
 - Skill Points: 4 + Int Modifier.
 
 REQUIREMENTS:
 
 Base Attack Bonus: +6
-Feats: Dodge, Ambidexterity, Mobility, Weapon Proficiency: Martial, Rogue or Elf.
-Skills: Tumble 5 or more ranks.  Perform 3 or more ranks.
+Feats: Dodge, Ambidexterity, Mobility, Weapon Proficiency (Martial, Rogue or Elf).
+Skills: Tumble 5 ranks. Perform 3 ranks.
 
 ABILITIES:
 
 Level
-1: Canny Defense - Add int bonus to AC when not wearing armor
-2: Precise Strike +1d6: Damage bonus when wielding a light piercing weapon
-3: Whirlwind Attack: Gain Whirlwind Attack feat for free
-4: Grace +2: Bonus to reflex save when not wearing armor
-5: Acrobatic Attack +2: Bonus to attack and damage by leaping at the enemy
-6: Precise Strike +2d6: Damage bonus when wielding a light piercing weapon
-7: Elaborate Parry: Bonus to AC equal to duelist level when in parry mode
-8: Grace +4: Bonus to reflex save when not wearing armor
-9: Spring Attack: Gain Spring Attack Feat for free
-10: Acrobatic Attack: +4: Bonus to attack and damage by leaping at the enemy
+1: Canny Defense - Add int bonus to AC when not wearing armor.
+2: Precise Strike +1d6 - Damage bonus when wielding a light piercing weapon.
+3: Whirlwind Attack
+4: Grace +2 - Bonus to reflex save when not wearing armor.
+5: Acrobatic Attack +2 - Bonus to attack and damage by leaping at the enemy.
+6: Precise Strike +2d6 - Damage bonus when wielding a light piercing weapon.
+7: Elaborate Parry - Bonus to parry skill.
+8: Grace +4 - Bonus to reflex save when not wearing armor.
+9: Spring Attack
+10: Acrobatic Attack: +4 - Bonus to attack and damage by leaping at the enemy.
 
 
 Known Issues:
@@ -508,8 +182,91 @@ Known Issues:
   -Epic levels aren't from official material.
 
 
+
+******************** Eldritch Knight *******************
+Studying the martial and arcane arts to equal degree, the eldritch knight is a versatile combatant who can cast fireball on her foes or charge them with sword drawn. The eldritch knight takes pride in her ability to use the right technique for the job: spells against physically tough foes and force of arms against spellcasting enemies.
+
+- Hit Die: d6
+- Proficiencies: None
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Feats: Weapon Proficiency (Martial)
+Arcane Spellcasting: Able to cast 3rd-level spells.
+
+ABILITIES:
+
+Eldritch Knights receive a bonus feat at first level. The feats to pick from are all fighter bonus feats (except Weapon Specialization).
+
+BONUS SPELLS
+Upon gaining a level in Eldritch Knight, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
+
+
+
+******************** Elemental Savant *******************
+Elemental Savants study the basic building blocks of existence - air, earth, fire, water - learning to harness their powers. Eventually they transcend their mortal form and become elemental beings. Most elemental savants start out as wizards, although clerics and druids are not unknown. Sorcerers occasionally take this prestige class, but since metamagic feats are of less utility to them, they have difficulty using the class's strengths to the fullest.
+
+- Hit Die: d4.
+- Proficiencies: An elemental savant does not gain any additional weapon or armor proficiencies.
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Arcane Spellcasting: Able to cast 3rd-level spells.
+Skills: Lore 8 ranks.
+
+ABILITIES:
+
+Level
+1: Elemental Transition 1 - Grants Immunity to Sleep.
+    Resistance +5 - Grants 5 resistance to chosen element.
+2: Elemental Focus +1 - Grants a DC increase for spells of the chosen element.
+3: Elemental Penetration +1 - Grants a Spell Penetration increase for spells of the chosen element.
+4: Elemental Transition 2 - Grants Darkvision and Immunity to Paralysis.
+    Resistance +10 - Grants 10 resistance to chosen element.
+5: Elemental Focus +2 - Spell DC increase improves.
+6: Elemental Penetration +2 - Spell Penetration bonus improves.
+7: Elemental Transition 3 - Grants Immunity to Stun.
+    Resistance +15 - Grants 15 resistance to chosen element.
+8: Elemental Focus +3 - Spell DC increase improves.
+9: Elemental Penetration +3 - Spell Penetration bonus improves.
+10: Elemental Perfection - Gain all benefits of being an elemental, including immunity to poison, sleep, paralysis, stunning, critical hits and sneak attacks. Gain the special attacks and special qualities of a medium elemental of the chosen type. Gain immunity to the chosen element, but take double damage from all spells of the opposing element.
+
+BONUS SPELLS
+Upon gaining a level in Elemental Savant, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
+
+
+
+******************** Harper Mage *******************
+Wizards and sorcerers have been part of the Harpers since the organization's inception. Many of its senior members today are powerful mages. Among the organizations principal allies are several influential wizards and sorcerers who have made some of their accumulated knowledge available to the Harpers. Mystra, the diety of magic, is one of the patron dieties of the Harpers; her predecessor was one of the dieties who met at the Dancing Place centuries ago to inspire the founding of the organization. With such a rich magical tradition, it is inevitable that the Harpers would develop some of their own magical lore and techniques to pass on to their agents.
+
+- Hit Die: d4
+- Proficiencies: A harper mage is proficient with simple weapons.
+- Skill Points: 4 + Int Modifier
+
+REQUIREMENTS:
+
+Feats: Alertness, Extend Spell
+Alignment: Any nonevil.
+Skills: Concentration 4 ranks, Spellcraft 8 ranks, Lore 8 ranks, Persuade 2 ranks.
+
+ABILITIES:
+
+Level
+1: Skill Focus: Lore
+2: Skill Focus: Spellcraft
+3: Still Spell
+4: Silent Spell
+5: Hardiness vs Spells
+
+BONUS SPELLS
+Upon gaining a level in Harper Mage, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
+
+
+
 ******************** Hierophant *******************
-A divine spellcaster who rises high in the service of his diety gains access to spells and abilities of which lesser faithful can only dream.  The hierophant prestige class is open to power divine spellcasters who are approaching access to the strongest and most difficult divine spells.  They delay the acquisition of these greatest gifts in exchange for a deeper understanding of and ability to control the power they channel.
+A divine spellcaster who rises high in the service of his deity gains access to spells and abilities of which lesser faithful can only dream. The hierophant prestige class is open to power divine spellcasters who are approaching access to the strongest and most difficult divine spells.  They delay the acquisition of these greatest gifts in exchange for a deeper understanding of and ability to control the power they channel.
 
 - Hit Die: d8
 - Proficiencies: A hierophant does not gain any additional weapon or armor proficiencies.
@@ -517,24 +274,160 @@ A divine spellcaster who rises high in the service of his diety gains access to 
 
 REQUIREMENTS:
 
-Divine Spellcasting: Level 7 or higher.
+Divine Spellcasting: Able to cast 7th-level spells.
 Feats: Any Metamagic feat
-Skills: Lore 15 or more ranks.
+Skills: Lore 15 ranks.
 
 ABILITIES:
-May select one of the following abilities every level.
 
-Blast Infidel - Negative is maximized against opposed alignments
-Faith Healing - Healing is maximized against similar alignments
-Master of Energy - Bonus to turn undead.
-Spell Power - Bonus to spell save DC
-Metamagic Feat - May choose a bonus Metamagic feat
-Spell Like Ability - Gains a known spell as an ability which can be used at will 3x/day
+May select one of the following abilities every level.
+*Blast Infidel - Negative is maximized against opposed alignments
+*Faith Healing - Healing is maximized against similar alignments
+*Master of Energy - Bonus to turn undead.
+*Spell Power - Bonus to spell save DC
+*Metamagic Feat - May choose a bonus Metamagic feat
+*Spell Like Ability - Gains a known spell as an ability which can be used at will 3x/day
 
 Known Issues:
-  -Loss of spell slots in exchange for abilites was impossible to implement properly.  This makes the Hierophant a bit more powerful than the PnP version.
+  -Loss of spell slots in exchange for abilities was impossible to implement properly.  This makes theHierophant a bit more powerful than the PnP version.
   -The feats involving transfer of abilities were not implemented.
-  -Blast Infidel and Faith Healing work by alignment, not diety, since the former is much more commonly used in NWN.
+  -Blast Infidel and Faith Healing work by alignment, not deity, since the former is much more commonly used in NWN.
+
+
+
+******************** Lich *******************
+Feared by mortal beings for their malign magic, their intelligence, and their willingness to embrace undeath for a chance to live forever, liches are evil beings of great power.
+
+This template class is the evolution of an Arcane or Divine caster of level 11 or greater into the feared Lich. The progression of un-death is not to be taken lightly, and it may completely destroy the one who seeks it.  The lich does not gain any spells or caster levels, yet they gain heavy defenses.
+
+- Hit Die: 1d4
+- Proficiencies: A lich does not gain any additional weapon or armor proficiencies.
+- Skill points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Class: 11 levels in Wizard, Sorcerer, or Cleric.
+Alignment: Any nongood.
+Skills: Concentration 5 ranks.
+Creation of first stage of phylactery. (First level up in the lich class, then create your phlyactery to gain your lich powers. Each level, this phylactery must be upgraded. Costs 40,000 gold and 1,600 XP.)
+
+ABILITIES:
+
+Level
+1: Lich Properties +2 - Gain bonuses to Hide, Listen, Move Silently, Search, Persuade, and Spot.
+    Lich Touch - Touch attack causes 1d6+5 damage and possible paralyzation for 1d4 rounds.
+    Increased Defence - Gain Damage Resistance 5 to cold and electricity.
+    Intelligence +2
+2: Lich Properties +4 - Bonuses increase.
+    Lich Touch - Increases damage and duration of paralyzation.
+    Increased Defense - Gain Damage Reduction 5/+1, Natural Armor +3, and Damage Resistance 10 to cold and electricity.
+    Fear Aura
+3: Lich Properties +6 - Bonuses increase.
+    Lich Touch - Increases duration of paralyzation.
+    Increased Defence - Gain Damage Reduction 10/+1, Natural Armor +4, and Damage Resistance 20 to cold and electricity.
+    Wisdom +2
+4: Lich Properties +8 - Bonuses increase.
+    Lich Touch - Increases duration of paralyzation to permanent.
+    Increased Defence - Gain Damage Reduction 15/+1, Natural Armor +5, immunity to cold and electricity, and Turn Resistance +4.
+    Charisma +2
+    Constitution +12
+    Undeath
+
+In order to become a demilich you must be a level 21 Sorcerer, Wizard, or Cleric.
+Each level, you must create one soul gem in order to gain the powers for that level You must also upgrade your phylactery.  To gain the final level, you must have 8 soul gems.
+Soul gems cost 120,000 gold and 4,800 exp each gem.  (Use the Craft Wonderous item feat to create them)
+
+Level
+5: Lich Properties +10 - Bonuses increase.
+    Increased Defence - Damage Reduction 5/+5; Damage Resistance 5 to acid, fire, and sonic; Turn Resistance +5; and Immunity to Level 1 spells.
+    Intelligence, Wisdom, and Charisma +3
+6: Lich Properties +12 - Bonuses increase.
+    Increased Defence - Damage Reduction 10/+8; Damage Resistance 10 to acid, fire, and sonic; Turn Resistance +8; and Immunity to Level 3 spells and below.
+    Intelligence, Wisdom, and Charisma +4
+7: Lich Properties +14 - Bonuses increase.
+    Increased Defence - Damage Reduction 15/+11, Turn Resistance +11, Immunity to Level 5 spells and below.
+    Intelligence, Wisdom, and Charisma +6
+8: Lich Properties +16 - Bonuses increase.
+    Increased Defence - Damage Reduction 10/+14; Damage Resistance 15 to acid, fire, and sonic; Turn Resistance +14; and Immunity to Level 7 spells and below.
+    Intelligence, Wisdom, and Charisma +7
+9: Lich Properties +18 - Bonuses increase.
+    Increased Defence - Damage Reduction 25/+17, Turn Resistance +17, and Immunity to Level 8 spells and below.
+    Intelligence, Wisdom, and Charisma +8
+10: Lich Properties +20 - Bonuses inrease.
+    Increased Defence - Damage Reduction 30/+20; Damage Resistance 20 to acid, fire, and sonic; Turn Resistance +20; and Immunity to Level 9 spells and below.
+    Intelligence, Wisdom, and Charisma +10
+
+
+
+******************** Mage Killer *******************
+Mage Killers are a rare breed. They master magic designed for combat against other spellcasters. They learn not only combat skills as might be taught a warrior, but also spells that target the weaknesses of their foes. Some use traps, others use weapons, but all hone their magical skills to a fine point, for it is those skills that distinguish them from the usual run of hunters and killers. They develop friendships with the sorts of people who can lead them to their foes, but they place the dirty business of overcoming those foes on their own shoulders.
+
+- Hit Die: d4.
+- Proficiencies: A mage killer does not gain any additional weapon or armor proficiencies.
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Arcane Spellcasting: Able to cast 4th-level spells.
+Feats: Great Fortitude, Lightning Reflexes, Combat Casting, and Weapon Proficiency: Martial.
+Skills: Spellcraft 10 ranks.
+
+ABILITIES:
+
+Level
+1: Improved Saves
+2: Augment Summoning
+3: Improved Saves
+4: Spell Focus: Evocation
+5: Improved Saves
+6: Spell Focus: Necromancy
+7: Improved Saves
+8: Spell Focus: Conjuration
+9: Improved Saves
+10: Spell Focus: Transmutation
+
+BONUS SPELLS
+Upon gaining a level in Mage Killer, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
+
+
+
+******************** Oozemaster *******************
+The oozemaster is not a class for stable individuals. It involves relating one-on-one with things that relate to nothing at all. Unlike the animal lord's kindred creatures, the oozemaster's charges have nothing to say. No one has yet developed a speak with ooze spell- or if someone has, the oozes haven't responded. Given that oozemasters exude everything but confidence, most of them have few sentient friends and even fewer guests. Thus, they tend to gibber and talk to themselves a lot.
+
+- Hit Die: d8.
+- Proficiencies: Oozemasters gain no weapon or armor proficiencies.
+- Skill Points: 4 + Int Modifier.
+
+- Requirements
+Spellcasting: Able to cast 3rd-level arcane or divine spells.
+Skills: Lore 7 ranks.
+Feats: Great Fortitude.
+
+ABILITIES:
+
+Levels:
+1: Minor Oozy Touch - Can secrete a specific minor ooze for a touch attack often as desired.
+2: Charisma penalty -1
+    Oozy Glob - Can use any learned minor oozy touch as a grenade weapon once per day.
+3: Minor Oozy Touch - Can choose another minor ooze.
+4: Charisma penalty -2
+    Oozy Glob - Can use twice per day
+5: Major Oozy Touch
+6: Charisma penalty -3
+    Oozy Glob - Can use three times per day.
+    Indiscernible Anatomy - Immunity to critical hits and sneak attacks.
+7: Major Oozy Touch - Can choose a major ooze for a touch attack or another minor ooze.
+8: Charisma penalty -4
+    Oozy Glob - Can use four times a day.
+    Slime Wave
+9: Major Oozy Touch - Can choose another major or minor ooze.
+10: Charisma penalty -5
+    Oozy Glob - Can use five times a day.
+    One with the Ooze - Type changes to ooze; gains the blind-fight feat; gains immunity to mind spells, poisons, and paralysis.
+
+BONUS SPELLS
+Every other level in Oozemaster, the character gains new spells per day as if he had also gained a level in his highest caster class. He does not learn any new spells through his abilities.
+
 
 
 ******************** Red Avenger *******************
@@ -548,26 +441,147 @@ REQUIREMENTS:
 
 Base Attack Bonus: +5
 Feats: Improved Unarmed Strike, Stunning Fist.
-Skills: Listen 8 or more ranks.  Tumble: 8 or more ranks.
+Skills: Listen 8 or more ranks, Tumble: 8 or more ranks.
 
 ABILITIES:
-Level
-1: Stunning Shout 1/day: Stun enemies by releasing ki in a shout
-2: Ki save 1/day: Add wisdom bonus to saving throws for a short time.
-3: Ki save 1/day: Add wisdom bonus to skill checks for a short time.
-4: Ki Healing 1/day: Use ki energy to heal.
-5: Deadly Shout 1/day: Injure enemies by releasing ki in a shout
-    Stunning Shout 2/day.
-6: Ki save 2/day
-7: Ki skill 2/day
-8: Ki healing 2/day
-9: Deadly Shout 2/day
-    Stunning Shout 3/day
-10: Free Ki: Double wisdom modifier when using ki abilities.
 
-Known Isssues:
-  - Ki save and skill apply to all saves/skills for 2 rounds instead of on only 1 save/skill check.  This makes up for not being able to precisely select any desired check as a free action.
+Level
+1: Stunning Shout - Stun enemies by releasing ki in a shout once a day.
+2: Ki Save - Add wisdom bonus to saving throws for a short time once a day.
+3: Ki Skill - Add wisdom bonus to skill checks for a short time once a day.
+4: Ki Healing - Use ki energy to heal once a day.
+5: Deadly Shout - Injure enemies by releasing ki in a shout once a day.
+    Stunning Shout - Gain another shout a day.
+6: Ki Save 2 - Gain another use per day.
+7: Ki Skill 2 - Gain another use per day.
+8: Ki Healing 2 - Gain another use per day.
+9: Deadly Shout 2 - Gain another use per day.
+    Stunning Shout 3 - Gain another shout per day.
+10: Free Ki - Double wisdom modifier when using ki abilities.
+
+Known Issues:
+  - Ki save and skill apply to all saves/skills for 2 rounds instead of on only 1 save/skill check. This makes up for not being able to precisely select any desired check as a free action.
   - Epic Levels are not from official material.
+
+
+
+******************** Shifter (PnP Version) *******************
+A shifter has no form they call their own. Instead, they cloth themselves in whatever shape is most expedient at the time. While others base their identities largely on their external forms, the shifter actually comes closer to their true self through all of their transformations. Of necessity, their sense of self is based not on their outward form, but on their soul, which is truly the only constant about them. It is the inner strength of that soul that enables them to take on any shape and remain themselves within.
+
+(This version was created more closely to PnP guidelines. All available forms can be shifted into via verbal commands. The list of available creatures is here: http://www.nwnlexicon.com/compiled/other.resource.html Essentially, everything.)
+
+- Hit Die: d8.
+- Proficiencies: A shifter does not gain any additional weapon or armor proficiencies.
+- Skill Points: 4 + Int Modifier.
+
+REQUIREMENTS:
+
+Druid: Level 5 or higher.
+Feats: Alertness
+
+ABILITIES:
+
+Level
+1: Greater Wildshape - Can change into almost any small or medium humanoid once per day.
+    Mimic - Can mimic almost any small or medium humanoid once per day.
+    Creature Weapon Proficiency - Can use creature weapons.
+2: Can change into/mimic almost any animal or monstrous humanoid.
+3: Can change into/mimic almost any large or tiny beast or plant.
+    Can use Greater Wildshape and Mimic feats twice a day each.
+4: Can change into/mimic almost any giant or Vermin
+5: Can change into/mimic almost any magical beast.
+    Can use Greater Wildshape and Mimic feats three times a day each.
+6: Can change into/mimic almost any aberration or ooze.
+7: Can change into/mimic almost any huge and dragon.
+    Can use Greater Wildshape and Mimic feats four times a day each.
+8: Can change into/mimic almost any undead and construct
+9: Can change into/mimic almost any elemental and outsider.
+    Can use Greater Wildshape and Mimic feats five times a day each.
+10: Evershifting form - No limit on Mimic or Greater Wildshape.
+
+Epic Shifter
+The epic shifter has gone beyond the normal druidic ability to wildshape; no longer does she simply assume a new form when she changes shape. The epic shifter actually becomes the new creature. Epic shifters are rarely encountered in their true form; indeed, some of the most ancient and powerful shifters claim (with some pride) to have forgotten their true form entirely.
+
+Epic shifters are generally a wild and carefree lot, and they prefer to spend their time exploring the multiverse and reveling in new forms and shapes they discover along the way.
+
+- Hit Die: d8.
+- Skill Points: 4 + Int Modifier.
+
+Level 11: Epic Greater Wildshape - Can turn into almost anything twice a day, gaining some abilities of some of the forms. The epic shifter gains two uses of this feat every three levels above 11.
+
+
+
+******************** Spellsword *******************
+The dream of melding magic and weapon play is fulfilled in the person of the Spellsword. A student of both arcane rituals and martial techniques, the Spellsword gradually learns to cast spells in armor with less chance of failure. Moreover, she can cast spells through her weapon, as well as store spells there for later use. Feared by mages for her ability to cast in armor and by the common people for her ability to use spells, the Spellsword often walks the world alone.
+
+- Hit Die: d8.
+- Proficiencies: A Spellsword does not gain any additional weapon or armor proficiencies.
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Arcane Spellcasting: Level 2 or higher.
+Feats: Weapon Proficiency Simple, Weapon Proficiency Martial, Armor Proficiency Light, Armor
+Proficiency Medium, Armor Proficiency Heavy.
+Skills: Lore 6 or more ranks.
+BAB: 4 or higher.
+
+ABILITIES:
+
+Level
+1: None
+2: Ignore Spell Failure 10%
+3: Ignore Spell Failure 15%
+4: None
+5: Ignore Spell Failure 20%
+6: Brew Potion
+7: Ignore Spell Failure 25%
+8: Bonus Feat
+9: Ignore Spell Failure 30%
+10: None
+
+BONUS SPELLS
+Every other level in Spellsword, the character gains new spells per day as if he had also gained a level in his highest caster class (bard, sorcerer, or wizard). He does not learn any new spells through his abilities.
+
+
+
+******************** Vassal of Bahamut *******************
+Most of Bahamut's emissaries and champions are dutiful and mighty metallic dragons. Occasionally, however, Bahamut finds a nondraconic champion whose reverence of good dragons is unshakeable, and whose hatred of evil dragons rivals that of the purest gold dragons- a force so good and strong that Bahamut feels moved to offer this champion a place in his court. This champion becomes a Vassal of Bahamut.
+
+-Hit Die: d10.
+-Proficiencies: A Vassal of Bahamut is proficient in all simple and martial weapons, all types of armor and shields.
+-Skill Points: 2 + Int Modifier. 
+
+REQUIREMENTS:
+
+Alignment: Lawful Good
+Base Attack Bonus: +7
+Feats: Sacred Vow, Vow of Obedience
+Skills: Craft armor 5 ranks, Persuade 5 ranks
+
+ABILITIES:
+
+Level
+1. Imperious Aura - Gains a bonus equal to his class level on all Appraise, Persuade, Intimidate, Taunt and Perform checks vs. a creature of any dragon type.
+    Platinum Armor +4 - Gains a Platinum armor made from transmuted scales of a red dragon. Can only use his Vassal abilities while wearing it.
+2. Dragon Sense - Gain darkvision.
+    Shared Trove - Gains 200,000 gold pieces.
+    Bless weapon - Can cast once a day, as the spell.
+3. Bonus Feat
+4. Dragonwrack (+2d6/1d6) - Deals 2d6 damage if he strikes and 1d6 damage if he is struck by an evil creature of the dragon type.
+    Protection against Alignment - Can cast once a day, as the spell.
+5. Shared Trove - Gains 500,000 gold pieces.
+    Platinum Armor +6 - Armor's abilities increase.
+6. Bonus Feat
+    Bull's strength - Can cast once a day, as the spell.
+7. Dragonwrack (+3d6/1d6) - Dragonwrack increases.
+8. Shared Trove - Gains 800,000 gold pieces.
+    Magic Circle against Alignment - Can cast once a day, as the spell.
+9. Bonus Feat
+    Searing Light - Can cast once a day, as the spell.
+10. Dragonwrack (+4d6/1d6) - Dragonwrack increases.
+    Platinum Armor +8 - Armor's abilities increase.
+
 
 
 *************** Updates ****************
@@ -577,7 +591,7 @@ V1.8:
 * Bug fixes
 
 V1.7:
-* Added Lich Template, and Shifter from Hennessy, and Disciple of Mephistopheles from Attilla.
+* Added Lich Template and Shifter from Hennessy and Disciple of Mephistopheles from Attilla.
 
 V1.6:
 * Combined with Stratovarius's and Attilla's pack.
@@ -586,29 +600,33 @@ V1.5:
 * Oozemasters!
 
 V1.4:
-* Spell-Like ability. Permanently stores a spell as a spell-like ability
-  to use 2 times per day. This also allows for caster only spells, like
-  greater stoneskin, to be casted on other targets. This is not as it
-  was meant to work, but I find no way to remove it and it's so damn
-  nice anyway :) And it compensates for the lacking Arcane Reach
+* Spell-Like ability. Permanently stores a spell as a spell-like ability to use 2 times per day. This also allows for caster only spells, like greater stoneskin, to be cast on other targets. This is not as it was meant to work, but I find no way to remove it and it's so damn nice anyway :) And it compensates for the lacking Arcane Reach
 
 V1.3:
-* Arcane Fire feat. Target your victim with the feat, cast any spell
-  (remember that spell level adds to damage) and watch the pain!
-  Subject to range attack check but not spell resistance.
+* Arcane Fire feat. Target your victim with the feat, cast any spell (remember that spell level adds to damage) and watch the pain! Subject to range attack check but not spell resistance.
 
 V1.2:
-* Mastery of Shaping is a togglable power now(make sure you DO toggle it
-  when you learn it).
+* Mastery of Shaping can now be toggled on and off. (make sure you DO toggle it when you learn it).
 * Mastery of Elements feat selection are now organized in subfeats
 
 V1.1:
-* Fixed a bug that prevented both SpellPower and Mestry of Shaping to work
-  (this was really stupid sorry ...)
+* Fixed a bug that prevented both Spell Power and Mastery of Shaping from working.
 
 
-						darkgod.nwn@t-o-m-e.net
-                                                Stratovarius: hs667@hotmail.com
+PrC makers:
 
-PS: Yes additing custom prestige classes sucks, but it's the way the game engine is made :(
-PS2: And thanks to mr_bumpkins incredible prc_caster_lvl scripts
+Aaon Graywolf - jpgil_galad@yahoo.com
+Attilla - lks_attilla@hotmail.com
+Dark God - darkgod.nwn@t-o-m-e.net
+Dark God (Alternate) - darkgod@t-o-m-e.net
+Kaltor - lamarre_francois@videotron.ca
+Lysander - monty_m678@yahoo.com
+Shane - hennessy_shane@yahoo.com
+Stratovarius - hs667@hotmail.com
+
+Others:
+
+Bleeding Edge - bleedingedge40@hotmail.com (Spell hak)
+Ethys - ethys_x@hotmail.com (Dialog.tlk version)
+Fat Gato - thomas@mtaonline.net (Beta and graphics)
+Midnight Voyager - midnight_voyager@hotmail.com (QA, evil Goddess etc.)
