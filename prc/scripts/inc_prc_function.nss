@@ -79,8 +79,14 @@ void DeletePRCLocalInts(object oSkin)
     DeleteLocalInt(oSkin,"ElemSavantImmMind");
     DeleteLocalInt(oSkin,"ElemSavantImmParal");
     DeleteLocalInt(oSkin,"ElemSavantImmSleep");
-// heartWarder
-    DeleteLocalInt(oSkin,"HeartPassion");
+// HeartWarder
+    DeleteLocalInt(oSkin, "HeartPassionA");
+    DeleteLocalInt(oSkin, "HeartPassionP");
+    DeleteLocalInt(oSkin, "HeartPassionPe");
+    DeleteLocalInt(oSkin, "HeartPassionT");
+    DeleteLocalInt(oSkin, "HeartPassionUMD");
+    DeleteLocalInt(oSkin, "HeartPassionB");
+    DeleteLocalInt(oSkin, "HeartPassionI");   
     DeleteLocalInt(oSkin,"FeyType");
 // MageKiller
     DeleteLocalInt(oSkin,"MKFortBonus");
