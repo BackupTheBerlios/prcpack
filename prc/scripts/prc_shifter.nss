@@ -39,7 +39,7 @@ void main()
         sShifterLevel = Get2DAString(sShifterFile,"SLEVEL",i);
 //SendMessageToPC(oPC,"sShifterLevel = " + sShifterLevel);
         nShiftLevelFile = StringToInt(sShifterLevel);
-        if (nShiftLevelFile <= nShifterLevel)
+        if ((nShiftLevelFile <= nShifterLevel) && (sShifterLevel != ""))
         {
 		// The creature is a standard that we apply to the shifters spark of life list
 		sCreatureResRef = Get2DAString(sShifterFile,"CResRef",i);

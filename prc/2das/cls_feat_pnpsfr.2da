@@ -152,3 +152,9 @@
 148   FEAT_PRESTIGE_SHIFTER_EGWSHAPE_6            2918        3      26               1        
 149   FEAT_PRESTIGE_SHIFTER_EGWSHAPE_7            2919        3      29               1        
 150   FEAT_PRESTIGE_SHIFTER_NATURALSPELL          2920        0      -1               0        
+151   FEAT_WEAPON_SPECIALIZATION_CREATURE         290         0      -1               0        
+152   FEAT_IMPROVED_CRITICAL_CREATURE             292         0      -1               0        
+153   FEAT_EPIC_DEVASTATING_CRITICAL_CREATURE     532         0      -1               0        
+154   FEAT_EPIC_WEAPON_FOCUS_CREATURE             656         0      -1               0        
+155   FEAT_EPIC_WEAPON_SPECIALIZATION_CREATURE    694         0      -1               0        
+156   FEAT_EPIC_OVERWHELMING_CRITICAL_CREATURE    746         0      -1               0        

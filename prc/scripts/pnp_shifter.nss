@@ -105,6 +105,7 @@ void RecognizeCreature( object oPC, string sTemplate )
 
     SetLocalArrayString( oMimicForms, "shift_choice", num_creatures, sTemplate );
     SetLocalInt( oMimicForms, "num_creatures", num_creatures+1 );
+//SendMessageToPC(oPC,"Num Creatures = "+IntToString(num_creatures+1));
 }
 
 int IsKnownCreature( object oPC, string sTemplate )
