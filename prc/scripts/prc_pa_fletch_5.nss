@@ -10,7 +10,7 @@
 //:: Created On: Apr 4, 2004
 //:://////////////////////////////////////////////
 
-#include "strat_prc_inc"
+#include "prc_feat_const"
 
 void main()
 {

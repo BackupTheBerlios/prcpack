@@ -203,3 +203,9 @@ const int DEMONSLAYING_2            = 2755;
 const int DEMONSLAYING_3            = 2756;
 const int DEMONSLAYING_4            = 2757;
 
+//Peerless Archer Feats
+const int FEAT_PA_FLETCH_1         = 4284;
+const int FEAT_PA_FLETCH_2         = 4285;
+const int FEAT_PA_FLETCH_3         = 4286;
+const int FEAT_PA_FLETCH_4         = 4287;
+const int FEAT_PA_FLETCH_5         = 4288;
