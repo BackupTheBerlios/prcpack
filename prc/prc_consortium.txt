@@ -842,5 +842,7 @@ Others:
 
 Bleeding Edge - bleedingedge40@hotmail.com (Spell hak)
 Ethys - ethys_x@hotmail.com (Dialog.tlk version)
-Fat Gato - thomas@mtaonline.net (Beta and graphics)
+Fat Gato - thomas@mtaonline.net (Beta)
 Midnight Voyager - midnight_voyager@hotmail.com (QA, evil Goddess etc.)
+Talhavian - Contact Fat Gato (Graphics)
+Exar Kun - Contact Fat Gato (Graphics)
