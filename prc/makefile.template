@@ -1,0 +1,164 @@
+# This file is a template makefile used to create the real makefile that
+# that is passed to NMAKE to buld the PRC project.  The batch file
+# make.bat creates the lists of source files and uses ssed to merge them
+# into this file where the ~~~xxx~~~ placeholders are, then runs the
+# resultant makefile to build the project.  Thus the bat file and this
+# makefile template form a pair of files that do the build in tandem.
+# The following directory tree is what the files expect to see:
+#
+# scripts - contains all of the source scripts
+#
+# 2das - Contains all of the source 2da files
+#
+# tlk - Contains the custom tlk file
+#
+# gfx - Contains all of the graphic images, icons, textures, etc. that
+# go in the prc pack.
+#
+# others - Contains various other files that go in the hak such as
+# creature blueprints, item blueprints, etc.
+#
+# tools - Contains all of the EXE files used by the makefile to do the build.
+#
+# objs - All of hte compiled script object files are placed here.  If this
+# directory does not exist it will be created.
+#
+# There is some outside information that the makefile needs to know, it expects
+# this information to be set in variables in the config.make file.  The variables
+# it expects to be set are as follows:
+#
+# NWN_DIR - The folder where you have NWN installed.
+#
+# PRC_VERSION - The version number of the PRC build, this is only used for the RAR
+# file name
+#
+# If just run w/o any arguments the makefile will build all haks/erfs/etc. and
+# install them in the appropriate spots in your NWN directory.  The following
+# additional build targets are supported, they are passed on the command
+# line to make.bat, eg. "make rar"
+#
+# hak - This is the same as specifying no arguments, i.e. the haks/erfs/etc. are
+# built and are installed in the NWN directory.
+#
+# rar - Does what hak does, then builds a rar file containing all of the output
+# files.
+#
+
+# Include the file with the NWN_DIR definition and version number
+!include config.make
+
+# Names of the output files.
+# NOTE: For version 2.0 this is going to change and there will be 2 haks,
+# the exact names are TBD.
+RAR		= prc_consortium$(PRC_VERSION).rar
+ERF		= prc_consortium.erf
+HAK		= prc_consortium.hak
+TLK		= $(TLKPATH)\prc_consortium.tlk
+README		= prc_consortium.txt
+
+
+# This variable contains all of the files that need to be installed in the
+# NWN override directory for the prc pack to work.  If this list is changed
+# then the updates should be made here. NOTE: You NEED to put the paths
+# to the subdirectories on there as well.
+OVERRIDEFILES	= $(2DAPATH)\classes.2da
+
+# Define the locations of the various EXE's used by the makefile.  All
+# should be in the tools folder, except the script compiler which
+# comes with NWN.
+RARCOMPILER	= tools\rar
+ERFCOMPILER 	= tools\erf
+NSSCOMPILER 	= $(NWN_DIR)\utils\clcompile
+
+
+# Redefine various paths set by the bat file to give them prettier more
+# generic names.
+2DAPATH		= $(MAKE2DAPATH)
+OBJPATH		= $(MAKEOBJSPATH)
+SRCPATH		= $(MAKESCRIPTPATH)
+TLKPATH		= $(MAKETLKPATH)
+
+
+# Paths for the various folders in the NWN install directory.
+NWN_ERF		= $(NWN_DIR)\erf
+NWN_HAK		= $(NWN_DIR)\hak
+NWN_TLK		= $(NWN_DIR)\tlk
+NWN_OVERRIDE	= $(NWN_DIR)\override
+
+
+# suffixes for inference rules.
+.SUFFIXES: .nss .ncs .erf .hak .zip .rar
+
+# variables to hold all of the contents of the various directories.
+
+SCRIPTS=~~~scripts~~~
+
+OBJS=~~~objs~~~
+
+2DAS=~~~2das~~~
+
+GFX=~~~gfx~~~
+
+OTHERS=~~~others~~~
+
+
+#
+# Build rules from here down.
+#
+
+# The top rule is the one run by default, we want to build the hak and install.
+all: hak
+
+
+# Rule to build the rar file.
+rar: hak $(RAR)
+
+
+# Rule to build the 'hak' content and install it.
+hak: $(ERF) $(HAK) install
+
+
+# Rule to install the hak content
+install: installcontent installoverrides
+
+# Rule that does the real work to install the content (except overrides)
+# to the NWN install directory.
+installcontent:
+	@echo Installing PRC files
+	@copy /y $(HAK) $(NWN_HAK) >nul
+	@copy /y $(ERF) $(NWN_ERF) >nul
+	@copy /y $(TLK) $(NWN_TLK) >nul
+
+# Rule to install all the override files.  This one is a bit tricky, the '!'
+# operator tells nmake to run the rule once for each target, and $** will
+# expand to each target once, so this in effect copies every file in the
+# OVERRIDEFILES variable to NWN_OVERRIDE.
+installoverrides: $(OVERRIDEFILES)
+	!@copy /y $** $(NWN_OVERRIDE) >nul
+
+
+$(RAR): $(HAK) $(ERF) $(OVERRIDEFILES) $(TLK) $(README)
+	@echo $(@F)
+	-@del $@ 2>nul
+	@$(RARCOMPILER) a -ep -inul $@ $**
+
+# Rule to build the ERF file.  Currently script source and object files are
+# going here.
+$(ERF): $(OBJS) $(SCRIPTS) 
+	@echo $(@F)
+	-@del $@ 2>nul
+	@$(ERFCOMPILER) -c $@ $**
+
+
+# Rule to build the HAK file.
+$(HAK): $(2DAS) $(GFX) $(OTHERS) 
+	@echo $(@F)
+	-@del $@ 2>nul
+	@$(ERFCOMPILER) -c $@ $**
+
+
+# Inference rule to compile scripts.
+{$(SRCPATH)\}.nss{$(OBJPATH)\}.ncs:
+	@echo $(<F)
+	@$(NSSCOMPILER) "$(MAKEDIR)\$<" "$(MAKEDIR)\$(@D)" >nul
+ 	-@del "$(MAKEDIR)\$(@R).ndb" 2>nul
