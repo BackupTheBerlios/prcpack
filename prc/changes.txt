@@ -73,3 +73,7 @@
 - Added new skill list for the standard bioware classes, it makes Perform a normal skill, so you can create things like
 a rogue/Duelist and other classes that require perform. I suggest everyone updates their own classes to also have this change.
 ---------End Zedium
+20/02/2004
+---------Begin Stratovarius
+- Added "Compiled Resources" folder for .Erfs and .Haks.
+---------End Stratovarius
