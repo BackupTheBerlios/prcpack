@@ -53,7 +53,7 @@ void main()
     object oItem = GetFirstItemInInventory(oPC);
     while (GetIsObjectValid(oItem) == TRUE)
     {
-        if (GetResRef(oItem) == "soulgem")
+        if (GetResRef(oItem) == "soul_gem")
             nNumSoulGems++;
         oItem = GetNextItemInInventory(GetFirstPC());
     }

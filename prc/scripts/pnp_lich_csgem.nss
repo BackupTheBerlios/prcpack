@@ -45,7 +45,7 @@ void main()
     CraftVFX(OBJECT_SELF);
 
     // Soul gem creation code
-    object oSoulGem = CreateItemOnObject("soulgem",oPC);
+    object oSoulGem = CreateItemOnObject("soul_gem",oPC);
     itemproperty iProp = ItemPropertyCastSpell(851,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
     AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oSoulGem);
 

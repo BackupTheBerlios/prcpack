@@ -97,5 +97,6 @@ Added DLG so you can pick what you want to shift into, list made dynamically fro
 Fixed shifter so if another PRC uses the hide, it returns the hide passives when returning to true form.
 Remove some of the spells from the epic shifter, pnp rules violation.
 Added function to clear all hide locals so shifter will reset the values.
+Changed the soulgem to soul_gem.uti so it can be checked in.
 ---------End Shane Hennessy
 
