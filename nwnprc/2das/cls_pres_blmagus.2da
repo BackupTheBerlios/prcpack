@@ -1,0 +1,7 @@
+2DA V2.0
+
+      LABEL       ReqType    ReqParam1          ReqParam2   
+0     Arcane      ARCSPELL   5                  ****        
+1     Heal        SKILL      4                  4           
+2     ScriptVar   VAR        PNP_AllowBLMagus   0           
+3     Toughness   FEAT       40                 ****        

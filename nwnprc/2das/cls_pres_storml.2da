@@ -1,0 +1,13 @@
+2DA V2.0
+
+      LABEL                      ReqType   ReqParam1         ReqParam2
+0     Cleric                     CLASSOR   2                 ****
+1     Druid                      CLASSOR   3                 ****
+2     GreatFort                  FEAT      14                ****
+3     WeapFocSpear               FEAT      97                ****     
+4     Destruction_Domain_Power   FEATOR    313               ****
+5     Evil_Domain_Power          FEATOR    315               ****
+6     Fire_Domain_Power          FEATOR    316               ****
+7     WildShape                  FEATOR    305               ****
+8     Spellcasting               SPELL     5                 **** 
+9     ScriptVar                  VAR       X1_AllowStormL    0           

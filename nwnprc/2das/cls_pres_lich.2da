@@ -1,0 +1,20 @@
+2DA V2.0                                                      
+                                                              
+           LABEL       ReqType    ReqParam1       ReqParam2   
+0          WizOr       CLASSOR    10              ****
+1          SorcOr      CLASSOR    9               ****
+2          ClericOr    CLASSOR    2               ****
+3          Concentrate SKILL      1               14
+4          ScriptVar   VAR        PNP_AllowLich   0
+ 
+
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              
+                                                              

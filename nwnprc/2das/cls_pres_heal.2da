@@ -1,0 +1,18 @@
+2DA V2.0                                                         
+                                                                 
+           LABEL          ReqType   ReqParam1        ReqParam2   
+0	   SkillHeal	  SKILL	    4   	     6
+1          SkillPersuade  SKILL     12               5     
+2	   ClassCler	  CLASS	    2		     ****
+3          ScriptVar      VAR       X2_AllowHeal     0    
+4	   FeatHealing    FEAT	    318              ****
+5	   FocusHealing   FEAT      177		     ****
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 

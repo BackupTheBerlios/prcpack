@@ -1,0 +1,7 @@
+2DA V2.0
+
+      FeatLabel                          FeatIndex   List   GrantedOnLevel   OnMenu   
+0     FEAT_PRESTIGE_LICH_TOUCH           2921        3      1                1        
+1     FEAT_PRESTIGE_LICH_FEAR_AURA       2922        3      1                1        
+2     FEAT_PRESTIGE_LICH_CRAFT_WO_ITEM   2924        3      1                1        
+3     FEAT_PRESTIGE_LICH_ALTER_SELF      2923        3      4                1        

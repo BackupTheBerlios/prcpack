@@ -1,0 +1,10 @@
+2DA V2.0
+
+      LABEL            ReqType   ReqParam1           ReqParam2   
+0     Base_Attack      BAB       6                   ****        
+1     Hide             SKILL     5                   4           
+2     PBShot           FEAT      27                  ***         
+3     ScriptVar        VAR       PNP_AllowBLArcher   0           
+4     WeapSpeLongBow   FEAT      139                 ****        
+5     CraftWeapon      SKILL     26                  6           
+6     Lore             SKILL     7                   7           

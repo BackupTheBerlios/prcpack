@@ -1,0 +1,26 @@
+2DA V2.0
+
+     FeatLabel            FeatIndex List GrantedOnLevel OnMenu 
+1    DefArrow             8         0    -1             0      
+2    Quicken              29        0    -1             0      
+3    TwoWeap              41        0    -1             0      
+4    Ambidex              1         0    -1             0      
+5    darkvision           228       3    2              0      
+6    FEAT_SHADOWJUMP      3307      3    1              1      
+6    FEAT_SHADOWJUMP2     3308      3    2              1      
+6    FEAT_SHADOWJUMP3     3309      3    3              1      
+7    FEAT_SHADOWBLUR      3304      3    2              1      
+8    FEAT_SHADOWPOUNCE    3310      3    4              1      
+8    FEAT_SHADOWPOUNCE1   3311      3    5              1      
+8    FEAT_SHADOWPOUNCE2   3312      3    6              1      
+9    FEAT_SHADOWDISCORPO  3305      3    5              0      
+10   FEAT_DEATHATTACK     455       3    6              0      
+11   FEAT_SHADOWSPELLLV01 3313      3    1              1      
+12   FEAT_SHADOWSPELLLV02 3314      3    2              1      
+13   FEAT_SHADOWSPELLLV03 3315      3    3              1      
+14   FEAT_SHADOWSPELLLV04 3316      3    4              1      
+15   FEAT_SHADOWSPELLLV21 3317      3    3              1      
+16   FEAT_SHADOWSPELLLV22 3318      3    4              1      
+17   FEAT_SHADOWSPELLLV23 3319      3    6              1      
+18   FEAT_SHADOWSPELLLV31 3320      3    5              1      
+19   FEAT_SHADOWSPELLLV32 3321      3    6              1      

@@ -1,0 +1,24 @@
+2DA V2.0                                                         
+                                                                 
+           LABEL           ReqType   ReqParam1        ReqParam2   
+0          Arcane          ARCSPELL  7                ****      
+1          Lore            SKILL     7                15
+2          Spellcraft      SKILL     16               15
+3          SkillFocusSpell FEAT      189              ****        
+4          SpellFocusCon   FEATOR    166              ****        
+5          SpellFocusDiv   FEATOR    167              ****        
+6          SpellFocusEnc   FEATOR    168              ****        
+7          SpellFocusEvo   FEATOR    169              ****        
+8          SpellFocusIll   FEATOR    170              ****        
+9          SpellFocusNec   FEATOR    171              ****        
+10         SpellFocusTra   FEATOR    172              ****  
+11         SpellFocusAb    FEATOR    35               ****      
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 

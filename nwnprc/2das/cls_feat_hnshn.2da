@@ -1,0 +1,34 @@
+2DA V2.0                                                                                      
+                                                                                              
+           FeatLabel                                    FeatIndex   List   GrantedOnLevel   OnMenu   
+0          WeapProfMonk                                    49          0      1                0        
+1          ImpStrike                                       21          0      1                0        
+2          FlurryofBlows                                   204         0      1                0        
+3          Evasion                                         206         0      1                0        
+4          MonkEndurance                                   207         0      3                0        
+5          StunFist                                        39          0      1                0        
+6          DefArrow                                        8           0      2                0        
+7          StillMind                                       208         0      3                0        
+8          PurityofBody                                    209         0      5                0        
+9          WholenessofBody                                 211         0      7                0        
+10         ImprovedEvasion                                 212         0      9                0        
+11         KiStrike                                        213         3      4                0        
+12         DiamondBody                                     214         0      2                0        
+13         ImpKnock                                        17          0      6                0        
+14         MonkACBonus                                     260         3      1                0        
+15         WeapProfEx                                      44          0      -1               0        
+16         WeapProfMar                                     45          0      -1               0        
+17         WeapProfSim                                     46          0      -1               0        
+18         KiStrike2                                       343         3      8                0        
+19         Knockdown                                       23          0      6                0        
+20         Cleave                                          6           0      1                0        
+21         TwoWeap                                         41          0      -1               0        
+22         Ambidex                                         1           0      -1               0        
+23    BlindFight					   408         3       2               0
+24    FEAT_PRESTIGE_RIDDLE_OF_AWARENESS                    2002        3       1               1
+25    FEAT_PRESTIGE_HAPPO_ZANSHIN                          2003        3       3               0
+26    FEAT_PRESTIGE_RIDDLE_OF_INTERACTION                  2004        3       4               1
+27    FEAT_PRESTIGE_BLINDSIGHT                             2005        3       6               0
+28    FEAT_PRESTIGE_HITSU_DO                               2006        3       6               1
+29    FEAT_PRESTIGE_WALK_THROUGH_THE_MOUNTAINS             2007        3       9               1
+30    FEAT_PRESTIGE_RIDDLE_OF_INVULNERABILITY              2008        3       10              0

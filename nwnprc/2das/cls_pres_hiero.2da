@@ -1,0 +1,21 @@
+2DA V2.0                                                         
+                                                                 
+           LABEL          ReqType   ReqParam1        ReqParam2   
+0          MMEmpower      FEATOR    11               ****        
+1          MMExtend       FEATOR    12               ****
+2          MMMaximize     FEATOR    25               ****
+3          MMQuicken      FEATOR    29               ****
+4          MMSilent       FEATOR    33               ****
+5          MMStill        FEATOR    37               ****      
+6          SkillLore      SKILL     7                15     
+7          ClericLvl11    FEAT      2824             ****
+10         ScriptVar      VAR       X2_AllowHiero    0           
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 

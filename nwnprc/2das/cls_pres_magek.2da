@@ -1,0 +1,10 @@
+2DA V2.0
+
+      LABEL         ReqType    ReqParam1       ReqParam2   
+0     Arcane        ARCSPELL   7               ****        
+1     GreatFort     FEAT       14              ****        
+2     LightngRef    FEAT       24              ****        
+3     CmbtCast      FEAT       7               ****        
+4     WeapProfMar   FEAT       45              ****        
+5     Spellcraft    SKILL      16              10          
+6     ScriptVar     VAR        X2_AllowMageK   0           

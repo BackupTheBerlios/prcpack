@@ -1,0 +1,24 @@
+2DA V2.0
+
+   FeatLabel          FeatIndex List GrantedOnLevel OnMenu 
+0  IMMUNITY_SLEEP     235       3    3              0      
+1  IMMUNITY_POISON    203       3    5              0      
+2  IMMUNITY_PARALYSIS 963       3    7              0      
+3  RESISTANCE_FIRE5   3322      3    1              0      
+4  RESISTANCE_FIRE10  3323      3    3              0      
+5  RESISTANCE_FIRE15  3324      3    5              0      
+6  RESISTANCE_FIRE20  3325      3    7              0      
+7  IMMUNITY_SNEAKATK  3326      3    9              0      
+8  IMMUNITY_ELEMENT   3327      3    9              0      
+9  IMMUNITY_CRITIK    3328      3    10             0      
+10 BONDED_AIR         3329      2    1              0      
+11 BONDED_EARTH       3330      2    1              0      
+12 BONDED_FIRE        3331      2    1              0      
+13 BONDED_WATER       3332      2    1              0      
+14 ELE_COMPANION_MED  3333      3    1              0      
+15 ELE_COMPANION_LAR  3334      3    3              0      
+16 ELE_COMPANION_HUG  3335      3    5              0      
+17 ELE_COMPANION_GRE  3336      3    7              0      
+18 ELE_COMPANION_ELD  3337      3    9              0      
+19 POLYMORPH_ELEM     3338      3    10             1
+20 ELEMENTALTYPE_SUBTYPE 3340   3    10             0      

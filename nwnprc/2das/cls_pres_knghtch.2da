@@ -1,0 +1,16 @@
+2DA V2.0                                                         
+                                                                 
+           LABEL           ReqType   ReqParam1        ReqParam2   
+0          Spell           SPELL     1                ****      
+1          Lore            SKILL     7                10
+4          ScriptVar       VAR       X2_AllowKnghtCh  0     
+5          SpellCheck      VAR       PRC_KnghtCh      1     
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 

@@ -1,0 +1,11 @@
+2DA V2.0
+
+      LABEL        ReqType   ReqParam1        ReqParam2   
+0     Persuade     SKILL     12               8           
+1     Lore         SKILL     7                12          
+2     Spellcraft   SKILL     16               8           
+3     Alertness    FEAT      0                ****        
+4     IronWill     FEAT      22               ****        
+5     ScriptVar    VAR       mh_AllowMaster   0           
+6     bluff        SKILL     23               8           
+7     spell        SPELL     2                ****        

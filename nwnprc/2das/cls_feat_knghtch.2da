@@ -1,0 +1,35 @@
+2DA V2.0                                                                                      
+                                                                                              
+           FeatLabel                             FeatIndex   List   GrantedOnLevel   OnMenu   
+       
+0         WeapProfSim                           46          3      1                0        
+1         ArmProfLgt                            3           3      1                0        
+2         ArmProfMed                            4           3      1                0        
+3         ArmProfHvy                            2           3      1                0        
+4         Shield                                32          3      1                0        
+5         WeapProfMar                           45          3      1                0             
+6         WeapProfEx                            44          0      -1               0        
+7         DefArrow                              8           0      -1               0        
+8         TwoWeap                               41          0      -1               0        
+9         Ambidex                               1           0      -1               0        
+10        FEAT_DEMONSLAYING_1                   2754        3      1                0                          
+11        FEAT_DEMONSLAYING_2                   2755        3      3                0
+12        FEAT_DEMONSLAYING_3                   2756        3      6                0
+13        FEAT_DEMONSLAYING_4                   2757        3      9                0
+14        FEAT_CENSURE_DEMONS_1                 2758        3      2                1
+15        FEAT_CENSURE_DEMONS_2                 2759        3      4                1
+16        FEAT_CENSURE_DEMONS_3                 2760        3      6                1
+17        FEAT_CENSURE_DEMONS_4                 2761        3      8                1
+18        FEAT_CENSURE_DEMONS_5                 2762        3      10               1
+19        FEAT_COURAGE_OF_HEAVEN_FEAR           2763        3      2                0
+20        FEAT_COURAGE_OF_HEAVEN_ENCH           2764        3      5                0
+21        FEAT_COURAGE_OF_HEAVEN_RADIUS         2765        3      8                1
+22        FEAT_CONSECRATED_AURA                 2766        3      8                1
+23        FEAT_HOLY_AURA_VERSUS_DEMONS          2767        3      10               1
+24        FEAT_DIVINE_FAVOR_2                   2768        3      2                1
+25        FEAT_DIVINE_FAVOR_3                   2769        3      7                1
+26        FEAT_AID_2                            2770        3      4                1
+27        FEAT_AID_3                            2771        3      9                1
+28        FEAT_MAGIC_CIRCLE_V_EVIL_2            2772        3      6                1
+29        FEAT_MAGIC_CIRCLE_V_EVIL_3            2773        3      10               1
+30        FEAT_HAMMER_OF_THE_GODS_2             2774        3      8                1

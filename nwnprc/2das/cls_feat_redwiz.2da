@@ -1,0 +1,28 @@
+2DA V2.0
+
+      FeatLabel              FeatIndex   List   GrantedOnLevel   OnMenu   
+0     FEAT_REDWIZ_ABJ        4210        2      -1               0        
+1     FEAT_REDWIZ_CON        4211        2      -1               0        
+2     FEAT_REDWIZ_DIV        4212        2      -1               0        
+3     FEAT_REDWIZ_ENC        4213        2      -1               0        
+4     FEAT_REDWIZ_EVO        4214        2      -1               0        
+5     FEAT_REDWIZ_ILL        4215        2      -1               0        
+6     FEAT_REDWIZ_NEC        4216        2      -1               0        
+7     FEAT_REDWIZ_TRS        4217        2      -1               0        
+8     FEAT_REDWIZ_SPEC_ABJ   4218        2      -1               0        
+9     FEAT_REDWIZ_SPEC_CON   4219        2      -1               0        
+10    FEAT_REDWIZ_SPEC_DIV   4220        2      -1               0        
+11    FEAT_REDWIZ_SPEC_ENC   4221        2      -1               0        
+12    FEAT_REDWIZ_SPEC_EVO   4222        2      -1               0        
+13    FEAT_REDWIZ_SPEC_ILL   4223        2      -1               0        
+14    FEAT_REDWIZ_SPEC_NEC   4224        2      -1               0        
+15    FEAT_REDWIZ_SPEC_TRS   4225        2      -1               0        
+16    FEAT_REDWIZ_SPOWER_1   4226        3      2                0        
+17    FEAT_REDWIZ_SPOWER_2   4227        3      4                0        
+18    FEAT_REDWIZ_SPOWER_3   4228        3      6                0        
+19    FEAT_REDWIZ_SPOWER_4   4229        3      8                0        
+20    FEAT_REDWIZ_SPOWER_5   4230        3      10               0        
+21    FEAT_REDWIZ_SDEF_1     4231        3      1                0        
+22    FEAT_REDWIZ_SDEF_2     4232        3      3                0        
+23    FEAT_REDWIZ_SDEF_3     4233        3      7                0        
+24    FEAT_REDWIZ_SDEF_4     4234        3      10               0        
