@@ -125,40 +125,40 @@ install: installcontent installoverrides
 # to the NWN install directory.
 installcontent:
 	@echo Installing PRC files
-	@copy /y $(HAK) $(NWN_HAK) >nul
-	@copy /y $(ERF) $(NWN_ERF) >nul
-	@copy /y $(TLK) $(NWN_TLK) >nul
+	@copy /y "$(HAK)" "$(NWN_HAK)" >nul
+	@copy /y "$(ERF)" "$(NWN_ERF)" >nul
+	@copy /y "$(TLK)" "$(NWN_TLK)" >nul
 
 # Rule to install all the override files.  This one is a bit tricky, the '!'
 # operator tells nmake to run the rule once for each target, and $** will
 # expand to each target once, so this in effect copies every file in the
 # OVERRIDEFILES variable to NWN_OVERRIDE.
 installoverrides: $(OVERRIDEFILES)
-	!@copy /y $** $(NWN_OVERRIDE) >nul
+	!@copy /y "$**" "$(NWN_OVERRIDE)" >nul
 
 
 $(RAR): $(HAK) $(ERF) $(OVERRIDEFILES) $(TLK) $(README)
 	@echo $(@F)
-	-@del $@ 2>nul
-	@$(RARCOMPILER) a -ep -inul $@ $**
+	-@del "$@" 2>nul
+	@"$(RARCOMPILER)" a -ep -inul $@ $**
 
 # Rule to build the ERF file.  Currently script source and object files are
 # going here.
 $(ERF): $(OBJS) $(SCRIPTS) 
 	@echo $(@F)
-	-@del $@ 2>nul
-	@$(ERFCOMPILER) -c $@ $**
+	-@del "$@" 2>nul
+	@"$(ERFCOMPILER)" -c $@ $**
 
 
 # Rule to build the HAK file.
 $(HAK): $(2DAS) $(GFX) $(OTHERS) 
 	@echo $(@F)
-	-@del $@ 2>nul
-	@$(ERFCOMPILER) -c $@ $**
+	-@del "$@" 2>nul
+	@"$(ERFCOMPILER)" -c $@ $**
 
 
 # Inference rule to compile scripts.
 {$(SRCPATH)\}.nss{$(OBJPATH)\}.ncs:
 	@echo $(<F)
-	@$(NSSCOMPILER) "$(MAKEDIR)\$<" "$(MAKEDIR)\$(@D)" >nul
+	@"$(NSSCOMPILER)" "$(MAKEDIR)\$<" "$(MAKEDIR)\$(@D)" >nul
  	-@del "$(MAKEDIR)\$(@R).ndb" 2>nul
