@@ -3,5 +3,5 @@
      LABEL                          ReqType     ReqParam1        ReqParam2   
 0    Boots_of_the_Winterlands       RESULT      x0_it_mboots001  ****
 1    CasterLevel5th                 CASTERLVL   5                ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502             ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925             ****        
 3    Endure_Elements                SPELL       50               ****        

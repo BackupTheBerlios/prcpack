@@ -3,5 +3,5 @@
       LABEL                         ReqType     ReqParam1        ReqParam2   
 0     Periapt_of_Wisdom_1           RESULT      nw_it_mneck007   ****        
 1     Caster_Level_8th              CASTERLVL   8                ****        
-2     CraftWondrousItem             FEAT        2502             ****        
+2     CraftWondrousItem             FEAT        2925             ****        
 3     Owls_Wisdom                   SPELL       355              ****        

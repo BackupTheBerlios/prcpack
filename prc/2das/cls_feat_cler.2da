@@ -71,5 +71,10 @@
 67         FEAT_EPIC_SPELL_DRAGON_KNIGHT         875         0      21               2
 68         FEAT_EPIC_SPELL_HELLBALL              876         0      21               2
 69         FEAT_EPIC_SPELL_RUIN                  878         0      21               2
-70        FEAT_EPIC_BLINDING_SPEED               491         0     -1               1
+70         FEAT_EPIC_BLINDING_SPEED              491         0     -1               1
 71         EnableHierophant                      2824        3      11              0   
+72         FEAT_CRAFT_WONDROUS_ITEM              2925        0      3                1        
+73         FEAT_CRAFT_MAGIC_ARMS_AND_ARMOR       2926        0      5                1        
+74         FEAT_CRAFT_ROD                        2927        0      9                1        
+75         FEAT_CRAFT_STAFF                      2928        0      12               1        
+76         FEAT_FORGE_RING                       2929        0      12               1        

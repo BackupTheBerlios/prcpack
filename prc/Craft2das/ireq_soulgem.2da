@@ -3,5 +3,5 @@
      LABEL                           ReqType     ReqParam1          ReqParam2   
 0    Lich_Soul_Gem                   RESULT      soul_gem           ****
 1    CasterLevel21                   CASTERLVL   21                 ****        
-2    Craft_Wondrous_Item_Feat        FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat        FEAT        2925               ****        
 3    ExtraGold			     EXTRAGOLD   120000             ****        

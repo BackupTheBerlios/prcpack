@@ -3,6 +3,6 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Circlet_of_Blasting_Major      RESULT      x0_armhe002        ****
 1    CasterLevel17th                CASTERLVL   17                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Maximize_Spell_Feat            FEAT        25                 ****        
 4    Searing_Light                  SPELL       156                ****        

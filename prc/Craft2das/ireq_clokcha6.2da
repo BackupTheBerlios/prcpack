@@ -3,5 +3,5 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Cloak_of_Charisma_6            RESULT      x2_it_mcloak008    ****
 1    CasterLevel8th                 CASTERLVL   8                  ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Charm_Monster                  SPELL       15                 ****        

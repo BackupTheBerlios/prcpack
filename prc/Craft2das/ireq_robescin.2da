@@ -3,6 +3,6 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Robe_of_Scintillating_Colors   RESULT      x0_cloth003        ****
 1    CasterLevel15th                CASTERLVL   15                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Hypnosis                       SPELL       ****               ****        
 4    Color_Spray                    SPELL       24                 ****        

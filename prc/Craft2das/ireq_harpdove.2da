@@ -3,7 +3,7 @@
      LABEL                                    ReqType     ReqParam1          ReqParam2   
 0    Doves_Harp                               RESULT      x0_it_mmedmisc02   ****        
 1    CasterLevel9th                           CASTERLVL   9                  ****        
-2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2925               ****        
 3    Calm_Emotions                            SPELL       12                 ****        
 4    Greater_Restoration                      SPELL       70                 ****        
 5    Healing_Circle                           SPELL       80                 ****        

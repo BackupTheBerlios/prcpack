@@ -134,4 +134,9 @@
 130   FEAT_EPIC_DRUID_INFINITE_WILDSHAPE   1068         3      22               0
 131   FEAT_EPIC_DRUID_INFINITE_ELEMENTAL   1069         3      26               0
 132   FEAT_EPIC_BLINDING_SPEED               491         0     -1               1
-133   FEAT_DISCIPLE_OF_DARKNESS                        4012        0      -1               1      
+133   FEAT_DISCIPLE_OF_DARKNESS                            4012        0      -1               1      
+134   FEAT_CRAFT_WONDROUS_ITEM                             2925        0      3                1        
+135   FEAT_CRAFT_MAGIC_ARMS_AND_ARMOR                      2926        0      5                1        
+136   FEAT_CRAFT_ROD                                       2927        0      9                1        
+137   FEAT_CRAFT_STAFF                                     2928        0      12               1        
+138   FEAT_FORGE_RING                                      2929        0      12               1        

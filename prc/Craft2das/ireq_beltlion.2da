@@ -3,6 +3,6 @@
       LABEL                         ReqType     ReqParam1        ReqParam2   
 0     Belt_of_Lions                 RESULT      x0_it_mbelt002   ****        
 1     Caster_Level_3rd              CASTERLVL   3                ****        
-2     CraftWondrousItem             FEAT        2502             ****        
+2     CraftWondrousItem             FEAT        2925             ****        
 2     darkvision                    FEAT        228              ****        
 3     Cats_Grace                    SPELL       13               ****        

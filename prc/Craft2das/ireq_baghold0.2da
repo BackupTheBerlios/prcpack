@@ -3,5 +3,5 @@
      LABEL                                    ReqType     ReqParam1          ReqParam2   
 0    Bag_of_Holding                           RESULT      nw_it_contain006   ****        
 1    CasterLevel9th                           CASTERLVL   9                  ****        
-2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2925               ****        
 3    Leomunds_Secret_Chest                    SPELL       ****               ****        

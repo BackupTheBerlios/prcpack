@@ -3,5 +3,5 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Gem_of_Seeing                  RESULT      x0_it_msmlmisc04   ****        
 1    CasterLevel10th                CASTERLVL   10                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    True_Seeing                    SPELL       186                ****        

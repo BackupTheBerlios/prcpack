@@ -3,7 +3,7 @@
       LABEL                         ReqType     ReqParam1        ReqParam2   
 0     Scarab_of_Protection          RESULT      x0_it_mneck003   ****        
 1     Caster_Level_18th             CASTERLVL   18               ****        
-2     CraftWondrousItem             FEAT        2502             ****        
+2     CraftWondrousItem             FEAT        2925             ****        
 3     Bless                         SPELL       6                ****        
 4     Death_Ward                    SPELL       38               ****        
 5     Negative_Energy_Protection    SPELL       125              ****        

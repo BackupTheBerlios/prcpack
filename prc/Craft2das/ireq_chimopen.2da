@@ -3,5 +3,5 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Chime_of_Opening               RESULT      x0_it_mthnmisc04   ****
 1    CasterLevel11th                CASTERLVL   11                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Knock                          SPELL       93                 ****        

@@ -133,4 +133,9 @@
 128   ExtraMusic                             423         1     -1              0
 128   LingeringSong                          424         1     -1              0
 129   FEAT_EPIC_BLINDING_SPEED               491         0     -1               1   
-130   FEAT_DISCIPLE_OF_DARKNESS                        4012        0      -1               1   
+130   FEAT_DISCIPLE_OF_DARKNESS              4012        0      -1               1   
+131   FEAT_CRAFT_WONDROUS_ITEM               2925        0      3               1        
+132   FEAT_CRAFT_MAGIC_ARMS_AND_ARMOR        2926        0      5               1        
+133   FEAT_CRAFT_ROD                         2927        0      9               1        
+134   FEAT_CRAFT_STAFF                       2928        0      12              1        
+135   FEAT_FORGE_RING                        2929        0      12              1        

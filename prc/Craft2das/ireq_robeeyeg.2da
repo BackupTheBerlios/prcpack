@@ -3,5 +3,5 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Robe_of_Eyes_Greater           RESULT      x0_cloth005        ****
 1    CasterLevel11th                CASTERLVL   11                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    True_Seeing                    SPELL       186                ****        

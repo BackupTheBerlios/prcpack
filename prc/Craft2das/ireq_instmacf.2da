@@ -3,7 +3,7 @@
      LABEL                                    ReqType     ReqParam1          ReqParam2   
 0    Inst_of_the_Bards_Mac_Fuirmidh_Cithern   RESULT      x0_it_mthnmisc16   ****        
 1    CasterLevel3rd                           CASTERLVL   3                  ****        
-2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2925               ****        
 3    Cure_Light_Wounds                        SPELL       32                 ****        
 4    Mage_Armor                               SPELL       102                ****        
 5    Sleep                                    SPELL       165                ****        

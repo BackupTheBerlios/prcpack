@@ -3,7 +3,7 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Robe_of_the_Archmagi_White     RESULT      nw_mcloth002       ****
 1    CasterLevel14th                CASTERLVL   14                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Mage_Armor                     SPELL       102                ****        
 4    Bless                          SPELL       6                  ****        
 5    Spell_Resistance               SPELL       168                ****        

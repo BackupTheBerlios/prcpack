@@ -3,5 +3,5 @@
      LABEL                                  ReqType     ReqParam1          ReqParam2   
 0    Mantle_of_Epic_Spell_Resistance        RESULT      x2_it_mcloak002    ****
 1    CasterLevel21st                        CASTERLVL   21                 ****        
-2    Craft_Wondrous_Item_Feat               FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat               FEAT        2925               ****        
 3    Spell_Resistance                       SPELL       168                ****        

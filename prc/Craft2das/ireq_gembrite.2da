@@ -3,7 +3,7 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Gem_of_Brightness              RESULT      x0_it_msmlmisc03   ****        
 1    CasterLevel6th                 CASTERLVL   6                  ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Light                          SPELL       100                ****        
 4    Blindness_and_Deafness         SPELL       8                  ****        
 5    Sunbeam                        SPELL       183                ****        

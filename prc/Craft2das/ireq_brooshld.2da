@@ -3,5 +3,5 @@
       LABEL                         ReqType     ReqParam1        ReqParam2   
 0     Brooch_of_Shielding           RESULT      x0_it_mmedmisc01 ****        
 1     Caster_Level_1st              CASTERLVL   1                ****        
-2     CraftWondrousItem             FEAT        2502             ****        
+2     CraftWondrousItem             FEAT        2925             ****        
 3     Shield                        SPELL       417              ****        

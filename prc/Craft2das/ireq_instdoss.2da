@@ -3,7 +3,7 @@
      LABEL                                    ReqType     ReqParam1          ReqParam2   
 0    Inst_of_the_Bards_Doss_Lute              RESULT      x0_it_mthnmisc17   ****        
 1    CasterLevel5th                           CASTERLVL   5                 ****        
-2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2925               ****        
 3    Ghostly_Visage                           SPELL       120                ****        
 4    Hold_Person                              SPELL       83                 ****        
 5    Neutralize_Poison                        SPELL       126                ****        

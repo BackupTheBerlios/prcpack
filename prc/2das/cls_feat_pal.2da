@@ -195,3 +195,8 @@
 191    FEAT_EPIC_IMPROVED_COMBAT_CASTING                    696          1      -1                0
 192    FEAT_EPIC_BLINDING_SPEED               491         0     -1               1   
 193   FEAT_DISCIPLE_OF_DARKNESS                        4012        0      -1               1   
+194   FEAT_CRAFT_WONDROUS_ITEM                             2925        0      3                1        
+195   FEAT_CRAFT_MAGIC_ARMS_AND_ARMOR                      2926        0      5                1        
+196   FEAT_CRAFT_ROD                                       2927        0      9                1        
+197   FEAT_CRAFT_STAFF                                     2928        0      12               1        
+198   FEAT_FORGE_RING                                      2929        0      12               1        

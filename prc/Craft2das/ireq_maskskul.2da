@@ -3,7 +3,7 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Mask_of_the_Skull              RESULT      x2_armhe002        ****
 1    CasterLevel13th                CASTERLVL   13                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Animate_Objects                SPELL       ****               ****        
 4    Finger_of_Death                SPELL       56                 ****        
 5    Fly                            SPELL       ****               ****        

@@ -3,5 +3,5 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Circlet_of_Blasting_Minor      RESULT      x0_armhe001        ****
 1    CasterLevel6th                 CASTERLVL   6                  ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Searing_Light                  SPELL       156                ****        

@@ -3,7 +3,7 @@
      LABEL                                    ReqType     ReqParam1          ReqParam2   
 0    Inst_of_the_Bards_Ollamh_Harp            RESULT      x0_it_mmedmisc04   ****        
 1    CasterLevel17th                          CASTERLVL   17                 ****        
-2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2925               ****        
 3    Mass_Charm                               SPELL       111                ****        
 4    Mass_Haste                               SPELL       113                ****        
 5    Summon_Creature_VI                       SPELL       180                ****        

@@ -3,6 +3,6 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Beholder_Crown                 RESULT      x0_armhe014        ****
 1    CasterLevel13th                CASTERLVL   13                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Finger_of_Death                SPELL       56                 ****        
 4    Flesh_to_Stone                 SPELL       485                ****        

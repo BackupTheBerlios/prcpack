@@ -121,3 +121,9 @@
 117    FEAT_EPIC_WEAPON_FOCUS_WHIP                          997          1      -1                 0
 118        FEAT_EPIC_PERFECT_HEALTH                         747          1      -1                 0
 119   FEAT_DISCIPLE_OF_DARKNESS                        4012        0      -1               1   
+120   FEAT_CRAFT_WONDROUS_ITEM                             2925        0      3                1        
+121   FEAT_CRAFT_MAGIC_ARMS_AND_ARMOR                      2926        0      5                1        
+122   FEAT_CRAFT_ROD                                       2927        0      9                1        
+123   FEAT_CRAFT_STAFF                                     2928        0      12               1        
+124   FEAT_FORGE_RING                                      2929        0      12               1        
+

@@ -3,6 +3,6 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Cloak_of_Resistance_4          RESULT      x0_maarcl028       ****
 1    CasterLevel5th                 CASTERLVL   5                  ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Resistance                     SPELL       151                ****        
 4    Level_12                       LEVEL       12                 ****        

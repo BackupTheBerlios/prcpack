@@ -3,7 +3,7 @@
      LABEL                                    ReqType     ReqParam1          ReqParam2   
 0    Inst_of_the_Bards_Canaith_Mandolin       RESULT      x0_it_mthnmisc18   ****        
 1    CasterLevel8th                           CASTERLVL   8                  ****        
-2    Craft_Wondrous_Item_Feat                 FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat                 FEAT        2925               ****        
 3    Cure_Serious_Wounds                      SPELL       35                 ****        
 4    Dispel_Magic                             SPELL       41                 ****        
 5    Summon_Creature_III                      SPELL       176                ****        

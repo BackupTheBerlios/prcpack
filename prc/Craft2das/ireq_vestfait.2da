@@ -3,5 +3,5 @@
      LABEL                           ReqType     ReqParam1          ReqParam2   
 0    Vestments_of_Faith              RESULT      x0_maarcl035       ****
 1    CasterLevel20th                 CASTERLVL   20                 ****        
-2    Craft_Wondrous_Item_Feat        FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat        FEAT        2925               ****        
 3    Stoneskin                       SPELL       172                ****        

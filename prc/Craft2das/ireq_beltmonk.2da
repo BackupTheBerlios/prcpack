@@ -3,6 +3,6 @@
       LABEL                         ReqType     ReqParam1        ReqParam2   
 0     Monks_Belt                    RESULT      x0_it_mbelt001   ****        
 1     Caster_Level_12th             CASTERLVL   12               ****        
-2     CraftWondrousItem             FEAT        2502             ****        
+2     CraftWondrousItem             FEAT        2925             ****        
 3     Haste                         SPELL       78               ****        
 4     Tensers_Transformation        SPELL       184              ****        

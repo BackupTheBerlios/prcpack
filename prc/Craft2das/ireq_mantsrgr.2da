@@ -3,5 +3,5 @@
      LABEL                                  ReqType     ReqParam1          ReqParam2   
 0    Mantle_of_Spell_Resistance_Greater     RESULT      x0_maarcl034       ****
 1    CasterLevel9th                         CASTERLVL   9                  ****        
-2    Craft_Wondrous_Item_Feat               FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat               FEAT        2925               ****        
 3    Spell_Resistance                       SPELL       168                ****        

@@ -3,6 +3,6 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Cloak_of_the_Bat               RESULT      x0_maarcl031       ****
 1    CasterLevel9th                 CASTERLVL   9                  ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Fly                            ****        ****               ****        
 4    Polymorph_Self                 SPELL       130                ****        

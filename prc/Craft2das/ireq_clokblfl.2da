@@ -3,5 +3,5 @@
      LABEL                           ReqType     ReqParam1          ReqParam2   
 0    Cape_of_Blackflame              RESULT      x0_maarcl040       ****
 1    CasterLevel14th                 CASTERLVL   14                 ****        
-2    Craft_Wondrous_Item_Feat        FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat        FEAT        2925               ****        
 3    Negative_Energy_Protection      SPELL       125                ****        

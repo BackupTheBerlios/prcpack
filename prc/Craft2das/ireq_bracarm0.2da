@@ -3,6 +3,6 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Bracers_of_Armor_10            RESULT      x2_it_mbracer005   ****
 1    CasterLevel7th                 CASTERLVL   7                  ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Mage_Armor                     SPELL       102                ****        
 4    Level_20                       LEVEL       20                 ****        

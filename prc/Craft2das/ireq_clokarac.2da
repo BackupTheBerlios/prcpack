@@ -3,6 +3,6 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Cloak_of_Arachnida             RESULT      x0_maarcl030       ****
 1    CasterLevel6th                 CASTERLVL   6                  ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Spider_Climb                   ****        ****               ****        
 4    Web                            SPELL       192                ****        

@@ -3,7 +3,7 @@
      LABEL                          ReqType     ReqParam1          ReqParam2   
 0    Helm_of_Brilliance             RESULT      x0_armhe012        ****
 1    CasterLevel13th                CASTERLVL   13                 ****        
-2    Craft_Wondrous_Item_Feat       FEAT        2502               ****        
+2    Craft_Wondrous_Item_Feat       FEAT        2925               ****        
 3    Light                          SPELL       62                 ****        
 4    Fireball                       SPELL       100                ****        
 5    Prismatic_Spray                SPELL       135                ****        
