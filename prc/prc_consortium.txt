@@ -37,11 +37,11 @@ Level
 1: Wear Fiend - Grants +1 Natural Armor, +2 Dexterity and Dark Vision.
 2: Flame Resistant - Gains 20 fire resistance.
 3: Fiendish Glare - Glare can decrease a foe's abilities and even stun weak opponents.
-4: Fiendish Knowledge - ?
+4: Fiendish Knowledge - Bonus feat of your choice.
 5: Skin Adaption - Grants +2 Natural Armor, +2 Constitution.
 6: Cold Resistant - Gains 20 cold resistance.
 7: Glare of the Pit - Once per day, glare can torch an opponent, dealing 16d6 damage.
-8: Fiendish Knowledge - ?
+8: Fiendish Knowledge - Bonus feat of your choice.
 9: Summon Fiend - Can summon a Vrock once per day.
 10: Symbiosis Grants 20/+1 Damage reduction. For each 5 Epic levels, it gains +1. 
 
