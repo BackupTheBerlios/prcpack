@@ -7,11 +7,15 @@ To install:
 1) Open your module in the toolset
 2) In Module Properties->Custom Content add the .hak and tlk file
 3) Import the .erf file with File->Import
-4) In Module Properties->Events set the "OnPlayerLevelUp" event to "prc_levelup"
+4) In Module Properties->Events set the following events:
+   "OnPlayerLevelUp" event to "prc_levelup"
+   "OnPlayerEquipItem" event to "prc_equip"
+   "OnPlayerUnEquipItem" event to "prc_unequip"
+   "OnClientEnter" event to "prc_onenter"
 5) Save
 6) Enjoy!
 
-You could also extract all the content of the hak&erf files to your overwrite and simply add the tlk to the module.
+You could also extract all the content of the hak&erf files to your overwrite and simply add the tlk&events to the module.
 
 
 ******************** Archmage *******************
@@ -512,6 +516,7 @@ Known Isssues:
 
 V1.8:
 * Hierophant, Red Avenger, Duelist
+* Bug fixes
 
 V1.7:
 * Added Lich Template, and Shifter from Hennessy, and Disciple of Mephistopheles from Attilla.
