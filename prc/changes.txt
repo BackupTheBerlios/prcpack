@@ -105,4 +105,8 @@ Changed the soulgem to soul_gem.uti so it can be checked in.
 - Email update system appears to be broken
 - Prepared 1.10 for release (backdate to last update)
 ---------End Stratovarius
+07/03/2004
+---------Begin Stratovarius
+- Released 1.10
+---------End Stratovarius
 

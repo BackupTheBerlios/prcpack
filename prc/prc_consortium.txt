@@ -3,17 +3,9 @@ Version 1.10.0
 This package includes new Prestige Classes by many people. (Listed at the bottom)
 
 To install:
-1) Open your module in the toolset
-2) In Module Properties-> Custom Content add the .hak and tlk file
-3) Import the .erf file with File-> Import
-4) In Module Properties-> Events set the following events:
-   "OnPlayerLevelUp" event to "prc_levelup"
-   "OnPlayerEquipItem" event to "prc_equip"
-   "OnPlayerUnEquipItem" event to "prc_unequip"
-   "OnClientEnter" event to "prc_onenter"
-   "OnPlayerRest" event to "prc_rest"
-5) Save
-6) Enjoy
+1) Place hak in NWN/Hak, TLK in NWN/TLK, erf in NWN/erf
+2) Run PRC Installer executable, selecting those modules you wish to add the pack to
+3) Enjoy
 
 You could also extract all the contents of the hak and erf files to your override folder and simply add the tlk & events to the module.
 
