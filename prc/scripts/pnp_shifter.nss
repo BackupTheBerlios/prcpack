@@ -13,6 +13,8 @@
 //:://////////////////////////////////////////////
 
 #include "prc_alterations"
+#include "nw_o0_itemmaker"
+#include "nw_i0_spells"
 
 // Determine the level of the Shifter needed to take on
 // oTargets shape.
@@ -78,6 +80,70 @@ int GetIPFeatFromFeat(int nFeat);
 // and sets the powers onto the object item
 void SetItemSpellPowers(object oItem, object oTarget);
 
+// Removes leftover aura effects
+void RemoveAuraEffect( object oPC );
+// Adds a creature to the list of valid GWS shift possibilities
+void RecognizeCreature( object oPC, string sTemplate );
+// Checks to see if the specified creature is a valid GWS shift choice
+int IsKnownCreature( object oPC, string sTemplate );
+
+void RecognizeCreature( object oPC, string sTemplate )
+{
+    object oMimicForms = GetItemPossessedBy( oPC, "sparkoflife" );
+    if ( !GetIsObjectValid(oMimicForms) )
+        oMimicForms = CreateItemOnObject( "sparkoflife", oPC );
+
+    int num_creatures = GetLocalInt( oMimicForms, "num_creatures" );
+
+    SetLocalArrayString( oMimicForms, "shift_choice", num_creatures, sTemplate );
+    SetLocalInt( oMimicForms, "num_creatures", num_creatures+1 );
+}
+
+int IsKnownCreature( object oPC, string sTemplate )
+{
+    object oMimicForms = GetItemPossessedBy( oPC, "sparkoflife" );
+    int num_creatures = GetLocalInt( oMimicForms, "num_creatures" );
+    int i;
+    string cmp;
+
+    for ( i=0; i<num_creatures; i++ )
+    {
+        cmp = GetLocalArrayString( oMimicForms, "shift_choice", i );
+        if ( TestStringAgainstPattern( cmp, sTemplate ) )
+        {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+// Remove "dangling" aura effects on trueform shift
+// Now only removes things it should remove (i.e., auras)
+void RemoveAuraEffect( object oPC )
+{
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_BLINDING, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_BLINDING, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_COLD, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_COLD, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_ELECTRICITY, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_ELECTRICITY, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_FEAR, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_FEAR, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_FIRE, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_FIRE, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_MENACE, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_MENACE, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_PROTECTION, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_PROTECTION, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_STUN, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_STUN, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_UNEARTHLY_VISAGE, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_UNEARTHLY_VISAGE, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_AURA_UNNATURAL, oPC) )
+        RemoveSpellEffects( SPELLABILITY_AURA_UNNATURAL, oPC, oPC );
+    if ( GetHasSpellEffect(SPELLABILITY_DRAGON_FEAR, oPC) )
+        RemoveSpellEffects( SPELLABILITY_DRAGON_FEAR, oPC, oPC );
+}
 
 
 void CopyAllItemProperties(object oDestination,object oTarget)
@@ -226,74 +292,789 @@ int GetIPFeatFromFeat(int nFeat)
 
 // Determines if the target creature has a certain type of spell
 // and sets the powers onto the object item
-void SetItemSpellPowers(object oItem, object oTarget)
+void SetItemSpellPowers(object oItem, object oCreature)
 {
     itemproperty iProp;
+    int total_props = 0; //max of 8 properties on one item
 
-    if (GetHasSpell(SPELL_DARKNESS,oTarget) ||
-        GetHasSpell(SPELLABILITY_AS_DARKNESS,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DARKNESS_3,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELL_DISPLACEMENT,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DISPLACEMENT_9,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_AS_INVISIBILITY,oTarget) ||
-        GetHasSpell(SPELL_INVISIBILITY,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_BREATH_PETRIFY,oTarget)||
-        GetHasSpell(SPELLABILITY_GAZE_PETRIFY,oTarget) ||
-        GetHasSpell(SPELLABILITY_TOUCH_PETRIFY,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_FLESH_TO_STONE_5,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_ACID,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_ACID_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_COLD,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_COLD_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_FEAR,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_FEAR_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_FIRE,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_FIRE_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_GAS,oTarget) ||
-        GetHasSpell(SPELLABILITY_GOLEM_BREATH_GAS,oTarget) )
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_GAS_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_LIGHTNING,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_LIGHTNING_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_PARALYZE,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_PARALYZE_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_SLEEP,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_SLEEP_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_SLOW,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_SLOW_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_DRAGON_BREATH_WEAKEN,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DRAGON_BREATH_WEAKEN_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_BOLT_WEB,oTarget) ||
-        GetHasSpell(SPELL_WEB,oTarget) )
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_WEB_3,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_MINDBLAST,oTarget) ||
-        GetHasSpell(SPELLABILITY_GAZE_STUNNED,oTarget) ||
-        GetHasSpell(SPELLABILITY_HOWL_STUN,oTarget) ||
-        GetHasSpell(SPELLABILITY_BOLT_STUN,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_POWER_WORD_STUN_13,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_BOLT_DOMINATE,oTarget) ||
-        GetHasSpell(SPELLABILITY_GAZE_DOMINATE,oTarget) ||
-        GetHasSpell(SPELL_DOMINATE_MONSTER,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DOMINATE_MONSTER_17,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_CONE_COLD,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_CONE_OF_COLD_15,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
-    if (GetHasSpell(SPELLABILITY_BOLT_LIGHTNING,oTarget) ||
-        GetHasSpell(SPELLABILITY_CONE_LIGHTNING,oTarget) ||
-        GetHasSpell(SPELLABILITY_PULSE_LIGHTNING,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIGHTNING_BOLT_10,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_BOLT_FIRE,oTarget) ||
-        GetHasSpell(SPELLABILITY_CONE_FIRE,oTarget) ||
-        GetHasSpell(SPELLABILITY_HELL_HOUND_FIREBREATH,oTarget) ||
-        GetHasSpell(SPELLABILITY_PULSE_FIRE,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIGHTNING_BOLT_10,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-    if (GetHasSpell(SPELLABILITY_BOLT_SLOW,oTarget))
-        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_SLOW_5,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-
-    // Manticore spikes dont have a define but the .2da says 439
-    if (GetHasSpell(SPELLABILITY_MANTICORE_SPIKES,oTarget))
-        iProp = ItemPropertyCastSpell(439,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
-
-    AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+    //first, auras--only want to allow one aura power to transfer
+    if ( GetHasSpell(SPELLABILITY_AURA_BLINDING, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(750,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_COLD, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(751,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_ELECTRICITY, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(752,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_FEAR, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(753,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_FIRE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(754,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_MENACE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(755,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_PROTECTION, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(756,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_STUN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(757,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_UNEARTHLY_VISAGE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(758,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_AURA_UNNATURAL, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(759,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //now, bolts
+    if ( GetHasSpell(SPELLABILITY_BOLT_ABILITY_DRAIN_CHARISMA, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(760,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_ABILITY_DRAIN_CONSTITUTION, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(761,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_ABILITY_DRAIN_DEXTERITY, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(762,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_ABILITY_DRAIN_INTELLIGENCE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(763,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_ABILITY_DRAIN_STRENGTH, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(764,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_ABILITY_DRAIN_WISDOM, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(765,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_ACID, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(766,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_CHARM, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(767,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_COLD, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(768,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_CONFUSE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(769,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_DAZE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(770,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_DEATH, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(771,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_DISEASE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(772,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_DOMINATE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(773,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_FIRE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(774,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_KNOCKDOWN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(775,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_LEVEL_DRAIN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(776,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_LIGHTNING, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(777,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_PARALYZE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(778,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_POISON, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(779,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_SHARDS, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(780,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_SLOW, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(781,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_STUN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(782,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_BOLT_WEB, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(783,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //now, cones
+    if ( GetHasSpell(SPELLABILITY_CONE_ACID, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(784,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_CONE_COLD, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(785,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_CONE_DISEASE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(786,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_CONE_FIRE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(787,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_CONE_LIGHTNING, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(788,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_CONE_POISON, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(789,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_CONE_SONIC, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(790,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //various petrify attacks
+    if ( GetHasSpell(SPELLABILITY_BREATH_PETRIFY, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(791,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_PETRIFY, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(792,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_TOUCH_PETRIFY, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(793,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //dragon stuff (fear aura, breaths)
+    if ( GetHasSpell(SPELLABILITY_DRAGON_FEAR, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(796,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_ACID, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(400,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_COLD, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(401,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_FEAR, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(402,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_FIRE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(403,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_GAS, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(404,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_LIGHTNING, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(405,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(698, oCreature) && (total_props <= 7) ) //NEGATIVE
+    {
+        iProp = ItemPropertyCastSpell(794,IP_CONST_CASTSPELL_NUMUSES_5_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_PARALYZE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(406,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_SLEEP, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(407,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_SLOW, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(408,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_DRAGON_BREATH_WEAKEN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(409,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(771, oCreature) && (total_props <= 7) ) //PRISMATIC
+    {
+        iProp = ItemPropertyCastSpell(795,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //gaze attacks
+    if ( GetHasSpell(SPELLABILITY_GAZE_CHARM, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(797,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_CONFUSION, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(798,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DAZE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(799,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DEATH, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(800,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DESTROY_CHAOS, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(801,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DESTROY_EVIL, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(802,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DESTROY_GOOD, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(803,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DESTROY_LAW, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(804,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DOMINATE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(805,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_DOOM, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(806,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_FEAR, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(807,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_PARALYSIS, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(808,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_GAZE_STUNNED, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(809,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //miscellaneous abilities
+    if ( GetHasSpell(SPELLABILITY_GOLEM_BREATH_GAS, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(810,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HELL_HOUND_FIREBREATH, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(811,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_KRENSHAR_SCARE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(812,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //howls
+    if ( GetHasSpell(SPELLABILITY_HOWL_CONFUSE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(813,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HOWL_DAZE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(814,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HOWL_DEATH, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(815,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HOWL_DOOM, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(816,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HOWL_FEAR, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(817,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HOWL_PARALYSIS, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(818,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HOWL_SONIC, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(819,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_HOWL_STUN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(820,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //pulses
+    if ( GetHasSpell(SPELLABILITY_PULSE_ABILITY_DRAIN_CHARISMA, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(821,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_ABILITY_DRAIN_CONSTITUTION, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(822,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_ABILITY_DRAIN_DEXTERITY, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(823,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_ABILITY_DRAIN_INTELLIGENCE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(824,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_ABILITY_DRAIN_STRENGTH, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(825,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_ABILITY_DRAIN_WISDOM, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(826,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_COLD, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(827,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_DEATH, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(828,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_DISEASE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(829,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_DROWN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(830,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_FIRE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(831,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_HOLY, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(832,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_LEVEL_DRAIN, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(833,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_LIGHTNING, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(834,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_NEGATIVE, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(835,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_POISON, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(836,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_SPORES, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(837,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_PULSE_WHIRLWIND, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(838,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //monster summon abilities
+    if ( GetHasSpell(SPELLABILITY_SUMMON_SLAAD, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(839,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(SPELLABILITY_SUMMON_TANARRI, oCreature) && (total_props <= 7) )
+    {
+        iProp = ItemPropertyCastSpell(840,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //abilities without const refs
+    if ( GetHasSpell(552, oCreature) && (total_props <= 7) ) //PSIONIC CHARM
+    {
+        iProp = ItemPropertyCastSpell(841,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(551, oCreature) && (total_props <= 7) ) //PSIONIC MINDBLAST
+    {
+        iProp = ItemPropertyCastSpell(842,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(713, oCreature) && (total_props <= 7) ) //MINDBLAST 10M
+    {
+        iProp = ItemPropertyCastSpell(843,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(741, oCreature) && (total_props <= 7) ) //PSIONIC BARRIER
+    {
+        iProp = ItemPropertyCastSpell(844,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(763, oCreature) && (total_props <= 7) ) //PSIONIC CONCUSSION
+    {
+        iProp = ItemPropertyCastSpell(845,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(731, oCreature) && (total_props <= 7) ) //BEBILITH WEB
+    {
+        iProp = ItemPropertyCastSpell(846,IP_CONST_CASTSPELL_NUMUSES_5_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(736, oCreature) && (total_props <= 7) ) //BEHOLDER EYES
+    {
+        iProp = ItemPropertyCastSpell(847,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(770, oCreature) && (total_props <= 7) ) //CHAOS SPITTLE
+    {
+        iProp = ItemPropertyCastSpell(848,IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(757, oCreature) && (total_props <= 7) ) //SHADOWBLEND
+    {
+        iProp = ItemPropertyCastSpell(849,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ( GetHasSpell(774, oCreature) && (total_props <= 7) ) //DEFLECTING FORCE
+    {
+        iProp = ItemPropertyCastSpell(850,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    //some spell-like abilities
+    if ((GetHasSpell(SPELL_DARKNESS,oCreature) ||
+        GetHasSpell(SPELLABILITY_AS_DARKNESS,oCreature)) &&
+        total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DARKNESS_3,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_DISPLACEMENT,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DISPLACEMENT_9,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if ((GetHasSpell(SPELLABILITY_AS_INVISIBILITY,oCreature) ||
+        GetHasSpell(SPELL_INVISIBILITY,oCreature)) &&
+        total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_INVISIBILITY_3,IP_CONST_CASTSPELL_NUMUSES_5_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_WEB,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_WEB_3,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_MAGIC_MISSILE,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_MAGIC_MISSILE_5,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_FIREBALL,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_FIREBALL_10,IP_CONST_CASTSPELL_NUMUSES_4_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_CONE_OF_COLD,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_CONE_OF_COLD_9,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_LIGHTNING_BOLT,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_LIGHTNING_BOLT_10,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_CURE_CRITICAL_WOUNDS,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_CURE_CRITICAL_WOUNDS_12,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_HEAL,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_HEAL_11,IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_FINGER_OF_DEATH,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_FINGER_OF_DEATH_13,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_FIRE_STORM,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_FIRE_STORM_13,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_HAMMER_OF_THE_GODS,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_HAMMER_OF_THE_GODS_12,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_GREATER_DISPELLING,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_GREATER_DISPELLING_7,IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_DISPEL_MAGIC,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_DISPEL_MAGIC_10,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
+    if (GetHasSpell(SPELL_HARM,oCreature) && total_props <= 7)
+    {
+        iProp = ItemPropertyCastSpell(IP_CONST_CASTSPELL_HARM_11,IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY);
+        AddItemProperty(DURATION_TYPE_PERMANENT,iProp,oItem);
+        total_props++;
+    }
 }
 
 
@@ -1019,7 +1800,8 @@ int GetIsCreatureHarmless(object oCreature)
         (sCreatureName == "Bat") ||
         (sCreatureName == "Dire Rat") ||
         (sCreatureName == "Will-O'-Wisp") ||
-        (sCreatureName == "Rat") )
+        (sCreatureName == "Rat") ||
+        (GetChallengeRating(oCreature) < 1.0 ))
         return TRUE;
     else
         return FALSE;
@@ -1352,6 +2134,7 @@ int SetShiftFromTemplate(object oPC, string sTemplate)
 int SetShiftFromTemplateValidate(object oPC, string sTemplate)
 {
     int bRetValue = FALSE;
+    int in_list = IsKnownCreature( oPC, sTemplate );
 
     // Create the obj from the template
     object oTarget = CreateObject(OBJECT_TYPE_CREATURE,sTemplate,GetLocation(oPC));
@@ -1360,9 +2143,13 @@ int SetShiftFromTemplateValidate(object oPC, string sTemplate)
     {
         SendMessageToPC(oPC,"Not a valid creature");
     }
+    if ( !in_list )
+    {
+        SendMessageToPC( oPC, "You have not mimiced this creature yet" );
+    }
 
     // Make sure the PC can take on that form
-    if (GetValidShift(oPC, oTarget))
+    if (GetValidShift(oPC, oTarget) && in_list )
     {
         // Shift the PC to it
         bRetValue = SetShift(oPC,oTarget);
@@ -1380,6 +2167,7 @@ int SetShiftFromTemplateValidate(object oPC, string sTemplate)
 int SetShiftEpicFromTemplateValidate(object oPC, string sTemplate)
 {
     int bRetValue = FALSE;
+    int in_list = IsKnownCreature( oPC, sTemplate );
 
     // Create the obj from the template
     object oTarget = CreateObject(OBJECT_TYPE_CREATURE,sTemplate,GetLocation(oPC));
@@ -1388,9 +2176,13 @@ int SetShiftEpicFromTemplateValidate(object oPC, string sTemplate)
     {
         SendMessageToPC(oPC,"Not a valid creature");
     }
+    if ( !in_list )
+    {
+        SendMessageToPC( oPC, "You have not mimiced this creature yet" );
+    }
 
     // Make sure the PC can take on that form
-    if (GetValidShift(oPC, oTarget))
+    if (GetValidShift(oPC, oTarget) && in_list )
     {
         // Shift the PC to it
         bRetValue = SetShiftEpic(oPC,oTarget);
@@ -1435,7 +2227,11 @@ int SetShiftTrueForm(object oPC)
     // if the did an epic form remove the special powers
     object oEpicPowersItem = GetItemPossessedBy(oPC,"EpicShifterPowers");
     if (GetIsObjectValid(oEpicPowersItem))
+    {
         RemoveAllItemProperties(oEpicPowersItem);
+        RemoveAuraEffect( oPC );
+    }
+
 
     // Spell failure can only be done through an effect
     // AC > 20 can only be done via an effect
