@@ -78,7 +78,8 @@ int nHospitaler = GetLevelByClass(CLASS_TYPE_HOSPITALER, oCaster);
 
     int nTrueNecroArcLevels;
     int nTrueNecroDivLevels;
-    int nTrueNecroLevels = GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
+    int nTrueNecroLevels;
+    nTrueNecroLevels = GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
     string school = lookup_spell_school(GetSpellId());
         if (school == "N")
         {
