@@ -82,4 +82,7 @@ a rogue/Duelist and other classes that require perform. I suggest everyone updat
 Added Brian Greinke's changes to make the shifter match PnP rules even better (real epic creature powers, and now you need to mimic something before you can become it)
 Added DLG so you can pick what you want to shift into, list made dynamically from mimiced forms
 ---------End Shane Hennessy
-
+23/02/2004
+---------Begin Stratovarius
+- Updated Hak and Rar files on CVS and Vault to remove numerous errors (from 20/02/04-23/02/04)
+---------End Stratovarius
