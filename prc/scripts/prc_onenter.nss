@@ -26,8 +26,8 @@ void main()
     DestroyObject(oSkin);
     object oPC = GetEnteringObject();
     GetPCSkin(oPC);
-}
 
-     if (GetLevelByClass(CLASS_TYPE_STORMLORD,oEntering))
-      RemovBonusStormlord(oEntering);
+
+     if (GetLevelByClass(CLASS_TYPE_STORMLORD,oPC))
+      RemovBonusStormlord(oPC);
 }
