@@ -41,6 +41,10 @@
 # module.OnUnaquireItem : Assigns script(s) to handle this module event
 # module.OnUserDefined : Assigns script(s) to handle this module event
 
+# Add the PRC pack version and specify at least 1.62 to install.
+Version : 2.0
+MinNWNVersion: 1.62
+
 # ERF with the required areas.
 erf : prc_consortium.erf
 
