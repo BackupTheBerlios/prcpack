@@ -1,3 +1,28 @@
+TO DO BUILDS USING A WINDOWS COMMAND PROMPT:
+============================================
+
+Open a windows command prompt cd into your prc directory.  Use notepad
+(or any other text editor) to create a file called config.make.  Add the 
+following 2 lines to the file:
+
+NWN_DIR = C:\games\neverwinternights\nwn
+PRC_VERSION = 19
+
+Where the value for NWN_DIR is the directory where NWN is installed and
+the value of PRC_VERSION is the revision number of the prc pack you
+are building. (only Stratovarius really needs to use this, the rest of
+us can set it to some random number, it's only used to make the RAR)
+
+To run the build just type "make", this will build the pack and install
+all of the appropriate files in your NWN directory.  If you want to
+make the RAR type "make rar".
+
+
+
+
+TO DO BUILDS USING CYGWIN:
+==========================
+
 What do you need:
 The command line erf tool available at:
 http://nwvault.ign.com/Files/other/data/1053576776593.shtml
