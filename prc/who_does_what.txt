@@ -34,7 +34,7 @@ Shane Hennessy:
 - Add shifter changes from fan on nwvault - complete
 - Add warrior of darkness prc - design done
 - Add a dlg for the shifter to reduce the newly added confusion with mimic being required - complete
-- Get rabbithail to add his magic crafting feats to our pak, if that fails make my own
+- Get rabbithail to add his magic crafting feats to our pak, if that fails make my own - complete
 - Add Fang of Lolth PRC - design done
 
 Stratovarius:
