@@ -237,6 +237,42 @@ Upon gaining a level in Elemental Savant, the character gains new spells per day
 
 
 
+******************** Fist of Raziel *******************
+The Fist of Raziel represents a knightly order dedicated to the celestial patron of holy warfare against evil. Raziel's crusaders lead the charge against evil wherever it is found. Smiting Evil is their speciality.
+
+- Hit Die: d10.
+- Proficiencies: The Fist of Raziel gains proficiency in simple and martials weapons , all armor and shields(except tower shield). 
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Alignment: Lawful Good.
+Feats: Power Attack.
+Skills: Persuade 5 ranks, Lore 5 ranks.
+Divine Spellcasting: Can cast 1st level spells.
+Base Attack Bonus: 6
+
+ABILITIES:
+
+Level
+1: Magic Circle Against Evil - Constant magic circle, as the spell.
+    Smite Evil (Weapon considered Divine) - Can smite evil once a day
+2: None
+3: Smite Evil (all threat are criticals rolls) - Can smite evil twice a day.
+4: None
+5: Smite Evil (+2d6 Holy dmg vs Evil) - Can smite evil three times a day.
+    Sanctify Martial Strike: A specific weapon gains dmg +1 vs Evil and +1d4 vs Outsider and Undead.
+6: None
+7: Smite Evil (+2d8 Holy dmg vs Outsider or Undead Evil) - Can smite evil four times a day. Doesn't stack with +2d6 dmg.
+8: None
+9: Smite Evil (Smite all targets in area to a maximum of five) - Can smite evil five times a day.
+10: Holy Martial Strike - Any weapon wielded is treated as +2d6 Holy damage vs Evil. 
+
+BONUS SPELLS
+Upon gaining a level in Fist of Raziel, the character gains new spells per day as if he had also gained a level in his highest caster class (Cleric or Paladin). He does not learn any new spells through his abilities.
+
+
+
 ******************** Harper Mage *******************
 Wizards and sorcerers have been part of the Harpers since the organization's inception. Many of its senior members today are powerful mages. Among the organizations principal allies are several influential wizards and sorcerers who have made some of their accumulated knowledge available to the Harpers. Mystra, the diety of magic, is one of the patron dieties of the Harpers; her predecessor was one of the dieties who met at the Dancing Place centuries ago to inspire the founding of the organization. With such a rich magical tradition, it is inevitable that the Harpers would develop some of their own magical lore and techniques to pass on to their agents.
 
@@ -683,6 +719,38 @@ Every other level in Spellsword, the character gains new spells per day as if he
 
 
 
+******************** Stormlord *******************
+Stormlords are the agents of Talos, inflicting destructive rampages wherever they wander. Talos cares only that they call up storms or engage in spectacular acts of violence. Stormlords often live as brigands,indulging their personals desires for wealth, food, luxury and wanton behavior as they crave random, spectacular acts of violence.
+
+- Hit Die: d8.
+- Proficiencies: A Stormlord does not gain any additional weapon or armor proficiencies.  
+- Skill Points: 2 + Int Modifier.
+
+REQUIREMENTS:
+
+Alignment: Any Evil or Chaotic.
+Feats: Great Fortitude, Weapon Focus (Spear) , Cleric Domains (Destruction, Fire, or Evil - Only for Clerics).
+Divine Spellcasting: Can cast 3rd level spells.
+
+ABILITIES:
+
+Level
+1: Electrical Resistance 10
+2: Shock Spear
+3: None
+4: Electrical Resistance 15
+5: Thundering Spear
+6: None
+7: Electrical Resistance 20
+8: Shocking Spear
+9: Electrical Resistance 30
+10: Elemental Deflagration
+
+BONUS SPELLS
+Upon gaining a level in Stormlord, the character gains new spells per day as if he had also gained a level in his highest caster class (druid or cleric). He does not learn any new spells through his abilities.
+
+
+
 ******************** Vassal of Bahamut *******************
 Most of Bahamut's emissaries and champions are dutiful and mighty metallic dragons. Occasionally, however, Bahamut finds a nondraconic champion whose reverence of good dragons is unshakeable, and whose hatred of evil dragons rivals that of the purest gold dragons- a force so good and strong that Bahamut feels moved to offer this champion a place in his court. This champion becomes a Vassal of Bahamut.
 
@@ -725,7 +793,7 @@ Level
 *************** Updates ****************
 
 v1.9:
-* Added Heartwarder, Holy Liberator, Hunter of the Dead, Knight of the Chalice, and Vassal of Bahamut
+* Added Fist of Raziel, Heartwarder, Holy Liberator, Hunter of the Dead, Knight of the Chalice, Stormlord, and Vassal of Bahamut
 
 V1.8:
 * Hierophant, Red Avenger, Duelist
