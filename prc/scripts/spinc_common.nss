@@ -143,6 +143,8 @@ const int SPELL_LIQUID_FIRE					= 0;
 
 float MinutesToSeconds(int minutes)
 {
+	return TurnsToSeconds(minutes);
+/*
 	// Use HoursToSeconds to figure out how long a scaled minute
 	// is and then calculate the number of real seconds based
 	// on that.
@@ -157,10 +159,13 @@ float MinutesToSeconds(int minutes)
 	float totalRounds = RoundsToSeconds(minutes);
 	float result = totalMinutes > totalRounds ? totalMinutes : totalRounds;
 	return result;
+*/
 }
 
 float TenMinutesToSeconds(int tenMinutes)
 {
+	return TurnsToSeconds(tenMinutes) * 10;
+/*
 	// Use HoursToSeconds to figure out how long a scaled 10 minute
 	// duration is and then calculate the number of real seconds based
 	// on that.
@@ -175,6 +180,7 @@ float TenMinutesToSeconds(int tenMinutes)
 	float totalRounds = RoundsToSeconds(tenMinutes);
 	float result = totalMinutes > totalRounds ? totalMinutes : totalRounds;
 	return result;
+*/
 }
 
 
