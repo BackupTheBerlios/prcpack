@@ -10,3 +10,12 @@
 - fixed Lich alignment restriction to any non-good to match source material
 - Added in Lich hide properties upon client enter using EventPRC system
 ---------End Shane Hennessy
+24/01/2004
+---------Begin Shane Hennessy
+- Lich DemiLich epic levels now go from 5-10 to better match ECL of +6.
+- New Crafting dialog for making phlyactery and soul gems.
+- Soul Gems added, with ability to cast Trap the soul spell.
+- Trap the soul spell added.
+- Changed TLK for new additions.
+---------End Shane Hennessy
+

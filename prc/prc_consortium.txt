@@ -347,72 +347,130 @@ Level 11: Epic Greater WildShape 2/day (gain +2 uses every 3 levels above 11)
 
 
 ******************** Lich Template *******************
+(Template Class)
 Feared by mortal beings for their malign magic, their intelligence, and their willingness to embrace undeath for a chance to live forever, liches are evil beings of great power.
 - WOTC website on the Lich Template
 
 Description:
-This template class is the evolution of an Arcane or Divine caster with the spell caster ability of 11th or greater level into the feared Lich. The progression of un-death is one not taken likely and it may completely destroy the one who seeks the power.
-
-1st Int +2, natural armor +2, lich skills +2, damaging touch 1d6+5, paralyzing touch (1d4 rounds), resistances (cold 5, electricity 5), ), phylactery (1st stage)
-2nd Natural armor +3, lich skills +4, damage reduction 5/+1, damaging touch (1d8+5), fear aura (10-ft. radius), fortification (light), paralyzing touch (1d4 minutes), phylactery (2nd stage), resistances (cold 10, electricity 10)
-3rd Wis +2, natural armor +4, lich skills +6, damage reduction 10/+1, fear aura (30-ft. radius), fortification (moderate), paralyzing touch (1d4 hours), phylactery (3rd stage), resistances (cold 20, electricity 20)
-4th Cha +2, natural armor +5, lich skills +8, damage reduction 15/+1, fear aura (60-ft. radius), immunities (cold, electricity, polymorph), paralyzing touch (permanent), phylactery (4th stage), turn resistance +4, undeath
+This template class is the evolution of an Arcane or Divine caster with the spell caster ability of 11th or greater level into the feared Lich. The progression of un-death is one not taken litely and it may completely destroy the one who seeks the power.  The power actually comes from defense because the lich does not gain any spells or caster levels.
 
 Prerequisites to take the class:
 11th level Wizard, Sorcerer, or Cleric.
+14 Concentration
 Any non good alignment.
-Creation of 1st stage of phylactery.
+Creation of 1st stage of phylactery.  (First level up in the lich class and then create your phlyactery to gain your lich powers)
+At each level up you must upgrade your phylactery in order to gain more powers.
 
 Lich skills: Hide, Listen, Move Silently, Search,Persuade, and Spot.
 Class skills: As a wizard.
 HD per level 1d4 (At level 4 you get a massive con bonus to simulate the retroactive d12 HD bump)
 
+Level 1
+Int +2
+natural armor +2
+lich skills +2
+damaging touch 1d6+5, paralyzing touch (1d4 rounds)
+resistances (cold 5, electricity 5), )
+
+Level 2
+natural armor +3
+lich skills +4
+damage reduction 5/+1
+damaging touch (1d8+5), paralyzing touch (1d4 minutes)
+resistances (cold 10, electricity 10)
+fear aura
+
+Level 3
+Wis +2
+ natural armor +4
+lich skills +6
+damage reduction 10/+1
+paralyzing touch (1d4 hours)
+resistances (cold 20, electricity 20)
+
+Level 4
+Cha +2
+natural armor +5
+lich skills +8
+damage reduction 15/+1
+immunities (cold, electricity)
+paralyzing touch (permanent)
+turn resistance +4
+undeath
+
 Epic Progression:
 In order to become a demilich you must be a level 21 Sorcerer, Wizard, or Cleric.
+At each level you must create one soul gem in order to gain the powers for that level, you must also upgrade your phylactery.  To gain the final level you must have 8 soul gems.
+Soul gems cost 120,000 gold and 4,800 exp each gem.  (Use the Craft Wonderous item feat to create them)
 
 Bonus Feats: None
 HD: 1d4
 
-(Carrierd over from your lich levels)
-+8 to lich skills
+(Carrierd over from your previous lich levels)
 100% cold immune
 100% electric immune
-+12 to con (for HD change)
++12 to con (simulation of retroactive d12 HD change)
+Undead Properties.
 
 Level 5:
-DR 7/-
+DR 5/+5
 DR Acid 5/-
 DR Fire 5/-
 DR Sonic 5/-
-+4 int, wis, and cha
-Immunity to level 1 and level 2 spells.
++3 int, wis, and cha
++10 lich skills
++5 turn resistance
+Immunity to level 1 spells.
 
 Level 6:
-(lich skills)
-DR 14/-
+DR 10/+8
+DR Acid 10/-
+DR Fire 10/-
+DR Sonic 10/-
++4 int, wis, and cha
++12 lich skills
++8 turn resistance
+Immunity to level 3 spells.
+
+Level 7:
+DR 15/+11
 DR Acid 10/-
 DR Fire 10/-
 DR Sonic 10/-
 +6 int, wis, and cha
-Immunity to level 3 and 4 spells.
++14 lich skills
++11 turn resistance
+Immunity to level 5 spells.
 
-Level 7:
-(lich skills)
-DR 22/-
+Level 8:
+DR 20/+14
+DR Acid 15/-
+DR Fire 15/-
+DR Sonic 15/-
++7 int, wis, and cha
++16 lich skills
++14 turn resistance
+Immunity to level 7 spells.
+
+Level 9:
+DR 25/+17
 DR Acid 15/-
 DR Fire 15/-
 DR Sonic 15/-
 +8 int, wis, and cha
-Immunity to level 5 and 6 spells.
++18 lich skills
++17 turn resistance
+Immunity to level 8 spells.
 
-Level 8:
-(lich skills)
-DR 30/-
+Level 10:
+DR 30/+20
 DR Acid 20/-
 DR Fire 20/-
 DR Sonic 20/-
 +10 int, wis, and cha
-Immunity to level 7, 8 , and 9 spells
++20 lich skills
++20 turn resistance
+Immunity to level 9 spells.
 
 ******************** Duelist *******************
 The duelist is a nimble, intelligent fighter trained in making precise attacks with light weapons, such as the rapier.  Also known as the swashbuckler, the duelist always takes full advantage of his quick reflexes and wits in a fight.  Rather than wearing bulky armor, duelists feel the best way to protect themselves is to not get hit at all.
