@@ -229,7 +229,8 @@ $(ERF): $(ERFFILES)
 $(SCRIPTSHAK): $(OBJS) $(SCRIPTS)
 	@echo $(@F)
 	-@del "$@" 2>nul
-	@"$(ERFCOMPILER)" -c $@ $**
+	@"$(ERFCOMPILER)" -c $@ $(SCRIPTS)
+	@"$(ERFCOMPILER)" -u $@ $(OBJS) >nul
 
 
 # Rule to build the 2.0 2das HAK file.
