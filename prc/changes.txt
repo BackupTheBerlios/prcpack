@@ -56,6 +56,6 @@
 16/02/2004
 ---------Begin Middy
 - Updated the entire... entire readme. Whew. Added Fist of Raziel, Heartwarder, Holy Liberator, Hunter of the Dead, Knight of the Chalice, Stormlord, and Vassal of Bahamut to the TLK.
-- Did not add Fist of Raziel and Stormlord to 2das.
+- Added Stormlord 2das. Fixed Classes.2das. Only 3 more needed.
 - Changes to each class description entry in the entire TLK. They're all fixed up. Some minor feat description fixes.
 ---------End Middy
