@@ -10,101 +10,74 @@
 
 void main()
 {
-    string type;
-    int i;
-    location locCentroid = GetSpellTargetLocation();
-    vector vCentroid = GetPositionFromLocation( locCentroid );
-    effect eSummonA = EffectVisualEffect( VFX_DUR_ELEMENTAL_SHIELD );
+    string sSummon;
     effect eSummonB;
     object oCreature;
-    vector vLoc;
-    location locSummon;
-    object oPC = OBJECT_SELF;
-    //added variables to check MoS total caster level to determine which summon to use; checks for
-    //MoS undead 4, than does a case/switch to determine which summon.
-
-    int nCasterLevel = 0; //What is my total caster level?
-    int nCasterBase = 0; //which caster do I base off of?
-
-    //Base class can only be Paladin or Cleric. I won't include Druid or Ranger. People can modify this if
-    //they desire, but it doesn't make sense to include them. It hardly makes sense to include Paladin, but since it's in the desc...
-    if(GetLevelByClass(CLASS_TYPE_PALADIN, oPC) > GetLevelByClass(CLASS_TYPE_CLERIC, oPC))
-        nCasterBase = GetLevelByClass(CLASS_TYPE_PALADIN, oPC);
-
-    else
-        nCasterBase = GetLevelByClass(CLASS_TYPE_CLERIC, oPC);
-
-    nCasterLevel = nCasterBase + (GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oPC));
+    int nClass = GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, OBJECT_SELF);
 
 
     if ( GetHasFeat(FEAT_MOS_UNDEAD_4) )
     {
-        if((GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oPC) > 11) && (nCasterLevel > 21)) // epic MoS summon; requires MoS level 11 or greater.
+        if(GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, OBJECT_SELF) >= 11)
         {
-            switch (nCasterLevel)
+            switch (nClass)
             {
-                case 21:
-                    type = "summonedgreaterw";
+                case 11:
+                    sSummon = "summonedgreaterw";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
-                case 24:
-                    type = "summonedgreat001";
+                case 14:
+                    sSummon = "summonedgreat001";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
-                case 27:
-                    type = "summonedgreat002";
+                case 17:
+                    sSummon = "summonedgreat002";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
-                case 30:
-                    type = "summonedgreat003";
+                case 20:
+                    sSummon = "summonedgreat003";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
-                case 33:
-                    type = "summonedgreat004";
+                case 23:
+                    sSummon = "summonedgreat004";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
-                case 36:
-                    type = "summonedgreat005";
+                case 26:
+                    sSummon = "summonedgreat005";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
-                case 39:
-                    type = "summonedgreat006";
+                case 29:
+                    sSummon = "summonedgreat006";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
                 case 180:  //max level for npc
-                    type = "summonedgreat006";
+                    sSummon = "summonedgreat006";
                     eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30);
                     break;
             }
         }
         else
         {
-            type = "SPECTRE_SUMM";
+            sSummon = "prc_mos_spectre2";
             eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30 );
         }
     }
     else if ( GetHasFeat(FEAT_MOS_UNDEAD_3) )
     {
-        type = "SPECTRE_SUMM";
+        sSummon = "prc_mos_spectre1";
         eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_20 );
     }
     else if ( GetHasFeat(FEAT_MOS_UNDEAD_2) )
     {
-        type = "WRAITH_SUMM";
+        sSummon = "prc_mos_wraith";
         eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_10 );
     }
     else
     {
-        type = "ALLIP_SUMM";
+        sSummon = "prc_mos_allip";
         eSummonB = EffectVisualEffect( VFX_FNF_GAS_EXPLOSION_EVIL );
     }
-
-    ApplyEffectAtLocation( DURATION_TYPE_TEMPORARY, EffectLinkEffects(eSummonA, eSummonB), locCentroid, 1.5f );
-        vLoc = Vector( vCentroid.x + (Random(6) - 2.5f),
-                       vCentroid.y + (Random(6) - 2.5f),
-                       vCentroid.z );
-        locSummon = Location( GetArea(oPC), vLoc, IntToFloat(Random(361) - 180) );
-        oCreature = CreateObject( OBJECT_TYPE_CREATURE, type, locSummon, FALSE );
-        AssignCommand( oCreature, ActionDoCommand(SetLocalInt(oCreature, "ttl", GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oPC))) );
-        AssignCommand( oCreature, ActionDoCommand(SetLocalObject(oCreature, "summoner", oPC)) );
+   float fDelay = 0.0;
+   effect eSum = EffectSummonCreature(sSummon, VFX_NONE, fDelay);
+   ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSum, OBJECT_SELF, fDelay);
 }
