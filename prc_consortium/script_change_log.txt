@@ -1,0 +1,87 @@
+New Modular Layout and EvalPRC Event Hook:
+
+  Rather than keep each and every class in one huge, messy levelup script, each class is now evaluated from it's own self-contained script.  These scripts are executed from a master custom event, which is fired by OnLevel, OnEquip and OnUnequip (some of the duelist's feats are equipment sensitive).  The event checks to see which PRC classes a player has, and then proceedes to call only the nessesary scripts.
+
+================================================
+
+New Composite Item Properties System:
+
+  The include file "inc_item_props" contains a robust system for compositing multiple bonuses of the same type togeather into a single bonus.  For example, a Duelist may recieve +4 AC from her Canny Defense feat.  If she also has levels of Acolyte of the Skin, she may recieve a +2 AC bonus from her Wear Fiend feat.  Normally, these bonuses would both be applied to the skin, and only the larger of the two would have any effect.  The compositing system would add these two bonuses togeather as a +6 AC bonus.  Even better, the system "remembers" how much of the total bonus is from which feat.  For example, Canny Defense only functions when not wearing armor.  When the duelist equips heavy plate mail, a simple scripting call can set the Canny Defense portion of the composite bonus to 0, reducing the total AC bonus on the skin to 2.  Confused?  Here's how it works.
+
+After Creating Skin:
+   Skin AC Bonus: 0
+   Local Ints: -none- 
+
+After Calling: SetCompositeBonus(oPC, oSkin, ITEM_PROPERTY_AC_BONUS, 4, "CannyDefenseBonus");
+   Skin AC Bonus: 4
+   Local Ints: "CannyDefenseBonus" = 4
+
+After Calling: SetCompositeBonus(oPC, oSkin, ITEM_PROPERTY_AC_BONUS, 2, "WearFiendBonus");
+   Skin AC Bonus: 6
+   Local Ints: "CannyDefenseBonus" = 4, "WearFiendBonus" = 2
+
+After Calling: SetCompositeBonus(oPC, oSkin, ITEM_PROPERTY_AC_BONUS, 0, "CannyDefenseBonus");
+   Skin AC Bonus: 2
+   Local Ints: "CannyDefenseBonus" = 0, "WearFiendBonus" = 2
+
+The composititng system works for any Item property that has an integer cost table value.  Properties with constant cost table values cannot be composited, since DAMAGE_BONUS_1d6 + DAMAGE_BONUS_2d6 does not actually equal DAMAGE_BONUS_3d6 (in fact, DAMAGE_BONUS_3d6 doesn't even exist).  A few of the more important properties that cannot be composited are:
+  Damage Bonuses
+  Spell Resistance
+  Massive Criticals
+  Damage Reduction
+  Damage Resistance
+
+================================================
+
+New Script Driven Combat Simulation System
+
+  The include file "inc_combat" contains the functions nessesary to simulate attacking and damaging using script calls.  The obvious advantage of this, is that it allows physical attack based feats (ex. Smite Evil or Stunning Fist) to be scripted.  Normally, a script driven feat requires that a full round action be taken.  That is, if you tried to write a Smite Neutral feat, you would only excecute one attack instead of your normal number of attacks per round.  Furthermore, the attack wouldn't actually be a true attack, but rather a touch attack, which does not account for weapon skill or property bonuses.  The combat simulation system contains all of the functions needed to simulate a full round of attacking. This allows you to, for example, apply the bonuses granted by a Smite Neutral feat to the first simulated attack, and then proceed to simulate any additional attacks that the player should recieve.  This package isn't quite as well tested as the Compositing system, and has a few limitations.
+
+Known Issues:
+  - Only partially tested for melee weapons, not tested at all for ranged weapons.
+  - Does not currently support additional damage types. (a longsword with a fire damage bonus would cause only slashing damage)
+  - Cannot account for effects on the creature wielding the weapon (there is no way to access the values of existing effects that I am aware of.  I can tell that oPC has a Damage_bonus effect, but I cannot determine the parameters of the effect)
+  - Doesn't currently support the epic critical bonus feats.  This would be an easy addition though.
+  - Currently, there is no good way to force a creature to play the attack animation through scripting.  This would require a bit more custom content to fix (to be more specific, we would need to replace an existing animation, which is already accessable through scripting, with the attack animation.  At least, I know of no way to play animations that aren't hardcoded with scripting constants)
+  - The feedback displayed for the attack rolls is in a different color from the usual displays.  If anyone knows how to change the color of messages sent to a PC, let me know.
+
+================================================
+
+Other Bug Fixes/Changes:
+
+Disciple of Mephistopholes
+ - Fixed compile-time errors in a two of the spell scripts
+ - Fixed run-time errors in the two touch attack spell scripts
+ - Fixed a problem in the class's feat gain table
+ - Added code to actually apply the Fire Resistance feats
+
+Lich
+ - Fixed a bug in counting spell-caster levels that was breaking the abilibty to reach demi-lichdom
+ - Changed the application of the Lich qualites to use the composite properties system, so they don't erase existing properties for other classes.
+
+Spellsword
+ - Added ArcaneSpellFailure mods to the list of valid properties for Creature Skins.  This was causing the Spell Failure Reduction bonuses not to work before.
+
+Archmage
+ - Fixed a bug in the requirements table.  One of the possible feats to satisify the Spell Focus requirement was missing.
+
+================================================
+
+Known Issues
+
+Disciple of Mephistopholes
+ - There is currently no resref for the creature used by the two summon spells.  Righ now, the unlucky caster just gets a naked dwarf
+ - The class's PRC Requirements table is unfinished
+
+Lich
+ - Exporting a lich character and re-importing him, will cause him to lose all of his properties.  This will be fixed in the next update when I hook the lich into the EvalPRCFeats event.
+
+Eldrich Knight
+ - Is this class unfinished?  One bonus feat and a few extra hit points seem a poor trade for giving up true caster levels.
+
+================================================
+
+Comming Up:
+
+ - I plan to implement the Spellsword's Store Spell Feat (easy) and Spell Chanelling Feats (a bit tougher) in the next update
+ - More classes from The Complete Warrior and Sword and Fist
