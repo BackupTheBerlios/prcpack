@@ -60,26 +60,34 @@ void main()
         fDuration = 0.0;
         break;
     case 5:
-        nDam += d6(4) + 5;
+        nDam += d6(2) + 5;
         fDuration = 0.0;
         break;
     case 6:
-        nDam += d6(6) + 10;
+        nDam += d6(4) + 8;
         fDuration = 0.0;
         break;
     case 7:
-        nDam += d6(8) + 15;
+        nDam += d6(6) + 12;
         fDuration = 0.0;
         break;
     case 8:
+        nDam += d6(8) + 15;
+        fDuration = 0.0;
+        break;
+    case 9:
+        nDam += d6(9) + 18;
+        fDuration = 0.0;
+        break;
+    case 10:
         nDam += d6(10) + 20;
         fDuration = 0.0;
         break;
     }
 
     // Apply Damage 1/2 if they will save
-    effect eVis = EffectVisualEffect(VFX_COM_HIT_NEGATIVE);
-    if(WillSave(oTarget,nSaveDC , SAVING_THROW_WILL))
+    effect eVis = EffectVisualEffect(VFX_IMP_NEGATIVE_ENERGY);
+    if(WillSave(oTarget,nSaveDC , SAVING_THROW_TYPE_NEGATIVE))
         nDam = nDam/2;
 
     effect eDamage = EffectDamage(nDam);
@@ -87,7 +95,7 @@ void main()
     ApplyEffectToObject(DURATION_TYPE_INSTANT,eDamage,oTarget);
 
     // Apply paralyze touch
-    if(FortitudeSave(oTarget,nSaveDC , SAVING_THROW_FORT))
+    if(FortitudeSave(oTarget,nSaveDC , SAVING_THROW_TYPE_MIND_SPELLS))
         return;
     eVis = EffectVisualEffect(VFX_DUR_PARALYZED);
     effect ePara = EffectParalyze();

@@ -18,8 +18,6 @@
 
 void main()
 {
-    object oHide = GetItemInSlot(INVENTORY_SLOT_CARMOUR,OBJECT_SELF);
-
     int nCurForm = GetAppearanceType(OBJECT_SELF);
     int nPCForm = GetTrueForm(OBJECT_SELF);
 
@@ -27,14 +25,14 @@ void main()
     if (nPCForm == nCurForm)
     {
         int nLichLevel = GetLevelByClass(CLASS_TYPE_LICH,OBJECT_SELF);
-        if (nLichLevel < 8)
+        if (nLichLevel < 10)
         {
             effect eFx = EffectVisualEffect(VFX_COM_CHUNK_RED_SMALL);
             ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eFx,OBJECT_SELF);
 
             SetCreatureAppearanceType(OBJECT_SELF,APPEARANCE_TYPE_LICH);
         }
-        if (nLichLevel == 8)
+        if (nLichLevel == 10)
         {
             effect eFx = EffectVisualEffect(VFX_COM_CHUNK_RED_LARGE);
             ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eFx,OBJECT_SELF);
