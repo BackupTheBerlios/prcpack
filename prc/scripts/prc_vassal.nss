@@ -12,19 +12,40 @@
 #include "inc_item_props"
 #include "prc_feat_const"
 
-void AddArmorOnhit(object oPC,int iEquip)
+  void AddArmorOnhit(object oPC,int iEquip)
+{
+  object oItem ;
 
+  if (iEquip==2)
+  {
+     oItem=GetItemInSlot(INVENTORY_SLOT_CHEST,oPC);
+     if ( GetLocalInt(oItem,"Dragonwrack"))
+         return;
+
+     if (GetBaseItemType(oItem)==BASE_ITEM_ARMOR)
      {
-     object oItem ;
-     if (iEquip==2)
-     {
-         oItem=GetItemInSlot(INVENTORY_SLOT_CHEST,oPC);
-     if ( GetLocalInt(oItem,"Dragonwrack")) return;
-         AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyOnHitCastSpell(IP_CONST_ONHIT_CASTSPELL_ONHIT_UNIQUEPOWER,1),oItem);
-         SetLocalInt(oItem,"Dragonwrack",1);
+        AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyOnHitCastSpell(IP_CONST_ONHIT_CASTSPELL_ONHIT_UNIQUEPOWER,1),oItem);
+
+        SetLocalInt(oItem,"Dragonwrack",1);
      }
-     else if (iEquip==1)
+  }
+  else if (iEquip==1)
+  {
+      oItem=GetPCItemLastUnequipped();
+      if (GetBaseItemType(oItem)!=BASE_ITEM_ARMOR) return;
+         RemoveSpecificProperty(oItem,ITEM_PROPERTY_ONHITCASTSPELL,IP_CONST_ONHIT_CASTSPELL_ONHIT_UNIQUEPOWER,0);
+      DeleteLocalInt(oItem,"Dragonwrack");
+  }
+   else
+  {
+     oItem=GetItemInSlot(INVENTORY_SLOT_CHEST,oPC);
+     if ( !GetLocalInt(oItem,"Dragonwrack")&& GetBaseItemType(oItem)==BASE_ITEM_ARMOR)
      {
+       AddItemProperty(DURATION_TYPE_PERMANENT,ItemPropertyOnHitCastSpell(IP_CONST_ONHIT_CASTSPELL_ONHIT_UNIQUEPOWER,1),oItem);
+        SetLocalInt(oItem,"Dragonwrack",1);
+     }
+  }
+  }
 
 void main()
 {
