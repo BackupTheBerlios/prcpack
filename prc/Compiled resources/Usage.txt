@@ -1,5 +1,6 @@
-This folder is for the latest versions of the .Erf and .Hak files for release. Since we generally
-only need those right around release time, the folder won't be used that often, but it is useful 
-for keeping track of what the latest release is, rather than searching around for emails.
+This folder is for the latest versions of the .Erf and .Hak files for release.
+Since we generally only need those right around release time, the folder won't be used
+that often, but it is useful for keeping track of what the latest release is, rather
+than searching around for emails.
 
 Strat
