@@ -316,6 +316,12 @@ void main()
     int nTurnCheck = d20() + nChrMod;              //The roll to apply to the max HD of undead that can be turned --> nTurnLevel
     int nTurnHD = d6(2) + nChrMod + nClassLevel;   //The number of HD of undead that can be turned.
 
+    if (GetHasFeat(FEAT_HEART_PASSION))
+    {
+      nTurnCheck +=2;
+      nTurnHD +=2;
+    }
+
     if(nMaster == TRUE)
     {
         nTurnCheck += 4;
