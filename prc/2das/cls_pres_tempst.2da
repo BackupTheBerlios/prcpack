@@ -1,0 +1,43 @@
+2DA V2.0                                                              
+                                                                      
+           LABEL               ReqType   ReqParam1        ReqParam2   
+0          Base_Attack         BAB       9                ****                                             
+1          Ambidex             FEATOR    1                ****                       
+2          Ranger              FEATOR    374              **** 
+3          Dodge               FEAT      10               ****  
+4          Two Weap            FEATOR    41               ****                       
+5          Ranger              FEATOR    374              **** 
+6          Mobility            FEAT      26               **** 
+7          Spring Attack       FEAT      392              **** 
+8          Weapon Finesse      FEATOR    42               ****                       
+9          WeapFocDagger       FEATOR    90               ****        
+10         WeapFocLgMace       FEATOR    94               ****        
+11         WeapFocMorn         FEATOR    95               ****        
+12         WeapFocStaff        FEATOR    96               ****        
+13         WeapFocSpear        FEATOR    97               ****        
+14         WeapFocSickle       FEATOR    98               ****        
+15         WeapFocShortSword   FEATOR    103              ****        
+16         WeapFocRapier       FEATOR    104              ****        
+17         WeapFocScim         FEATOR    105              ****        
+18         WeapFocLSw          FEATOR    106              ****        
+19         WeapFocGSw          FEATOR    107              ****        
+20         WeapFocHAxe         FEATOR    108              ****        
+21         WeapFocBAxe         FEATOR    110              ****        
+22         WeapFocGAxe         FEATOR    111              ****        
+23         WeapFocHalb         FEATOR    112              ****        
+24         WeapFocLgHam        FEATOR    113              ****        
+25         WeapFocLgFlail      FEATOR    114              ****        
+26         WeapFocWHam         FEATOR    115              ****        
+27         WeapFocHFlail       FEATOR    116              ****        
+28         WeapFocKama         FEATOR    117              ****        
+29         WeapFocKukri        FEATOR    118              ****        
+30         WeapFocScy          FEATOR    121              ****        
+31         WeapFocKatana       FEATOR    122              ****        
+32         WeapFocBSw          FEATOR    123              ****        
+33         WeapFocDMace        FEATOR    125              ****        
+34         WeapFocDAxe         FEATOR    126              ****        
+35         WeapFoc2Sw          FEATOR    127              ****        
+36         WeapFocClub         FEATOR    43               ****
+37         WeapFocDWAxe        FEATOR    952              ****
+38         WeapFocWhip         FEATOR    993              **** 
+39         ScriptVar           VAR       X2_AllowTempest  0 

@@ -27,7 +27,7 @@
 #include "prc_class_const"
 #include "prc_spell_const"
 #include "prc_alterations"
-
+#include "prc_inc_oni"
 
 
 
@@ -53,6 +53,8 @@ void EvalPRCFeats(object oPC)
     if(GetLevelByClass(CLASS_TYPE_STORMLORD,oPC) > 0)           ExecuteScript("prc_stormlord", oPC);
     if(GetLevelByClass(CLASS_TYPE_PNP_SHIFTER ,oPC) > 0)        ExecuteScript("prc_shifter", oPC);
     if(GetLevelByClass(CLASS_TYPE_KNIGHT_CHALICE,oPC) > 0)      ExecuteScript("prc_knghtch", oPC);
+    if(GetLevelByClass(CLASS_TYPE_FRE_BERSERKER, oPC) > 0)      ExecuteScript("prc_frebzk", oPC);
+    if(GetLevelByClass(CLASS_TYPE_TEMPEST, oPC) > 0)            ExecuteScript("prc_tempest", oPC);    
 }
 
 

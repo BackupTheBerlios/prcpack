@@ -29,6 +29,7 @@
 
 #include "x2_inc_switches"
 #include "heartward_inc"
+#include "prc_inc_oni"
 
 void main()
 {
@@ -43,7 +44,10 @@ void main()
    oSpellTarget = GetSpellTargetObject();
    oItem        =  GetSpellCastItem();
 
-   //nVassal = GetLevelByClass(CLASS_TYPE_VASSAL,OBJECT_SELF);
+   // put the const int in so that the code could compile
+   // needs to have the proper include with CLASS_TYPE_VASSAL added
+   int CLASS_TYPE_VASSAL = 00;
+   nVassal = GetLevelByClass(CLASS_TYPE_VASSAL, OBJECT_SELF);
 
 
    if (GetIsObjectValid(oItem))
@@ -63,14 +67,14 @@ void main()
         }
      }
 
-
 //// Stormlord Shocking & Thundering Spear
 
      if (GetHasFeat( FEAT_THUNDER_WEAPON,OBJECT_SELF))
-        {
            ExecuteScript("ft_shockweap",OBJECT_SELF);
-        }
 
+
+   }
+   
 ///  Vassal of Bahamut Dragonwrack
      if (nVassal >= 4)
         {
@@ -83,5 +87,24 @@ void main()
                 ExecuteScript("ft_dw_weapon", oSpellTarget);
             }
          }
- }
+
+   // Frenzied Berserker Auto Frenzy
+   if(GetHasFeat(FEAT_FRENZY, OBJECT_SELF) )
+   {      
+	if(!GetHasFeatEffect(FEAT_FRENZY))
+	{	    
+		// 10 + damage dealt in that hit
+		int willSaveDC = 10 + GetTotalDamageDealt();
+		int save = WillSave(OBJECT_SELF, willSaveDC, SAVING_THROW_TYPE_NONE, OBJECT_SELF);
+        	if(save == 0)
+        	{
+			AssignCommand(OBJECT_SELF, ActionUseFeat(FEAT_FRENZY, OBJECT_SELF) );
+		}
+        }     
+   }
+   
+   if(GetLevelByClass(CLASS_TYPE_FOE_HUNTER, OBJECT_SELF) > 1)
+   {
+        ExecuteScript("prc_fh_dr",OBJECT_SELF);
+   }
 }

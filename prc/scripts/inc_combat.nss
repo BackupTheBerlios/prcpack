@@ -56,6 +56,12 @@ int DoMeleeAttack(object oPC, object oWeap, object oTarget, int iMod = 0, int bS
 // * Caveat: Cannot account for DAMAGE_BONUS effects on oPC
 int GetMeleeWeaponDamage(object oPC, object oWeap, int bCrit = FALSE,int iDamage = 0);
 
+// * Just like above except for ranged weapons
+int DoRangedAttack(object oPC, object oWeap, object oTarget, int iMod = 0, int bShowFeedback = TRUE, float fDelay = 0.0);
+
+// * Just like above except for ranged weapons
+int GetRangedWeaponDamage(object oPC, object oWeap, int bCrit = FALSE,int iDamage = 0);
+
 // * Returns the Enhancement Bonus of oWeap as DAMAGE_POWER_*
 int GetWeaponEnhancement(object oWeap);
 
@@ -609,4 +615,152 @@ int GetWeaponDamageType(object oWeap)
     }
 
     return -1;
+}
+
+int DoRangedAttack(object oPC, object oWeap, object oTarget, int iMod = 0, int bShowFeedback = TRUE, float fDelay = 0.0)
+{
+    //Declare in instantiate major variables
+    int iDiceRoll = d20();
+    int iBAB = GetBaseAttackBonus(oPC);
+    int iAC = GetAC(oTarget);
+    int iType = GetBaseItemType(oWeap);
+    int iCritThreat = GetMeleeWeaponCriticalRange(oPC, oWeap);
+    int iEnhancement = GetWeaponEnhancement(oWeap);
+        iEnhancement = iEnhancement < 0 ? 0 : iEnhancement;
+    int bFocus = GetHasFeat(GetFeatByWeaponType(iType, "Focus"), oPC);
+    int bEFocus = GetHasFeat(GetFeatByWeaponType(iType, "EpicFocus"), oPC);
+    int bProwess = GetHasFeat(FEAT_EPIC_PROWESS, oPC);
+    int iStr = GetAbilityModifier(ABILITY_STRENGTH, oPC);
+        iStr = iStr < 0 ? 0 : iStr;
+    int iDex = GetAbilityModifier(ABILITY_DEXTERITY, oPC);
+        iDex = iStr < 0 ? 0 : iDex;
+    string sFeedback = GetName(oPC) + " attacks " + GetName(oTarget) + ": ";
+    int iReturn = 0;
+
+    //Add up total attack bonus
+    int iAttackBonus = iBAB;
+        iAttackBonus += iDex;
+        iAttackBonus += bFocus ? 1 : 0;
+        iAttackBonus += bEFocus ? 2 : 0;
+        iAttackBonus += bProwess ? 1 : 0;
+        iAttackBonus += iEnhancement;
+        iAttackBonus += iMod;
+
+    //Include ATTACK_BONUS properties from the weapon
+    itemproperty ip = GetFirstItemProperty(oWeap);
+    while(GetIsItemPropertyValid(ip))
+    {
+        if(GetItemPropertyType(ip) == ITEM_PROPERTY_ATTACK_BONUS)
+            iAttackBonus += GetItemPropertyCostTableValue(ip);
+        ip = GetNextItemProperty(oWeap);
+    }
+
+    //Check for a critical threat
+    if(iDiceRoll >= iCritThreat && iDiceRoll + iAttackBonus > iAC)
+    {
+        sFeedback += "*critical hit*: (" + IntToString(iDiceRoll) + " + " + IntToString(iAttackBonus) + " = " + IntToString(iDiceRoll + iAttackBonus) + "): ";
+        //Roll again to see if we scored a critical hit
+        iDiceRoll = d20();
+
+        sFeedback += "*threat roll*: (" + IntToString(iDiceRoll) + " + " + IntToString(iAttackBonus) + " = " + IntToString(iDiceRoll + iAttackBonus) + ")";
+        if(iDiceRoll + iAttackBonus > iAC)
+            iReturn = 2;
+        else
+            iReturn = 1;
+    }
+
+    //Just a regular hit
+    else if(iDiceRoll + iAttackBonus > iAC)
+    {
+        sFeedback += "*hit*: (" + IntToString(iDiceRoll) + " + " + IntToString(iAttackBonus) + " = " + IntToString(iDiceRoll + iAttackBonus) + ")";
+        iReturn = 1;
+    }
+
+    //Missed
+    else
+    {
+        sFeedback += "*miss*: (" + IntToString(iDiceRoll) + " + " + IntToString(iAttackBonus) + " = " + IntToString(iDiceRoll + iAttackBonus) + ")";
+        iReturn = 0;
+    }
+
+    if(bShowFeedback) DelayCommand(fDelay, SendMessageToPC(oPC, sFeedback));
+    return iReturn;
+}
+
+int GetRangedWeaponDamage(object oPC, object oWeap, int bCrit = FALSE,int iDamage = 0)
+{
+    //Declare in instantiate major variables
+    int iType = GetBaseItemType(oWeap);
+    int nSides = StringToInt(Get2DAString("baseitems", "DieToRoll", iType));
+    int nDice = StringToInt(Get2DAString("baseitems", "NumDice", iType));
+    int nCritMult = StringToInt(Get2DAString("baseitems", "CritHitMult", iType));
+    int nMassiveCrit;
+    int iStr = GetAbilityModifier(ABILITY_STRENGTH, oPC);
+        iStr = iStr < 0 ? 0 : iStr;
+    int bSpec = GetHasFeat(GetFeatByWeaponType(iType, "Specialization"), oPC);
+    int bESpec = GetHasFeat(GetFeatByWeaponType(iType, "EpicSpecialization"), oPC);
+    int iBonus = 0;
+    int iEnhancement = GetWeaponEnhancement(oWeap);
+        iEnhancement = iEnhancement < 0 ? 0 : iEnhancement;
+        
+    int iMaxStrBonus = 0;
+
+    //Get Damage Bonus and Massive Critical Properties from oWeap
+    itemproperty ip = GetFirstItemProperty(oWeap);
+    while(GetIsItemPropertyValid(ip))
+    {
+        int tempConst = -1;
+        int iCostVal = GetItemPropertyCostTableValue(ip);
+
+        if(GetItemPropertyType(ip) == ITEM_PROPERTY_MASSIVE_CRITICALS){
+            if(iCostVal > tempConst){
+                nMassiveCrit = GetDamageByConstant(iCostVal, TRUE);
+                tempConst = iCostVal;
+             }
+        }
+
+        if(GetItemPropertyType(ip) == ITEM_PROPERTY_DAMAGE_BONUS){
+            iBonus += GetDamageByConstant(iCostVal, TRUE);
+        }
+        
+        if(GetItemPropertyType(ip) == ITEM_PROPERTY_MIGHTY){
+            iMaxStrBonus += GetDamageByConstant(iCostVal, TRUE);
+        }
+        
+        ip = GetNextItemProperty(oWeap);
+    }
+
+    //Roll the base damage dice.
+    if(nSides == 2) iDamage += d2(nDice);
+    if(nSides == 4) iDamage += d4(nDice);
+    if(nSides == 6) iDamage += d6(nDice);
+    if(nSides == 8) iDamage += d8(nDice);
+    if(nSides == 10) iDamage += d10(nDice);
+    if(nSides == 12) iDamage += d12(nDice);
+
+    //Add any applicable bonuses
+    if(bSpec) iDamage += 2;
+    if(bESpec) iDamage += 4;
+    iDamage += iEnhancement;
+    iDamage += iBonus;
+    
+    if(iMaxStrBonus > 0)
+    {
+         if(iMaxStrBonus > iStr)
+         {
+              iDamage += iStr;
+         }
+         else
+         {
+              iDamage += iMaxStrBonus;
+         }
+    }
+
+    //Add critical bonuses
+    if(bCrit){
+        iDamage *= nCritMult;
+        iDamage += nMassiveCrit;
+    }
+
+    return iDamage;
 }
