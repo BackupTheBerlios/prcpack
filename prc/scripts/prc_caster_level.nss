@@ -3,6 +3,7 @@
 #include "discipleinclude"
 #include "inc_prc_function"
 #include "heartward_inc"
+#include "lookup_2da_spell"
 
 //Added code to correct problems in Hierophant spell-like abilities.
 //Aaon Graywolf - 6 Jan 2004
@@ -73,6 +74,22 @@ int nMasterShroud = GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oCaster);
 int nHospitaler = GetLevelByClass(CLASS_TYPE_HOSPITALER, oCaster);
 
 
+/******************* True Necromancer ********************/
+
+    int nTrueNecroArcLevels;
+    int nTrueNecroDivLevels;
+    int nTrueNecroLevels = GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
+    string school = lookup_spell_school(GetSpellId());
+        if (school == "N")
+        {
+        nTrueNecroArcLevels = GetLevelByClass(CLASS_TYPE_CLERIC, oCaster);
+        nTrueNecroDivLevels = GetLevelByClass(CLASS_TYPE_WIZARD, oCaster);
+        nTrueNecroDivLevels = nTrueNecroLevels + nTrueNecroDivLevels;
+        }
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////////
 // INSTRUCTIONS
 //
@@ -92,14 +109,17 @@ int nArcaneCastLevels = nArchmageLevels +
                         nHarperLevels +
                         nSpellswordLevels +
                         nFireLevels + nAcidLevels + nColdLevels + nElecLevels +
-                        nPaleMasterLevels + nFireAdept + 
-                        nMastHarpLevels; // + n<levels from any other arcane prc you define>;
+                        nPaleMasterLevels + nFireAdept +
+                        nMastHarpLevels +
+                        nTrueNecroLevels +
+                        nTrueNecroArcLevels; // + n<levels from any other arcane prc you define>;
 
 int nDivineCastLevels = nHeartWLevels +
                         nStormlord +
                         nFistRaziel +
                         nMasterShroud +
-                        nHospitaler; // + n<levels from any divine prc you define>;
+                        nHospitaler +
+                        nTrueNecroDivLevels; // + n<levels from any divine prc you define>;
 
 /* Find which class to add levels to for Oozemasters */
 if (bArcane(GetClassByPosition(1, oCaster)) || bDivine(GetClassByPosition(1, oCaster)))
