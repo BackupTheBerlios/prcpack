@@ -31,6 +31,8 @@ void main()
 
 
     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId()));
+    // To use this is to be pure evil...
+    AdjustAlignment(OBJECT_SELF,ALIGNMENT_EVIL,20);
 
     // Total character levels
     int nTotalHD = GetHitDice(OBJECT_SELF);
