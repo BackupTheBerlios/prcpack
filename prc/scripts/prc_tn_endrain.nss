@@ -14,7 +14,6 @@
 
 #include "prc_alterations"
 #include "NW_I0_SPELLS"
-#include "strat_prc_inc"
 #include "x2_inc_spellhook"
 
 void main()
