@@ -57,7 +57,7 @@ RAR				= $(OUTPATH)\prc_consortium$(PRC_VERSION).rar
 ERF				= $(OUTPATH)\prc_consortium.erf
 HAK				= $(OUTPATH)\prc_consortium.hak
 TLK				= $(TLKPATH)\prc_consortium.tlk
-README			= prc_consortium.txt
+README			= prc_consortium.htm
 MISCRESOURCES	= $(OUTPATH)\PRCInstaller.exe "$(OUTPATH)\PRC Pack.hif"
 # Proposed version 2.0 haks
 SCRIPTSHAK		= $(OUTPATH)\prc_scripts.hak
