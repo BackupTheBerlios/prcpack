@@ -1,0 +1,86 @@
+classes.2da has 201 rows
+classes.2da rows    0-  38 USED
+classes.2da rows   39-  64 EMPTY
+classes.2da rows   65-  74 USED
+classes.2da rows   75-  79 EMPTY
+classes.2da rows   80-  82 USED
+classes.2da rows   83-  85 EMPTY
+classes.2da rows   86-  88 USED
+classes.2da rows   89-  89 EMPTY
+classes.2da rows   90-  91 USED
+classes.2da rows   92-  99 EMPTY
+classes.2da rows  100- 101 USED
+classes.2da rows  102- 149 EMPTY
+classes.2da rows  150- 163 USED
+classes.2da rows  164- 200 EMPTY
+
+
+
+feat.2da has 4282 rows
+feat.2da rows    0-1071 USED
+feat.2da rows 1072-2499 EMPTY
+feat.2da rows 2500-2566 USED
+feat.2da rows 2567-2698 EMPTY
+feat.2da rows 2699-2753 USED
+feat.2da rows 2754-2799 EMPTY
+feat.2da rows 2800-2876 USED
+feat.2da rows 2877-2899 EMPTY
+feat.2da rows 2900-2924 USED
+feat.2da rows 2925-2999 EMPTY
+feat.2da rows 3000-3013 USED
+feat.2da rows 3014-3019 EMPTY
+feat.2da rows 3020-3036 USED
+feat.2da rows 3037-3229 EMPTY
+feat.2da rows 3230-3247 USED
+feat.2da rows 3248-3999 EMPTY
+feat.2da rows 4000-4012 USED
+feat.2da rows 4013-4199 EMPTY
+feat.2da rows 4200-4281 USED
+
+
+
+prc_consortium.tlk has 2857 entries
+prc_consortium.tlk rows    0- 126 USED
+prc_consortium.tlk rows  127- 499 EMPTY
+prc_consortium.tlk rows  500- 523 USED
+prc_consortium.tlk rows  524- 527 EMPTY
+prc_consortium.tlk rows  528- 547 USED
+prc_consortium.tlk rows  548- 548 EMPTY
+prc_consortium.tlk rows  549- 568 USED
+prc_consortium.tlk rows  569- 570 EMPTY
+prc_consortium.tlk rows  571- 589 USED
+prc_consortium.tlk rows  590- 591 EMPTY
+prc_consortium.tlk rows  592- 609 USED
+prc_consortium.tlk rows  610- 611 EMPTY
+prc_consortium.tlk rows  612- 627 USED
+prc_consortium.tlk rows  628- 699 EMPTY
+prc_consortium.tlk rows  700- 723 USED
+prc_consortium.tlk rows  724- 799 EMPTY
+prc_consortium.tlk rows  800- 838 USED
+prc_consortium.tlk rows  839- 899 EMPTY
+prc_consortium.tlk rows  900- 923 USED
+prc_consortium.tlk rows  924- 999 EMPTY
+prc_consortium.tlk rows 1000-1102 USED
+prc_consortium.tlk rows 1103-2783 EMPTY
+prc_consortium.tlk rows 2784-2813 USED
+prc_consortium.tlk rows 2814-2819 EMPTY
+prc_consortium.tlk rows 2820-2856 USED
+
+
+
+spells.2da has 3009 rows
+spells.2da rows    0- 802 USED
+spells.2da rows  803-1499 EMPTY
+spells.2da rows 1500-1503 USED
+spells.2da rows 1504-1749 EMPTY
+spells.2da rows 1750-1755 USED
+spells.2da rows 1756-1899 EMPTY
+spells.2da rows 1900-1908 USED
+spells.2da rows 1909-1999 EMPTY
+spells.2da rows 2000-2008 USED
+spells.2da rows 2009-2009 EMPTY
+spells.2da rows 2010-2023 USED
+spells.2da rows 2024-2209 EMPTY
+spells.2da rows 2210-2216 USED
+spells.2da rows 2217-2999 EMPTY
+spells.2da rows 3000-3008 USED
