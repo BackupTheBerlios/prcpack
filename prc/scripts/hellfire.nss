@@ -63,38 +63,35 @@ void main()
     {
         if (spellsIsTarget(oTarget, SPELL_TARGET_STANDARDHOSTILE, OBJECT_SELF))
         {
-            if((GetSpellId() == 341) || GetSpellId() == 58)
+            //Get the distance between the explosion and the target to calculate delay
+            fDelay = GetDistanceBetweenLocations(lTarget, GetLocation(oTarget))/20;
+            if (!MyResistSpell(OBJECT_SELF, oTarget, fDelay))
             {
-                //Get the distance between the explosion and the target to calculate delay
-                fDelay = GetDistanceBetweenLocations(lTarget, GetLocation(oTarget))/20;
-                if (!MyResistSpell(OBJECT_SELF, oTarget, fDelay))
+                //Roll damage for each target
+                nDamage = d6(3);
+                //Resolve metamagic
+                if (nMetaMagic == METAMAGIC_MAXIMIZE)
                 {
-                    //Roll damage for each target
-                    nDamage = d6(3);
-                    //Resolve metamagic
-                    if (nMetaMagic == METAMAGIC_MAXIMIZE)
-                    {
-                        nDamage = 6 * nCasterLvl;
-                    }
-                    else if (nMetaMagic == METAMAGIC_EMPOWER)
-                    {
-                       nDamage = nDamage + nDamage / 2;
-                    }
-                    //Set the damage effect
-                    eDam = EffectDamage(nDamage, DAMAGE_TYPE_DIVINE);
-                    if(nDamage > 0)
-                    {
-                        // Apply effects to the currently selected target.
-                        DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget));
-                        //This visual effect is applied to the target object not the location as above.  This visual effect
-                        //represents the flame that erupts on the target not on the ground.
-                        DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget));
-                    }
-                 }
+                    nDamage = 6 * nCasterLvl;
+                }
+                else if (nMetaMagic == METAMAGIC_EMPOWER)
+                {
+                   nDamage = nDamage + nDamage / 2;
+                }
+                //Set the damage effect
+                eDam = EffectDamage(nDamage, DAMAGE_TYPE_DIVINE);
+                if(nDamage > 0)
+                {
+                    // Apply effects to the currently selected target.
+                    DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget));
+                    //This visual effect is applied to the target object not the location as above.  This visual effect
+                    //represents the flame that erupts on the target not on the ground.
+                    DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget));
+                }
              }
-        }
-       //Select the next target within the spell shape.
-       oTarget = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_SMALL, lTarget, TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
+         }
+         //Select the next target within the spell shape.
+         oTarget = GetNextObjectInShape(SHAPE_SPHERE, RADIUS_SIZE_SMALL, lTarget, TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
     }
 }
 
