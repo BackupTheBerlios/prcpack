@@ -18,6 +18,10 @@ void lookup_spell(int spell_id)
     string level = Get2DAString("spells", "Wiz_Sorc", spell_id);
     SetLocalString(module, "PRC_PACK_SPELL_LEVEL_" + IntToString(spell_id), level);
 
+    /* Cache the cleric level */
+    string clevel = Get2DAString("spells", "Cleric", spell_id);
+    SetLocalString(module, "PRC_PACK_SPELL_CLERIC_LEVEL_" + IntToString(spell_id), clevel);
+
     /* Now it is looked up */
     SetLocalInt(module, "PRC_PACK_SPELL_LOOKED_" + IntToString(spell_id), 1);
 }
@@ -27,6 +31,13 @@ string lookup_spell_level(int spell_id)
     /* Check the spell */
     lookup_spell(spell_id);
     return GetLocalString(GetModule(), "PRC_PACK_SPELL_LEVEL_" + IntToString(spell_id));
+}
+
+string lookup_spell_cleric_level(int spell_id)
+{
+    /* Check the spell */
+    lookup_spell(spell_id);
+    return GetLocalString(GetModule(), "PRC_PACK_SPELL_CLERIC_LEVEL_" + IntToString(spell_id));
 }
 
 string lookup_spell_type(int spell_id)

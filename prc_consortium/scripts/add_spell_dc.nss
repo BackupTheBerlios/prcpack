@@ -14,7 +14,7 @@
 int GetHierophantSLAAdjustment(object oCaster)
 {
     if(GetWasLastSpellHieroSLA())
-        return StringToInt(Get2DAString("spells", "Cleric", GetSpellId())) - GetLevelByClass(CLASS_TYPE_HIEROPHANT, oCaster);
+        return StringToInt(lookup_spell_cleric_level(GetSpellId())) - GetLevelByClass(CLASS_TYPE_HIEROPHANT, oCaster);
 
     return 0;
 }

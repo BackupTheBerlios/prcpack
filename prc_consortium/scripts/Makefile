@@ -26,9 +26,10 @@ pack: scripts
 clean:
 	@rm -f $(OBJS) $(ZIP) $(ERF) $(HAK) *.ndb
 
+# NOTE: It really should be $(OBJS) instead of *.ncs but this causes problems with include files
 install: scripts
 	@echo 'Copying 2das, gfx, scripts and others to override and tlk to tlk directory...'
-	@cp -f $(OBJS) $(NWN_OVERRIDE)
+	@cp -f *.ncs $(NWN_OVERRIDE)
 	@cp -f $(2DAS) $(NWN_OVERRIDE)
 	@cp -f $(GFXS) $(NWN_OVERRIDE)
 	@cp -f $(OTHERS) $(NWN_OVERRIDE)

@@ -1,8 +1,8 @@
 #!/bin/sh
 
-twodas=`ls ../2das/*.2da | tr '\n' ' '`
-gfxs=`ls ../gfx/* | tr '\n' ' '`
-others=`ls ../others/* | tr '\n' ' '`
+twodas=`ls ../2das/*.2da | grep -v CVS | tr '\n' ' '`
+gfxs=`ls -d ../gfx/* | grep -v CVS | tr '\n' ' '`
+others=`ls -d ../others/* | grep -v CVS | tr '\n' ' '`
 scripts=`ls *.nss | tr '\n' ' '`
 
 # Take out the include files
