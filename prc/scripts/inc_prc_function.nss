@@ -267,6 +267,7 @@ int MyPRCGetRacialType(object oCreature)
         return RACIAL_TYPE_ELEMENTAL;
     if (GetLevelByClass(CLASS_TYPE_ES_ACID,oCreature) >= 10)
         return RACIAL_TYPE_ELEMENTAL;
-
+    if (GetLevelByClass(CLASS_TYPE_HEARTWARDER,oCreature) >= 10)
+        return RACIAL_TYPE_FEY;
     return GetRacialType(oCreature);
 }
