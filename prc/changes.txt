@@ -1,0 +1,2 @@
+19/01/2004
+- Turn Undead => Rebuke/Command Undead for evil chars, from Wes Baran -- DarkGod
