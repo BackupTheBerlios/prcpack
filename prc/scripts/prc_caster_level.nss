@@ -68,6 +68,7 @@ int nFireAdept = GetHasFeat(FEAT_FIRE_ADEPT, oCaster);
 int nHeartWLevels = GetLevelByClass(CLASS_TYPE_HEARTWARDER, oCaster);
 int nStormlord    = GetLevelByClass(CLASS_TYPE_STORMLORD, oCaster);
 int nFistRaziel   = GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster);
+int nMasterShroud = GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oCaster);
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -93,7 +94,8 @@ int nArcaneCastLevels = nArchmageLevels +
 
 int nDivineCastLevels = nHeartWLevels +
                         nStormlord +
-                        nFistRaziel ; // + n<levels from any divine prc you define>;
+                        nFistRaziel +
+                        nMasterShroud ; // + n<levels from any divine prc you define>;
 
 /* Find which class to add levels to for Oozemasters */
 if (bArcane(GetClassByPosition(1, oCaster)) || bDivine(GetClassByPosition(1, oCaster)))
@@ -219,4 +221,3 @@ else
 return FALSE;
 }
 }// end function
-

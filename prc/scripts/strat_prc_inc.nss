@@ -1,5 +1,5 @@
-//Hierophant, Duelist and Red Avenger
-//Aaon Graywolf - Jan 6, 2004
+//Master of Shrouds
+//Stratovarius - Feb 22, 2004
 
 //New Prestige Classes
 const int CLASS_TYPE_MAGEKILLER   = 65; //CONSTANT
@@ -16,6 +16,7 @@ const int CLASS_TYPE_HIEROPHANT   = 81; //CONSTANT
 const int CLASS_TYPE_RED_AVENGER  = 82; //CONSTANT
 const int CLASS_TYPE_LICH = 90; // CONSTANT
 const int CLASS_TYPE_PNP_SHIFTER = 91; // CONSTANT
+const int CLASS_TYPE_MASTER_OF_SHROUDS = 175; // CONSTANT
 
 //Augment Summon Feat for Mage Killer
 const int FEAT_AUGMENT_SUMMON = 2510; //CONSTANT
@@ -126,4 +127,3 @@ const int FEAT_FREE_KI_4            = 2752; //CONSTANT
 
 // Shifter class feats
 const int FEAT_PRESTIGE_SHIFTER_NATURALSPELL = 2920;
-
