@@ -228,9 +228,9 @@ $(MISCHAK): $(OTHERS)
 # file dependencies for all source scripts files that get built to object files
 # (i.e. it ignores include scripts files).
 #
-depends: $(OBJS)
+depends:
 	@echo Updating dependencies
-	@tools\makedep -a -w -n -l -s$(SRCPATH) -i$(SRCPATH) -o$(MAKEFILE) $**
+	@tools\makedep -a -w -n -l -s$(SRCPATH) -i$(SRCPATH) -o$(MAKEFILE) $(OBJS)
 
 
 # Inference rule to compile scripts.
