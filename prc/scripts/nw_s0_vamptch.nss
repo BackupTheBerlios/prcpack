@@ -104,8 +104,8 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
     if(GetObjectType(oTarget) == OBJECT_TYPE_CREATURE)
     {
         if(!GetIsReactionTypeFriendly(oTarget) &&
-            GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD &&
-            GetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT &&
+            MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD &&
+            MyPRCGetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT &&
             !GetHasSpellEffect(SPELL_NEGATIVE_ENERGY_PROTECTION, oTarget))
         {
 

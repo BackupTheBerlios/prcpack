@@ -76,7 +76,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ABJURATION);
                (GetAssociate(ASSOCIATE_TYPE_SUMMONED, oMaster) == oTarget ||
                GetAssociate(ASSOCIATE_TYPE_FAMILIAR, oMaster) == oTarget ||
                GetAssociate(ASSOCIATE_TYPE_ANIMALCOMPANION, oMaster) == oTarget ) ||
-               (GetRacialType((oTarget)) == RACIAL_TYPE_OUTSIDER)  &&
+               (MyPRCGetRacialType((oTarget)) == RACIAL_TYPE_OUTSIDER)  &&
                (nPool > 0)
                )
             {

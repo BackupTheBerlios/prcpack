@@ -54,7 +54,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_CONJURATION);
     eLink = EffectLinkEffects(eLink, eDur3);
 
     object oTarget = GetSpellTargetObject();
-    int nRacial = GetRacialType(oTarget);
+    int nRacial = MyPRCGetRacialType(oTarget);
     //Check for metamagic extend
     if (nMetaMagic == METAMAGIC_EXTEND)
     {

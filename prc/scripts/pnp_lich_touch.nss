@@ -12,7 +12,7 @@
 //:://////////////////////////////////////////////
 // touch attack for the lich class
 
-const int CLASS_TYPE_LICH = 90;
+#include "prc_alterations"
 
 void main()
 {
@@ -23,7 +23,7 @@ void main()
         return;
 
     // Gotta be a living critter
-    int nType = GetRacialType(oTarget);
+    int nType = MyPRCGetRacialType(oTarget);
     if ((nType == RACIAL_TYPE_CONSTRUCT) ||
         (nType == RACIAL_TYPE_UNDEAD) ||
         (nType == RACIAL_TYPE_ELEMENTAL))

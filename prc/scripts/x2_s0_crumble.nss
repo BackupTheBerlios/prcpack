@@ -46,7 +46,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_TRANSMUTATION
     object oTarget  = GetSpellTargetObject();
     int  nCasterLvl =(GetCasterLevel(oCaster)+ GetChangesToCasterLevel(oCaster));
     int  nType      = GetObjectType(oTarget);
-    int  nRacial    = GetRacialType(oTarget);
+    int  nRacial    = MyPRCGetRacialType(oTarget);
     int  nMetaMagic = GetMetaMagicFeat();
 
     //Minimum caster level of 1, maximum of 15.
@@ -68,7 +68,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_TRANSMUTATION
         return;
     }
 
-    if (GetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT  &&  GetLevelByClass(CLASS_TYPE_CONSTRUCT,oTarget) == 0)
+    if (MyPRCGetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT  &&  GetLevelByClass(CLASS_TYPE_CONSTRUCT,oTarget) == 0)
     {
         return;
     }

@@ -17,6 +17,7 @@
 //:: VFX Pass By: Preston W, On: June 20, 2001
 
 #include "x2_inc_spellhook"
+#include "prc_alterations"
 
 // return TRUE if the effect created by a supernatural force and can't be dispelled by spells
 int GetIsSupernaturalCurse(effect eEff);
@@ -80,7 +81,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
         }
         eBad = GetNextEffect(oTarget);
     }
-    if(GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+    if(MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
     {
         //Apply the VFX impact and effects
         int nHeal = GetMaxHitPoints(oTarget) - GetCurrentHitPoints(oTarget);

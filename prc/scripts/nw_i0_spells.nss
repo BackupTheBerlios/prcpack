@@ -99,7 +99,7 @@ void DoSpellBreach(object oTarget, int nTotal, int nSR, int nSpellId = -1);
 // * Returns true if Target is a humanoid
 int AmIAHumanoid(object oTarget)
 {
-   int nRacial = GetRacialType(oTarget);
+   int nRacial = MyPRCGetRacialType(oTarget);
 
    if((nRacial == RACIAL_TYPE_DWARF) ||
       (nRacial == RACIAL_TYPE_HALFELF) ||
@@ -176,7 +176,7 @@ void spellsCure(int nDamage, int nMaxExtraDamage, int nMaximized, int vfx_impact
     }
 
 
-    if (GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+    if (MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
     {
         //Figure out the amount of damage to heal
         nHeal = nDamage;

@@ -60,7 +60,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ENCHANTMENT);
         //Fire cast spell at event for the specified target
         SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_HOLD_ANIMAL));
         //Check racial type
-        if (GetRacialType(oTarget) == RACIAL_TYPE_ANIMAL)
+        if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_ANIMAL)
         {
             //Make SR check
             if (!MyPRCResistSpell(OBJECT_SELF, oTarget))

@@ -72,7 +72,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
             fDelay = GetRandomDelay(1.5, 2.5);
             if (!MyPRCResistSpell(OBJECT_SELF, oTarget, fDelay))
             {
-                if(GetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT && GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+                if(MyPRCGetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT && MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
                 {
                     //Roll damage for each target
                     nDamage = d8(nCasterLvl);

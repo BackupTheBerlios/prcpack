@@ -61,7 +61,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
     {
         nDuration = nCasterLevel * 2;
     }
-    if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD && GetHitDice(oTarget) <= nHD)
+    if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD && GetHitDice(oTarget) <= nHD)
     {
         if(!GetIsReactionTypeFriendly(oTarget))
         {

@@ -12,7 +12,7 @@
 //:: Created On:
 //:://////////////////////////////////////////////
 
-const int CLASS_TYPE_PNP_SHIFTER = 91;
+#include "prc_alterations"
 
 // Determine the level of the Shifter needed to take on
 // oTargets shape.
@@ -305,7 +305,7 @@ int GetShifterLevelRequired(object oTarget)
 {
     // Target Information
     int nTSize = GetCreatureSize(oTarget);
-    int nTRacialType = GetRacialType(oTarget);
+    int nTRacialType = MyPRCGetRacialType(oTarget);
 
     int nLevelRequired = 0;
 
@@ -433,7 +433,7 @@ int GetValidShift(object oPC, object oTarget)
 // Return values: TRUE or FALSE
 int GetCanFormEquip(object oCreature, int nInvSlot)
 {
-    int nTRacialType = GetRacialType(oCreature);
+    int nTRacialType = MyPRCGetRacialType(oCreature);
 
     switch (nTRacialType)
     {
@@ -475,7 +475,7 @@ int GetCanFormEquip(object oCreature, int nInvSlot)
 // Return values: TRUE or FALSE
 int GetCanFormCast(object oCreature)
 {
-    int nTRacialType = GetRacialType(oCreature);
+    int nTRacialType = MyPRCGetRacialType(oCreature);
 
     // Need to have hands, and the ability to speak
 
@@ -1278,7 +1278,7 @@ int SetShift(object oPC, object oTarget)
         }
     }
     // If they dont have the natural spell feat they can only cast spells in certain shapes
-    if (!GetHasFeat(/*FEAT_PRESTIGE_SHIFTER_NATURALSPELL*/2920,oPC))
+    if (!GetHasFeat(FEAT_PRESTIGE_SHIFTER_NATURALSPELL,oPC))
     {
         if (!GetCanFormCast(oTarget))
         {

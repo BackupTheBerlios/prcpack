@@ -297,7 +297,7 @@ void DoGrenade(int nDirectDamage, int nSplashDamage, int vSmallHit, int vRingHit
         if(spellsIsTarget(oTarget,SPELL_TARGET_STANDARDHOSTILE,OBJECT_SELF) )
         {
         // * must be the correct racial type (only used with Holy Water)
-            if ((nRacialType != RACIAL_TYPE_ALL) && (nRacialType == GetRacialType(oTarget)))
+            if ((nRacialType != RACIAL_TYPE_ALL) && (nRacialType == MyPRCGetRacialType(oTarget)))
             {
                 ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget);
                 SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId()));
@@ -347,7 +347,7 @@ void DoGrenade(int nDirectDamage, int nSplashDamage, int vSmallHit, int vRingHit
             if(nDamage > 0)
             {
         // * must be the correct racial type (only used with Holy Water)
-                if ((nRacialType != RACIAL_TYPE_ALL) && (nRacialType == GetRacialType(oTarget)))
+                if ((nRacialType != RACIAL_TYPE_ALL) && (nRacialType == MyPRCGetRacialType(oTarget)))
                 {
                     // Apply effects to the currently selected target.
                     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, GetSpellId()));
@@ -617,7 +617,7 @@ void spellsInflictTouchAttack(int nDamage, int nMaxExtraDamage, int nMaximized, 
 
 
     //Check that the target is undead
-    if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+    if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
     {
         //Figure out the amount of damage to heal
         nHeal = nDamage;
@@ -1694,7 +1694,7 @@ int spellsIsFlying(object oCreature)
 // * returns true if oCreature does not have a mind
 int spellsIsMindless(object oCreature)
 {
-    int nRacialType = GetRacialType(oCreature);
+    int nRacialType = MyPRCGetRacialType(oCreature);
     switch(nRacialType)
     {
         case RACIAL_TYPE_ELEMENTAL:

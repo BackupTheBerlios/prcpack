@@ -15,6 +15,8 @@
 
 #include "NW_I0_SPELLS"
 #include "strat_prc_inc"
+#include "prc_alterations"
+
 void main()
 {
     //Declare major variables
@@ -43,7 +45,7 @@ void main()
     int nTouch;
 
     //Undead are damaged instead of healed
-    if(GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD || GetLevelByClass(CLASS_TYPE_UNDEAD,oTarget)>0)
+    if(MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD || GetLevelByClass(CLASS_TYPE_UNDEAD,oTarget)>0)
     {
         //Make a ranged touch attack
         nTouch = TouchAttackMelee(oTarget,TRUE);

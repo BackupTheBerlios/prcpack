@@ -1,6 +1,7 @@
 #include "x2_inc_switches"
 #include "inc_prc_function"
 
+
 //does everything myResistSPell does, only it adjusts for +1 ECL
 // uses spell script: "add_spell_penetr" , also any changes made to "prc_caster_level" will affect
 // it the same way as they affect the GetChangesToCasterLevel function.
@@ -226,3 +227,6 @@ nDamageType = nNewType;
 }
 return nDamageType;
 }
+
+
+

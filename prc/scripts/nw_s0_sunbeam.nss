@@ -80,7 +80,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
             if ( ! MyPRCResistSpell(OBJECT_SELF, oTarget, 1.0))
             {
                 //Check if the target is an undead
-                if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+                if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
                 {
                     //Roll damage and save
                     nDamage = d6(nCasterLevel);

@@ -72,7 +72,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
     effect eHeal = EffectHeal(nDamage);
     effect eVisHeal = EffectVisualEffect(VFX_IMP_HEALING_M);
     effect eRay;
-    if(GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+    if(MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
     {
         if(!GetIsReactionTypeFriendly(oTarget))
         {

@@ -57,7 +57,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ENCHANTMENT);
     int nCasterLevel = (GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF));
     int nDuration = 2 + nCasterLevel/3;
     nDuration = GetScaledDuration(nDuration, oTarget);
-    int nRacial = GetRacialType(oTarget);
+    int nRacial = MyPRCGetRacialType(oTarget);
     //Fire cast spell at event for the specified target
     SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_DOMINATE_PERSON, FALSE));
     //Make sure the target is a humanoid

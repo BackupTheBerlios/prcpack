@@ -25,6 +25,10 @@
 #include "prc_dg_inc"
 #include "discipleinclude"
 #include "strat_prc_inc"
+// Gets the racial type (RACIAL_TYPE_*) of oCreature
+// * Return value if oCreature is not a valid creature: RACIAL_TYPE_INVALID
+// This function includes changes via levels of classes (like the lich)
+int MyPRCGetRacialType(object oCreature);
 
 // * Check to see which custom PRCs oPC has and apply the proper feat bonuses
 void EvalPRCFeats(object oPC);
@@ -214,8 +218,8 @@ int BlastInfidelOrFaithHeal(object oCaster, object oTarget, int iEnergyType, int
     //If the target is undead and damage type is negative
     //or if the target is living and damage type is positive
     //then we're healing.  Otherwise, we're harming.
-    int iHeal = ( GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD && iEnergyType == DAMAGE_TYPE_NEGATIVE ) ||
-                ( GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD && iEnergyType == DAMAGE_TYPE_POSITIVE );
+    int iHeal = ( MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD && iEnergyType == DAMAGE_TYPE_NEGATIVE ) ||
+                ( MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD && iEnergyType == DAMAGE_TYPE_POSITIVE );
     int iRetVal = FALSE;
     int iAlignDif = CompareAlignment(oCaster, oTarget);
     string sFeedback = "";
@@ -236,4 +240,31 @@ int BlastInfidelOrFaithHeal(object oCaster, object oTarget, int iEnergyType, int
     if(iDisplayFeedback) FloatingTextStringOnCreature(sFeedback, oCaster);
     return iRetVal;
 }
+
+int MyPRCGetRacialType(object oCreature)
+{
+    // Determine if they have a class that makes them another racial type
+    // level 4 lich is undead
+    if (GetLevelByClass(CLASS_TYPE_LICH,oCreature) >= 4)
+        return RACIAL_TYPE_UNDEAD;
+    if (GetLevelByClass(CLASS_TYPE_MONK,oCreature) >= 20)
+        return RACIAL_TYPE_OUTSIDER;
+    if (GetLevelByClass(CLASS_TYPE_OOZEMASTER,oCreature) >= 10)
+        return RACIAL_TYPE_OOZE;
+    if (GetLevelByClass(CLASS_TYPE_DRAGONDISCIPLE,oCreature) >= 10)
+        return RACIAL_TYPE_DRAGON;
+    if (GetLevelByClass(CLASS_TYPE_ACOLYTE,oCreature) >= 10)
+        return RACIAL_TYPE_OUTSIDER;
+    if (GetLevelByClass(CLASS_TYPE_ES_FIRE,oCreature) >= 10)
+        return RACIAL_TYPE_ELEMENTAL;
+    if (GetLevelByClass(CLASS_TYPE_ES_COLD,oCreature) >= 10)
+        return RACIAL_TYPE_ELEMENTAL;
+    if (GetLevelByClass(CLASS_TYPE_ES_ELEC,oCreature) >= 10)
+        return RACIAL_TYPE_ELEMENTAL;
+    if (GetLevelByClass(CLASS_TYPE_ES_ACID,oCreature) >= 10)
+        return RACIAL_TYPE_ELEMENTAL;
+
+    return GetRacialType(oCreature);
+}
+
 

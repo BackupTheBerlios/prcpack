@@ -23,7 +23,7 @@
 // if TRUE, the cleric has enough levels of control to control the undead
 // if FALSE, the cleric will rebuke the undead instead
 
-#include "strat_prc_inc"
+#include "prc_alterations"
 
 // Checks to see if an evil cleric has control 'slots' to command
 // the specified undead
@@ -79,7 +79,7 @@ void RebukeUndead(int nTurnLevel, int nTurnHD, int nVermin, int nElemental, int 
         if(!GetIsFriend(oTarget))
         {
             nHD = GetHitDice(oTarget) + GetTurnResistanceHD(oTarget);
-            nRacial = GetRacialType(oTarget);
+            nRacial = MyPRCGetRacialType(oTarget);
 
             if (nRacial == RACIAL_TYPE_OUTSIDER )
             {
@@ -191,7 +191,7 @@ void TurnUndead(int nTurnLevel, int nTurnHD, int nVermin, int nElemental, int nC
         if(!GetIsFriend(oTarget))
         {
             nHD = GetHitDice(oTarget) + GetTurnResistanceHD(oTarget);
-            nRacial = GetRacialType(oTarget);
+            nRacial = MyPRCGetRacialType(oTarget);
 
             if (nRacial == RACIAL_TYPE_OUTSIDER )
             {

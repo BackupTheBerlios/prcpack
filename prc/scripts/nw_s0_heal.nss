@@ -49,7 +49,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_CONJURATION);
   effect eSun = EffectVisualEffect(VFX_IMP_SUNSTRIKE);
   effect eHealVis = EffectVisualEffect(VFX_IMP_HEALING_X);
     //Check to see if the target is an undead
-    if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+    if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
     {
         if(!GetIsReactionTypeFriendly(oTarget))
         {

@@ -62,7 +62,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ENCHANTMENT);
     int nModifier = 0;
 
     // * creatures of different race find different things funny
-    if (GetRacialType(oTarget) != GetRacialType(OBJECT_SELF))
+    if (MyPRCGetRacialType(oTarget) != MyPRCGetRacialType(OBJECT_SELF))
     {
         nModifier = 4;
     }

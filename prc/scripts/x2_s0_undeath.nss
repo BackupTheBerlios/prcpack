@@ -114,7 +114,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
         while (GetIsObjectValid(oTarget) && nHDLeft >0)
         {
 
-            if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+            if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
             {
                 nCurHD = GetHitDice(oTarget);
                 if (nCurHD <= nHDLeft )

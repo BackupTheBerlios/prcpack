@@ -54,7 +54,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_CONJURATION);
     eLink = EffectLinkEffects(eLink, eDur2);
     eLink = EffectLinkEffects(eLink, eDur3);
 
-    int nRacial = GetRacialType(oTarget);
+    int nRacial = MyPRCGetRacialType(oTarget);
     int nAlign = GetAlignmentGoodEvil(OBJECT_SELF);
     if(nDuration == 0)
     {

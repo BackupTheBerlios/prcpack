@@ -79,7 +79,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
             nDamage = nDamage + (nDamage/2) + nCasterLevel;
         }
         //If the target is an allied undead it is healed
-        if(GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+        if(MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
         {
             //Fire cast spell at event for the specified target
             SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_CIRCLE_OF_DOOM, FALSE));

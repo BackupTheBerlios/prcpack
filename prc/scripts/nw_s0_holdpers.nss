@@ -67,10 +67,10 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ENCHANTMENT);
         SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_HOLD_PERSON));
         //Make sure the target is a humanoid
         if (GetIsPlayableRacialType(oTarget) ||
-            GetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_GOBLINOID ||
-            GetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_MONSTROUS ||
-            GetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_ORC ||
-            GetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_REPTILIAN)
+            MyPRCGetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_GOBLINOID ||
+            MyPRCGetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_MONSTROUS ||
+            MyPRCGetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_ORC ||
+            MyPRCGetRacialType(oTarget) == RACIAL_TYPE_HUMANOID_REPTILIAN)
         {
             //Make SR Check
             if (!MyPRCResistSpell(OBJECT_SELF, oTarget))

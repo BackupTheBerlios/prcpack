@@ -47,7 +47,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
     int nCasterLvl = GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF);
     int nDuration  = nCasterLvl;
     int nMetaMagic = GetMetaMagicFeat();
-    int nRacial = GetRacialType(oTarget);
+    int nRacial = MyPRCGetRacialType(oTarget);
     effect eVis = EffectVisualEffect(VFX_IMP_AC_BONUS);
 
     //Fire cast spell at event for the specified target

@@ -80,7 +80,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_CONJURATION);
     }
 
 
-    if (GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+    if (MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
     {
         if (oTarget != OBJECT_SELF)
         {

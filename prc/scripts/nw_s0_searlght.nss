@@ -70,13 +70,13 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
                 nCasterLevel = 10;
             }
             //Check for racial type undead
-            if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+            if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
             {
                 nDamage = d6(nCasterLevel);
                 nMax = 6;
             }
             //Check for racial type construct
-            else if (GetRacialType(oTarget) == RACIAL_TYPE_CONSTRUCT)
+            else if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_CONSTRUCT)
             {
                 nCasterLevel /= 2;
                 if(nCasterLevel == 0)

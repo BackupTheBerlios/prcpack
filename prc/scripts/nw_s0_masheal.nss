@@ -62,7 +62,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_CONJURATION);
   {
       fDelay = GetRandomDelay();
       //Check to see if the target is an undead
-      if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD && !GetIsReactionTypeFriendly(oTarget))
+      if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD && !GetIsReactionTypeFriendly(oTarget))
       {
             //Fire cast spell at event for the specified target
             SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_MASS_HEAL));
@@ -97,7 +97,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_CONJURATION);
       else
       {
             //Make a faction check
-            if(GetIsFriend(oTarget) && GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+            if(GetIsFriend(oTarget) && MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
             {
                 //Fire cast spell at event for the specified target
                 SignalEvent(oTarget, EventSpellCastAt(OBJECT_SELF, SPELL_MASS_HEAL, FALSE));

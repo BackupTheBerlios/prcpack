@@ -51,7 +51,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_CONJURATION);
     effect eGate;
 
 
-    int nRacial = GetRacialType(oTarget);
+    int nRacial = MyPRCGetRacialType(oTarget);
     int nAlign = GetAlignmentGoodEvil(OBJECT_SELF);
     if(nDuration == 0)
     {

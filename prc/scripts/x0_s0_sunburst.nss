@@ -88,7 +88,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
 
             if (!MyPRCResistSpell(OBJECT_SELF, oTarget, fDelay))
             {
-                if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+                if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
                 {
                     //Roll damage for each target
                     nDamage = MaximizeOrEmpower(6, nCasterLvl, nMetaMagic);
@@ -130,7 +130,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
 
 
 
-                    if (GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+                    if (MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
                     {
                         // * if reflex saving throw fails no blindness
                         if (!ReflexSave(oTarget, (GetSpellSaveDC() + GetChangesToSaveDC(OBJECT_SELF)), SAVING_THROW_TYPE_SPELL))

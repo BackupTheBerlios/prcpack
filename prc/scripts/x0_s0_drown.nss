@@ -62,9 +62,9 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_TRANSMUTATION
         if(!MyPRCResistSpell(OBJECT_SELF, oTarget))
         {
             // * certain racial types are immune
-            if ((GetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT)
-                &&(GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
-                &&(GetRacialType(oTarget) != RACIAL_TYPE_ELEMENTAL))
+            if ((MyPRCGetRacialType(oTarget) != RACIAL_TYPE_CONSTRUCT)
+                &&(MyPRCGetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+                &&(MyPRCGetRacialType(oTarget) != RACIAL_TYPE_ELEMENTAL))
             {
                 //Make a fortitude save
                 if(!MySavingThrow(SAVING_THROW_FORT, oTarget, (GetSpellSaveDC() + GetChangesToSaveDC(OBJECT_SELF))))

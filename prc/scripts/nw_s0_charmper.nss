@@ -57,7 +57,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_ENCHANTMENT);
     int nCasterLevel = (GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF));
     int nDuration = 2 + nCasterLevel/3;
     nDuration = GetScaledDuration(nDuration, oTarget);
-    int nRacial = GetRacialType(oTarget);
+    int nRacial = MyPRCGetRacialType(oTarget);
     //Make Metamagic check for extend
     if (nMetaMagic == METAMAGIC_EXTEND)
     {

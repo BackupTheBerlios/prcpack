@@ -52,7 +52,7 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_NECROMANCY);
     effect eVis2 = EffectVisualEffect(VFX_IMP_HEALING_G);
     effect eHeal, eDam;
     //Check that the target is undead
-    if (GetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
+    if (MyPRCGetRacialType(oTarget) == RACIAL_TYPE_UNDEAD)
     {
         //Figure out the amount of damage to heal
         nHeal = GetMaxHitPoints(oTarget) - GetCurrentHitPoints(oTarget);
