@@ -93,17 +93,10 @@ module.OnPlayerUnequipItem : prc_unequip
 module.OnUserDefined : prc_onuserdef
 
 # Cache PRC scripts for better performance.
-module.Cache : screen_targets
+module.Cache : prc_add_spl_pen
+module.Cache : prc_add_spell_dc
+module.Cache : prc_set_dmg_type
 module.Cache : prc_caster_level
-module.Cache : set_damage_type
-module.Cache : change_metamagic
-module.Cache : add_spell_dc
-module.Cache : add_spell_penetr
-module.Cache : add_damage
-module.Cache : add_damageshield
-module.Cache : add_randdamage
-module.Cache : add_healing
-module.Cache : add_hitpoints
 module.Cache : prc_onaquire
 module.Cache : prc_onactivate
 module.Cache : prc_equip
