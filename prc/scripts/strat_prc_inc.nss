@@ -1,5 +1,5 @@
-//Hospitaler, Master Harper, Master of Shrouds
-//Stratovarius - March 02, 2004
+//Peerless Archer
+//Stratovarius - April 04, 2004
 
 //New Prestige Classes
 const int CLASS_TYPE_MAGEKILLER   = 65; //CONSTANT
@@ -17,6 +17,8 @@ const int CLASS_TYPE_RED_AVENGER  = 82; //CONSTANT
 const int CLASS_TYPE_LICH = 90; // CONSTANT
 const int CLASS_TYPE_PNP_SHIFTER = 91; // CONSTANT
 const int CLASS_TYPE_TRUENECRO = 151; // CONSTANT
+const int CLASS_TYPE_ARCTRICK = 152; // CONSTANT
+const int CLASS_TYPE_PEERLESS = 159; // CONSTANT
 const int CLASS_TYPE_HOSPITALER = 174; // CONSTANT
 const int CLASS_TYPE_MASTER_OF_SHROUDS = 175; // CONSTANT
 const int CLASS_TYPE_MASTER_HARPER = 176; // CONSTANT
@@ -143,3 +145,10 @@ const int DEMONSLAYING_1            = 2754; //CONSTANT
 const int DEMONSLAYING_2            = 2755; //CONSTANT
 const int DEMONSLAYING_3            = 2756; //CONSTANT
 const int DEMONSLAYING_4            = 2757; //CONSTANT
+
+//Peerless Archer Feats
+const int FEAT_PA_FLETCH_1         = 4284; //CONSTANT
+const int FEAT_PA_FLETCH_2         = 4285; //CONSTANT
+const int FEAT_PA_FLETCH_3         = 4286; //CONSTANT
+const int FEAT_PA_FLETCH_4         = 4287; //CONSTANT
+const int FEAT_PA_FLETCH_5         = 4288; //CONSTANT

@@ -9,6 +9,9 @@
 //:: Created By: James Tallet
 //:: Created On: Apr 4, 2004
 //:://////////////////////////////////////////////
+
+#include "strat_prc_inc"
+
 void main()
 {
 
@@ -20,16 +23,18 @@ void main()
  if (nMinXPForLevel > nNewXP || nNewXP == 0 )
  {
        FloatingTextStrRefOnCreature(3785, OBJECT_SELF); // Item Creation Failed - Not enough XP
+       IncrementRemainingFeatUses(OBJECT_SELF, FEAT_PA_FLETCH_1);
        return ;
  }
  if (nGold < 300)
  {
        FloatingTextStrRefOnCreature(3785, OBJECT_SELF); // Item Creation Failed - Not enough XP
+       IncrementRemainingFeatUses(OBJECT_SELF, FEAT_PA_FLETCH_1);
        return ;
  }
 
 
- CreateItemOnObject("wammar010", OBJECT_SELF, 99);
+ SetIdentified(CreateItemOnObject("NW_WAMMAR009", OBJECT_SELF, 99), TRUE);
  SetXP(OBJECT_SELF,nNewXP);
  TakeGoldFromCreature(300, OBJECT_SELF, TRUE);
 }
