@@ -92,6 +92,7 @@ void ShiftFromKnownArray(int nIndex, object oTemplate, object oPC);
 
 void RecognizeCreature( object oPC, string sTemplate )
 {
+
     // Only add new ones
     if (IsKnownCreature(oPC,sTemplate))
         return;

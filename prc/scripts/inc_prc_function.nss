@@ -57,6 +57,7 @@ void EvalPRCFeats(object oPC)
     if(iElemSavant > 0)                                         ExecuteScript("prc_elemsavant", oPC);
     if(GetLevelByClass(CLASS_TYPE_HEARTWARDER,oPC) > 0)         ExecuteScript("prc_heartwarder", oPC);
     if(GetLevelByClass(CLASS_TYPE_STORMLORD,oPC) > 0)           ExecuteScript("prc_stormlord", oPC);
+    if(GetLevelByClass(CLASS_TYPE_PNP_SHIFTER ,oPC) > 0)        ExecuteScript("prc_shifter", oPC);
 }
 
 // This is required if you want your skin effects to work with the shifter

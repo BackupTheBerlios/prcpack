@@ -36,6 +36,7 @@ Shane Hennessy:
 - Add a dlg for the shifter to reduce the newly added confusion with mimic being required - complete
 - Get rabbithail to add his magic crafting feats to our pak, if that fails make my own - complete
 - Add Fang of Lolth PRC - design done
+- Shifter now has shifterlist.2da to have default shapes to assist local vault players.
 
 Stratovarius:
 - Arcane Trickster - Feat TLK and Scripts remaining
