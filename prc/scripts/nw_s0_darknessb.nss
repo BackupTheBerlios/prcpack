@@ -30,15 +30,15 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
     eAOE = GetFirstEffect(oTarget);
     while (GetIsEffectValid(eAOE))
     {
-        if (GetEffectCreator(eAOE) == oCreator)
+        int nID = GetEffectSpellId(eAOE);
+
+        if( nID== SPELL_DARKNESS || nID == SPELLABILITY_AS_DARKNESS  || nID == SPELL_SHADOW_CONJURATION_DARKNESS || nID == 688 || nID ==SHADOWLORD_DARKNESS)
         {
-            int nID = GetEffectSpellId(eAOE);
-            //If the effect was created by the spell then remove it
-            if( nID== SPELL_DARKNESS || nID == SPELLABILITY_AS_DARKNESS  || nID == SPELL_SHADOW_CONJURATION_DARKNESS || nID == 688 )
-            {
-                RemoveEffect(oTarget, eAOE);
-            }
+           if (GetEffectCreator(eAOE) == oCreator)
+              RemoveEffect(oTarget, eAOE);
+
         }
+
         //Get next effect on the target
         eAOE = GetNextEffect(oTarget);
     }

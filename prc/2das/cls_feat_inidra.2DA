@@ -1,0 +1,17 @@
+2DA V2.0
+
+   FeatLabel         FeatIndex List GrantedOnLevel OnMenu 
+0  Evasion           206       3    1              0      
+1  darkvision        228       3    3              0      
+2  LowLightVision    354       3    3              0      
+3  WeapProfCreature  289       3    2              0      
+4  ClawDragon        3341      3    2              0      
+5  ClawDragonEnh2    3348      3    5              0      
+6  ClawDragonEnh3    3349      3    8              0      
+7  IncreaseUnarmed1  3342      3    4              0      
+8  IncreaseUnarmed2  3343      3    8              0      
+9  FrightfulPresence 3344      3    5              1      
+10 ImprovedEvasion   212       3    6              0      
+11 spellResistance   3345      3    7              0      
+13 dragonshape       3347      3    10             1      
+12 StunStrike        3346      3    9              0      

@@ -67,7 +67,18 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
         ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink2, oTarget);
     }
 
+    int iShadow = GetLevelByClass(CLASS_TYPE_SHADOWLORD,oTarget);
+
+    if (iShadow)
+        ApplyEffectToObject(DURATION_TYPE_PERMANENT,EffectUltravision(), oTarget);
+    if (iShadow>1)
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, EffectConcealment(20), oTarget);
+
+
 DeleteLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR");
 // Getting rid of the local integer storing the spellschool name
 
 }
+
+
+

@@ -59,6 +59,11 @@ void EvalPRCFeats(object oPC)
     if(GetLevelByClass(CLASS_TYPE_STORMLORD,oPC) > 0)           ExecuteScript("prc_stormlord", oPC);
     if(GetLevelByClass(CLASS_TYPE_PNP_SHIFTER ,oPC) > 0)        ExecuteScript("prc_shifter", oPC);
     if(GetLevelByClass(CLASS_TYPE_KNIGHT_CHALICE,oPC) > 0)      ExecuteScript("prc_knghtch", oPC);
+    if(GetLevelByClass(CLASS_TYPE_FISTRAZIEL,oPC) > 0)          ExecuteScript("prc_fistraziel", oPC);
+    if(GetLevelByClass(CLASS_TYPE_TEMPUS,oPC) > 0)              ExecuteScript("prc_battletempus", oPC);
+    if(GetLevelByClass(CLASS_TYPE_SHADOWLORD,oPC) > 0)          ExecuteScript("prc_shadowlord", oPC);
+    if(GetLevelByClass(CLASS_TYPE_BONDED_SUMMONNER,oPC) > 0)    ExecuteScript("prc_bondedsumm", oPC);
+    if(GetLevelByClass(CLASS_TYPE_INITIATE_DRACONIC,oPC) > 0)   ExecuteScript("prc_initdraconic", oPC);
 }
 
 // This is required if you want your skin effects to work with the shifter

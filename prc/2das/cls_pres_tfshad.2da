@@ -1,0 +1,35 @@
+2DA V2.0
+
+   LABEL             ReqType ReqParam1      ReqParam2 
+0  ShadowDancer      CLASS   27             ****      
+1  Sorcerer          CLASS   9              ****      
+2  Wizard            CLASS   10             ****      
+3  Bard              CLASS   1              ****      
+4  BlindFight        FEAT    408            ****      
+5  Dodge             FEAT    10             ****      
+6  Mobility          FEAT    26             ****      
+7  SpringAttack      FEAT    392            ****      
+8  SneakAttack2      FEATOR  345            ****      
+9  SneakAttack3      FEATOR  346            ****      
+10 SneakAttack4      FEATOR  347            ****      
+11 SneakAttack5      FEATOR  348            ****      
+12 SneakAttack6      FEATOR  349            ****      
+13 SneakAttack7      FEATOR  350            ****      
+14 SneakAttack8      FEATOR  351            ****      
+15 SneakAttack9      FEATOR  352            ****      
+16 SneakAttack10     FEATOR  353            ****      
+17 SneakAttack11     FEATOR  1032           ****      
+18 SneakAttack12     FEATOR  1033           ****      
+19 SneakAttack13     FEATOR  1034           ****      
+20 SneakAttack14     FEATOR  1035           ****      
+21 SneakAttack15     FEATOR  1036           ****      
+22 SneakAttack16     FEATOR  1037           ****      
+23 SneakAttack17     FEATOR  1038           ****      
+24 SneakAttack18     FEATOR  1039           ****      
+25 SneakAttack19     FEATOR  1040           ****      
+26 SneakAttack20     FEATOR  1041           ****      
+27 Prereq_Shadowlord FEAT    3339           ****      
+28 Lore              SKILL   7              2         
+29 Hide              SKILL   5              10        
+30 MoveSilently      SKILL   8              10        
+31 ScriptVar         VAR     X1_AllowShaLow 0         

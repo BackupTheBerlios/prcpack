@@ -1,0 +1,12 @@
+2DA V2.0
+
+      LABEL           ReqType   ReqParam1         ReqParam2
+0     Base_Attack     BAB       6                 ****
+1     Persuade	      SKILL     12                5
+2     Lore            SKILL     7                 5
+3     PowerAtk        FEAT      28                ****
+4     Divine          SPELL     1                 **** 
+5     Cleric          CLASSOR   2                 ****
+6     Paladin         CLASSOR   6                 ****
+7     TurnUndead      FEAT      294               ****  
+8     ScriptVar       VAR       X1_AllowFistRaz   0           

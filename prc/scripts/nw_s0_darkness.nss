@@ -41,10 +41,13 @@ SetLocalInt(OBJECT_SELF, "X2_L_LAST_SPELLSCHOOL_VAR", SPELL_SCHOOL_EVOCATION);
 // End of Spell Cast Hook
 
 
+
     //Declare major variables including Area of Effect Object
     effect eAOE = EffectAreaOfEffect(AOE_PER_DARKNESS);
     location lTarget = GetSpellTargetLocation();
-    int nDuration = (GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF));
+
+    int  nDuration = (GetCasterLevel(OBJECT_SELF) + GetChangesToCasterLevel(OBJECT_SELF));
+
     int nMetaMagic = GetMetaMagicFeat();
     //Make sure duration does no equal 0
     if (nDuration < 1)

@@ -64,6 +64,7 @@ void main()
             GetLevelByClass(CLASS_TYPE_ES_ELEC, oCaster)+
             GetLevelByClass(CLASS_TYPE_ES_ACID, oCaster)+
             GetLevelByClass(CLASS_TYPE_MASTER_HARPER, oCaster)+
+            GetLevelByClass(CLASS_TYPE_BONDED_SUMMONNER, oCaster)/2+
             GetHasFeat(FEAT_FIRE_ADEPT, oCaster);
 
 
@@ -133,6 +134,7 @@ void main()
             GetLevelByClass(CLASS_TYPE_FISTRAZIEL, oCaster)+
             GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oCaster)+
             GetLevelByClass(CLASS_TYPE_HOSPITALER, oCaster)+
+            GetLevelByClass(CLASS_TYPE_TEMPUS, oCaster)/2+
             GetLevelByClass(CLASS_TYPE_TRUENECRO, oCaster);
 
             /*///////////////////////////////////////////////
