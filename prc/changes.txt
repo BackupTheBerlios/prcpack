@@ -109,4 +109,7 @@ Changed the soulgem to soul_gem.uti so it can be checked in.
 ---------Begin Stratovarius
 - Released 1.10
 ---------End Stratovarius
+11/03/2004
+---------Begin Zedium
+- Updated the Duelist script, you will find in an erf in the Script folder, it fixes some of the basic bugs.
 
