@@ -14,6 +14,6 @@ void main()
     }
 
 
- CreateItemOnObject("x1_wmgrenade005");
+ CreateItemOnObject("x1_wmgrenade005", OBJECT_SELF, 1);
  SetXP(OBJECT_SELF,nNewXP);
 }
