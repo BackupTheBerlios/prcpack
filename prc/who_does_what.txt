@@ -29,14 +29,13 @@ Shane Hennessy:
 - Add warrior of darkness prc
 
 Stratovarius:
-- Arcane Trickster - Class, feat, cls_feat.2das
-- Blood Archer - Class, feat, cls_feat.2das
-- Blood Magus - Class, feat, cls_feat.2das
-- Diabolist - Class, feat, cls_feat.2das
-- Fist of Hextor - Class, feat, cls_feat.2das
-- Lasher - Class, feat, cls_feat.2das
-- Order of the Bow Initiate - Class, feat, cls_feat.2das
-- Purple Dragon Knight - Class, feat, cls_feat.2das
-- Red Wizard of Thay - Class, feat, cls_feat.2das
-- True Necromancer - Class, feat, cls_feat.2das
-
+- Arcane Trickster - TLK and Scripts remaining
+- Blood Archer - TLK and Scripts remaining
+- Blood Magus - TLK and Scripts remaining
+- Diabolist - TLK and Scripts remaining
+- Fist of Hextor - TLK and Scripts remaining
+- Lasher - Unstarted
+- Order of the Bow Initiate - Unstarted
+- Purple Dragon Knight - TLK and Scripts remaining
+- Red Wizard of Thay - TLK and Scripts remaining
+- True Necromancer - TLK and Scripts remaining
