@@ -51,6 +51,6 @@
 ---------End Middy
 16/02/2004
 ---------Begin Middy
-- Updated the entire... entire readme. Added Vassal of Bahamut to it. Other additions and the like pending. Woo, I'm tired.
-- Minor tlk updates.
+- Updated the entire... entire readme. Whew. Added Heartwarder, Holy Liberator, Hunter of the Dead, and Knight of the Chalice, Vassal of Bahamut to it.
+- Changes to each class description entry in the entire TLK. They're all fixed up. Some minor feat description fixes.
 ---------End Middy

@@ -146,7 +146,6 @@ Level
 
 
 ******************** Duelist *******************
-
 The duelist is a nimble, intelligent fighter trained in making precise attacks with light weapons, such as the rapier.  Also known as the swashbuckler, the duelist always takes full advantage of his quick reflexes and wits in a fight.  Rather than wearing bulky armor, duelists feel that the best way to protect themselves is to not get hit at all.
 
 - Hit Die: d10
@@ -393,8 +392,8 @@ Level
 7: Cure Light Wounds - As the spell, once per day.
 8: Positive Energy Burst - Use 2 turn attempts to damage nearby undead
     Restoration - As the spell, twice per day.
-9: Lesser Restoration - As the spell, twice per day/
-10: Sealed Life - Immune to level / ability drain
+9: Lesser Restoration - As the spell, twice per day
+10: Sealed Life - Immune to level/ability drain
     Smite Undead - Three times per day.
     Searing Light - As the spell, twice per day.
 
