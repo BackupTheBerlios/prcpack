@@ -3,6 +3,9 @@
  * 2004/02/15
  * Brian Greinke
  */
+
+#include "strat_prc_inc"
+
 void main()
 {
     int num;
@@ -17,19 +20,19 @@ void main()
     location locSummon;
     object oPC = OBJECT_SELF;
 
-    if ( GetHasFeat(3504) )
+    if ( GetHasFeat(FEAT_MOS_UNDEAD_4) )
     {
         num = 8;
         type = "SPECTRE_SUMM";
         eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_30 );
     }
-    else if ( GetHasFeat(3503) )
+    else if ( GetHasFeat(FEAT_MOS_UNDEAD_3) )
     {
         num = 2;
         type = "SPECTRE_SUMM";
         eSummonB = EffectVisualEffect( VFX_FNF_LOS_EVIL_20 );
     }
-    else if ( GetHasFeat(3502) )
+    else if ( GetHasFeat(FEAT_MOS_UNDEAD_2) )
     {
         num = 2;
         type = "WRAITH_SUMM";
@@ -50,7 +53,7 @@ void main()
                        vCentroid.z );
         locSummon = Location( GetArea(oPC), vLoc, IntToFloat(Random(361) - 180) );
         oCreature = CreateObject( OBJECT_TYPE_CREATURE, type, locSummon, FALSE );
-        AssignCommand( oCreature, ActionDoCommand(SetLocalInt(oCreature, "ttl", GetLevelByClass(150, oPC))) );
+        AssignCommand( oCreature, ActionDoCommand(SetLocalInt(oCreature, "ttl", GetLevelByClass(CLASS_TYPE_MASTER_OF_SHROUDS, oPC))) );
         AssignCommand( oCreature, ActionDoCommand(SetLocalObject(oCreature, "summoner", oPC)) );
     }
 }

@@ -1,4 +1,4 @@
-//HOSPITALER, Master Harper	
+//Hospitaler, Master Harper, Master of Shrouds
 //Stratovarius - March 02, 2004
 
 //New Prestige Classes
@@ -128,4 +128,10 @@ const int FEAT_FREE_KI_3            = 2751; //CONSTANT
 const int FEAT_FREE_KI_4            = 2752; //CONSTANT
 
 // Shifter class feats
-const int FEAT_PRESTIGE_SHIFTER_NATURALSPELL = 2920;
+const int FEAT_PRESTIGE_SHIFTER_NATURALSPELL = 2920; //CONSTANT
+
+//Master of Shrouds Class Feats
+const int FEAT_MOS_UNDEAD_1         = 3501; //CONSTANT
+const int FEAT_MOS_UNDEAD_2         = 3502; //CONSTANT
+const int FEAT_MOS_UNDEAD_3         = 3503; //CONSTANT
+const int FEAT_MOS_UNDEAD_4         = 3504; //CONSTANT
