@@ -15,7 +15,7 @@ all:	scripts pack
 
 scripts: $(OBJS)
 
-pack:
+pack: scripts
 	@echo -n 'Packing erf file..'
 	@$(ERFCOMPILER) -c $(ERF) $(SCRIPTS) $(OBJS)
 	@echo '.done'
