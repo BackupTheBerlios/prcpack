@@ -54,3 +54,7 @@
 - Updated the entire... entire readme. Whew. Added Heartwarder, Holy Liberator, Hunter of the Dead, and Knight of the Chalice, Vassal of Bahamut to it.
 - Changes to each class description entry in the entire TLK. They're all fixed up. Some minor feat description fixes.
 ---------End Middy
+16/02/2004
+---------Begin Stratovarius
+- Added Heartwarder, Stormlord, Fist of Raziel scripts to the CVS. A little worried about errors on these. Release will find the errors I think.
+---------End Stratovarius
