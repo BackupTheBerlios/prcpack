@@ -1,6 +1,6 @@
 //::///////////////////////////////////////////////
-//:: Ranged Legerdemain
-//:: prc_at_legerdem.nss
+//:: Ranged Legerdemain- Disable Trap
+//:: prc_at_legertrap.nss
 //:://////////////////////////////////////////////
 //::
 //:: Allows caster to use skills at a range
@@ -13,7 +13,6 @@
 
 
 #include "prc_alterations"
-
 #include "NW_I0_SPELLS"
 #include "x2_inc_spellhook"
 
@@ -23,17 +22,17 @@ void main()
     //Declare major variables
     int nDC;
     object oCaster = OBJECT_SELF;
-    object oLock = GetSpellTargetObject();
-    int nType = GetObjectType(oLock);
-    if (OBJECT_TYPE_DOOR == nType || OBJECT_TYPE_PLACEABLE == nType)
+    object oTrap = GetSpellTargetObject();
+    int nType = GetObjectType(oTrap);
+    if (OBJECT_TYPE_DOOR == nType || OBJECT_TYPE_PLACEABLE == nType || OBJECT_TYPE_TRIGGER == nType)
     {
-    if (GetDistanceToObject(oLock) <= 30.0)
+    if (GetDistanceToObject(oTrap) <= 30.0)
         {
-        nDC = GetLockUnlockDC(oLock);
+        nDC = GetTrapDisarmDC(oTrap);
         nDC = nDC + 5;
-        if (GetIsSkillSuccessful(oCaster, SKILL_OPEN_LOCK, nDC))
+        if (GetIsSkillSuccessful(oCaster, SKILL_DISABLE_TRAP, nDC))
             {
-            SetLocked(oLock, FALSE);
+            SetTrapDisabled(oTrap);
             }
 
         }
