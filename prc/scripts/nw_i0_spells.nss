@@ -857,4 +857,3 @@ void TrapDoElectricalDamage(int ngDamageMaster, int nSaveDC, int nSecondary)
     }
 }
 
-//void main(){}

@@ -589,5 +589,4 @@ void CraftVFX(object oObject)
     ApplyEffectToObject(DURATION_TYPE_INSTANT,eFx,oObject, 4.0);
 }
 
-//void main(){}
 

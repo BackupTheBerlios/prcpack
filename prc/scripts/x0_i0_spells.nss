@@ -1917,6 +1917,5 @@ void spellsDispelAoE(object oTargetAoE, object oCaster, int nCasterLevel)
 
 }
 
-//void main(){}
 
 

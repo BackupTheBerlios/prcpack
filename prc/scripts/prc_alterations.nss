@@ -137,12 +137,3 @@ int MyPRCGetRacialType(object oCreature)
 
 
 
-
-/*void main(){
-    object oPC = GetFirstPC();
-    int nTotal =    GetChangesToCasterLevel(oPC)+
-                    GetChangesToSaveDC(oPC)+
-                    ChangedElementalDamage(oPC, DAMAGE_TYPE_FIRE)+
-                    MyPRCResistSpell(oPC, oPC);
-}*/
-
