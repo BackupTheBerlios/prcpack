@@ -645,6 +645,10 @@ A shifter has no form they call their own. Instead, they cloth themselves in wha
 
 (This version was created more closely to PnP guidelines. All available forms can be shifted into via verbal commands. The list of available creatures is here: http://www.nwnlexicon.com/compiled/other.resource.html Essentially, everything.)
 
+Special thanks to Brian Greinke for his additions:
+True Epic Monster Powers,
+Greater Wild Shape and Epic Greater Wild Shape now require you to have already mimiced the form you want to become.
+
 - Hit Die: d8.
 - Proficiencies: A shifter does not gain any additional weapon or armor proficiencies.
 - Skill Points: 4 + Int Modifier.
